@@ -1,2 +1,3 @@
 django-allauth[mfa,socialaccount,steam]>=65.5.0
 python-dotenv
+gunicorn
