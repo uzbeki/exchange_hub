@@ -1,0 +1,88 @@
+{% extends "allauth/layouts/entrance.html" %}
+{% load static allauth %}
+{% block head_title %}Create Request{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">Create a Request</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <!-- Type Field (Dropdown) -->
+                        <div class="mb-3">
+                            <label for="{{ form.type.id_for_label }}" class="form-label">Request Type</label>
+                            <select name="{{ form.type.name }}" id="{{ form.type.id_for_label }}" class="form-select" required>
+                                {% for value, label in form.type.field.choices %}
+                                    <option value="{{ value }}" {% if value == form.type.value %}selected{% endif %}>{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                            {% if form.type.errors %}
+                                <div class="invalid-feedback d-block">{{ form.type.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Amount Field (Number Input) -->
+                        <div class="mb-3">
+                            <label for="{{ form.amount.id_for_label }}" class="form-label">Amount</label>
+                            <input type="number" name="{{ form.amount.name }}" id="{{ form.amount.id_for_label }}" class="form-control" value="{{ form.amount.value|default_if_none:'' }}" required>
+                            {% if form.amount.errors %}
+                                <div class="invalid-feedback d-block">{{ form.amount.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Currency Field (Dropdown) -->
+                        <div class="mb-3">
+                            <label for="{{ form.currency.id_for_label }}" class="form-label">Currency</label>
+                            <select name="{{ form.currency.name }}" id="{{ form.currency.id_for_label }}" class="form-select" required>
+                                {% for value, label in form.currency.field.choices %}
+                                    <option value="{{ value }}" {% if value == form.currency.value %}selected{% endif %}>{{ label }}</option>
+                                {% endfor %}
+                            </select>
+                            {% if form.currency.errors %}
+                                <div class="invalid-feedback d-block">{{ form.currency.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Deadline Field (Date Picker) -->
+                        <div class="mb-3">
+                            <label for="{{ form.deadline.id_for_label }}" class="form-label">Deadline</label>
+                            <input type="datetime-local" name="{{ form.deadline.name }}" id="{{ form.deadline.id_for_label }}" class="form-control" value="{{ form.deadline.value|default_if_none:'' }}" required>
+                            {% if form.deadline.errors %}
+                                <div class="invalid-feedback d-block">{{ form.deadline.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Urgent Field (Checkbox) -->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" name="{{ form.urgent.name }}" id="{{ form.urgent.id_for_label }}" class="form-check-input" {% if form.urgent.value %}checked{% endif %}>
+                            <label for="{{ form.urgent.id_for_label }}" class="form-check-label">Urgent</label>
+                            {% if form.urgent.errors %}
+                                <div class="invalid-feedback d-block">{{ form.urgent.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Conditions Field (Textarea) -->
+                        <div class="mb-3">
+                            <label for="{{ form.conditions.id_for_label }}" class="form-label">Conditions</label>
+                            <textarea name="{{ form.conditions.name }}" id="{{ form.conditions.id_for_label }}" class="form-control" rows="3">{{ form.conditions.value|default_if_none:'' }}</textarea>
+                            {% if form.conditions.errors %}
+                                <div class="invalid-feedback d-block">{{ form.conditions.errors|join:", " }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

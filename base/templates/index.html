@@ -1,0 +1,151 @@
+{% extends "allauth/layouts/entrance.html" %}
+{% load allauth humanize %}
+{% block head_title %}Money Exchange Platform{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4 fw-bold text-primary text-center mb-4">Money Exchange Platform</h1>
+    <p class="text-center mb-5 lead">Connect with others to exchange money without fees!</p>
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="alert alert-info" role="alert">
+                <i class="bi bi-arrow-right-circle me-2"></i>
+                Want to <strong>send money to Uzbekistan</strong>? Check "Offers to Receive Money from Uzbekistan" below.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="alert alert-success" role="alert">
+                <i class="bi bi-arrow-left-circle me-2"></i>
+                Want to <strong>receive money from Uzbekistan</strong>? Check "Offers to Send Money to Uzbekistan" below.
+            </div>
+        </div>
+    </div>
+
+    <!-- Offers to Send Money to Uzbekistan -->
+    <h2 class="fw-bold text-primary mb-3">Offers to Send Money to Uzbekistan</h2>
+    <div class="row">
+        {% for req in send_requests %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <span>
+                            {% if req.user == user %}
+                                <strong class="text-warning">{{ req.user.username }} (You)</strong>
+                            {% else %}
+                                {{ req.user.username }}
+                            {% endif %}
+                        </span>
+                        <span class="badge bg-light text-primary">{{ req.currency }}</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>
+                            Send: {{ req.amount|intcomma }} JPY
+                        </h5>
+                        <p class="card-text">
+                            <strong>Deadline:</strong> {{ req.deadline }} 
+                            {% if req.urgent %}
+                                <span class="badge bg-danger ms-2">Urgent</span>
+                            {% endif %}
+                        </p>
+                        <p class="card-text">
+                            <strong>Conditions:</strong>
+                            <span class="d-block mt-1">{{ req.conditions|default:"None"|linebreaks }}</span>
+                        </p>
+                        {% if not req.hide_contacts %}
+                            <p class="card-text">
+                                <strong>Contact:</strong> 
+                                <a href="mailto:{{ req.user.profile.contact_info }}" class="text-primary">
+                                    <i class="bi bi-envelope-fill me-1"></i>{{ req.user.profile.contact_info }}
+                                </a>
+                            </p>
+                        {% else %}
+                            <p class="card-text text-muted">
+                                <i class="bi bi-lock-fill me-1"></i>Contact information hidden. Use the message form to connect.
+                            </p>
+                        {% endif %}
+                    </div>
+                    {% if req.user != user %}
+                    <div class="card-footer bg-light text-center">
+                        <a href="{% url 'start_conversation' req.id %}" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill me-2" viewBox="0 0 16 16">
+                                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+                            </svg> Start Conversation
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>No active send requests available.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Offers to Receive Money from Uzbekistan -->
+    <h2 class="fw-bold text-success mb-3">Offers to Receive Money from Uzbekistan</h2>
+    <div class="row">
+        {% for req in receive_requests %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                        <span>
+                            {% if req.user == user %}
+                                <strong class="text-warning">{{ req.user.username }} (You)</strong>
+                            {% else %}
+                                {{ req.user.username }}
+                            {% endif %}
+                        </span>
+                        <span class="badge bg-light text-success">{{ req.currency }}</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-arrow-left-circle-fill text-success me-2"></i>
+                            Receive: {{ req.amount|intcomma }} JPY
+                        </h5>
+                        <p class="card-text">
+                            <strong>Deadline:</strong> {{ req.deadline }} 
+                            {% if req.urgent %}
+                                <span class="badge bg-danger ms-2">Urgent</span>
+                            {% endif %}
+                        </p>
+                        <p class="card-text">
+                            <strong>Conditions:</strong>
+                            <span class="d-block mt-1">{{ req.conditions|default:"None"|linebreaks }}</span>
+                        </p>
+                        {% if not req.hide_contacts %}
+                            <p class="card-text">
+                                <strong>Contact:</strong> 
+                                <a href="mailto:{{ req.user.profile.contact_info }}" class="text-primary">
+                                    <i class="bi bi-envelope-fill me-1"></i>{{ req.user.profile.contact_info }}
+                                </a>
+                            </p>
+                        {% else %}
+                            <p class="card-text text-muted">
+                                <i class="bi bi-lock-fill me-1"></i>Contact information hidden. Use the message form to connect.
+                            </p>
+                        {% endif %}
+                    </div>
+                    {% if req.user != user %}
+                    <div class="card-footer bg-light text-center">
+                        <a href="{% url 'start_conversation' req.id %}" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill me-2" viewBox="0 0 16 16">
+                                <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+                            </svg> Start Conversation
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>No active receive requests available.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

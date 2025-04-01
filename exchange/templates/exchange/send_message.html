@@ -1,0 +1,32 @@
+{% extends 'allauth/layouts/entrance.html' %}
+{% load static %}
+{% block head_title %}Send Message{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h3 class="mb-0">Send a Message</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-4">
+                        You are sending a message to <strong>{{ req.user.username }}</strong> regarding their request to 
+                        {% if req.type == 'send' %}send money to Uzbekistan{% else %}receive money from Uzbekistan{% endif %}.
+                    </p>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer bg-light text-center">
+                    <a href="{% url 'home' %}" class="btn btn-outline-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
