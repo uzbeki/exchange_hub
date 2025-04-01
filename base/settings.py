@@ -202,7 +202,7 @@ INSTALLED_APPS = (
     # "allauth.socialaccount.providers.pinterest",
     # "allauth.socialaccount.providers.pocket",
     "allauth.socialaccount.providers.reddit",
-    "allauth.socialaccount.providers.saml",
+    # "allauth.socialaccount.providers.saml",
     # "allauth.socialaccount.providers.shopify",
     "allauth.socialaccount.providers.slack",
     # "allauth.socialaccount.providers.snapchat",

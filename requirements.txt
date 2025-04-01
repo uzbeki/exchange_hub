@@ -1,2 +1,2 @@
-django-allauth[mfa,saml,socialaccount,steam]>=65.5.0
+django-allauth[mfa,socialaccount,steam]>=65.5.0
 python-dotenv
