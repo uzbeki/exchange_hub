@@ -1,6 +1,6 @@
-{% extends "allauth/layouts/entrance.html" %} {% load static allauth %} {% block head_title %}My Requests{% endblock %}
+{% extends "allauth/layouts/manage.html" %} {% load static allauth %} {% block head_title %}My Requests{% endblock %}
 {% block content %}
-<h1>My Requests</h1>
+{% element h1 %}My requests{% endelement %}
 <div class="container">
   {% for req in requests %}
   <div class="card mb-3">
