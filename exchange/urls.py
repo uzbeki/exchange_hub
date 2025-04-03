@@ -11,8 +11,12 @@ urlpatterns = [
         ])),
     ])),
     
-    
-    path('conversations/', views.ConversationsListView.as_view(), name='conversations_list'),
-    path('conversation/<uuid:conversation_id>/', views.ConversationView.as_view(), name='conversation'),
+    path("conversations/", include([
+        path("", views.ConversationsListView.as_view(), name="conversations_list"),
+        path("<uuid:conversation_id>/", include([
+            path("", views.ConversationView.as_view(), name="conversation"),
+            path("delete/", views.DeleteConversationView.as_view(), name="delete_conversation"),
+        ])),
+    ])),
     path('start_conversation/<uuid:request_id>/', views.StartConversationView.as_view(), name='start_conversation'),
 ]

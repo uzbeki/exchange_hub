@@ -12,7 +12,7 @@ from exchange.models import Conversation, Request, Message
 from exchange.forms import RequestForm, MessageForm
 from django.contrib import messages
 from django.db import models
-from django.http import HttpRequest
+from django.http import HttpRequest, JsonResponse
 
 
 class BaseAuthenticatedView(LoginRequiredMixin, TemplateView):
@@ -33,7 +33,7 @@ class CreateRequestView(BaseAuthenticatedView, FormView):
         req = form.save(commit=False)
         req.user = self.request.user
         req.save()
-        messages.success(self.request, "Request created successfully")
+        messages.success(self.request, "New offer created successfully")
         return redirect("home")
 
     def get_context_data(self, **kwargs):
@@ -52,9 +52,9 @@ class CompleteRequestView(LoginRequiredMixin, UserPassesTestMixin, RedirectView)
         if req.status == "active":
             req.status = "completed"
             req.save()
-            messages.success(self.request, "Request completed successfully")
+            messages.success(self.request, "Offer completed successfully")
         return reverse("my_requests")
-    
+
     def test_func(self):
         # Check if the user is the owner of the request
         req = get_object_or_404(Request, id=self.kwargs["request_id"])
@@ -67,7 +67,7 @@ class DeleteRequestView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     pk_url_kwarg = "request_id"
 
     def form_valid(self, form):
-        messages.success(self.request, "Request deleted successfully")
+        messages.success(self.request, "Offer deleted successfully")
         return super().form_valid(form)
 
     def test_func(self):
@@ -145,9 +145,7 @@ class ConversationView(BaseAuthenticatedView, UserPassesTestMixin):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        conversation = Conversation.objects.get(
-            id=self.kwargs["conversation_id"]
-        )
+        conversation = Conversation.objects.get(id=self.kwargs["conversation_id"])
         messages = conversation.messages.all()
         messages.filter(~models.Q(sender=self.request.user)).update(is_read=True)
 
@@ -180,3 +178,31 @@ class ConversationView(BaseAuthenticatedView, UserPassesTestMixin):
             conversation.participant1,
             conversation.participant2,
         ]
+
+
+class DeleteConversationView(LoginRequiredMixin, View):
+    def post(self, request: HttpRequest, *args, **kwargs):
+        try:
+            conversation = Conversation.objects.get(id=self.kwargs["conversation_id"])
+        except Conversation.DoesNotExist:
+            return JsonResponse(
+                {"error": "Conversation not found."},
+                status=404,
+            )
+        # Check if the user is a participant in the conversation
+        if request.user not in [
+            conversation.participant1,
+            conversation.participant2,
+        ]:
+            return JsonResponse(
+                {"error": "You are not authorized to delete this conversation."},
+                status=403,
+            )
+        conversation.delete()
+        messages.success(request, "Conversation deleted successfully.")
+        return JsonResponse(
+            {
+                "success": "Conversation deleted successfully.",
+                "redirect_url": reverse("conversations_list"),
+            }
+        )
