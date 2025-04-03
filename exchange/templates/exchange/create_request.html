@@ -1,13 +1,13 @@
 {% extends "allauth/layouts/manage.html" %}
 {% load static allauth %}
-{% block head_title %}Create Request{% endblock %}
+{% block head_title %}New offer{% endblock %}
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white text-center">
-                    <h3 class="mb-0">Create a Request</h3>
+                    <h3 class="mb-0">Create an offer</h3>
                 </div>
                 <div class="card-body">
                     <form method="post">
@@ -15,7 +15,7 @@
 
                         <!-- Type Field (Dropdown) -->
                         <div class="mb-3">
-                            <label for="{{ form.type.id_for_label }}" class="form-label">Request Type</label>
+                            <label for="{{ form.type.id_for_label }}" class="form-label">Offer Type</label>
                             <select name="{{ form.type.name }}" id="{{ form.type.id_for_label }}" class="form-select" required>
                                 {% for value, label in form.type.field.choices %}
                                     <option value="{{ value }}" {% if value == form.type.value %}selected{% endif %}>{{ label }}</option>

@@ -1,7 +1,7 @@
-{% extends "allauth/layouts/manage.html" %} {% load static allauth %} {% block head_title %}My Requests{% endblock %}
+{% extends "allauth/layouts/manage.html" %} {% load static allauth %} {% block head_title %}My offers{% endblock %}
 {% block content %}
-{% element h1 %}My requests{% endelement %}
 <div class="container">
+  {% element h1 %}My offers{% endelement %}
   {% for req in requests %}
   <div class="card mb-3">
     <!-- Card Header: Request Type -->
@@ -49,7 +49,7 @@
   {% empty %}
   <!-- Empty State -->
   <div class="card">
-    <div class="card-body text-center">No requests yet.</div>
+    <div class="card-body text-center">No offers yet.</div>
   </div>
   {% endfor %}
 </div>

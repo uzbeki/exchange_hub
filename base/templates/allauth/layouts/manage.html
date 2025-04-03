@@ -1,20 +1,7 @@
 {% extends "allauth/layouts/base.html" %}
 {% load allauth static %}
 {% block body %}
-<main class="">
-    <div id="content" class="container">
-        {% if messages %}
-            <div class="pt-4">
-                {% for message in messages %}
-                    {% element alert level=message.tags %}
-                        {% slot message %}
-                            {{ message }}
-                        {% endslot %}
-                    {% endelement %}
-                {% endfor %}
-            </div>
-        {% endif %}
-        {% block content %}{% endblock %}
-    </div>
+<main class="container">
+    {% block content %}{% endblock %}
 </main>
 {% endblock %}
