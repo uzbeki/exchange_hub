@@ -26,7 +26,7 @@ class BaseAuthenticatedView(LoginRequiredMixin, TemplateView):
 
 
 class CreateRequestView(BaseAuthenticatedView, FormView):
-    template_name = "exchange/create_request.html"
+    template_name = "exchange/create_offer.html"
     form_class = RequestForm
 
     def form_valid(self, form):
@@ -53,7 +53,7 @@ class CompleteRequestView(LoginRequiredMixin, UserPassesTestMixin, RedirectView)
             req.status = "completed"
             req.save()
             messages.success(self.request, "Offer completed successfully")
-        return reverse("my_requests")
+        return reverse("my_offers")
 
     def test_func(self):
         # Check if the user is the owner of the request
@@ -63,7 +63,7 @@ class CompleteRequestView(LoginRequiredMixin, UserPassesTestMixin, RedirectView)
 
 class DeleteRequestView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Request
-    success_url = reverse_lazy("my_requests")
+    success_url = reverse_lazy("my_offers")
     pk_url_kwarg = "request_id"
 
     def form_valid(self, form):
@@ -76,7 +76,7 @@ class DeleteRequestView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class MyRequestsView(BaseAuthenticatedView):
-    template_name = "exchange/my_requests.html"
+    template_name = "exchange/my_offers.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
