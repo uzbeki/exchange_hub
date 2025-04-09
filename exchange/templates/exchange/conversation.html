@@ -40,12 +40,18 @@
     <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/>
     <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>  
   </symbol>
-  <symbol id="send" viewBox="0 0 16 16">
+  <symbol id="send-message" viewBox="0 0 16 16">
     <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+  </symbol>
+  <symbol id="send" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+  </symbol>
+  <symbol id="receive" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
   </symbol>
 
 </svg>
-<div class="container py-3">
+<div class="container py-3 px-0 px-md-3">
   <div class="row">
     <!-- Chat List -->
     <div class="col-lg-4 col-12 mb-3 mb-lg-0">
@@ -78,13 +84,36 @@
                           {{ conv.participant1.username }}
                       {% endif %}
                   </h6>
-                    <small class="text-truncate {% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %}">{{conv.last_message}}</small>
+                  <small class="text-truncate {% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %}">
+                    {{ conv.last_message }}
+                  </small>
+                  <!-- Request Info -->
+                  <div class="mt-1">
+                    <small class="{% if conversation.id == conv.id %}text-light{% else %}text-muted{% endif %}">
+                      {% comment %} <i class="bi bi-box-arrow-in-right me-1"></i> {% endcomment %}
+                      <svg class="bi me-1" width="16" height="16" fill="currentColor">
+                        <use xlink:href="#{{conv.request.type}}"></use>
+                      </svg>
+                      {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
+                      {% if conv.request.urgent %}
+                        <span class="badge bg-danger ms-2">Urgent</span>
+                      {% endif %}
+                      {% if conv.request.user == request.user %}
+                        <span class="badge bg-success ms-2">Your offer</span>
+                      {% else %}
+                        <span class="badge bg-secondary ms-2">by {{ conv.request.user.username }}</span>
+                      {% endif %}
+                    </small>
+                  </div>
                 </div>
               </div>
               <div class="d-flex align-items-center">
-                <small class="{% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %} me-2">{{conv.last_message_timestamp|time}}</small>
-                {% comment %} <span class="badge bg-primary rounded-pill">2</span> {% endcomment %}
-                <span class="badge bg-primary rounded-pill {% if conv.unread_count == 0 %}d-none{% endif %}">{{conv.unread_count}}</span>
+                <small class="{% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %} me-2">
+                  {{ conv.last_message_timestamp|time }}
+                </small>
+                <span class="badge bg-primary rounded-pill {% if conv.unread_count == 0 %}d-none{% endif %}">
+                  {{ conv.unread_count }}
+                </span>
               </div>
             </div>
           </a>
@@ -183,7 +212,7 @@
           {{ form.content }}
           <button type="submit" class="btn btn-primary">
             <svg class="bi" width="16" height="16" fill="currentColor">
-              <use xlink:href="#send"></use>
+              <use xlink:href="#send-message"></use>
             </svg>
           </button>
         </form>

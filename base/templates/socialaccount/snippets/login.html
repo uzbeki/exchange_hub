@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load allauth %}
+{% load socialaccount %}
+{% get_providers as socialaccount_providers %}
+{% if socialaccount_providers %}
+    {% if not SOCIALACCOUNT_ONLY %}
+        <div class="d-flex align-items-center my-4 mt-5">
+            <hr class="flex-grow-1">
+            <span class="mx-2 text-muted fw-bold">{% translate "Or continue with" %}</span>
+            <hr class="flex-grow-1">
+        </div>
+    {% endif %}
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+    {% include "socialaccount/snippets/login_extra.html" %}
+{% endif %}

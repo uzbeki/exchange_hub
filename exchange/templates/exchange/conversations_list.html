@@ -1,6 +1,6 @@
 {% extends 'allauth/layouts/manage.html' %} {% block head_title %}My Conversations{% endblock %} {% block content %}
 {% block head_extra %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">{% endblock head_extra %}
-<div class="container py-3">
+<div class="container py-3 px-0 px-md-3">
   <!-- Search Bar -->
   <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Search chats..." disabled data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!"/>
@@ -11,82 +11,48 @@
   <div class="list-group list-group-flush">
 
     {% for conv in conversations %}
-    <!-- Chat Item with Unread Messages -->
-    <a href="{% url 'conversation' conv.id %}" class="list-group-item list-group-item-action border-bottom">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-          <div class="flex-shrink-0">
-            <i class="bi bi-person-circle fs-4"></i>
+      <!-- Chat Item with Request Info -->
+      <a href="{% url 'conversation' conv.id %}" class="list-group-item list-group-item-action border-bottom">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex">
+            <div class="flex-shrink-0">
+              <i class="bi bi-person-circle fs-4"></i>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h6 class="mb-1 text-truncate">
+                {% if request.user == conv.participant1 %}
+                  {{ conv.participant2 }}
+                {% else %}
+                  {{ conv.participant1 }}
+                {% endif %}
+              </h6>
+              <small class="text-muted text-truncate">{{ conv.last_message }}</small>
+            </div>
           </div>
-          <div class="flex-grow-1 ms-3">
-            <h6 class="mb-1 text-truncate">{% if request.user == conv.participant1 %}{{conv.participant2}}{% else %}{{conv.participant1}}{% endif %}</h6>
-            <small class="text-muted text-truncate">{{conv.last_message}}</small>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <small class="text-muted me-2">{{conv.last_message_timestamp|timesince}} ago</small>
-          {% if conv.unread_count > 0 %}
-            <span class="badge bg-primary rounded-pill">{{conv.unread_count}}</span>
-          {% endif %}
-        </div>
-      </div>
-    </a>
-    {% endfor %}
-
-    {% comment %} <!-- Chat Item without Unread Messages -->
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-          <div class="flex-shrink-0">
-            <i class="bi bi-person-circle fs-4"></i>
-          </div>
-          <div class="flex-grow-1 ms-3">
-            <h6 class="mb-1 text-truncate">Jane Smith</h6>
-            <small class="text-muted text-truncate">See you tomorrow!</small>
+          <div class="d-flex align-items-center">
+            <small class="text-muted me-2">{{ conv.last_message_timestamp|timesince }} ago</small>
+            {% if conv.unread_count > 0 %}
+              <span class="badge bg-primary rounded-pill">{{ conv.unread_count }}</span>
+            {% endif %}
           </div>
         </div>
-        <div class="d-flex align-items-center">
-          <small class="text-muted me-2">Yesterday</small>
+        <!-- Request Info -->
+        <div class="mt-2 ps-4">
+          <small class="text-muted">
+            <i class="bi bi-box-arrow-in-right me-1"></i>
+            Offer: {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
+            {% if conv.request.urgent %}
+              <span class="badge bg-danger ms-2">Urgent</span>
+            {% endif %}
+            {% if conv.request.user == request.user %}
+              <span class="badge bg-success ms-2">Your Request</span>
+            {% else %}
+              <span class="badge bg-secondary ms-2">Request by {{ conv.request.user.username }}</span>
+            {% endif %}
+          </small>
         </div>
-      </div>
-    </a>
-
-    <!-- Additional Chat Item with Unread Messages -->
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-          <div class="flex-shrink-0">
-            <i class="bi bi-person-circle fs-4"></i>
-          </div>
-          <div class="flex-grow-1 ms-3">
-            <h6 class="mb-1 text-truncate">Alex Johnson</h6>
-            <small class="text-muted text-truncate">Meeting at 3 PM</small>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <small class="text-muted me-2">9:15 AM</small>
-          <span class="badge bg-primary rounded-pill">5</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- Additional Chat Item without Unread Messages -->
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="d-flex">
-          <div class="flex-shrink-0">
-            <i class="bi bi-person-circle fs-4"></i>
-          </div>
-          <div class="flex-grow-1 ms-3">
-            <h6 class="mb-1 text-truncate">Emily Brown</h6>
-            <small class="text-muted text-truncate">Thanks for the update</small>
-          </div>
-        </div>
-        <div class="d-flex align-items-center">
-          <small class="text-muted me-2">Monday</small>
-        </div>
-      </div>
-    </a> {% endcomment %}
+      </a>
+  {% endfor %}
   </div>
 </div>
 {% endblock %}
