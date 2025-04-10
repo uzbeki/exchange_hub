@@ -8,6 +8,7 @@ urlpatterns = [
         path("<uuid:request_id>/", include([
             path("complete/", views.CompleteRequestView.as_view(), name="complete_offer"),
             path("delete/", views.DeleteRequestView.as_view(), name="delete_offer"),
+            path("update/", views.UpdateOfferView.as_view(), name="update_offer"),
         ])),
     ])),
     

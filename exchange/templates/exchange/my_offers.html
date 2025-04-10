@@ -237,8 +237,8 @@
       </form>
       {% endif %}
 
-      <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Coming Soon">
-        <a href="#edit_request" class="disabled btn btn-outline-secondary btn-sm">
+      <span>
+        <a href="{% url "update_offer" request_id=req.id %}" class="btn btn-outline-secondary btn-sm">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#pencil"/>
           </svg>

@@ -6,6 +6,9 @@ from django.views.generic import (
     View,
     RedirectView,
     DeleteView,
+    UpdateView,
+    ListView,
+    CreateView,
 )
 from django.urls import reverse, reverse_lazy
 from exchange.models import Conversation, Request, Message
@@ -40,6 +43,34 @@ class CreateRequestView(BaseAuthenticatedView, FormView):
         context = super().get_context_data(**kwargs)
         context["form"] = self.get_form()
         return context
+
+
+class UpdateOfferView(BaseAuthenticatedView, UserPassesTestMixin, UpdateView):
+    model = Request
+    # form_class = RequestForm
+    template_name = "exchange/update_offer.html"
+    pk_url_kwarg = "request_id"
+    fields = [
+        "type",
+        "amount",
+        "currency",
+        "deadline",
+        "urgent",
+        "hide_contacts",
+        "conditions",
+    ]
+    success_url = reverse_lazy("my_offers")
+
+    def get_context_data(self, **kwargs):
+        self.object = self.get_object()
+        context = super().get_context_data(**kwargs)
+        return context
+
+
+    def test_func(self):
+        # Check if the user is the owner of the request
+        req = self.get_object()
+        return req.user == self.request.user
 
 
 class CompleteRequestView(LoginRequiredMixin, UserPassesTestMixin, RedirectView):
