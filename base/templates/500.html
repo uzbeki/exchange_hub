@@ -1,0 +1,83 @@
+{% extends "allauth/layouts/base.html" %}
+{% block head_title %}500 Internal Server Error{% endblock %}
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="exclamation-octagon-fill" viewBox="0 0 16 16">
+        <path d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+    </symbol>
+    <symbol id="arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </symbol>
+    <symbol id="arrow-clockwise" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>      
+    </symbol>
+    <symbol id="house-door-fill" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+    </symbol>
+    <symbol id="bug-fill" viewBox="0 0 16 16">
+        <path d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z"/>
+        <path d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975"/>      
+    </symbol>
+    <symbol id="radioactive" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
+        <path d="M9.653 5.496A3 3 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.97 5.97 0 0 1 8 2c1.222 0 2.358.365 3.306.992zm1.342 2.324a3 3 0 0 1-.884 2.312 3 3 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a6 6 0 0 0 1.767-4.624zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>      
+    </symbol>
+    <symbol id="hdd-network-fill" viewBox="0 0 16 16">
+        <path d="M2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h5.5v3A1.5 1.5 0 0 0 6 11.5H.5a.5.5 0 0 0 0 1H6A1.5 1.5 0 0 0 7.5 14h1a1.5 1.5 0 0 0 1.5-1.5h5.5a.5.5 0 0 0 0-1H10A1.5 1.5 0 0 0 8.5 10V7H14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm.5 3a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m2 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1"/>
+    </symbol>
+    <symbol id="tools" viewBox="0 0 16 16">
+        <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+    </symbol>
+    <symbol id="question-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+    </symbol>
+</svg>
+<div class="container text-center py-5 my-5"> {# Add vertical padding/margin #}
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-7"> {# Constrain content width #}
+            {% comment %} <svg class="bi bi-exclamation-octagon-fill display-1 text-danger mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#exclamation-octagon-fill"/></svg> {% endcomment %}
+            <svg class="bi bi-bug-fill display-1 text-muted mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#bug-fill"/></svg>
+            {% comment %} <svg class="bi bi-radioactive display-1 text-warning mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#radioactive"/></svg> {% endcomment %}
+            {% comment %} <svg class="bi bi-hdd-network-fill display-1 text-secondary mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#hdd-network-fill"/></svg> {% endcomment %}
+            {% comment %} <svg class="bi bi-tools display-1 text-info mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#tools"/></svg> {% endcomment %}
+            <h1 class="display-1 fw-bold text-danger mb-2">500</h1>
+
+            <h2 class="fw-normal text-secondary mb-3">Internal Server Error</h2>
+
+            <p class="lead text-muted mb-4">
+                We seem to be experiencing some technical difficulties.
+                We apologize for the inconvenience.
+            </p>
+            <p class="text-muted">
+                Our technical team has been automatically notified and is working on the issue.
+                Please try refreshing the page in a few moments or return to the homepage.
+            </p>
+
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4 pt-2">
+                <a href="javascript:history.back()" class="btn btn-outline-secondary btn-lg px-4 d-inline-flex align-items-center">
+                    <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                        <use xlink:href="#arrow-left-circle"></use>
+                    </svg>
+                    Go Back
+                </a>
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center">
+                    <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                        <use xlink:href="#house-door-fill"></use>
+                    </svg>
+                    Go to Homepage
+                </a>
+                {% comment %} <a href="#" class="btn btn-outline-info btn-lg px-4 d-inline-flex align-items-center">
+                    <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                        <use xlink:href="#question-circle-fill"></use>
+                    </svg>
+                    Contact Support
+                </a> {% endcomment %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

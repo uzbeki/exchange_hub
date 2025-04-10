@@ -1,0 +1,65 @@
+{% extends "allauth/layouts/base.html" %}
+{% block head_title %}Page Not Found (404){% endblock %} 
+
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="compass" viewBox="0 0 16 16">
+        <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016m6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/>
+        <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>      
+    </symbol>
+    <symbol id="arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </symbol>
+    <symbol id="house-door-fill" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+    </symbol>
+    <symbol id="question-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+    </symbol>
+    <symbol id="emoji-frown" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.5 3.5 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.5 4.5 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"/>      
+    </symbol>
+</svg>
+<div class="container text-center py-5 my-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            {% comment %} <i class="bi bi-compass display-1 text-primary mb-4"></i> {% endcomment %}
+            {# Alternatives: bi-question-circle-fill (text-info), bi-binoculars-fill (text-secondary), bi-emoji-frown (text-muted) #}
+            {% comment %} <svg class="bi bi-compass display-1 text-primary mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#compass"/></svg> {% endcomment %}
+            {% comment %} <svg class="bi bi-compass display-1 text-info mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#question-circle-fill"/></svg> {% endcomment %}
+            <svg class="bi bi-compass display-1 text-muted mb-4" fill="currentColor" style="width: 1.5em; height:1.5em;"><use xlink:href="#emoji-frown"/></svg>
+
+            <h1 class="display-1 fw-bold text-secondary mb-2">404</h1>
+
+            <h2 class="fw-normal text-primary mb-3">Oops! Page Not Found</h2>
+
+            <p class="lead text-muted mb-4">
+                We couldn't find the page you were looking for.
+                It might have been moved, deleted, or perhaps you mistyped the URL.
+            </p>
+
+            <p class="small text-muted">
+                You tried to access: <code>{{ request.path_info }}</code>
+            </p>
+
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4 pt-2">
+                <a href="javascript:history.back()" class="btn btn-outline-secondary btn-lg px-4 d-inline-flex align-items-center">
+                    <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                        <use xlink:href="#arrow-left-circle"></use>
+                    </svg>
+                    Go Back
+                </a>
+                <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center">
+                    <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                        <use xlink:href="#house-door-fill"></use>
+                    </svg>
+                    Go to Homepage
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
