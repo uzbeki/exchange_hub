@@ -1,8 +1,5 @@
 {% extends "allauth/layouts/manage.html" %} {% load static allauth i18n %} {% block head_title %}My offers{% endblock %}
-{% block head_extra %}<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-/>{% endblock head_extra %} {% block content %}
+{% block content %}
 <style>
   .card {
     transition: transform 0.2s, box-shadow 0.2s;
@@ -12,11 +9,113 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 </style>
-
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="person-circle" viewBox="0 0 16 16">
+    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+  </symbol>
+  <symbol id="three-dots-vertical" viewBox="0 0 16 16">
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+  </symbol>
+  <symbol id="trash" viewBox="0 0 16 16">
+    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>  
+  </symbol>
+  <symbol id="person" viewBox="0 0 16 16">
+    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+  </symbol>
+  <symbol id="share" viewBox="0 0 16 16">
+    <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
+  </symbol>
+  <symbol id="ban" viewBox="0 0 16 16">
+    <path d="M15 8a6.97 6.97 0 0 0-1.71-4.584l-9.874 9.875A7 7 0 0 0 15 8M2.71 12.584l9.874-9.875a7 7 0 0 0-9.874 9.874ZM16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0"/>
+  </symbol>
+  <symbol id="flag" viewBox="0 0 16 16">
+    <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12 12 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A20 20 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a20 20 0 0 0 1.349-.476l.019-.007.004-.002h.001M14 1.221c-.22.078-.48.167-.766.255-.81.252-1.872.523-2.734.523-.886 0-1.592-.286-2.203-.534l-.008-.003C7.662 1.21 7.139 1 6.5 1c-.669 0-1.606.229-2.415.478A21 21 0 0 0 3 1.845v6.433c.22-.078.48-.167.766-.255C4.576 7.77 5.638 7.5 6.5 7.5c.847 0 1.548.28 2.158.525l.028.01C9.32 8.29 9.86 8.5 10.5 8.5c.668 0 1.606-.229 2.415-.478A21 21 0 0 0 14 7.655V1.222z"/>
+  </symbol>
+  <symbol id="bell" viewBox="0 0 16 16">
+    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+  </symbol>
+  <symbol id="bell-slash" viewBox="0 0 16 16">
+    <path d="M5.164 14H15c-.299-.199-.557-.553-.78-1-.9-1.8-1.22-5.12-1.22-6q0-.396-.06-.776l-.938.938c.02.708.157 2.154.457 3.58.161.767.377 1.566.663 2.258H6.164zm5.581-9.91a4 4 0 0 0-1.948-1.01L8 2.917l-.797.161A4 4 0 0 0 4 7c0 .628-.134 2.197-.459 3.742q-.075.358-.166.718l-1.653 1.653q.03-.055.059-.113C2.679 11.2 3 7.88 3 7c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0c.942.19 1.788.645 2.457 1.284zM10 15a2 2 0 1 1-4 0zm-9.375.625a.53.53 0 0 0 .75.75l14.75-14.75a.53.53 0 0 0-.75-.75z"/>
+  </symbol>
+  <symbol id="search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+  </symbol>
+  <symbol id="check2-all" viewBox="0 0 16 16">
+    <path d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0"/>
+    <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708"/>  
+  </symbol>
+  <symbol id="send-message" viewBox="0 0 16 16">
+    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+  </symbol>
+  <symbol id="send" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+  </symbol>
+  <symbol id="receive" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+  </symbol>
+  <symbol id="stars" viewBox="0 0 16 16">
+    <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+  </symbol>
+  <symbol id="cash-stack" viewBox="0 0 16 16">
+    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+    <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2z"/>
+  </symbol>
+  <symbol id="calendar" viewBox="0 0 16 16">
+    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+  </symbol>
+  <symbol id="tag" viewBox="0 0 16 16">
+    <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0"/>
+    <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z"/>  
+  </symbol>
+  <symbol id="file-text" viewBox="0 0 16 16">
+    <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>  
+  </symbol>
+  <symbol id="lock" viewBox="0 0 16 16">
+    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>  
+  </symbol>
+  <symbol id="unlock" viewBox="0 0 16 16">
+    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2M3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1z"/>
+  </symbol>
+  <symbol id="chat" viewBox="0 0 16 16">
+    <path d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105"/>
+  </symbol>
+  <symbol id="check-circle" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+    <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>  
+  </symbol>
+  <symbol id="pencil" viewBox="0 0 16 16">
+    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+  </symbol>
+  <symbol id="exclamation-triangle" viewBox="0 0 16 16">
+    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/>  
+  </symbol>
+  <symbol id="piggy-bank" viewBox="0 0 16 16">
+    <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"/>
+    <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"/>  
+  </symbol>
+  <symbol id="plus-circle" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>  
+  </symbol>
+  <symbol id="" viewBox="0 0 16 16">
+  </symbol>
+  <symbol id="" viewBox="0 0 16 16">
+  </symbol>
+</svg>
 <div class="container">
   <div class="text-center my-4">
     <h1 class="display-4 fw-bold text-primary">
-      <i class="bi bi-stars text-warning"></i> My Offers <i class="bi bi-stars text-warning"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stars text-warning" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+        <use xlink:href="#stars"/>
+      </svg>
+      My Offers 
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stars text-warning" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+        <use xlink:href="#stars"/>
+      </svg>
     </h1>
     <p class="text-muted">Here are the offers you have made available for others to see</p>
   </div>
@@ -24,7 +123,12 @@
   <div class="card shadow-sm mb-3">
     <!-- Card Header: Request Type and Urgent Badge -->
     <div class="card-header d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">{{ req.get_type_display }}</h5>
+      <h5 class="mb-0">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#{{req.type}}"/>
+        </svg>
+        {{ req.get_type_display }}
+      </h5>
       {% if req.urgent %}
       <span class="badge bg-warning text-dark">Urgent</span>
       {% endif %}
@@ -36,7 +140,9 @@
         <!-- Amount -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-cash me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#cash-stack"/>
+            </svg>
             <div>
               <small class="text-muted">Amount</small>
               <div>{{ req.amount_with_currency }}</div>
@@ -47,7 +153,9 @@
         <!-- Deadline -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-calendar me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#calendar"/>
+            </svg>
             <div>
               <small class="text-muted">Deadline</small>
               <div>{{ req.deadline|date:"M d, Y H:i" }}</div>
@@ -58,7 +166,9 @@
         <!-- Status -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-tag me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#tag"/>
+            </svg>
             <div>
               <small class="text-muted">Status</small>
               <div>
@@ -75,7 +185,9 @@
         <!-- Conditions -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-file-text me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#file-text"/>
+            </svg>
             <div>
               <small class="text-muted">Conditions</small>
               <div>{{ req.conditions|default:"None" }}</div>
@@ -86,7 +198,9 @@
         <!-- Hide Contacts -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi {% if req.hide_contacts %}bi-lock{% else %}bi-unlock{% endif %} me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#{% if req.hide_contacts %}lock{% else %}unlock{% endif %}"/>
+            </svg>
             <div>
               <small class="text-muted">Hide Contacts</small>
               <div>{{ req.hide_contacts|yesno:"Yes,No" }}</div>
@@ -97,7 +211,9 @@
         <!-- Conversations -->
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-chat me-2"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#chat"/>
+            </svg>
             <div>
               <small class="text-muted">Conversations</small>
               <div>{{ req.conversations.count }}</div>
@@ -113,20 +229,29 @@
       <form method="post" action="{% url 'complete_offer' req.id %}" class="d-inline-block">
         {% csrf_token %}
         <button type="submit" class="btn btn-outline-primary btn-sm">
-          <i class="bi bi-check-circle"></i> Complete
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#check-circle"/>
+          </svg>
+          Complete
         </button>
       </form>
       {% endif %}
 
       <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Coming Soon">
         <a href="#edit_request" class="disabled btn btn-outline-secondary btn-sm">
-          <i class="bi bi-pencil"></i> Edit
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#pencil"/>
+          </svg>
+          Edit
         </a>
       </span>
 
       <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Coming Soon">
         <a href="#view_conversations" class="disabled btn btn-outline-info btn-sm">
-          <i class="bi bi-chat"></i> Conversations
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#chat"/>
+          </svg>
+          Conversations
         </a>
       </span>
 
@@ -141,7 +266,10 @@
       >
         {% csrf_token %}
         <button type="submit" disabled class="btn btn-outline-warning btn-sm">
-          <i class="bi bi-exclamation-triangle"></i> Mark Urgent
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#exclamation-triangle"/>
+          </svg>
+          Mark Urgent
         </button>
       </form>
       {% else %}
@@ -155,14 +283,21 @@
       >
         {% csrf_token %}
         <button type="submit" disabled class="btn btn-outline-warning btn-sm">
-          <i class="bi bi-exclamation-triangle"></i> Remove Urgency
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#exclamation-triangle"/>
+          </svg>
+          Remove Urgency
         </button>
       </form>
       {% endif %}
 
       <form method="post" action="{% url 'delete_offer' req.id %}" class="d-inline-block">
         {% csrf_token %}
-        <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Delete</button>
+        <button type="submit" class="btn btn-outline-danger btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+            <use xlink:href="#trash"/>
+          </svg>
+          Delete</button>
       </form>
     </div>
   </div>
@@ -170,14 +305,19 @@
   <!-- Empty State -->
   <div class="card text-center">
     <div class="card-body">
-      <i class="bi bi-piggy-bank display-1 text-primary"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-piggy-bank display-1 text-primary" viewBox="0 0 16 16" style="width: 4em; height: 4em;">
+        <use xlink:href="#piggy-bank"/>
+      </svg>
       <h2 class="mt-3">Start Saving Today!</h2>
       <p class="text-muted">
         Create an offer now and connect directly with others to exchange money effortlessly—no bank fees, no delays,
         just seamless transactions!
       </p>
       <a href="{% url 'create_offer' %}" class="btn btn-primary btn-lg">
-        <i class="bi bi-plus-circle me-2"></i>Create Your Offer Now
+        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#plus-circle"/>
+        </svg>
+        Create Your Offer Now
       </a>
     </div>
   </div>

@@ -1,8 +1,53 @@
 {% extends "allauth/layouts/base.html" %} {% load allauth humanize static %} 
-{% block head_title %}Money Exchange Platform{% endblock %} {% block head_extra %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>{% endblock %}
+{% block head_title %}Money Exchange Platform{% endblock %} 
 
 {% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="send" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+  </symbol>
+  <symbol id="receive" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+  </symbol>
+  <symbol id="envelope-fill" viewBox="0 0 16 16">
+    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+  </symbol>
+  <symbol id="lock-fill" viewBox="0 0 16 16">
+    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+  </symbol>
+  <symbol id="chat-fill" viewBox="0 0 16 16">
+    <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9 9 0 0 0 8 15"/>
+  </symbol>
+  <symbol id="telephone-outbound-fill" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5"/>
+  </symbol>
+  <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+  </symbol>
+  <symbol id="piggy-bank" viewBox="0 0 16 16">
+    <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"/>
+    <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"/>  
+  </symbol>
+  <symbol id="link" viewBox="0 0 16 16">
+    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>  
+  </symbol>
+  <symbol id="shield-lock" viewBox="0 0 16 16">
+    <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+    <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"/>  
+  </symbol>
+  <symbol id="pencil-square" viewBox="0 0 16 16">
+    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>  
+  </symbol>
+  <symbol id="people" viewBox="0 0 16 16">
+    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+  </symbol>
+  <symbol id="cash" viewBox="0 0 16 16">
+    <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+    <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z"/>  
+  </symbol>
+</svg>
 <!-- Hero Section -->
 <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-secondary) 100%)">
   <div class="container">
@@ -22,7 +67,9 @@
       <div class="col-md-6 mb-3">
         <div class="card border-0 shadow h-100">
           <div class="card-body d-flex flex-column">
-            <i class="bi bi-arrow-right-circle-fill text-primary display-4 mb-3"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4 mb-3 mx-auto" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#send"/>
+            </svg>
             <h3 class="card-title fw-bold">Send Money</h3>
             <p class="card-text flex-grow-1">Looking to send money to Uzbekistan? Find expats who need funds.</p>
             <a href="#sendOffers" class="btn btn-outline-primary mt-3">View Offers</a>
@@ -32,7 +79,9 @@
       <div class="col-md-6 mb-3">
         <div class="card border-0 shadow h-100">
           <div class="card-body d-flex flex-column">
-            <i class="bi bi-arrow-left-circle-fill text-success display-4 mb-3"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-success display-4 mb-3 mx-auto" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#receive"/>
+            </svg>
             <h3 class="card-title fw-bold">Receive Money</h3>
             <p class="card-text flex-grow-1">Need to receive money from Uzbekistan? Connect with senders instantly.</p>
             <a href="#receiveOffers" class="btn btn-outline-success mt-3">View Offers</a>
@@ -58,7 +107,10 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">
-                <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>
+                {% comment %} <i class="bi bi-arrow-right-circle-fill text-primary me-2"></i> {% endcomment %}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#send"/>
+                </svg>
                 Send: {{ req.amount|intcomma }} JPY
               </h5>
               <p class="card-text">
@@ -73,20 +125,72 @@
               {% if not req.hide_contacts %}
               <p class="card-text">
                 <strong>Contact:</strong>
-                <a href="mailto:{{ req.user.profile.contact_info }}" class="text-primary">
-                  <i class="bi bi-envelope-fill me-1"></i>{{ req.user.profile.contact_info }}
-                </a>
+                <ul class="list-unstyled mt-2">
+                  {% if req.user.contact_info.email %}
+                  <li>
+                    <a href="mailto:{{ req.user.contact_info.email }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                        <use xlink:href="#envelope-fill"/>
+                      </svg>
+                      {{ req.user.contact_info.email }}
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% if req.user.contact_info.phone %}
+                  <li>
+                    <a href="tel:{{ req.user.contact_info.phone }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                        <use xlink:href="#telephone-outbound-fill"/>
+                      </svg>
+                      {{ req.user.contact_info.phone }}
+                    </a>
+                  </li>
+                  {% endif %}
+                  {% comment %} {% if req.user.contact_info.username %}
+                  <li>
+                    <span class="text-info">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                        <use xlink:href="#person-circle"/>
+                      </svg>
+                      {{ req.user.contact_info.username }}
+                    </span>
+                  </li>
+                  {% endif %} {% endcomment %}
+                  {% if req.user.contact_info.social_accounts %}
+                  <li>
+                    <strong>Social Accounts:</strong>
+                    <ul class="list-unstyled">
+                      {% for account in req.user.contact_info.social_accounts %}
+                      <li>
+                        <a href="{{ account.url }}" target="_blank" class="text-secondary">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                            <use xlink:href="#link"/>
+                          </svg>
+                          {{ account.platform }}
+                        </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                  {% endif %}
+                </ul>
               </p>
               {% else %}
               <p class="card-text text-muted">
-                <i class="bi bi-lock-fill me-1"></i>Contact information hidden. Use the message form to connect.
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#lock-fill"/>
+                </svg>
+                Contact information hidden. Use the message form to connect.
               </p>
               {% endif %}
             </div>
             {% if req.user != user %}
             <div class="card-footer text-center">
               <a href="{% url 'start_conversation' req.id %}" class="btn btn-outline-primary">
-                <i class="bi bi-chat-fill me-2"></i> Start Conversation
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1 text-primary" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#chat-fill"/>
+                </svg>
+                 Start Conversation
               </a>
             </div>
             {% endif %}
@@ -95,7 +199,10 @@
         {% empty %}
         <div class="col-12">
           <div class="alert alert-warning text-center" role="alert">
-            <i class="bi bi-exclamation-triangle-fill me-2"></i>No active send requests available.
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#exclamation-triangle-fill"/>
+            </svg>
+            No active send requests available.
           </div>
         </div>
         {% endfor %}
@@ -119,7 +226,9 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">
-                <i class="bi bi-arrow-left-circle-fill text-success me-2"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#receive"/>
+                </svg>
                 Receive: {{ req.amount|intcomma }} JPY
               </h5>
               <p class="card-text">
@@ -134,20 +243,29 @@
               {% if not req.hide_contacts %}
               <p class="card-text">
                 <strong>Contact:</strong>
-                <a href="mailto:{{ req.user.profile.contact_info }}" class="text-primary">
-                  <i class="bi bi-envelope-fill me-1"></i>{{ req.user.profile.contact_info }}
+                <a href="mailto:{{ req.user.profile.contact_info }}" class="text-success">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#envelope-fill"/>
+                </svg>
+                  {{ req.user.profile.contact_info }}
                 </a>
               </p>
               {% else %}
               <p class="card-text text-muted">
-                <i class="bi bi-lock-fill me-1"></i>Contact information hidden. Use the message form to connect.
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#lock-fill"/>
+                </svg>
+                Contact information hidden. Use the message form to connect.
               </p>
               {% endif %}
             </div>
             {% if req.user != user %}
             <div class="card-footer text-center">
               <a href="{% url 'start_conversation' req.id %}" class="btn btn-outline-success">
-                <i class="bi bi-chat-fill me-2"></i> Start Conversation
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+                  <use xlink:href="#chat-fill"/>
+                </svg>
+                 Start Conversation
               </a>
             </div>
             {% endif %}
@@ -156,7 +274,10 @@
         {% empty %}
         <div class="col-12">
           <div class="alert alert-warning text-center" role="alert">
-            <i class="bi bi-exclamation-triangle-fill me-2"></i>No active receive requests available.
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+              <use xlink:href="#exclamation-triangle-fill"/>
+            </svg>
+            No active receive requests available.
           </div>
         </div>
         {% endfor %}
@@ -183,17 +304,23 @@
     <h2 class="text-center mb-4">Why Choose Us?</h2>
     <div class="row">
       <div class="col-md-4 text-center">
-        <i class="bi bi-piggy-bank display-4 text-primary"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#piggy-bank"/>
+        </svg>
         <h3 class="mt-3">No Fees</h3>
         <p>Exchange money without any commissions or hidden charges.</p>
       </div>
       <div class="col-md-4 text-center">
-        <i class="bi bi-link display-4 text-primary"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#link"/>
+        </svg>
         <h3 class="mt-3">Direct Connection</h3>
         <p>Connect directly with other users through our secure chat system.</p>
       </div>
       <div class="col-md-4 text-center">
-        <i class="bi bi-shield-lock display-4 text-primary"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#shield-lock"/>
+        </svg>
         <h3 class="mt-3">Secure</h3>
         <p>Your data is protected, and we don't handle any money transfers.</p>
       </div>
@@ -207,17 +334,23 @@
     <h2 class="text-center mb-4">How It Works</h2>
     <div class="row">
       <div class="col-md-4 text-center">
-        <i class="bi bi-pencil-square display-4 text-success"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#pencil-square"/>
+        </svg>
         <h3 class="mt-3">1. Post Your Offer</h3>
         <p>Create an offer to send or receive money with your preferred terms.</p>
       </div>
       <div class="col-md-4 text-center">
-        <i class="bi bi-people display-4 text-success"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#people"/>
+        </svg>
         <h3 class="mt-3">2. Connect with Others</h3>
         <p>Browse offers and start a conversation with potential matches.</p>
       </div>
       <div class="col-md-4 text-center">
-        <i class="bi bi-cash display-4 text-success"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
+          <use xlink:href="#cash"/>
+        </svg>
         <h3 class="mt-3">3. Exchange Money</h3>
         <p>Agree on terms and complete the transaction securely.</p>
       </div>
