@@ -1,0 +1,50 @@
+{% extends "allauth/layouts/base.html" %} {% load allauth humanize static %} 
+{% block head_title %}403 - Access Forbidden{% endblock %} 
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="shield-lock-fill" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.8 11.8 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7 7 0 0 0 1.048-.625 11.8 11.8 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.54 1.54 0 0 0-1.044-1.263 63 63 0 0 0-2.887-.87C9.843.266 8.69 0 8 0m0 5a1.5 1.5 0 0 1 .5 2.915l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99A1.5 1.5 0 0 1 8 5"/>
+    </symbol>
+    <symbol id="arrow-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+    </symbol>
+    <symbol id="house-door-fill" viewBox="0 0 16 16">
+        <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+    </symbol>
+</svg>
+<main class="flex-shrink-0 py-5 my-auto">
+  <div class="container text-center">
+    <div class="py-5">
+      <svg class="bi display-1 text-danger mb-4" fill="currentColor" style="width: 1.5em; height: 1.5em;" viewBox="0 0 16 16">
+        <use xlink:href="#shield-lock-fill"></use>
+      </svg>
+      <h1 class="display-1 fw-bold text-secondary mb-2">403</h1>
+
+      <h2 class="fw-normal text-danger mb-3">Access Forbidden</h2>
+
+      <p class="lead text-muted mb-4">
+        Uh oh! It looks like you don't have permission to view this page. This could be because the page requires
+        special privileges, you're not logged in, or access is restricted.
+      </p>
+
+      <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+        <a
+          href="javascript:history.back()"
+          class="btn btn-outline-secondary btn-lg px-4 d-inline-flex align-items-center"
+        >
+            <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                <use xlink:href="#arrow-left-circle"></use>
+            </svg>
+           Go Back
+        </a>
+        <a href="/" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center">
+            <svg class="bi me-2" fill="currentColor" style="width: 1em; height: 1em;" viewBox="0 0 16 16">
+                <use xlink:href="#house-door-fill"></use>
+            </svg>
+           Go to Homepage
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
