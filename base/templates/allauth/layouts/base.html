@@ -199,7 +199,8 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16">
                                         <use href="#person-circle"/>
                                     </svg>
-                                    <strong>{{user}} <small class="d-inline-block">(via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %})</small></strong>
+                                    {% comment %} <strong>{{user}} <small class="d-inline-block">(via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %})</small></strong> {% endcomment %}
+                                    <strong>{{user}}</strong>
                                 </button>
                                 <ul class="dropdown-menu text-small dropdown-menu-lg-end">
                                     {% url 'account_email' as email_url_ %}

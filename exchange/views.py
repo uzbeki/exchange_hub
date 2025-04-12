@@ -55,6 +55,7 @@ class UpdateOfferView(BaseAuthenticatedView, UserPassesTestMixin, UpdateView):
         "amount",
         "currency",
         "deadline",
+        "status",
         "urgent",
         "hide_contacts",
         "conditions",

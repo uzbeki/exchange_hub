@@ -14,6 +14,7 @@ class RequestForm(forms.ModelForm):
             "amount",
             "currency",
             "deadline",
+            "status",
             "urgent",
             "hide_contacts",
             "conditions",
