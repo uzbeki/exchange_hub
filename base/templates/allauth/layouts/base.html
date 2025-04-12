@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load i18n static %}
+{% load i18n static socialaccount %}
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE }}" data-bs-theme="auto">
     <head>
@@ -41,6 +41,7 @@
             }
         </style>
         <script src="{% static "/base/js/base.js" %}" defer></script>
+        <script src="{% static "/base/js/header.js" %}" defer></script>
         {% block head_extra %}{% endblock head_extra %}
     </head>
     <body class="min-vh-100 d-flex flex-shrink-0 flex-column">
@@ -193,11 +194,12 @@
                             </form>
                             {% if user.is_authenticated %}
                             <div class="nav-item dropdown text-end">
-                                <button class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle btn btn-sm btn-link px-0 px-md-1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle btn btn-sm btn-link px-0 px-md-1" data-bs-toggle="dropdown" aria-expanded="false" 
+                                    title="You are logged in via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16">
                                         <use href="#person-circle"/>
                                     </svg>
-                                    <strong>{{user}}</strong>
+                                    <strong>{{user}} <small class="d-inline-block">(via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %})</small></strong>
                                 </button>
                                 <ul class="dropdown-menu text-small dropdown-menu-lg-end">
                                     {% url 'account_email' as email_url_ %}
@@ -243,7 +245,14 @@
                                         </li>
                                     {% endif %}
                                   <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
+                                  <li>
+                                    <a class="dropdown-item"
+                                       href="#"
+                                       id="logout-link"
+                                       data-logout-url="{% url 'account_logout' %}">
+                                       Sign out
+                                    </a>
+                                </li>
                                 </ul>
                             </div>
                             {% else %}
