@@ -16,6 +16,7 @@ from exchange.forms import RequestForm, MessageForm
 from django.contrib import messages
 from django.db import models
 from django.http import HttpRequest, JsonResponse
+from django.utils.translation import gettext_lazy as _
 
 
 class BaseAuthenticatedView(LoginRequiredMixin, TemplateView):
@@ -36,7 +37,7 @@ class CreateRequestView(BaseAuthenticatedView, FormView):
         req = form.save(commit=False)
         req.user = self.request.user
         req.save()
-        messages.success(self.request, "New offer created successfully")
+        messages.success(self.request, _("New offer created successfully"))
         return redirect("home")
 
     def get_context_data(self, **kwargs):
@@ -84,7 +85,7 @@ class CompleteRequestView(LoginRequiredMixin, UserPassesTestMixin, RedirectView)
         if req.status == "active":
             req.status = "completed"
             req.save()
-            messages.success(self.request, "Offer completed successfully")
+            messages.success(self.request, _("Offer completed successfully"))
         return reverse("my_offers")
 
     def test_func(self):
@@ -99,7 +100,7 @@ class DeleteRequestView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     pk_url_kwarg = "request_id"
 
     def form_valid(self, form):
-        messages.success(self.request, "Offer deleted successfully")
+        messages.success(self.request, _("Offer deleted successfully"))
         return super().form_valid(form)
 
     def test_func(self):
@@ -231,10 +232,10 @@ class DeleteConversationView(LoginRequiredMixin, View):
                 status=403,
             )
         conversation.delete()
-        messages.success(request, "Conversation deleted successfully.")
+        messages.success(request, _("Conversation deleted successfully."))
         return JsonResponse(
             {
-                "success": "Conversation deleted successfully.",
+                "success": _("Conversation deleted successfully."),
                 "redirect_url": reverse("conversations_list"),
             }
         )

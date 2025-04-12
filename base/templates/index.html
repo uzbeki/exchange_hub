@@ -1,5 +1,5 @@
-{% extends "allauth/layouts/base.html" %} {% load allauth humanize static %} 
-{% block head_title %}Money Exchange Platform{% endblock %} 
+{% extends "allauth/layouts/base.html" %} {% load allauth humanize static i18n %} 
+{% block head_title %}{% translate 'Money Exchange Platform' %}{% endblock %} 
 
 {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -54,11 +54,11 @@
 <!-- Hero Section -->
 <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-secondary) 100%)">
   <div class="container">
-    <h1 class="display-3 fw-bold">Money Exchange Platform</h1>
+    <h1 class="display-3 fw-bold">{% translate 'Money Exchange Platform' %}</h1>
     <p class="lead my-4">
-      Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen.
+      {% translate 'Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen.' %}
     </p>
-    <a href="#offers" class="btn btn-lg btn-light shadow">Get Started</a>
+    <a href="#offers" class="btn btn-lg btn-light shadow">{% translate 'Get Started' %}</a>
   </div>
 </section>
 
@@ -73,9 +73,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4 mb-3 mx-auto" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
               <use xlink:href="#send"/>
             </svg>
-            <h3 class="card-title fw-bold">Send Money</h3>
-            <p class="card-text flex-grow-1">Looking to send money to Uzbekistan? Find expats who need funds.</p>
-            <a href="#sendOffers" class="btn btn-outline-primary mt-3">View Offers</a>
+            <h3 class="card-title fw-bold">{% translate 'Send Money' %}</h3>
+            <p class="card-text flex-grow-1">{% translate 'Looking to send money to Uzbekistan? Find expats who need funds.' %}</p>
+            <a href="#sendOffers" class="btn btn-outline-primary mt-3">{% translate 'View Offers' %}</a>
           </div>
         </div>
       </div>
@@ -85,9 +85,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-success display-4 mb-3 mx-auto" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
               <use xlink:href="#receive"/>
             </svg>
-            <h3 class="card-title fw-bold">Receive Money</h3>
-            <p class="card-text flex-grow-1">Need to receive money from Uzbekistan? Connect with senders instantly.</p>
-            <a href="#receiveOffers" class="btn btn-outline-success mt-3">View Offers</a>
+            <h3 class="card-title fw-bold">{% translate 'Receive Money' %}</h3>
+            <p class="card-text flex-grow-1">{% translate 'Need to receive money from Uzbekistan? Connect with senders instantly.' %}</p>
+            <a href="#receiveOffers" class="btn btn-outline-success mt-3">{% translate 'View Offers' %}</a>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
 
     <!-- Offers to Send Money to Uzbekistan -->
     <div class="mb-5">
-      <h2 id="sendOffers" class="fw-bold text-primary mb-4">Offers to Send Money to Uzbekistan</h2>
+      <h2 id="sendOffers" class="fw-bold text-primary mb-4">{% translate 'Offers to Send Money to Uzbekistan' %}</h2>
       <div class="row">
         {% for req in send_requests %}
         <div class="col-md-6 col-lg-4 mb-4">
@@ -114,29 +114,29 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#send"/>
                 </svg>
-                Send: {{ req.amount|intcomma }} {{ req.currency }}
+                {% translate 'Send:' %} {{ req.amount|intcomma }} {{ req.currency }}
               </h5>
               <p class="card-text">
-                <strong>Deadline:</strong> {{ req.deadline }} {% if req.urgent %}
-                <span class="badge bg-danger ms-2">Urgent</span>
+                <strong>{% translate 'Deadline:' %}</strong> {{ req.deadline }} {% if req.urgent %}
+                <span class="badge bg-danger ms-2">{% translate 'Urgent' %}</span>
                 {% endif %}
               </p>
               <p class="card-text">
-                <strong>Conditions:</strong>
+                <strong>{% translate 'Conditions:' %}</strong>
                 <span class="d-block mt-1">{{ req.conditions|default:"None"|linebreaks }}</span>
               </p>
-              <p class="card-text text-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services.">
+              <p class="card-text text-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{% translate 'This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services.' %}">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;" aria-hidden="true">
                       <use xlink:href="#piggy-bank-fill"/>
                   </svg>
                   <span class="fw-bold">
                     {{ req.potential_savings_amount|intcomma }} {{ req.currency }}
                   </span>
-                  <strong>potential savings</strong>
+                  <strong>{% translate 'potential savings' %}</strong>
               </p>
               {% if not req.hide_contacts %}
               <p class="card-text">
-                <strong>Contact:</strong>
+                <strong>{% translate 'Contact:' %}</strong>
                 <ul class="list-unstyled mt-2">
                   {% if req.user.contact_info.email %}
                   <li>
@@ -170,7 +170,7 @@
                   {% endif %} {% endcomment %}
                   {% if req.user.contact_info.social_accounts %}
                   <li>
-                    <strong>Social Accounts:</strong>
+                    <strong>{% translate 'Social Accounts:' %}</strong>
                     <ul class="list-unstyled">
                       {% for account in req.user.contact_info.social_accounts %}
                       <li>
@@ -192,7 +192,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#lock-fill"/>
                 </svg>
-                Contact information hidden. Use the message form to connect.
+                {% translate 'Contact information hidden. Use the message form to connect.' %}
               </p>
               {% endif %}
             </div>
@@ -202,7 +202,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1 text-primary" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#chat-fill"/>
                 </svg>
-                 Start Conversation
+                 {% translate 'Start Conversation' %}
               </a>
             </div>
             {% endif %}
@@ -214,7 +214,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
               <use xlink:href="#exclamation-triangle-fill"/>
             </svg>
-            No active send requests available.
+            {% translate 'No active send requests available.' %}
           </div>
         </div>
         {% endfor %}
@@ -223,7 +223,7 @@
 
     <!-- Offers to Receive Money from Uzbekistan -->
     <div>
-      <h2 id="receiveOffers" class="fw-bold text-success mb-4">Offers to Receive Money from Uzbekistan</h2>
+      <h2 id="receiveOffers" class="fw-bold text-success mb-4">{% translate 'Offers to Receive Money from Uzbekistan' %}</h2>
       <div class="row">
         {% for req in receive_requests %}
         <div class="col-md-6 col-lg-4 mb-4">
@@ -241,29 +241,29 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#receive"/>
                 </svg>
-                Receive: {{ req.amount|intcomma }} {{ req.currency }}
+                {% translate 'Receive:' %} {{ req.amount|intcomma }} {{ req.currency }}
               </h5>
               <p class="card-text">
-                <strong>Deadline:</strong> {{ req.deadline }} {% if req.urgent %}
-                <span class="badge bg-danger ms-2">Urgent</span>
+                <strong>{% translate 'Deadline:' %}</strong> {{ req.deadline }} {% if req.urgent %}
+                <span class="badge bg-danger ms-2">{% translate 'Urgent' %}</span>
                 {% endif %}
               </p>
               <p class="card-text">
-                <strong>Conditions:</strong>
+                <strong>{% translate 'Conditions:' %}</strong>
                 <span class="d-block mt-1">{{ req.conditions|default:"None"|linebreaks }}</span>
               </p>
-              <p class="card-text text-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services.">
+              <p class="card-text text-success" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="{% translate 'This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services.' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-1" viewBox="0 0 16 16" style="width: 1em; height: 1em;" aria-hidden="true">
                     <use xlink:href="#piggy-bank-fill"/>
                 </svg>
                 <span class="fw-bold">
                   {{ req.potential_savings_amount|intcomma }} {{ req.currency }}
                 </span>
-                <strong>potential savings</strong>
+                <strong>{% translate 'potential savings' %}</strong>
             </p>
               {% if not req.hide_contacts %}
               <p class="card-text">
-                <strong>Contact:</strong>
+                <strong>{% translate 'Contact:' %}</strong>
                 <a href="mailto:{{ req.user.profile.contact_info }}" class="text-success">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#envelope-fill"/>
@@ -276,7 +276,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#lock-fill"/>
                 </svg>
-                Contact information hidden. Use the message form to connect.
+                {% translate 'Contact information hidden. Use the message form to connect.' %}
               </p>
               {% endif %}
             </div>
@@ -286,7 +286,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
                   <use xlink:href="#chat-fill"/>
                 </svg>
-                 Start Conversation
+                 {% translate 'Start Conversation' %}
               </a>
             </div>
             {% endif %}
@@ -298,7 +298,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
               <use xlink:href="#exclamation-triangle-fill"/>
             </svg>
-            No active receive requests available.
+            {% translate 'No active receive requests available.' %}
           </div>
         </div>
         {% endfor %}
@@ -310,40 +310,40 @@
   <div class="container my-5">
     <div class="row justify-content-center align-items-center">
       <div class="col-md-6 text-center">
-        <img src="{% static "/post.svg" %}" alt="Post an Offer" class="img-fluid mb-4" style="max-width: 300px;">
-        <h3 class="fw-bold text-primary">Didn't find a suitable offer?</h3>
+        <img src="{% static "/post.svg" %}" alt="{% translate 'Post an Offer' %}" class="img-fluid mb-4" style="max-width: 300px;">
+        <h3 class="fw-bold text-primary">{% translate "Didn't find a suitable offer?" %}</h3>
         <p class="lead mb-4">
-          Take the initiative to post your own offer and connect with others looking to exchange money.
+          {% translate 'Take the initiative to post your own offer and connect with others looking to exchange money.' %}
         </p>
-        <a href="{% url 'create_offer' %}" class="btn btn-primary btn-lg">Post an Offer</a>
+        <a href="{% url 'create_offer' %}" class="btn btn-primary btn-lg">{% translate 'Post an Offer' %}</a>
       </div>
     </div>
   </div>
   <hr />
   <!-- Features Section -->
   <div class="container my-5">
-    <h2 class="text-center mb-4">Why Choose Us?</h2>
+    <h2 class="text-center mb-4">{% translate 'Why Choose Us?' %}</h2>
     <div class="row">
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#piggy-bank"/>
         </svg>
-        <h3 class="mt-3">No Fees</h3>
-        <p>Exchange money without any commissions or hidden charges.</p>
+        <h3 class="mt-3">{% translate 'No Fees' %}</h3>
+        <p>{% translate 'Exchange money without any commissions or hidden charges.' %}</p>
       </div>
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#link"/>
         </svg>
-        <h3 class="mt-3">Direct Connection</h3>
-        <p>Connect directly with other users through our secure chat system.</p>
+        <h3 class="mt-3">{% translate 'Direct Connection' %}</h3>
+        <p>{% translate 'Connect directly with other users through our secure chat system.' %}</p>
       </div>
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#shield-lock"/>
         </svg>
-        <h3 class="mt-3">Secure</h3>
-        <p>Your data is protected, and we don't handle any money transfers.</p>
+        <h3 class="mt-3">{% translate 'Secure' %}</h3>
+        <p>{% translate "Your data is protected, and we don't handle any money transfers." %}</p>
       </div>
     </div>
   </div>
@@ -352,28 +352,28 @@
 
   <!-- How It Works Section -->
   <div class="container my-5">
-    <h2 class="text-center mb-4">How It Works</h2>
+    <h2 class="text-center mb-4">{% translate 'How It Works' %}</h2>
     <div class="row">
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#pencil-square"/>
         </svg>
-        <h3 class="mt-3">1. Post Your Offer</h3>
-        <p>Create an offer to send or receive money with your preferred terms.</p>
+        <h3 class="mt-3">{% translate '1. Post Your Offer' %}</h3>
+        <p>{% translate 'Create an offer to send or receive money with your preferred terms.' %}</p>
       </div>
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#people"/>
         </svg>
-        <h3 class="mt-3">2. Connect with Others</h3>
-        <p>Browse offers and start a conversation with potential matches.</p>
+        <h3 class="mt-3">{% translate '2. Connect with Others' %}</h3>
+        <p>{% translate 'Browse offers and start a conversation with potential matches.' %}</p>
       </div>
       <div class="col-md-4 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi text-primary display-4" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#cash"/>
         </svg>
-        <h3 class="mt-3">3. Exchange Money</h3>
-        <p>Agree on terms and complete the transaction securely.</p>
+        <h3 class="mt-3">{% translate '3. Exchange Money' %}</h3>
+        <p>{% translate 'Agree on terms and complete the transaction securely.' %}</p>
       </div>
     </div>
   </div>

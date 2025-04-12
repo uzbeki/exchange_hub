@@ -1,20 +1,21 @@
 {% extends "allauth/layouts/manage.html" %}
 {% load static allauth %}
-{% block head_title %}Update Offer{% endblock %}
+{% load i18n %}
+{% block head_title %}{% trans "Update Offer" %}{% endblock %}
 {% block content %}
 <div class="my-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white text-center">
-                    <h3 class="mb-0">Update your offer</h3>
+                    <h3 class="mb-0">{% trans "Update your offer" %}</h3>
                 </div>
                 <div class="card-body">
                     <form method="post">
                         {% csrf_token %}
                         <!-- Type Field (Dropdown) -->
                         <div class="mb-3">
-                            <label for="{{ form.type.id_for_label }}" class="form-label">Offer Type</label>
+                            <label for="{{ form.type.id_for_label }}" class="form-label">{% trans "Offer Type" %}</label>
                             <select name="{{ form.type.name }}" id="{{ form.type.id_for_label }}" class="form-select" required>
                                 {% for value, label in form.type.field.choices %}
                                     <option value="{{ value }}" {% if value == form.type.value %}selected{% endif %}>{{ label }}</option>
@@ -27,7 +28,7 @@
                         
                         <!-- Amount Field (Number Input) -->
                         <div class="mb-3">
-                            <label for="{{ form.amount.id_for_label }}" class="form-label">Amount</label>
+                            <label for="{{ form.amount.id_for_label }}" class="form-label">{% trans "Amount" %}</label>
                             <input type="number" name="{{ form.amount.name }}" id="{{ form.amount.id_for_label }}" class="form-control" value="{{ form.amount.value|default_if_none:'' }}" required>
                             {% if form.amount.errors %}
                                 <div class="invalid-feedback d-block">{{ form.amount.errors|join:", " }}</div>
@@ -36,7 +37,7 @@
                         
                         <!-- Currency Field (Dropdown) -->
                         <div class="mb-3">
-                            <label for="{{ form.currency.id_for_label }}" class="form-label">Currency</label>
+                            <label for="{{ form.currency.id_for_label }}" class="form-label">{% trans "Currency" %}</label>
                             <select name="{{ form.currency.name }}" id="{{ form.currency.id_for_label }}" class="form-select" required>
                                 {% for value, label in form.currency.field.choices %}
                                     <option value="{{ value }}" {% if value == form.currency.value %}selected{% endif %}>{{ label }}</option>
@@ -49,7 +50,7 @@
                         
                         <!-- Deadline Field (Date Picker) -->
                         <div class="mb-3">
-                            <label for="{{ form.deadline.id_for_label }}" class="form-label">Deadline</label>
+                            <label for="{{ form.deadline.id_for_label }}" class="form-label">{% trans "Deadline" %}</label>
                             <input type="datetime-local" name="{{ form.deadline.name }}" id="{{ form.deadline.id_for_label }}" class="form-control" value="{{ form.deadline.value|date:'Y-m-d\\TH:i'|default_if_none:'' }}" required>
                             {% if form.deadline.errors %}
                                 <div class="invalid-feedback d-block">{{ form.deadline.errors|join:", " }}</div>
@@ -58,7 +59,7 @@
 
                         <!-- Status Field (Select) -->
                         <div class="mb-3">
-                            <label for="{{ form.status.id_for_label }}" class="form-label">Status</label>
+                            <label for="{{ form.status.id_for_label }}" class="form-label">{% trans "Status" %}</label>
                             <select name="{{ form.status.name }}" id="{{ form.status.id_for_label }}" class="form-select" required>
                                 {% for value, label in form.status.field.choices %}
                                     <option value="{{ value }}" {% if value == form.status.value %}selected{% endif %}>{{ label }}</option>
@@ -72,7 +73,7 @@
                         <!-- Urgent Field (Checkbox) -->
                         <div class="mb-3 form-check">
                             <input type="checkbox" name="{{ form.urgent.name }}" id="{{ form.urgent.id_for_label }}" class="form-check-input" {% if form.urgent.value %}checked{% endif %}>
-                            <label for="{{ form.urgent.id_for_label }}" class="form-check-label">Urgent</label>
+                            <label for="{{ form.urgent.id_for_label }}" class="form-check-label">{% trans "Urgent" %}</label>
                             {% if form.urgent.errors %}
                                 <div class="invalid-feedback d-block">{{ form.urgent.errors|join:", " }}</div>
                             {% endif %}
@@ -81,7 +82,7 @@
                         <!-- Hide Contacts Field (Checkbox) -->
                         <div class="mb-3 form-check">
                             <input type="checkbox" name="{{ form.hide_contacts.name }}" id="{{ form.hide_contacts.id_for_label }}" class="form-check-input" {% if form.hide_contacts.value %}checked{% endif %}>
-                            <label for="{{ form.hide_contacts.id_for_label }}" class="form-check-label">Hide Contacts</label>
+                            <label for="{{ form.hide_contacts.id_for_label }}" class="form-check-label">{% trans "Hide Contacts" %}</label>
                             {% if form.hide_contacts.errors %}
                                 <div class="invalid-feedback d-block">{{ form.hide_contacts.errors|join:", " }}</div>
                             {% endif %}
@@ -89,7 +90,7 @@
 
                         <!-- Conditions Field (Textarea) -->
                         <div class="mb-3">
-                            <label for="{{ form.conditions.id_for_label }}" class="form-label">Conditions</label>
+                            <label for="{{ form.conditions.id_for_label }}" class="form-label">{% trans "Conditions" %}</label>
                             <textarea name="{{ form.conditions.name }}" id="{{ form.conditions.id_for_label }}" class="form-control" rows="3">{{ form.conditions.value|default_if_none:'' }}</textarea>
                             {% if form.conditions.errors %}
                                 <div class="invalid-feedback d-block">{{ form.conditions.errors|join:", " }}</div>
@@ -98,7 +99,7 @@
                         
                         <!-- Submit Button -->
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Update Offer</button>
+                            <button type="submit" class="btn btn-primary">{% trans "Update Offer" %}</button>
                         </div>
                     </form>
                 </div>

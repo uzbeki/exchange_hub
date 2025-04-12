@@ -57,9 +57,13 @@ LANGUAGE_CODE = "en"
 
 LANGUAGES = [
     ("en", "English"),
-    # ("ja", "Japanese"),
-    # ("ru", "Russian"),
-    # ("uz", "Uzbek"),
+    ("ja", "Japanese"),
+    ("ru", "Russian"),
+    ("uz", "Uzbek"),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, "locale"),
 ]
 
 SITE_ID = 1
@@ -202,10 +206,10 @@ MFA_PASSKEY_SIGNUP_ENABLED = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MESSAGE_TAGS = {
-    messages.DEBUG: 'alert-secondary',
-    messages.INFO: 'alert-info',
-    messages.SUCCESS: 'alert-success',
-    messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger',
+    messages.DEBUG: "alert-secondary",
+    messages.INFO: "alert-info",
+    messages.SUCCESS: "alert-success",
+    messages.WARNING: "alert-warning",
+    messages.ERROR: "alert-danger",
 }
 LOGIN_REDIRECT_URL = "my_offers"

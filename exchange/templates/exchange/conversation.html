@@ -1,6 +1,6 @@
 {% extends 'allauth/layouts/manage.html' %}
-{% load static %}
-{% block head_title %}Conversation{% endblock %} 
+{% load static i18n %}
+{% block head_title %}{% blocktrans %}Conversation{% endblocktrans %}{% endblock %}
 {% block head_extra %}<script defer src="{% static "exchange/js/conversation.js" %}"></script>{% endblock head_extra %}
 {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -57,7 +57,7 @@
     <div class="col-lg-4 col-12 mb-3 mb-lg-0">
       <!-- Search Bar -->
       <div class="input-group mb-3">
-        <input type="text" class="form-control" disabled placeholder="Search chats..." data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!" />
+        <input type="text" class="form-control" disabled placeholder="{% blocktrans %}Search chats...{% endblocktrans %}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}" />
         <span class="input-group-text">
           <svg class="bi" width="16" height="16" fill="currentColor">
             <use xlink:href="#search"></use>
@@ -96,12 +96,12 @@
                       </svg>
                       {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
                       {% if conv.request.urgent %}
-                        <span class="badge bg-danger ms-2">Urgent</span>
+                        <span class="badge bg-danger ms-2">{% blocktrans %}Urgent{% endblocktrans %}</span>
                       {% endif %}
                       {% if conv.request.user == request.user %}
-                        <span class="badge bg-success ms-2">Your offer</span>
+                        <span class="badge bg-success ms-2">{% blocktrans %}Your offer{% endblocktrans %}</span>
                       {% else %}
-                        <span class="badge bg-secondary ms-2">by {{ conv.request.user.username }}</span>
+                        <span class="badge bg-secondary ms-2">{% blocktrans %}by {{ conv.request.user.username }}{% endblocktrans %}</span>
                       {% endif %}
                     </small>
                   </div>
@@ -137,7 +137,7 @@
           {% endif %}
           <small>({{ conversation.request }})</small>
           {% if conversation.request.status == "completed" %}
-            <span class="badge bg-success ms-2">Completed</span>
+            <span class="badge bg-success ms-2">{% blocktrans %}Completed{% endblocktrans %}</span>
           {% endif %}
         </h5>
         <!-- Dropdown for Chat Actions -->
@@ -151,36 +151,36 @@
             <li><button class="dropdown-item" type="button" id="deleteChatButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#trash"/>
-              </svg>Delete this chat</button>
+              </svg>{% blocktrans %}Delete this chat{% endblocktrans %}</button>
             </li>
             <li><button class="dropdown-item" type="button" id="shareContactButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#share"/>
-              </svg>Share my contact</button>
+              </svg>{% blocktrans %}Share my contact{% endblocktrans %}</button>
             </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!">
+            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
               <button class="dropdown-item" disabled type="button" id="blockUserButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#ban"/>
-              </svg>Block this user</button>
+              </svg>{% blocktrans %}Block this user{% endblocktrans %}</button>
             </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!">
+            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
               <button class="dropdown-item" disabled type="button" id="reportUserButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#flag"/>
-              </svg>Report this user</button>
+              </svg>{% blocktrans %}Report this user{% endblocktrans %}</button>
             </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!">
+            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
               <button class="dropdown-item" disabled type="button" id="muteNotificationsButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#bell-slash"/>
-              </svg>Mute notifications</button>
+              </svg>{% blocktrans %}Mute notifications{% endblocktrans %}</button>
             </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!">
+            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
               <button class="dropdown-item" disabled type="button" id="unmuteNotificationsButton" data-id="{{ conversation.id }}">
               <svg class="bi me-2" width="16" height="16" fill="currentColor">
                 <use xlink:href="#bell"/>
-              </svg>Unmute notifications</button>
+              </svg>{% blocktrans %}Unmute notifications{% endblocktrans %}</button>
             </li>
           </ul>
         </div>
@@ -213,8 +213,7 @@
           <button type="submit" class="btn btn-primary">
             <svg class="bi" width="16" height="16" fill="currentColor">
               <use xlink:href="#send-message"></use>
-            </svg>
-          </button>
+            </svg>{% blocktrans %}Send{% endblocktrans %}</button>
         </form>
       </div>
     </div>

@@ -1,4 +1,6 @@
-{% extends 'allauth/layouts/manage.html' %} {% block head_title %}My Conversations{% endblock %} {% block content %}
+{% extends 'allauth/layouts/manage.html' %} 
+{% load i18n %}
+{% block head_title %}{% blocktrans %}My Conversations{% endblocktrans %}{% endblock %} {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="person-circle" viewBox="0 0 16 16">
     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -17,7 +19,7 @@
 <div class="container py-3 px-0 px-md-3">
   <!-- Search Bar -->
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search chats..." disabled data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 coming soon!"/>
+    <input type="text" class="form-control" placeholder="{% blocktrans %}Search chats...{% endblocktrans %}" disabled data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}"/>
     <span class="input-group-text">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"< class="bi bi-search" viewBox="0 0 16 16">
         <use xlink:href="#search"/>
@@ -64,12 +66,12 @@
             </svg>
             {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
             {% if conv.request.urgent %}
-              <span class="badge bg-danger ms-2">Urgent</span>
+              <span class="badge bg-danger ms-2">{% blocktrans %}Urgent{% endblocktrans %}</span>
             {% endif %}
             {% if conv.request.user == request.user %}
-              <span class="badge bg-success ms-2">Your offer</span>
+              <span class="badge bg-success ms-2">{% blocktrans %}Your offer{% endblocktrans %}</span>
             {% else %}
-              <span class="badge bg-secondary ms-2">by {{ conv.request.user.username }}</span>
+              <span class="badge bg-secondary ms-2">{% blocktrans %}by {{ conv.request.user.username }}{% endblocktrans %}</span>
             {% endif %}
           </small>
         </div>

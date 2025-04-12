@@ -1,4 +1,4 @@
-{% extends "allauth/layouts/manage.html" %} {% load static humanize allauth i18n %} {% block head_title %}My offers{% endblock %}
+{% extends "allauth/layouts/manage.html" %} {% load static humanize allauth i18n %} {% block head_title %}{% blocktrans %}My offers{% endblocktrans %}{% endblock %}
 {% block content %}
 <style>
   .card {
@@ -113,12 +113,12 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stars text-warning" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
         <use xlink:href="#stars"/>
       </svg>
-      My Offers 
+      {% blocktrans %}My Offers{% endblocktrans %}
       <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-stars text-warning" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
         <use xlink:href="#stars"/>
       </svg>
     </h1>
-    <p class="text-muted">Here are the offers you have made available for others to see</p>
+    <p class="text-muted">{% blocktrans %}Here are the offers you have made available for others to see{% endblocktrans %}</p>
   </div>
   {% for req in requests %}
   <div class="card shadow-sm mb-3">
@@ -131,7 +131,7 @@
         {{ req.get_type_display }}
       </h5>
       {% if req.urgent %}
-      <span class="badge bg-warning text-dark">Urgent</span>
+      <span class="badge bg-warning text-dark">{% blocktrans %}Urgent{% endblocktrans %}</span>
       {% endif %}
     </div>
 
@@ -145,7 +145,7 @@
               <use xlink:href="#cash-stack"/>
             </svg>
             <div>
-              <small class="text-muted">Amount</small>
+              <small class="text-muted">{% blocktrans %}Amount{% endblocktrans %}</small>
               <div>{{ req.amount_with_currency }}</div>
             </div>
           </div>
@@ -158,7 +158,7 @@
               <use xlink:href="#calendar"/>
             </svg>
             <div>
-              <small class="text-muted">Deadline</small>
+              <small class="text-muted">{% blocktrans %}Deadline{% endblocktrans %}</small>
               <div>{{ req.deadline|date:"M d, Y H:i" }}</div>
             </div>
           </div>
@@ -171,7 +171,7 @@
               <use xlink:href="#tag"/>
             </svg>
             <div>
-              <small class="text-muted">Status</small>
+              <small class="text-muted">{% blocktrans %}Status{% endblocktrans %}</small>
               <div>
                 <span
                   class="badge {% if req.status == 'active' %}bg-primary{% elif req.status == 'completed' %}bg-success{% else %}bg-secondary{% endif %}"
@@ -190,7 +190,7 @@
                 <use xlink:href="#piggy-bank-fill"/>
               </svg>
               <div>
-                <small class="text-muted">Potential Savings</small>
+                <small class="text-muted">{% blocktrans %}Potential Savings{% endblocktrans %}</small>
                 <div class="text-success fw-bold">
                   {{ req.potential_savings_amount|intcomma }} {{ req.currency }}
                 </div>
@@ -206,7 +206,7 @@
               <use xlink:href="#file-text"/>
             </svg>
             <div>
-              <small class="text-muted">Conditions</small>
+              <small class="text-muted">{% blocktrans %}Conditions{% endblocktrans %}</small>
               <div>{{ req.conditions|default:"None" }}</div>
             </div>
           </div>
@@ -219,7 +219,7 @@
               <use xlink:href="#{% if req.hide_contacts %}lock{% else %}unlock{% endif %}"/>
             </svg>
             <div>
-              <small class="text-muted">Hide Contacts</small>
+              <small class="text-muted">{% blocktrans %}Hide Contacts{% endblocktrans %}</small>
               <div>{{ req.hide_contacts|yesno:"Yes,No" }}</div>
             </div>
           </div>
@@ -232,7 +232,7 @@
               <use xlink:href="#chat"/>
             </svg>
             <div>
-              <small class="text-muted">Conversations</small>
+              <small class="text-muted">{% blocktrans %}Conversations{% endblocktrans %}</small>
               <div>{{ req.conversations.count }}</div>
             </div>
           </div>
@@ -249,7 +249,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#check-circle"/>
           </svg>
-          Complete
+          {% blocktrans %}Complete{% endblocktrans %}
         </button>
       </form>
       {% endif %}
@@ -259,7 +259,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#pencil"/>
           </svg>
-          Edit
+          {% blocktrans %}Edit{% endblocktrans %}
         </a>
       </span>
 
@@ -268,7 +268,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#chat"/>
           </svg>
-          Conversations
+          {% blocktrans %}Conversations{% endblocktrans %}
         </a>
       </span>
 
@@ -286,7 +286,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#exclamation-triangle"/>
           </svg>
-          Mark Urgent
+          {% blocktrans %}Mark Urgent{% endblocktrans %}
         </button>
       </form>
       {% else %}
@@ -303,7 +303,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#exclamation-triangle"/>
           </svg>
-          Remove Urgency
+          {% blocktrans %}Remove Urgency{% endblocktrans %}
         </button>
       </form>
       {% endif %}
@@ -314,7 +314,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
             <use xlink:href="#trash"/>
           </svg>
-          Delete</button>
+          {% blocktrans %}Delete{% endblocktrans %}</button>
       </form>
     </div>
   </div>
@@ -325,16 +325,15 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-piggy-bank display-1 text-primary" viewBox="0 0 16 16" style="width: 4em; height: 4em;">
         <use xlink:href="#piggy-bank"/>
       </svg>
-      <h2 class="mt-3">Start Saving Today!</h2>
+      <h2 class="mt-3">{% blocktrans %}Start Saving Today!{% endblocktrans %}</h2>
       <p class="text-muted">
-        Create an offer now and connect directly with others to exchange money effortlessly—no bank fees, no delays,
-        just seamless transactions!
+        {% blocktrans %}Create an offer now and connect directly with others to exchange money effortlessly—no bank fees, no delays, just seamless transactions!{% endblocktrans %}
       </p>
       <a href="{% url 'create_offer' %}" class="btn btn-primary btn-lg">
         <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-circle me-2" viewBox="0 0 16 16" style="width: 1em; height: 1em;">
           <use xlink:href="#plus-circle"/>
         </svg>
-        Create Your Offer Now
+        {% blocktrans %}Create Your Offer Now{% endblocktrans %}
       </a>
     </div>
   </div>

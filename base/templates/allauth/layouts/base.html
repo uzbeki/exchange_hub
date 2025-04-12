@@ -6,10 +6,10 @@
         <script src="{% static "/base/js/color_modes.js" %}"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Open Exchange Platform">
+        <meta name="description" content="{% translate 'Open Exchange Platform' %}">
         <meta property="og:image" content="{% static 'logo.png' %}">
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-        <title>{% block head_title %}Open Exchange Platform{% endblock %}</title>
+        <title>{% block head_title %}{% translate 'Open Exchange Platform' %}{% endblock %}</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
         <style>
             .btn-bd-primary {
@@ -110,29 +110,29 @@
                     type="button"
                     aria-expanded="false"
                     data-bs-toggle="dropdown"
-                    aria-label="Toggle theme (auto)">
+                    aria-label="{% translate 'Toggle theme' %} (auto)">
                 <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+                <span class="visually-hidden" id="bd-theme-text">{% translate 'Toggle theme' %}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
                 <li>
                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
                     <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-                    Light
+                    {% translate 'Light' %}
                     <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
                 </button>
                 </li>
                 <li>
                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
                     <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-                    Dark
+                    {% translate 'Dark' %}
                     <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
                 </button>
                 </li>
                 <li>
                 <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
                     <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-                    Auto
+                    {% translate 'Auto' %}
                     <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
                 </button>
                 </li>
@@ -142,30 +142,30 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid px-lg-4">
-                    <a class="navbar-brand" href="/">Open Exchange Hub</a>
+                    <a class="navbar-brand" href="/">{% translate 'Open Exchange Hub' %}</a>
                     <button class="navbar-toggler"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarText"
                             aria-controls="navbarText"
                             aria-expanded="false"
-                            aria-label="Toggle navigation">
+                            aria-label="{% translate 'Toggle navigation' %}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul role="navigation"
-                            aria-label="Project links"
+                            aria-label="{% translate 'Project links' %}"
                             class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" href="{% url "create_offer" %}">New offer</a>
+                                <a class="nav-link active" href="{% url "create_offer" %}">{% translate 'New offer' %}</a>
                             </li>
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url "my_offers" %}">My offers</a>
+                                <a class="nav-link" href="{% url "my_offers" %}">{% translate 'My offers' %}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url "conversations_list" %}">
-                                    Conversations
+                                    {% translate 'Conversations' %}
                                     {% if unread_messages > 0%}
                                         <span class="badge bg-danger">{{unread_messages}}</span>
                                     {% endif %}
@@ -178,7 +178,7 @@
                                 {% csrf_token %}
                                 {% get_available_languages as LANGUAGES %}
                                 {% get_current_language as LANGUAGE_CODE %}
-                                <label for="language-dropdown" class="visually-hidden">{% translate "Select Language" %}</label>
+                                <label for="language-dropdown" class="visually-hidden">{% translate 'Select Language' %}</label>
                                 <select id="language-dropdown"
                                         aria-label="{% translate 'Select Language' %}"
                                         class="form-select form-select-sm"
@@ -195,7 +195,7 @@
                             {% if user.is_authenticated %}
                             <div class="nav-item dropdown text-end">
                                 <button class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle btn btn-sm btn-link px-0 px-md-1" data-bs-toggle="dropdown" aria-expanded="false" 
-                                    title="You are logged in via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %}">
+                                    title="{% translate 'You are logged in via' %} {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}{% translate 'Email' %}{% endif %}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16">
                                         <use href="#person-circle"/>
                                     </svg>
@@ -207,42 +207,42 @@
                                     {% if email_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ email_url_ }}">Change Email</a>
+                                            href="{{ email_url_ }}">{% translate 'Change Email' %}</a>
                                         </li>
                                     {% endif %}
                                     {% url 'account_change_password' as change_password_url_ %}
                                     {% if change_password_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ change_password_url_ }}">Change Password</a>
+                                            href="{{ change_password_url_ }}">{% translate 'Change Password' %}</a>
                                         </li>
                                     {% endif %}
                                     {% url 'account_change_phone' as phone_url_ %}
                                     {% if phone_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ phone_url_ }}">Change Phone</a>
+                                            href="{{ phone_url_ }}">{% translate 'Change Phone' %}</a>
                                         </li>
                                     {% endif %}
                                     {% url 'socialaccount_connections' as connections_url_ %}
                                     {% if connections_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ connections_url_ }}">Third-Party Accounts</a>
+                                            href="{{ connections_url_ }}">{% translate 'Third-Party Accounts' %}</a>
                                         </li>
                                     {% endif %}
                                     {% url 'mfa_index' as mfa_index_url_ %}
                                     {% if mfa_index_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ mfa_index_url_ }}">Two-Factor Authentication</a>
+                                            href="{{ mfa_index_url_ }}">{% translate 'Two-Factor Authentication' %}</a>
                                         </li>
                                     {% endif %}
                                     {% url 'usersessions_list' as usersessions_list_url_ %}
                                     {% if usersessions_list_url_ %}
                                         <li>
                                             <a class="dropdown-item"
-                                            href="{{ usersessions_list_url_ }}">Sessions</a>
+                                            href="{{ usersessions_list_url_ }}">{% translate 'Sessions' %}</a>
                                         </li>
                                     {% endif %}
                                   <li><hr class="dropdown-divider"></li>
@@ -251,13 +251,13 @@
                                        href="#"
                                        id="logout-link"
                                        data-logout-url="{% url 'account_logout' %}">
-                                       Sign out
+                                       {% translate 'Sign out' %}
                                     </a>
                                 </li>
                                 </ul>
                             </div>
                             {% else %}
-                                <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">{% translate "Sign In" %}</a>
+                                <a href="{% url 'account_login' %}" class="btn btn-sm btn-outline-primary">{% translate 'Sign In' %}</a>
                             {% endif %}
                         </div>
                     </div>
@@ -272,7 +272,7 @@
         {% endblock extra_body %}
         <footer class="mt-auto text-body-secondary bg-body-tertiary border-top">
             <div class="container-fluid px-lg-4 py-3">
-                <p class="mb-0 text-center text-body-secondary">© {{ now|date:"Y" }} Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!</p>
+                <p class="mb-0 text-center text-body-secondary">© {{ now|date:"Y" }} {% translate "Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!" %}</p>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>

@@ -1,0 +1,561 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-13 02:23+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Japanese <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
+#: .\base\templates\account\login.html:31
+#: .\base\templates\allauth\layouts\base.html:261
+msgid "Sign In"
+msgstr "サインイン"
+
+#: .\base\templates\account\login.html:19
+#, python-format
+msgid "If you have not created an account yet, then please %(link)ssign up%(end_link)s first."
+msgstr "まだアカウントを作成していない場合は、まず%(link)sサインアップ%(end_link)sしてください。"
+
+#: .\base\templates\account\login.html:42
+#, python-format
+msgid "Sign in with %(icon)s"
+msgstr "%(icon)sでサインイン"
+
+#: .\base\templates\account\login.html:47
+msgid "Send me a sign-in code"
+msgstr "サインインコードを送信"
+
+#: .\base\templates\allauth\layouts\base.html:9
+#: .\base\templates\allauth\layouts\base.html:12
+msgid "Open Exchange Platform"
+msgstr "オープン為替プラットフォーム"
+
+#: .\base\templates\allauth\layouts\base.html:113
+#: .\base\templates\allauth\layouts\base.html:115
+msgid "Toggle theme"
+msgstr "テーマを切り替える"
+
+#: .\base\templates\allauth\layouts\base.html:121
+msgid "Light"
+msgstr "ライト"
+
+#: .\base\templates\allauth\layouts\base.html:128
+msgid "Dark"
+msgstr "ダーク"
+
+#: .\base\templates\allauth\layouts\base.html:135
+msgid "Auto"
+msgstr "自動"
+
+#: .\base\templates\allauth\layouts\base.html:141
+msgid "Skip to main content"
+msgstr "メインコンテンツへスキップ"
+
+#: .\base\templates\allauth\layouts\base.html:145
+msgid "Open Exchange Hub"
+msgstr "オープン為替ハブ"
+
+#: .\base\templates\allauth\layouts\base.html:152
+msgid "Toggle navigation"
+msgstr "ナビゲーションを切り替える"
+
+#: .\base\templates\allauth\layouts\base.html:157
+msgid "Project links"
+msgstr "プロジェクトリンク"
+
+#: .\base\templates\allauth\layouts\base.html:160
+#: .\exchange\templates\exchange\create_offer.html:3
+msgid "New offer"
+msgstr "新規オファー"
+
+#: .\base\templates\allauth\layouts\base.html:164
+#: .\exchange\templates\exchange\my_offers.html:1
+msgid "My offers"
+msgstr "マイオファー"
+
+#: .\base\templates\allauth\layouts\base.html:168
+#: .\exchange\templates\exchange\my_offers.html:235
+#: .\exchange\templates\exchange\my_offers.html:271
+msgid "Conversations"
+msgstr "会話"
+
+#: .\base\templates\allauth\layouts\base.html:181
+#: .\base\templates\allauth\layouts\base.html:183
+msgid "Select Language"
+msgstr "言語を選択"
+
+#: .\base\templates\allauth\layouts\base.html:198
+msgid "You are logged in via"
+msgstr "次の方法でログインしています："
+
+#: .\base\templates\allauth\layouts\base.html:198
+msgid "Email"
+msgstr "Eメール"
+
+#: .\base\templates\allauth\layouts\base.html:211
+msgid "Change Email"
+msgstr "Eメールを変更"
+
+#: .\base\templates\allauth\layouts\base.html:218
+msgid "Change Password"
+msgstr "パスワードを変更"
+
+#: .\base\templates\allauth\layouts\base.html:225
+msgid "Change Phone"
+msgstr "電話番号を変更"
+
+#: .\base\templates\allauth\layouts\base.html:232
+msgid "Third-Party Accounts"
+msgstr "サードパーティアカウント"
+
+#: .\base\templates\allauth\layouts\base.html:239
+msgid "Two-Factor Authentication"
+msgstr "二要素認証"
+
+#: .\base\templates\allauth\layouts\base.html:246
+msgid "Sessions"
+msgstr "セッション"
+
+#: .\base\templates\allauth\layouts\base.html:255
+msgid "Sign out"
+msgstr "サインアウト"
+
+#: .\base\templates\allauth\layouts\base.html:276
+msgid "Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "オープン為替プラットフォーム。全著作権は留保されていますが、銀行手数料を過剰に支払う権利はあなたのものです！"
+
+#: .\base\templates\index.html:2 .\base\templates\index.html:57
+msgid "Money Exchange Platform"
+msgstr "両替プラットフォーム"
+
+#: .\base\templates\index.html:59
+msgid "Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen."
+msgstr "ウズベキスタン駐在員を繋ぎ、手数料・コミッション・仲介業者なしでスムーズに送金・受取を実現します。"
+
+#: .\base\templates\index.html:61
+msgid "Get Started"
+msgstr "始める"
+
+#: .\base\templates\index.html:76
+msgid "Send Money"
+msgstr "送金する"
+
+#: .\base\templates\index.html:77
+msgid "Looking to send money to Uzbekistan? Find expats who need funds."
+msgstr "ウズベキスタンに送金したいですか？資金を必要としている駐在員を見つけましょう。"
+
+#: .\base\templates\index.html:78 .\base\templates\index.html:90
+msgid "View Offers"
+msgstr "オファーを見る"
+
+#: .\base\templates\index.html:88
+msgid "Receive Money"
+msgstr "受け取る"
+
+#: .\base\templates\index.html:89
+msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
+msgstr "ウズベキスタンからお金を受け取る必要がありますか？送信者とすぐに繋がりましょう。"
+
+#: .\base\templates\index.html:98
+msgid "Offers to Send Money to Uzbekistan"
+msgstr "ウズベキスタンへの送金オファー"
+
+#: .\base\templates\index.html:118
+msgid "Send:"
+msgstr "送金:"
+
+#: .\base\templates\index.html:121 .\base\templates\index.html:249
+msgid "Deadline:"
+msgstr "期限:"
+
+#: .\base\templates\index.html:122 .\base\templates\index.html:250
+#: .\exchange\templates\exchange\conversation.html:100
+#: .\exchange\templates\exchange\conversations_list.html:69
+#: .\exchange\templates\exchange\create_offer.html:63
+#: .\exchange\templates\exchange\my_offers.html:134
+#: .\exchange\templates\exchange\update_offer.html:76
+msgid "Urgent"
+msgstr "緊急"
+
+#: .\base\templates\index.html:126 .\base\templates\index.html:254
+msgid "Conditions:"
+msgstr "条件:"
+
+#: .\base\templates\index.html:129 .\base\templates\index.html:257
+msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
+msgstr "これは、銀行手数料や送金サービスをスキップすることで、あなたとこのオファーを受け入れる人が節約できるおおよその金額です。"
+
+#: .\base\templates\index.html:136 .\base\templates\index.html:264
+msgid "potential savings"
+msgstr "潜在的な節約額"
+
+#: .\base\templates\index.html:140 .\base\templates\index.html:268
+msgid "Contact:"
+msgstr "連絡先:"
+
+#: .\base\templates\index.html:175
+msgid "Social Accounts:"
+msgstr "ソーシャルアカウント:"
+
+#: .\base\templates\index.html:197 .\base\templates\index.html:281
+msgid "Contact information hidden. Use the message form to connect."
+msgstr "連絡先情報は非表示です。接続するにはメッセージフォームを使用してください。"
+
+#: .\base\templates\index.html:207 .\base\templates\index.html:291
+msgid "Start Conversation"
+msgstr "会話を開始"
+
+#: .\base\templates\index.html:219
+msgid "No active send requests available."
+msgstr "利用可能なアクティブな送信リクエストはありません。"
+
+#: .\base\templates\index.html:228
+msgid "Offers to Receive Money from Uzbekistan"
+msgstr "ウズベキスタンからの受取オファー"
+
+#: .\base\templates\index.html:246
+msgid "Receive:"
+msgstr "受取:"
+
+#: .\base\templates\index.html:303
+msgid "No active receive requests available."
+msgstr "利用可能なアクティブな受取リクエストはありません。"
+
+#: .\base\templates\index.html:315 .\base\templates\index.html:320
+msgid "Post an Offer"
+msgstr "オファーを投稿"
+
+#: .\base\templates\index.html:316
+msgid "Didn't find a suitable offer?"
+msgstr "適切なオファーが見つかりませんでしたか？"
+
+#: .\base\templates\index.html:318
+msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
+msgstr "率先して自分のオファーを投稿し、両替を希望する他の人と繋がりましょう。"
+
+#: .\base\templates\index.html:327
+msgid "Why Choose Us?"
+msgstr "選ばれる理由"
+
+#: .\base\templates\index.html:333
+msgid "No Fees"
+msgstr "手数料なし"
+
+#: .\base\templates\index.html:334
+msgid "Exchange money without any commissions or hidden charges."
+msgstr "手数料や隠れた費用なしで両替できます。"
+
+#: .\base\templates\index.html:340
+msgid "Direct Connection"
+msgstr "直接接続"
+
+#: .\base\templates\index.html:341
+msgid "Connect directly with other users through our secure chat system."
+msgstr "安全なチャットシステムを通じて他のユーザーと直接接続します。"
+
+#: .\base\templates\index.html:347
+msgid "Secure"
+msgstr "安全"
+
+#: .\base\templates\index.html:348
+msgid "Your data is protected, and we don't handle any money transfers."
+msgstr "あなたのデータは保護されており、私たちはお金の送金を扱いません。"
+
+#: .\base\templates\index.html:357
+msgid "How It Works"
+msgstr "仕組み"
+
+#: .\base\templates\index.html:363
+msgid "1. Post Your Offer"
+msgstr "1. オファーを投稿"
+
+#: .\base\templates\index.html:364
+msgid "Create an offer to send or receive money with your preferred terms."
+msgstr "希望する条件で送金または受取のオファーを作成します。"
+
+#: .\base\templates\index.html:370
+msgid "2. Connect with Others"
+msgstr "2. 他のユーザーと繋がる"
+
+#: .\base\templates\index.html:371
+msgid "Browse offers and start a conversation with potential matches."
+msgstr "オファーを閲覧し、潜在的なマッチング相手と会話を開始します。"
+
+#: .\base\templates\index.html:377
+msgid "3. Exchange Money"
+msgstr "3. 両替する"
+
+#: .\base\templates\index.html:378
+msgid "Agree on terms and complete the transaction securely."
+msgstr "条件に合意し、安全に取引を完了します。"
+
+#: .\base\templates\socialaccount\snippets\login.html:9
+msgid "Or continue with"
+msgstr "または以下で続行"
+
+#: .\base\users\admin.py:11
+msgid "Personal info"
+msgstr "個人情報"
+
+#: .\base\users\admin.py:15
+msgid "Permissions"
+msgstr "権限"
+
+#: .\base\users\admin.py:26
+msgid "Important dates"
+msgstr "重要な日付"
+
+#: .\base\users\apps.py:7
+msgid "Users"
+msgstr "ユーザー"
+
+#: .\exchange\models.py:12
+msgid "Send to Uzbekistan"
+msgstr "ウズベキスタンへ送金"
+
+#: .\exchange\models.py:13
+msgid "Receive from Uzbekistan"
+msgstr "ウズベキスタンから受取"
+
+#: .\exchange\models.py:16
+msgid "Japanese Yen"
+msgstr "日本円"
+
+#: .\exchange\models.py:17
+msgid "Uzbekistan Sum"
+msgstr "ウズベキスタン・スム"
+
+#: .\exchange\models.py:18
+msgid "US Dollar"
+msgstr "米ドル"
+
+#: .\exchange\models.py:21
+msgid "Active"
+msgstr "アクティブ"
+
+#: .\exchange\models.py:22 .\exchange\templates\exchange\conversation.html:141
+msgid "Completed"
+msgstr "完了"
+
+#: .\exchange\models.py:35
+msgid "Hide contacts from other users"
+msgstr "他のユーザーから連絡先を隠す"
+
+#: .\exchange\templates\exchange\conversation.html:3
+msgid "Conversation"
+msgstr "会話"
+
+#: .\exchange\templates\exchange\conversation.html:60
+#: .\exchange\templates\exchange\conversations_list.html:22
+msgid "Search chats..."
+msgstr "チャットを検索..."
+
+#: .\exchange\templates\exchange\conversation.html:60
+#: .\exchange\templates\exchange\conversation.html:162
+#: .\exchange\templates\exchange\conversation.html:168
+#: .\exchange\templates\exchange\conversation.html:174
+#: .\exchange\templates\exchange\conversation.html:180
+#: .\exchange\templates\exchange\conversations_list.html:22
+msgid "coming soon!"
+msgstr "近日公開！"
+
+#: .\exchange\templates\exchange\conversation.html:103
+#: .\exchange\templates\exchange\conversations_list.html:72
+msgid "Your offer"
+msgstr "あなたのオファー"
+
+#: .\exchange\templates\exchange\conversation.html:105
+#: .\exchange\templates\exchange\conversations_list.html:74
+#, python-format
+msgid "by %(conv.request.user.username)s"
+msgstr "%(conv.request.user.username)s より"
+
+#: .\exchange\templates\exchange\conversation.html:155
+msgid "Delete this chat"
+msgstr "このチャットを削除"
+
+#: .\exchange\templates\exchange\conversation.html:160
+msgid "Share my contact"
+msgstr "連絡先を共有"
+
+#: .\exchange\templates\exchange\conversation.html:166
+msgid "Block this user"
+msgstr "このユーザーをブロック"
+
+#: .\exchange\templates\exchange\conversation.html:172
+msgid "Report this user"
+msgstr "このユーザーを報告"
+
+#: .\exchange\templates\exchange\conversation.html:178
+msgid "Mute notifications"
+msgstr "通知をミュート"
+
+#: .\exchange\templates\exchange\conversation.html:184
+msgid "Unmute notifications"
+msgstr "通知のミュートを解除"
+
+#: .\exchange\templates\exchange\conversation.html:217
+msgid "Send"
+msgstr "送信"
+
+#: .\exchange\templates\exchange\conversations_list.html:3
+msgid "My Conversations"
+msgstr "マイ会話"
+
+#: .\exchange\templates\exchange\create_offer.html:10
+msgid "Create an offer"
+msgstr "オファーを作成"
+
+#: .\exchange\templates\exchange\create_offer.html:18
+#: .\exchange\templates\exchange\update_offer.html:18
+msgid "Offer Type"
+msgstr "オファータイプ"
+
+#: .\exchange\templates\exchange\create_offer.html:31
+#: .\exchange\templates\exchange\my_offers.html:148
+#: .\exchange\templates\exchange\update_offer.html:31
+msgid "Amount"
+msgstr "金額"
+
+#: .\exchange\templates\exchange\create_offer.html:40
+#: .\exchange\templates\exchange\update_offer.html:40
+msgid "Currency"
+msgstr "通貨"
+
+#: .\exchange\templates\exchange\create_offer.html:53
+#: .\exchange\templates\exchange\my_offers.html:161
+#: .\exchange\templates\exchange\update_offer.html:53
+msgid "Deadline"
+msgstr "期限"
+
+#: .\exchange\templates\exchange\create_offer.html:72
+#: .\exchange\templates\exchange\my_offers.html:222
+#: .\exchange\templates\exchange\update_offer.html:85
+msgid "Hide Contacts"
+msgstr "連絡先を隠す"
+
+#: .\exchange\templates\exchange\create_offer.html:80
+#: .\exchange\templates\exchange\my_offers.html:209
+#: .\exchange\templates\exchange\update_offer.html:93
+msgid "Conditions"
+msgstr "条件"
+
+#: .\exchange\templates\exchange\create_offer.html:89
+msgid "Submit Request"
+msgstr "リクエストを送信"
+
+#: .\exchange\templates\exchange\my_offers.html:116
+msgid "My Offers"
+msgstr "マイオファー"
+
+#: .\exchange\templates\exchange\my_offers.html:121
+msgid "Here are the offers you have made available for others to see"
+msgstr "あなたが他の人に見せるために利用可能にしたオファーはここにあります"
+
+#: .\exchange\templates\exchange\my_offers.html:174
+#: .\exchange\templates\exchange\update_offer.html:62
+msgid "Status"
+msgstr "ステータス"
+
+#: .\exchange\templates\exchange\my_offers.html:193
+msgid "Potential Savings"
+msgstr "潜在的な節約額"
+
+#: .\exchange\templates\exchange\my_offers.html:252
+msgid "Complete"
+msgstr "完了する"
+
+#: .\exchange\templates\exchange\my_offers.html:262
+msgid "Edit"
+msgstr "編集"
+
+#: .\exchange\templates\exchange\my_offers.html:289
+msgid "Mark Urgent"
+msgstr "緊急マークを付ける"
+
+#: .\exchange\templates\exchange\my_offers.html:306
+msgid "Remove Urgency"
+msgstr "緊急マークを削除"
+
+#: .\exchange\templates\exchange\my_offers.html:317
+msgid "Delete"
+msgstr "削除"
+
+#: .\exchange\templates\exchange\my_offers.html:328
+msgid "Start Saving Today!"
+msgstr "今日から節約を始めよう！"
+
+#: .\exchange\templates\exchange\my_offers.html:330
+msgid "Create an offer now and connect directly with others to exchange money effortlessly—no bank fees, no delays, just seamless transactions!"
+msgstr "今すぐオファーを作成し、他の人と直接繋がり、銀行手数料や遅延なしでスムーズにお金を両替しましょう！"
+
+#: .\exchange\templates\exchange\my_offers.html:336
+msgid "Create Your Offer Now"
+msgstr "今すぐオファーを作成"
+
+#: .\exchange\templates\exchange\send_message.html:4
+#: .\exchange\templates\exchange\send_message.html:22
+msgid "Send Message"
+msgstr "メッセージを送信"
+
+#: .\exchange\templates\exchange\send_message.html:11
+msgid "Send a Message"
+msgstr "メッセージを送信"
+
+#: .\exchange\templates\exchange\send_message.html:15
+msgid "You are sending a message to"
+msgstr "メッセージを送信しています："
+
+#: .\exchange\templates\exchange\send_message.html:15
+msgid "regarding their request to"
+msgstr "彼らのリクエストに関して："
+
+#: .\exchange\templates\exchange\send_message.html:16
+msgid "send money to Uzbekistan"
+msgstr "ウズベキスタンへ送金"
+
+#: .\exchange\templates\exchange\send_message.html:16
+msgid "receive money from Uzbekistan"
+msgstr "ウズベキスタンから受取"
+
+#: .\exchange\templates\exchange\send_message.html:27
+msgid "Back to Home"
+msgstr "ホームに戻る"
+
+#: .\exchange\templates\exchange\update_offer.html:4
+#: .\exchange\templates\exchange\update_offer.html:102
+msgid "Update Offer"
+msgstr "オファーを更新"
+
+#: .\exchange\templates\exchange\update_offer.html:11
+msgid "Update your offer"
+msgstr "オファーを更新する"
+
+#: .\exchange\views.py:40
+msgid "New offer created successfully"
+msgstr "新しいオファーが正常に作成されました"
+
+#: .\exchange\views.py:88
+msgid "Offer completed successfully"
+msgstr "オファーが正常に完了しました"
+
+#: .\exchange\views.py:103
+msgid "Offer deleted successfully"
+msgstr "オファーが正常に削除されました"
+
+#: .\exchange\views.py:235 .\exchange\views.py:238
+msgid "Conversation deleted successfully."
+msgstr "会話が正常に削除されました。"
