@@ -41,6 +41,11 @@ class Request(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.type} - {self.amount_with_currency}"
 
+    def potential_savings_amount(self):
+        # for now, it is an approximate amount based on the amount
+        # this should be replaced with a real calculation based on the exchange rate
+        return int(float(self.amount) * 0.03)  # 3% savings
+
 
 
 class Conversation(models.Model):
