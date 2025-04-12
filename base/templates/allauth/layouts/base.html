@@ -188,7 +188,7 @@
                                     {% for lang in languages %}
                                         <option lang="{{ lang.code }}"
                                                 {% if lang.code == LANGUAGE_CODE %}selected{% endif %}
-                                                value="{{ lang.code }}">{{ lang.name_local }}</option>
+                                                value="{{ lang.code }}">{{ lang.name_local|capfirst }}</option>
                                     {% endfor %}
                                 </select>
                             </form>
