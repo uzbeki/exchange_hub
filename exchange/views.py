@@ -1,25 +1,25 @@
+from django import forms
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.edit import ContextMixin
 from django.views.generic import (
     TemplateView,
-    FormView,
     View,
     RedirectView,
     DeleteView,
     UpdateView,
-    ListView,
     CreateView,
 )
 from django.urls import reverse, reverse_lazy
 from exchange.models import Conversation, Request, Message
-from exchange.forms import RequestForm, MessageForm
+from exchange.forms import RequestForm, MessageForm, RequestUpdateForm
 from django.contrib import messages
 from django.db import models
 from django.http import HttpRequest, JsonResponse
 from django.utils.translation import gettext_lazy as _
 
 
-class BaseAuthenticatedView(LoginRequiredMixin, TemplateView):
+class BaseMixin(LoginRequiredMixin, ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["unread_messages"] = Message.objects.filter(
@@ -29,48 +29,43 @@ class BaseAuthenticatedView(LoginRequiredMixin, TemplateView):
         return context
 
 
-class CreateRequestView(BaseAuthenticatedView, FormView):
-    template_name = "exchange/create_offer.html"
+class CreateOfferView(BaseMixin, CreateView):
+    model = Request
     form_class = RequestForm
+    template_name = "exchange/offer_form.html"  # Unified template
+    success_url = reverse_lazy("my_offers")  # Or reverse_lazy("home")
 
     def form_valid(self, form):
-        req = form.save(commit=False)
-        req.user = self.request.user
-        req.save()
+        # Assign the user before saving
+        form.instance.user = self.request.user
         messages.success(self.request, _("New offer created successfully"))
-        return redirect("home")
+        return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = self.get_form()
+        context["view_title"] = _("Create an Offer")
+        context["submit_button_text"] = _("Create Offer")
         return context
 
 
-class UpdateOfferView(BaseAuthenticatedView, UserPassesTestMixin, UpdateView):
+class UpdateOfferView(BaseMixin, UserPassesTestMixin, UpdateView):
     model = Request
-    # form_class = RequestForm
-    template_name = "exchange/update_offer.html"
+    form_class = RequestUpdateForm  # Use the specific update form class
+    template_name = "exchange/offer_form.html"
     pk_url_kwarg = "request_id"
-    fields = [
-        "type",
-        "amount",
-        "currency",
-        "deadline",
-        "status",
-        "urgent",
-        "hide_contacts",
-        "conditions",
-    ]
     success_url = reverse_lazy("my_offers")
 
     def get_context_data(self, **kwargs):
-        self.object = self.get_object()
         context = super().get_context_data(**kwargs)
+        context["view_title"] = _("Update Your Offer")
+        context["submit_button_text"] = _("Update Offer")
         return context
 
+    def form_valid(self, form):
+        messages.success(self.request, _("Offer updated successfully"))
+        return super().form_valid(form)
 
     def test_func(self):
-        # Check if the user is the owner of the request
         req = self.get_object()
         return req.user == self.request.user
 
@@ -108,7 +103,7 @@ class DeleteRequestView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return self.get_object().user == self.request.user
 
 
-class MyRequestsView(BaseAuthenticatedView):
+class MyRequestsView(BaseMixin, TemplateView):
     template_name = "exchange/my_offers.html"
 
     def get_context_data(self, **kwargs):
@@ -117,26 +112,6 @@ class MyRequestsView(BaseAuthenticatedView):
             "-created_at"
         )
         return context
-
-
-class SendMessageView(BaseAuthenticatedView, FormView):
-    template_name = "exchange/send_message.html"
-    form_class = MessageForm
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["req"] = get_object_or_404(Request, id=self.kwargs["request_id"])
-        context["form"] = self.get_form()
-        return context
-
-    def form_valid(self, form):
-        req = get_object_or_404(Request, id=self.kwargs["request_id"])
-        message = form.save(commit=False)
-        message.request = req
-        message.sender = self.request.user
-        message.recipient = req.user
-        message.save()
-        return redirect("conversation", request_id=self.kwargs["request_id"])
 
 
 class StartConversationView(LoginRequiredMixin, View):
@@ -162,7 +137,7 @@ class StartConversationView(LoginRequiredMixin, View):
         return redirect("conversation", conversation_id=conversation.id)
 
 
-class ConversationsListView(BaseAuthenticatedView):
+class ConversationsListView(BaseMixin, TemplateView):
     template_name = "exchange/conversations_list.html"
 
     def get_context_data(self, **kwargs):
@@ -173,7 +148,7 @@ class ConversationsListView(BaseAuthenticatedView):
         return context
 
 
-class ConversationView(BaseAuthenticatedView, UserPassesTestMixin):
+class ConversationView(BaseMixin, UserPassesTestMixin, TemplateView):
     template_name = "exchange/conversation.html"
 
     def get_context_data(self, **kwargs):

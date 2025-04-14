@@ -139,7 +139,10 @@ MIDDLEWARE = (
     "allauth.account.middleware.AccountMiddleware",
 )
 
-AUTHENTICATION_BACKENDS = ("allauth.account.auth_backends.AuthenticationBackend",)
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
 
 ROOT_URLCONF = "base.urls"
 

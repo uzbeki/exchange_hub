@@ -2,7 +2,7 @@ from django.urls import path, include
 from exchange import views
 
 urlpatterns = [
-    path("create_offer/", views.CreateRequestView.as_view(), name="create_offer"),
+    path("create_offer/", views.CreateOfferView.as_view(), name="create_offer"),
     path("my_offers/", include([
         path("", views.MyRequestsView.as_view(), name="my_offers"),
         path("<uuid:request_id>/", include([

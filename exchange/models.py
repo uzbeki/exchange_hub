@@ -1,3 +1,4 @@
+from decimal import Decimal
 from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -44,7 +45,7 @@ class Request(models.Model):
     def potential_savings_amount(self):
         # for now, it is an approximate amount based on the amount
         # this should be replaced with a real calculation based on the exchange rate
-        return int(float(self.amount) * 0.03)  # 3% savings
+        return int(self.amount * Decimal(0.03))  # 3% savings
 
 
 
