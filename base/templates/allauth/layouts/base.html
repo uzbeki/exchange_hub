@@ -6,10 +6,10 @@
         <script src="{% static "/base/js/color_modes.js" %}"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{% translate 'Open Exchange Platform' %}">
+        <meta name="description" content="{% translate 'Open Exchange Hub' %}">
         <meta property="og:image" content="{% static 'logo.png' %}">
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-        <title>{% block head_title %}{% translate 'Open Exchange Platform' %}{% endblock %}</title>
+        <title>{% block head_title %}{% translate 'Open Exchange Hub' %}{% endblock %}</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
         <style>
             .btn-bd-primary {
@@ -27,7 +27,7 @@
                 --bs-btn-active-color: var(--bs-btn-hover-color);
                 --bs-btn-active-bg: #5a23c8;
                 --bs-btn-active-border-color: #5a23c8;
-              }
+            }
         
             .bd-mode-toggle {
                 z-index: 1500;
@@ -272,7 +272,14 @@
         {% endblock extra_body %}
         <footer class="mt-auto text-body-secondary bg-body-tertiary border-top">
             <div class="container-fluid px-lg-4 py-3">
-                <p class="mb-0 text-center text-body-secondary">© {{ now|date:"Y" }} {% translate "Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!" %}</p>
+                <p class="mb-0 text-center text-body-secondary">
+                    © {{ now|date:"Y" }} {% translate "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!" %}
+                </p>
+                <p class="mt-2 mb-0 text-center">
+                    <a href="{% url 'faq' %}" class="text-decoration-none text-primary fw-bold">
+                    {% translate "Have questions? Check out our FAQ!" %}
+                    </a>
+                </p>
             </div>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>

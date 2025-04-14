@@ -1,0 +1,422 @@
+{% extends "allauth/layouts/base.html" %} {% load i18n %} 
+{% block head_title %}{% translate 'FAQ' %}{% endblock %} 
+{% block extra_head %}
+<style>
+    .accordion-button:not(.collapsed) {
+        color: var(--bs-primary);
+        background-color: var(--bs-primary-bg-subtle);
+    }
+    .accordion-button:focus {
+        box-shadow: 0 0 0 .25rem var(--bs-primary-border-subtle);
+    }
+</style>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "{% translate 'What is Open Exchange Hub?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}Open Exchange Hub is a platform designed to connect people, particularly Uzbek expats, who need to exchange currencies (like JPY, UZS, USD) between Uzbekistan and other countries. We facilitate direct peer-to-peer connections, allowing users to bypass traditional bank fees and transfer service commissions.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'Are there any fees to use the platform?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}No, Open Exchange Hub is completely free to use for posting offers, browsing, and connecting with other users via chat. We do not charge any commissions or hidden fees. The exchange terms and methods are agreed upon directly between users.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'How does the exchange process work?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}1. Post or Find: Create an offer detailing your exchange need (amount, currency, direction) or browse existing offers from other users. 2. Connect: Use our secure chat system to contact a user whose offer matches your needs, or wait for someone to contact you about your offer. 3. Agree: Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer in each country), and timing directly with the other user. 4. Exchange: Complete the transaction offline based on your agreement. Important: Open Exchange Hub facilitates the connection but does not handle or guarantee the money transfer itself.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'Is exchanging money through this platform safe?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}We provide tools like secure chat and user authentication to help you connect safely. However, the actual money exchange happens directly between users outside of our platform. We strongly recommend exercising caution: Start with small amounts if exchanging with someone new. Verify the identity of the other person if possible. Use trusted payment methods. Be wary of offers that seem too good to be true. Open Exchange Hub is not responsible for disputes or losses arising from offline transactions.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'Can I hide my contact information?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}Yes. When creating an offer, you have the option to hide your direct contact details (like email or phone number) from public view on the offer card. If you choose this, other users will need to initiate a conversation through our platform's chat system to connect with you.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'How do I post an offer?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}You need to be logged in to post an offer. Click the \"New Offer\" link in the navigation bar. Fill in the required details: Type: Whether you want to \"Send to Uzbekistan\" or \"Receive from Uzbekistan\". Amount & Currency: The amount and the currency you are offering or requesting (e.g., 100,000 JPY, 500 USD, 5,000,000 UZS). Deadline: When you need the exchange completed by (optional). Urgent: Mark if the request is urgent. Conditions: Any specific terms or preferred methods (optional). Hide Contacts: Choose whether to display your contact info on the offer. Then, submit the form. Your offer will appear on the main page.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'How does the chat system work?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}When you find an offer you're interested in (and you are logged in), click the \"Start Conversation\" button on the offer card (unless it's your own offer). This will open a private chat session between you and the offer creator. You can access all your ongoing conversations from the \"Conversations\" link in the navigation bar. You'll also see a notification badge for unread messages.{% endblocktranslate %}{% endfilter %}"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "{% translate 'What does \"Potential Savings\" mean?' %}",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{% filter escapejs %}{% blocktranslate %}The \"Potential Savings\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used.{% endblocktranslate %}{% endfilter %}"
+          }
+        }
+      ]
+    }
+</script>
+{% endblock extra_head %}
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="question-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+    </symbol>
+    <symbol id="info-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>      
+    </symbol>
+    <symbol id="info-circle-fill" viewBox="0 0 16 16">
+        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/>
+    </symbol>
+    <symbol id="currency-dollar" viewBox="0 0 16 16">
+        <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"/>
+    </symbol>
+    <symbol id="question-octagon" viewBox="0 0 16 16">
+        <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1z"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>      
+    </symbol>
+    <symbol id="shield-check" viewBox="0 0 16 16">
+        <path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/>
+        <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/>      
+    </symbol>
+    <symbol id="eye-slash" viewBox="0 0 16 16">
+        <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+        <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+        <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>      
+    </symbol>
+    <symbol id="pencil-square" viewBox="0 0 16 16">
+        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>      
+    </symbol>
+    <symbol id="chat-dots" viewBox="0 0 16 16">
+        <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+        <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2"/>      
+    </symbol>
+    <symbol id="piggy-bank" viewBox="0 0 16 16">
+        <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6.6 6.6 0 0 1 7.964 4.5c.666 0 1.303.097 1.893.273a.5.5 0 0 0 .286-.958A7.6 7.6 0 0 0 7.964 3.5c-.734 0-1.441.103-2.102.292a.5.5 0 1 0 .276.962"/>
+        <path fill-rule="evenodd" d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069q0-.218-.02-.431c.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a1 1 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.74.74 0 0 0-.375.562c-.024.243.082.48.32.654a2 2 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595M2.516 6.26c.455-2.066 2.667-3.733 5.448-3.733 3.146 0 5.536 2.114 5.536 4.542 0 1.254-.624 2.41-1.67 3.248a.5.5 0 0 0-.165.535l.66 2.175h-.985l-.59-1.487a.5.5 0 0 0-.629-.288c-.661.23-1.39.359-2.157.359a6.6 6.6 0 0 1-2.157-.359.5.5 0 0 0-.635.304l-.525 1.471h-.979l.633-2.15a.5.5 0 0 0-.17-.534 4.65 4.65 0 0 1-1.284-1.541.5.5 0 0 0-.446-.275h-.56a.5.5 0 0 1-.492-.414l-.254-1.46h.933a.5.5 0 0 0 .488-.393m12.621-.857a.6.6 0 0 1-.098.21l-.044-.025c-.146-.09-.157-.175-.152-.223a.24.24 0 0 1 .117-.173c.049-.027.08-.021.113.012a.2.2 0 0 1 .064.199"/>      
+    </symbol>
+</svg>
+<main class="container mt-4 mb-5 flex-grow-1" id="content">
+  <h1 class="mb-4 border-bottom pb-2">
+    <svg class="bi me-2 text-primary" style="width: 1.em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+      <use xlink:href="#question-circle-fill"></use>
+    </svg>
+    {% translate 'Frequently Asked Questions (FAQ)' %}
+  </h1>
+
+  <div class="accordion" id="faqAccordion">
+    <h2 class="h4 mt-4 mb-3 text-secondary">{% translate 'General' %}</h2>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="false"
+          aria-controls="collapseOne"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#info-circle"></use>
+            </svg>
+           {% translate 'What is Open Exchange Hub?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingOne"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}Open Exchange Hub is a platform designed to connect people, particularly Uzbek expats, who
+          need to exchange currencies (like JPY, UZS, USD) between Uzbekistan and other countries. We facilitate direct
+          peer-to-peer connections, allowing users to bypass traditional bank fees and transfer service commissions.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#currency-dollar"></use>
+            </svg>
+           {% translate 'Are there any fees to use the platform?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}No, Open Exchange Hub is completely free to use for posting offers, browsing, and
+          connecting with other users via chat. We do not charge any commissions or hidden fees. The exchange terms and
+          methods are agreed upon directly between users.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingThree">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#question-octagon"></use>
+            </svg>
+           {% translate 'How does the exchange process work?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingThree"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}
+          <ol>
+            <li>
+              <strong>Post or Find:</strong> Create an offer detailing your exchange need (amount, currency, direction)
+              or browse existing offers from other users.
+            </li>
+            <li>
+              <strong>Connect:</strong> Use our secure chat system to contact a user whose offer matches your needs, or
+              wait for someone to contact you about your offer.
+            </li>
+            <li>
+              <strong>Agree:</strong> Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer
+              in each country), and timing directly with the other user.
+            </li>
+            <li>
+              <strong>Exchange:</strong> Complete the transaction offline based on your agreement.
+              <strong>Important:</strong> Open Exchange Hub facilitates the connection but does
+              <strong>not</strong> handle or guarantee the money transfer itself.
+            </li>
+          </ol>
+          {% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <h2 class="h4 mt-5 mb-3 text-secondary">{% translate 'Security & Trust' %}</h2>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingFour">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseFour"
+          aria-expanded="false"
+          aria-controls="collapseFour"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#shield-check"></use>
+            </svg>
+           {% translate 'Is exchanging money through this platform safe?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseFour"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingFour"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}We provide tools like secure chat and user authentication to help you connect safely.
+          However, the actual money exchange happens directly between users outside of our platform. We strongly
+          recommend exercising caution:
+          <ul>
+            <li>Start with small amounts if exchanging with someone new.</li>
+            <li>Verify the identity of the other person if possible.</li>
+            <li>Use trusted payment methods.</li>
+            <li>Be wary of offers that seem too good to be true.</li>
+          </ul>
+          Open Exchange Hub is not responsible for disputes or losses arising from offline transactions. {% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingFive">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseFive"
+          aria-expanded="false"
+          aria-controls="collapseFive"
+        >
+        <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <use xlink:href="#eye-slash"></use>
+        </svg>
+        {% translate 'Can I hide my contact information?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingFive"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}Yes. When creating an offer, you have the option to hide your direct contact details (like
+          email or phone number) from public view on the offer card. If you choose this, other users will need to
+          initiate a conversation through our platform's chat system to connect with you.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <h2 class="h4 mt-5 mb-3 text-secondary">{% translate 'Using the Platform' %}</h2>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingSix">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseSix"
+          aria-expanded="false"
+          aria-controls="collapseSix"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#pencil-square"></use>
+            </svg>
+            {% translate 'How do I post an offer?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseSix"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingSix"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}You need to be logged in to post an offer. Click the "New Offer" link in the navigation
+          bar. Fill in the required details:
+          <ul>
+            <li><strong>Type:</strong> Whether you want to "Send to Uzbekistan" or "Receive from Uzbekistan".</li>
+            <li>
+              <strong>Amount & Currency:</strong> The amount and the currency you are offering or requesting (e.g.,
+              100,000 JPY, 500 USD, 5,000,000 UZS).
+            </li>
+            <li><strong>Deadline:</strong> When you need the exchange completed by (optional).</li>
+            <li><strong>Urgent:</strong> Mark if the request is urgent.</li>
+            <li><strong>Conditions:</strong> Any specific terms or preferred methods (optional).</li>
+            <li><strong>Hide Contacts:</strong> Choose whether to display your contact info on the offer.</li>
+          </ul>
+          Then, submit the form. Your offer will appear on the main page. {% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingSeven">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseSeven"
+          aria-expanded="false"
+          aria-controls="collapseSeven"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#chat-dots"></use>
+            </svg>
+           {% translate 'How does the chat system work?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseSeven"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingSeven"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}When you find an offer you're interested in (and you are logged in), click the "Start
+          Conversation" button on the offer card (unless it's your own offer). This will open a private chat session
+          between you and the offer creator. You can access all your ongoing conversations from the "Conversations" link
+          in the navigation bar. You'll also see a notification badge for unread messages.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h3 class="accordion-header" id="headingEight">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseEight"
+          aria-expanded="false"
+          aria-controls="collapseEight"
+        >
+            <svg class="bi me-2" style="width: 1em; height: 1em;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                <use xlink:href="#piggy-bank"></use>
+            </svg>
+           {% translate 'What does "Potential Savings" mean?' %}
+        </button>
+      </h3>
+      <div
+        id="collapseEight"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingEight"
+        data-bs-parent="#faqAccordion"
+      >
+        <div class="accordion-body">
+          {% blocktranslate trimmed %}The "Potential Savings" amount shown on offer cards is an *estimate* of the fees you and
+          the other party might save by using our platform instead of traditional banks or money transfer services,
+          which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g.,
+          based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend
+          on the specific alternative methods you would have used.{% endblocktranslate %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

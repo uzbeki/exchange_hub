@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-13 02:23+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Bekhruz Otaev <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-14 22:24+0900\n"
+"PO-Revision-Date: 2025-04-14 22:07+0900\n"
+"Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Uzbek <beki@bekhruz.com>\n"
 "Language: uz\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:261
+#: .\base\templates\allauth\layouts\base.html:261 .\information.txt:417
 msgid "Sign In"
 msgstr "Kirish"
 
@@ -40,265 +40,382 @@ msgstr "Menga kirish kodini yuboring"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-msgid "Open Exchange Platform"
-msgstr "Ochiq Ayirboshlash Platformasi"
-
-#: .\base\templates\allauth\layouts\base.html:113
-#: .\base\templates\allauth\layouts\base.html:115
-msgid "Toggle theme"
-msgstr "Temani o'zgartirish"
-
-#: .\base\templates\allauth\layouts\base.html:121
-msgid "Light"
-msgstr "Yorug'"
-
-#: .\base\templates\allauth\layouts\base.html:128
-msgid "Dark"
-msgstr "Qorong'u"
-
-#: .\base\templates\allauth\layouts\base.html:135
-msgid "Auto"
-msgstr "Avto"
-
-#: .\base\templates\allauth\layouts\base.html:141
-msgid "Skip to main content"
-msgstr "Asosiy tarkibga o'tish"
-
-#: .\base\templates\allauth\layouts\base.html:145
+#: .\base\templates\allauth\layouts\base.html:145 .\base\templates\index.html:2
+#: .\base\templates\index.html:106 .\information.txt:168 .\information.txt:171
+#: .\information.txt:301 .\information.txt:444 .\information.txt:453
 msgid "Open Exchange Hub"
 msgstr "Ochiq Ayirboshlash Markazi"
 
-#: .\base\templates\allauth\layouts\base.html:152
+#: .\base\templates\allauth\layouts\base.html:113
+#: .\base\templates\allauth\layouts\base.html:115 .\information.txt:269
+#: .\information.txt:271
+msgid "Toggle theme"
+msgstr "Temani o'zgartirish"
+
+#: .\base\templates\allauth\layouts\base.html:121 .\information.txt:277
+msgid "Light"
+msgstr "Yorug'"
+
+#: .\base\templates\allauth\layouts\base.html:128 .\information.txt:284
+msgid "Dark"
+msgstr "Qorong'u"
+
+#: .\base\templates\allauth\layouts\base.html:135 .\information.txt:291
+msgid "Auto"
+msgstr "Avto"
+
+#: .\base\templates\allauth\layouts\base.html:141 .\information.txt:297
+msgid "Skip to main content"
+msgstr "Asosiy tarkibga o'tish"
+
+#: .\base\templates\allauth\layouts\base.html:152 .\information.txt:308
 msgid "Toggle navigation"
 msgstr "Navigatsiyani almashtirish"
 
-#: .\base\templates\allauth\layouts\base.html:157
+#: .\base\templates\allauth\layouts\base.html:157 .\information.txt:313
 msgid "Project links"
 msgstr "Loyiha havolalari"
 
-#: .\base\templates\allauth\layouts\base.html:160
-#: .\exchange\templates\exchange\create_offer.html:3
+#: .\base\templates\allauth\layouts\base.html:160 .\information.txt:316
 msgid "New offer"
 msgstr "Yangi taklif"
 
 #: .\base\templates\allauth\layouts\base.html:164
-#: .\exchange\templates\exchange\my_offers.html:1
+#: .\exchange\templates\exchange\my_offers.html:1 .\information.txt:320
 msgid "My offers"
 msgstr "Mening takliflarim"
 
 #: .\base\templates\allauth\layouts\base.html:168
 #: .\exchange\templates\exchange\my_offers.html:235
-#: .\exchange\templates\exchange\my_offers.html:271
+#: .\exchange\templates\exchange\my_offers.html:271 .\information.txt:324
 msgid "Conversations"
 msgstr "Suhbatlar"
 
 #: .\base\templates\allauth\layouts\base.html:181
-#: .\base\templates\allauth\layouts\base.html:183
+#: .\base\templates\allauth\layouts\base.html:183 .\information.txt:337
+#: .\information.txt:339
 msgid "Select Language"
 msgstr "Tilni tanlang"
 
-#: .\base\templates\allauth\layouts\base.html:198
+#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
 msgid "You are logged in via"
 msgstr "Siz orqali kirgansiz"
 
-#: .\base\templates\allauth\layouts\base.html:198
+#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
 msgid "Email"
 msgstr "Elektron pochta"
 
-#: .\base\templates\allauth\layouts\base.html:211
+#: .\base\templates\allauth\layouts\base.html:211 .\information.txt:367
 msgid "Change Email"
 msgstr "Elektron pochtani o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:218
+#: .\base\templates\allauth\layouts\base.html:218 .\information.txt:374
 msgid "Change Password"
 msgstr "Parolni o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:225
+#: .\base\templates\allauth\layouts\base.html:225 .\information.txt:381
 msgid "Change Phone"
 msgstr "Telefon raqamini o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:232
+#: .\base\templates\allauth\layouts\base.html:232 .\information.txt:388
 msgid "Third-Party Accounts"
 msgstr "Uchinchi tomon hisoblari"
 
-#: .\base\templates\allauth\layouts\base.html:239
+#: .\base\templates\allauth\layouts\base.html:239 .\information.txt:395
 msgid "Two-Factor Authentication"
 msgstr "Ikki faktorli autentifikatsiya"
 
-#: .\base\templates\allauth\layouts\base.html:246
+#: .\base\templates\allauth\layouts\base.html:246 .\information.txt:402
 msgid "Sessions"
 msgstr "Sessiyalar"
 
-#: .\base\templates\allauth\layouts\base.html:255
+#: .\base\templates\allauth\layouts\base.html:255 .\information.txt:411
 msgid "Sign out"
 msgstr "Chiqish"
 
-#: .\base\templates\allauth\layouts\base.html:276
-msgid "Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!"
-msgstr "Ochiq pul ayirboshlash platformasi. Barcha huquqlar himoyalangan, bank to'lovlarini ortiqcha to'lash huquqidan tashqari — bu sizniki!"
+#: .\base\templates\allauth\layouts\base.html:277 .\information.txt:432
+msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "Ochiq pul ayirboshlash markazi. Barcha huquqlar himoyalangan, bank to'lovlarini ortiqcha to'lash huquqidan tashqari — bu sizniki!"
 
-#: .\base\templates\index.html:2 .\base\templates\index.html:57
-msgid "Money Exchange Platform"
-msgstr "Pul Ayirboshlash Platformasi"
+#: .\base\templates\allauth\layouts\base.html:281
+msgid "Have questions? Check out our FAQ!"
+msgstr "Savollaringiz bormi? Bizning FAQ boʻlimimizni koʻrib chiqing!"
 
-#: .\base\templates\index.html:59
+#: .\base\templates\faq.html:2
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\base\templates\faq.html:20 .\base\templates\faq.html:151
+msgid "What is Open Exchange Hub?"
+msgstr "Ochiq Ayirboshlash Markazi nima?"
+
+#: .\base\templates\faq.html:23 .\base\templates\faq.html:161
+msgid "Open Exchange Hub is a platform designed to connect people, particularly Uzbek expats, who need to exchange currencies (like JPY, UZS, USD) between Uzbekistan and other countries. We facilitate direct peer-to-peer connections, allowing users to bypass traditional bank fees and transfer service commissions."
+msgstr "Ochiq Ayirboshlash Markazi - bu O'zbekiston va boshqa mamlakatlar o'rtasida valyuta (JPY, UZS, USD kabi) ayirboshlashga muhtoj bo'lgan odamlarni, xususan, o'zbekistonlik muhojirlarni bog'lash uchun mo'ljallangan platforma. Biz to'g'ridan-to'g'ri odamdan-odamga aloqalarni osonlashtiramiz, bu esa foydalanuvchilarga an'anaviy bank to'lovlari va pul o'tkazmalari xizmatlarining komissiyalarini chetlab o'tish imkonini beradi."
+
+#: .\base\templates\faq.html:28 .\base\templates\faq.html:181
+msgid "Are there any fees to use the platform?"
+msgstr "Platformadan foydalanish uchun to'lovlar bormi?"
+
+#: .\base\templates\faq.html:31 .\base\templates\faq.html:191
+msgid "No, Open Exchange Hub is completely free to use for posting offers, browsing, and connecting with other users via chat. We do not charge any commissions or hidden fees. The exchange terms and methods are agreed upon directly between users."
+msgstr "Yo'q, Ochiq Ayirboshlash Markazi takliflarni joylashtirish, ko'rib chiqish va chat orqali boshqa foydalanuvchilar bilan bog'lanish uchun mutlaqo bepul. Biz hech qanday komissiya yoki yashirin to'lovlar olmaymiz. Ayirboshlash shartlari va usullari to'g'ridan-to'g'ri foydalanuvchilar o'rtasida kelishiladi."
+
+#: .\base\templates\faq.html:36 .\base\templates\faq.html:211
+msgid "How does the exchange process work?"
+msgstr "Ayirboshlash jarayoni qanday ishlaydi?"
+
+#: .\base\templates\faq.html:39
+msgid "1. Post or Find: Create an offer detailing your exchange need (amount, currency, direction) or browse existing offers from other users. 2. Connect: Use our secure chat system to contact a user whose offer matches your needs, or wait for someone to contact you about your offer. 3. Agree: Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer in each country), and timing directly with the other user. 4. Exchange: Complete the transaction offline based on your agreement. Important: Open Exchange Hub facilitates the connection but does not handle or guarantee the money transfer itself."
+msgstr "1. Joylashtiring yoki toping: Ayirboshlash ehtiyojingizni (miqdor, valyuta, yo'nalish) batafsil ko'rsatadigan taklif yarating yoki boshqa foydalanuvchilarning mavjud takliflarini ko'rib chiqing. 2. Bog'laning: Taklifi sizning ehtiyojlaringizga mos keladigan foydalanuvchi bilan bog'lanish uchun xavfsiz chat tizimimizdan foydalaning yoki kimdir sizning taklifingiz bo'yicha siz bilan bog'lanishini kuting. 3. Kelishing: Boshqa foydalanuvchi bilan to'g'ridan-to'g'ri ayirboshlash kursi, to'lov usullari (masalan, har bir mamlakatdagi mahalliy bank o'tkazmasi) va vaqtini muhokama qiling va kelishing. 4. Ayirboshlang: Kelishuvingiz asosida tranzaksiyani oflayn rejimda yakunlang. Muhim: Ochiq Ayirboshlash Markazi aloqani osonlashtiradi, lekin pul o'tkazmasining o'zini boshqarmaydi yoki kafolatlamaydi."
+
+#: .\base\templates\faq.html:44 .\base\templates\faq.html:261
+msgid "Is exchanging money through this platform safe?"
+msgstr "Ushbu platforma orqali pul ayirboshlash xavfsizmi?"
+
+#: .\base\templates\faq.html:47
+msgid "We provide tools like secure chat and user authentication to help you connect safely. However, the actual money exchange happens directly between users outside of our platform. We strongly recommend exercising caution: Start with small amounts if exchanging with someone new. Verify the identity of the other person if possible. Use trusted payment methods. Be wary of offers that seem too good to be true. Open Exchange Hub is not responsible for disputes or losses arising from offline transactions."
+msgstr "Xavfsiz bog'lanishingizga yordam berish uchun biz xavfsiz chat va foydalanuvchi autentifikatsiyasi kabi vositalarni taqdim etamiz. Biroq, haqiqiy pul ayirboshlash to'g'ridan-to'g'ri platformamizdan tashqarida foydalanuvchilar o'rtasida sodir bo'ladi. Biz ehtiyotkor bo'lishni qat'iy tavsiya qilamiz: Yangi odam bilan ayirboshlayotgan bo'lsangiz, kichik miqdorlardan boshlang. Agar iloji bo'lsa, boshqa shaxsning shaxsini tasdiqlang. Ishonchli to'lov usullaridan foydalaning. Haddan tashqari yaxshi ko'rinadigan takliflardan ehtiyot bo'ling. Ochiq Ayirboshlash Markazi oflayn tranzaksiyalardan kelib chiqadigan nizolar yoki yo'qotishlar uchun javobgar emas."
+
+#: .\base\templates\faq.html:52 .\base\templates\faq.html:298
+msgid "Can I hide my contact information?"
+msgstr "Aloqa ma'lumotlarimni yashirsam bo'ladimi?"
+
+#: .\base\templates\faq.html:55 .\base\templates\faq.html:308
+msgid "Yes. When creating an offer, you have the option to hide your direct contact details (like email or phone number) from public view on the offer card. If you choose this, other users will need to initiate a conversation through our platform's chat system to connect with you."
+msgstr "Ha. Taklif yaratayotganda, taklif kartasida to'g'ridan-to'g'ri aloqa ma'lumotlaringizni (masalan, elektron pochta yoki telefon raqami) omma ko'zidan yashirish imkoniyati mavjud. Agar siz buni tanlasangiz, boshqa foydalanuvchilar siz bilan bog'lanish uchun platformamizning chat tizimi orqali suhbat boshlashlari kerak bo'ladi."
+
+#: .\base\templates\faq.html:60 .\base\templates\faq.html:330
+msgid "How do I post an offer?"
+msgstr "Qanday qilib taklif joylashtirsam bo'ladi?"
+
+#: .\base\templates\faq.html:63
+msgid "You need to be logged in to post an offer. Click the \\\"New Offer\\\" link in the navigation bar. Fill in the required details: Type: Whether you want to \\\"Send to Uzbekistan\\\" or \\\"Receive from Uzbekistan\\\". Amount & Currency: The amount and the currency you are offering or requesting (e.g., 100,000 JPY, 500 USD, 5,000,000 UZS). Deadline: When you need the exchange completed by (optional). Urgent: Mark if the request is urgent. Conditions: Any specific terms or preferred methods (optional). Hide Contacts: Choose whether to display your contact info on the offer. Then, submit the form. Your offer will appear on the main page."
+msgstr "Taklif joylashtirish uchun tizimga kirgan bo'lishingiz kerak. Navigatsiya panelidagi \"Yangi Taklif\" havolasini bosing. Kerakli ma'lumotlarni to'ldiring: Turi: Siz \"O'zbekistonga jo'natish\" yoki \"O'zbekistondan qabul qilish\"ni xohlaysizmi. Miqdor va Valyuta: Siz taklif qilayotgan yoki so'rayotgan miqdor va valyuta (masalan, 100 000 JPY, 500 USD, 5 000 000 UZS). Muddat: Ayirboshlashni qachongacha yakunlash kerak (ixtiyoriy). Shoshilinch: Agar so'rov shoshilinch bo'lsa, belgilang. Shartlar: Har qanday maxsus shartlar yoki afzal ko'rilgan usullar (ixtiyoriy). Kontaktlarni yashirish: Taklifda aloqa ma'lumotlaringizni ko'rsatish yoki ko'rsatmaslikni tanlang. Keyin shaklni yuboring. Sizning taklifingiz asosiy sahifada paydo bo'ladi."
+
+#: .\base\templates\faq.html:68 .\base\templates\faq.html:371
+msgid "How does the chat system work?"
+msgstr "Chat tizimi qanday ishlaydi?"
+
+#: .\base\templates\faq.html:71
+msgid "When you find an offer you're interested in (and you are logged in), click the \\\"Start Conversation\\\" button on the offer card (unless it's your own offer). This will open a private chat session between you and the offer creator. You can access all your ongoing conversations from the \\\"Conversations\\\" link in the navigation bar. You'll also see a notification badge for unread messages."
+msgstr "Sizni qiziqtirgan taklifni topganingizda (va tizimga kirgan bo'lsangiz), taklif kartasidagi \"Suhbatni boshlash\" tugmasini bosing (agar bu sizning taklifingiz bo'lmasa). Bu siz va taklif yaratuvchisi o'rtasida shaxsiy chat sessiyasini ochadi. Barcha davom etayotgan suhbatlaringizga navigatsiya panelidagi \"Suhbatlar\" havolasidan kirishingiz mumkin. Shuningdek, o'qilmagan xabarlar uchun bildirishnoma belgisini ko'rasiz."
+
+#: .\base\templates\faq.html:76
+msgid "What does \\\"Potential Savings\\\" mean?"
+msgstr "\"Potensial tejash\" nimani anglatadi?"
+
+#: .\base\templates\faq.html:79
+msgid "The \\\"Potential Savings\\\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used."
+msgstr "Taklif kartalarida ko'rsatilgan \"Potensial tejash\" miqdori siz va boshqa tomon an'anaviy banklar yoki pul o'tkazmalari xizmatlari o'rniga bizning platformamizdan foydalanib tejashingiz *mumkin* bo'lgan to'lovlarning *taxminiy* hisobidir. Bu xizmatlar ko'pincha yuqori to'lovlar va noqulay ayirboshlash kurslarini qo'llaydi. Bu hisob-kitob hozirda taxminiy (masalan, foizga asoslangan) bo'lib, odamdan-odamga ayirboshlashning foydasini ko'rsatishga mo'ljallangan. Haqiqiy tejash siz foydalangan bo'lar edingiz, muqobil usullarga bog'liq."
+
+#: .\base\templates\faq.html:132
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "Ko'p Beriladigan Savollar (FAQ)"
+
+#: .\base\templates\faq.html:136
+msgid "General"
+msgstr "Umumiy"
+
+#: .\base\templates\faq.html:221
+msgid "<ol> <li> <strong>Post or Find:</strong> Create an offer detailing your exchange need (amount, currency, direction) or browse existing offers from other users. </li> <li> <strong>Connect:</strong> Use our secure chat system to contact a user whose offer matches your needs, or wait for someone to contact you about your offer. </li> <li> <strong>Agree:</strong> Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer in each country), and timing directly with the other user. </li> <li> <strong>Exchange:</strong> Complete the transaction offline based on your agreement. <strong>Important:</strong> Open Exchange Hub facilitates the connection but does <strong>not</strong> handle or guarantee the money transfer itself. </li> </ol>"
+msgstr "<ol> <li> <strong>Joylashtiring yoki toping:</strong> Ayirboshlash ehtiyojingizni (miqdor, valyuta, yo'nalish) batafsil ko'rsatadigan taklif yarating yoki boshqa foydalanuvchilarning mavjud takliflarini ko'rib chiqing. </li> <li> <strong>Bog'laning:</strong> Taklifi sizning ehtiyojlaringizga mos keladigan foydalanuvchi bilan bog'lanish uchun xavfsiz chat tizimimizdan foydalaning yoki kimdir sizning taklifingiz bo'yicha siz bilan bog'lanishini kuting. </li> <li> <strong>Kelishing:</strong> Boshqa foydalanuvchi bilan to'g'ridan-to'g'ri ayirboshlash kursi, to'lov usullari (masalan, har bir mamlakatdagi mahalliy bank o'tkazmasi) va vaqtini muhokama qiling va kelishing. </li> <li> <strong>Ayirboshlang:</strong> Kelishuvingiz asosida tranzaksiyani oflayn rejimda yakunlang. <strong>Muhim:</strong> Ochiq Ayirboshlash Markazi aloqani osonlashtiradi, lekin pul o'tkazmasining o'zini <strong>boshqarmaydi</strong> yoki kafolatlamaydi. </li> </ol>"
+
+#: .\base\templates\faq.html:246
+msgid "Security & Trust"
+msgstr "Xavfsizlik va Ishonch"
+
+#: .\base\templates\faq.html:271
+msgid "We provide tools like secure chat and user authentication to help you connect safely. However, the actual money exchange happens directly between users outside of our platform. We strongly recommend exercising caution: <ul> <li>Start with small amounts if exchanging with someone new.</li> <li>Verify the identity of the other person if possible.</li> <li>Use trusted payment methods.</li> <li>Be wary of offers that seem too good to be true.</li> </ul> Open Exchange Hub is not responsible for disputes or losses arising from offline transactions."
+msgstr "Xavfsiz bog'lanishingizga yordam berish uchun biz xavfsiz chat va foydalanuvchi autentifikatsiyasi kabi vositalarni taqdim etamiz. Biroq, haqiqiy pul ayirboshlash to'g'ridan-to'g'ri platformamizdan tashqarida foydalanuvchilar o'rtasida sodir bo'ladi. Biz ehtiyotkor bo'lishni qat'iy tavsiya qilamiz: <ul> <li>Yangi odam bilan ayirboshlayotgan bo'lsangiz, kichik miqdorlardan boshlang.</li> <li>Agar iloji bo'lsa, boshqa shaxsning shaxsini tasdiqlang.</li> <li>Ishonchli to'lov usullaridan foydalaning.</li> <li>Haddan tashqari yaxshi ko'rinadigan takliflardan ehtiyot bo'ling.</li> </ul> Ochiq Ayirboshlash Markazi oflayn tranzaksiyalardan kelib chiqadigan nizolar yoki yo'qotishlar uchun javobgar emas."
+
+#: .\base\templates\faq.html:315
+msgid "Using the Platform"
+msgstr "Platformadan Foydalanish"
+
+#: .\base\templates\faq.html:340
+msgid "You need to be logged in to post an offer. Click the \"New Offer\" link in the navigation bar. Fill in the required details: <ul> <li><strong>Type:</strong> Whether you want to \"Send to Uzbekistan\" or \"Receive from Uzbekistan\".</li> <li> <strong>Amount & Currency:</strong> The amount and the currency you are offering or requesting (e.g., 100,000 JPY, 500 USD, 5,000,000 UZS). </li> <li><strong>Deadline:</strong> When you need the exchange completed by (optional).</li> <li><strong>Urgent:</strong> Mark if the request is urgent.</li> <li><strong>Conditions:</strong> Any specific terms or preferred methods (optional).</li> <li><strong>Hide Contacts:</strong> Choose whether to display your contact info on the offer.</li> </ul> Then, submit the form. Your offer will appear on the main page."
+msgstr "Taklif joylashtirish uchun tizimga kirgan bo'lishingiz kerak. Navigatsiya panelidagi \"Yangi Taklif\" havolasini bosing. Kerakli ma'lumotlarni to'ldiring: <ul> <li><strong>Turi:</strong> Siz \"O'zbekistonga jo'natish\" yoki \"O'zbekistondan qabul qilish\"ni xohlaysizmi.</li> <li> <strong>Miqdor va Valyuta:</strong> Siz taklif qilayotgan yoki so'rayotgan miqdor va valyuta (masalan, 100 000 JPY, 500 USD, 5 000 000 UZS). </li> <li><strong>Muddat:</strong> Ayirboshlashni qachongacha yakunlash kerak (ixtiyoriy).</li> <li><strong>Shoshilinch:</strong> Agar so'rov shoshilinch bo'lsa, belgilang.</li> <li><strong>Shartlar:</strong> Har qanday maxsus shartlar yoki afzal ko'rilgan usullar (ixtiyoriy).</li> <li><strong>Kontaktlarni yashirish:</strong> Taklifda aloqa ma'lumotlaringizni ko'rsatish yoki ko'rsatmaslikni tanlang.</li> </ul> Keyin shaklni yuboring. Sizning taklifingiz asosiy sahifada paydo bo'ladi."
+
+#: .\base\templates\faq.html:381
+msgid "When you find an offer you're interested in (and you are logged in), click the \"Start Conversation\" button on the offer card (unless it's your own offer). This will open a private chat session between you and the offer creator. You can access all your ongoing conversations from the \"Conversations\" link in the navigation bar. You'll also see a notification badge for unread messages."
+msgstr "Sizni qiziqtirgan taklifni topganingizda (va tizimga kirgan bo'lsangiz), taklif kartasidagi \"Suhbatni boshlash\" tugmasini bosing (agar bu sizning taklifingiz bo'lmasa). Bu siz va taklif yaratuvchisi o'rtasida shaxsiy chat sessiyasini ochadi. Barcha davom etayotgan suhbatlaringizga navigatsiya panelidagi \"Suhbatlar\" havolasidan kirishingiz mumkin. Shuningdek, o'qilmagan xabarlar uchun bildirishnoma belgisini ko'rasiz."
+
+#: .\base\templates\faq.html:402
+msgid "What does \"Potential Savings\" mean?"
+msgstr "\"Potensial tejash\" nimani anglatadi?"
+
+#: .\base\templates\faq.html:412
+msgid "The \"Potential Savings\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used."
+msgstr "Taklif kartalarida ko'rsatilgan \"Potensial tejash\" miqdori siz va boshqa tomon an'anaviy banklar yoki pul o'tkazmalari xizmatlari o'rniga bizning platformamizdan foydalanib tejashingiz *mumkin* bo'lgan to'lovlarning *taxminiy* hisobidir. Bu xizmatlar ko'pincha yuqori to'lovlar va noqulay ayirboshlash kurslarini qo'llaydi. Bu hisob-kitob hozirda taxminiy (masalan, foizga asoslangan) bo'lib, odamdan-odamga ayirboshlashning foydasini ko'rsatishga mo'ljallangan. Haqiqiy tejash siz foydalangan bo'lar edingiz, muqobil usullarga bog'liq."
+
+#: .\base\templates\index.html:108 .\information.txt:455
 msgid "Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen."
 msgstr "O'zbekistonlik muhojirlarni pul jo'natish va qabul qilish uchun muammosiz bog'lash — to'lovlar yo'q, komissiyalar yo'q, vositachilar yo'q."
 
-#: .\base\templates\index.html:61
+#: .\base\templates\index.html:110 .\information.txt:457
 msgid "Get Started"
 msgstr "Boshlash"
 
-#: .\base\templates\index.html:76
+#: .\base\templates\index.html:125 .\information.txt:472
 msgid "Send Money"
 msgstr "Pul jo'natish"
 
-#: .\base\templates\index.html:77
+#: .\base\templates\index.html:126 .\information.txt:473
 msgid "Looking to send money to Uzbekistan? Find expats who need funds."
 msgstr "O'zbekistonga pul jo'natmoqchimisiz? Mablag'ga muhtoj muhojirlarni toping."
 
-#: .\base\templates\index.html:78 .\base\templates\index.html:90
+#: .\base\templates\index.html:127 .\base\templates\index.html:139
+#: .\information.txt:474 .\information.txt:486
 msgid "View Offers"
 msgstr "Takliflarni ko'rish"
 
-#: .\base\templates\index.html:88
+#: .\base\templates\index.html:137 .\information.txt:484
 msgid "Receive Money"
 msgstr "Pul qabul qilish"
 
-#: .\base\templates\index.html:89
+#: .\base\templates\index.html:138 .\information.txt:485
 msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
 msgstr "O'zbekistondan pul qabul qilishingiz kerakmi? Jo'natuvchilar bilan bir zumda bog'laning."
 
-#: .\base\templates\index.html:98
+#: .\base\templates\index.html:147 .\information.txt:494
 msgid "Offers to Send Money to Uzbekistan"
 msgstr "O'zbekistonga pul jo'natish takliflari"
 
-#: .\base\templates\index.html:118
+#: .\base\templates\index.html:167 .\information.txt:514
 msgid "Send:"
 msgstr "Jo'natish:"
 
-#: .\base\templates\index.html:121 .\base\templates\index.html:249
+#: .\base\templates\index.html:170 .\base\templates\index.html:298
+#: .\information.txt:517 .\information.txt:645
 msgid "Deadline:"
 msgstr "Muddati:"
 
-#: .\base\templates\index.html:122 .\base\templates\index.html:250
-#: .\exchange\templates\exchange\conversation.html:100
+#: .\base\templates\index.html:171 .\base\templates\index.html:299
+#: .\exchange\templates\exchange\conversation.html:104
 #: .\exchange\templates\exchange\conversations_list.html:69
-#: .\exchange\templates\exchange\create_offer.html:63
 #: .\exchange\templates\exchange\my_offers.html:134
-#: .\exchange\templates\exchange\update_offer.html:76
+#: .\exchange\templates\exchange\offer_form.html:72 .\information.txt:518
+#: .\information.txt:646
 msgid "Urgent"
 msgstr "Shoshilinch"
 
-#: .\base\templates\index.html:126 .\base\templates\index.html:254
+#: .\base\templates\index.html:175 .\base\templates\index.html:303
+#: .\information.txt:522 .\information.txt:650
 msgid "Conditions:"
 msgstr "Shartlar:"
 
-#: .\base\templates\index.html:129 .\base\templates\index.html:257
+#: .\base\templates\index.html:178 .\base\templates\index.html:306
+#: .\information.txt:525 .\information.txt:653
 msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
 msgstr "Bu siz va bank to'lovlari yoki pul o'tkazmalari xizmatlarini chetlab o'tib, ushbu taklifni qabul qilgan har bir kishi tejaydigan taxminiy summa."
 
-#: .\base\templates\index.html:136 .\base\templates\index.html:264
+#: .\base\templates\index.html:185 .\base\templates\index.html:313
+#: .\information.txt:532 .\information.txt:660
 msgid "potential savings"
 msgstr "potensial tejash"
 
-#: .\base\templates\index.html:140 .\base\templates\index.html:268
+#: .\base\templates\index.html:189 .\base\templates\index.html:317
+#: .\information.txt:536 .\information.txt:664
 msgid "Contact:"
 msgstr "Aloqa:"
 
-#: .\base\templates\index.html:175
+#: .\base\templates\index.html:224 .\information.txt:571
 msgid "Social Accounts:"
 msgstr "Ijtimoiy tarmoq hisoblari:"
 
-#: .\base\templates\index.html:197 .\base\templates\index.html:281
+#: .\base\templates\index.html:246 .\base\templates\index.html:330
+#: .\information.txt:593 .\information.txt:677
 msgid "Contact information hidden. Use the message form to connect."
 msgstr "Aloqa maʼlumotlari yashirilgan. Bog'lanish uchun xabar shaklidan foydalaning."
 
-#: .\base\templates\index.html:207 .\base\templates\index.html:291
+#: .\base\templates\index.html:256 .\base\templates\index.html:340
+#: .\information.txt:603 .\information.txt:687
 msgid "Start Conversation"
 msgstr "Suhbatni boshlash"
 
-#: .\base\templates\index.html:219
+#: .\base\templates\index.html:268 .\information.txt:615
 msgid "No active send requests available."
 msgstr "Faol jo'natish so'rovlari mavjud emas."
 
-#: .\base\templates\index.html:228
+#: .\base\templates\index.html:277 .\information.txt:624
 msgid "Offers to Receive Money from Uzbekistan"
 msgstr "O'zbekistondan pul qabul qilish takliflari"
 
-#: .\base\templates\index.html:246
+#: .\base\templates\index.html:295 .\information.txt:642
 msgid "Receive:"
 msgstr "Qabul qilish:"
 
-#: .\base\templates\index.html:303
+#: .\base\templates\index.html:352 .\information.txt:699
 msgid "No active receive requests available."
 msgstr "Faol qabul qilish so'rovlari mavjud emas."
 
-#: .\base\templates\index.html:315 .\base\templates\index.html:320
+#: .\base\templates\index.html:364 .\base\templates\index.html:369
+#: .\information.txt:711 .\information.txt:716
 msgid "Post an Offer"
 msgstr "Taklif joylashtirish"
 
-#: .\base\templates\index.html:316
+#: .\base\templates\index.html:365 .\information.txt:712
 msgid "Didn't find a suitable offer?"
 msgstr "Mos taklif topa olmadingizmi?"
 
-#: .\base\templates\index.html:318
+#: .\base\templates\index.html:367 .\information.txt:714
 msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
 msgstr "O'z taklifingizni joylashtirish tashabbusini oling va pul ayirboshlamoqchi bo'lgan boshqalar bilan bog'laning."
 
-#: .\base\templates\index.html:327
+#: .\base\templates\index.html:376 .\information.txt:723
 msgid "Why Choose Us?"
 msgstr "Nima uchun bizni tanlaysiz?"
 
-#: .\base\templates\index.html:333
+#: .\base\templates\index.html:382 .\information.txt:729
 msgid "No Fees"
 msgstr "To'lovlar yo'q"
 
-#: .\base\templates\index.html:334
+#: .\base\templates\index.html:383 .\information.txt:730
 msgid "Exchange money without any commissions or hidden charges."
 msgstr "Hech qanday komissiya yoki yashirin to'lovlarsiz pul ayirboshlang."
 
-#: .\base\templates\index.html:340
+#: .\base\templates\index.html:389 .\information.txt:736
 msgid "Direct Connection"
 msgstr "To'g'ridan-to'g'ri aloqa"
 
-#: .\base\templates\index.html:341
+#: .\base\templates\index.html:390 .\information.txt:737
 msgid "Connect directly with other users through our secure chat system."
 msgstr "Xavfsiz chat tizimimiz orqali boshqa foydalanuvchilar bilan to'g'ridan-to'g'ri bog'laning."
 
-#: .\base\templates\index.html:347
+#: .\base\templates\index.html:396 .\information.txt:743
 msgid "Secure"
 msgstr "Xavfsiz"
 
-#: .\base\templates\index.html:348
+#: .\base\templates\index.html:397 .\information.txt:744
 msgid "Your data is protected, and we don't handle any money transfers."
 msgstr "Sizning ma'lumotlaringiz himoyalangan va biz hech qanday pul o'tkazmalarini amalga oshirmaymiz."
 
-#: .\base\templates\index.html:357
+#: .\base\templates\index.html:406 .\information.txt:753
 msgid "How It Works"
 msgstr "Qanday ishlaydi"
 
-#: .\base\templates\index.html:363
+#: .\base\templates\index.html:412 .\information.txt:759
 msgid "1. Post Your Offer"
 msgstr "1. Taklifingizni joylashtiring"
 
-#: .\base\templates\index.html:364
+#: .\base\templates\index.html:413 .\information.txt:760
 msgid "Create an offer to send or receive money with your preferred terms."
 msgstr "O'zingiz afzal ko'rgan shartlar bilan pul jo'natish yoki qabul qilish taklifini yarating."
 
-#: .\base\templates\index.html:370
+#: .\base\templates\index.html:419 .\information.txt:766
 msgid "2. Connect with Others"
 msgstr "2. Boshqalar bilan bog'laning"
 
-#: .\base\templates\index.html:371
+#: .\base\templates\index.html:420 .\information.txt:767
 msgid "Browse offers and start a conversation with potential matches."
 msgstr "Takliflarni ko'rib chiqing va potensial mos keluvchilar bilan suhbatni boshlang."
 
-#: .\base\templates\index.html:377
+#: .\base\templates\index.html:426 .\information.txt:773
 msgid "3. Exchange Money"
 msgstr "3. Pul ayirboshlang"
 
-#: .\base\templates\index.html:378
+#: .\base\templates\index.html:427 .\information.txt:774
 msgid "Agree on terms and complete the transaction securely."
 msgstr "Shartlarga kelishing va tranzaksiyani xavfsiz tarzda yakunlang."
 
@@ -322,35 +439,35 @@ msgstr "Muhim sanalar"
 msgid "Users"
 msgstr "Foydalanuvchilar"
 
-#: .\exchange\models.py:12
+#: .\exchange\models.py:13
 msgid "Send to Uzbekistan"
 msgstr "O'zbekistonga jo'natish"
 
-#: .\exchange\models.py:13
+#: .\exchange\models.py:14
 msgid "Receive from Uzbekistan"
 msgstr "O'zbekistondan qabul qilish"
 
-#: .\exchange\models.py:16
+#: .\exchange\models.py:17
 msgid "Japanese Yen"
 msgstr "Yapon Iyeni"
 
-#: .\exchange\models.py:17
+#: .\exchange\models.py:18
 msgid "Uzbekistan Sum"
 msgstr "O'zbekiston So'mi"
 
-#: .\exchange\models.py:18
+#: .\exchange\models.py:19
 msgid "US Dollar"
 msgstr "AQSh Dollari"
 
-#: .\exchange\models.py:21
+#: .\exchange\models.py:22
 msgid "Active"
 msgstr "Faol"
 
-#: .\exchange\models.py:22 .\exchange\templates\exchange\conversation.html:141
+#: .\exchange\models.py:23 .\exchange\templates\exchange\conversation.html:145
 msgid "Completed"
 msgstr "Tugallangan"
 
-#: .\exchange\models.py:35
+#: .\exchange\models.py:36
 msgid "Hide contacts from other users"
 msgstr "Boshqa foydalanuvchilardan aloqa maʼlumotlarini yashirish"
 
@@ -358,104 +475,62 @@ msgstr "Boshqa foydalanuvchilardan aloqa maʼlumotlarini yashirish"
 msgid "Conversation"
 msgstr "Suhbat"
 
-#: .\exchange\templates\exchange\conversation.html:60
+#: .\exchange\templates\exchange\conversation.html:62
 #: .\exchange\templates\exchange\conversations_list.html:22
 msgid "Search chats..."
 msgstr "Chatlarni qidirish..."
 
-#: .\exchange\templates\exchange\conversation.html:60
-#: .\exchange\templates\exchange\conversation.html:162
+#: .\exchange\templates\exchange\conversation.html:63
 #: .\exchange\templates\exchange\conversation.html:168
-#: .\exchange\templates\exchange\conversation.html:174
-#: .\exchange\templates\exchange\conversation.html:180
+#: .\exchange\templates\exchange\conversation.html:176
+#: .\exchange\templates\exchange\conversation.html:184
+#: .\exchange\templates\exchange\conversation.html:192
 #: .\exchange\templates\exchange\conversations_list.html:22
 msgid "coming soon!"
 msgstr "tez kunda!"
 
-#: .\exchange\templates\exchange\conversation.html:103
+#: .\exchange\templates\exchange\conversation.html:107
 #: .\exchange\templates\exchange\conversations_list.html:72
 msgid "Your offer"
 msgstr "Sizning taklifingiz"
 
-#: .\exchange\templates\exchange\conversation.html:105
+#: .\exchange\templates\exchange\conversation.html:109
 #: .\exchange\templates\exchange\conversations_list.html:74
 #, python-format
-msgid "by %(conv.request.user.username)s"
-msgstr "%(conv.request.user.username)s tomonidan"
+msgid "by %(username)s"
+msgstr "%(username)s tomonidan"
 
-#: .\exchange\templates\exchange\conversation.html:155
+#: .\exchange\templates\exchange\conversation.html:160
 msgid "Delete this chat"
 msgstr "Ushbu chatni o'chirish"
 
-#: .\exchange\templates\exchange\conversation.html:160
+#: .\exchange\templates\exchange\conversation.html:165
 msgid "Share my contact"
 msgstr "Aloqa maʼlumotlarimni ulashish"
 
-#: .\exchange\templates\exchange\conversation.html:166
+#: .\exchange\templates\exchange\conversation.html:173
 msgid "Block this user"
 msgstr "Ushbu foydalanuvchini bloklash"
 
-#: .\exchange\templates\exchange\conversation.html:172
+#: .\exchange\templates\exchange\conversation.html:181
 msgid "Report this user"
 msgstr "Ushbu foydalanuvchi haqida xabar berish"
 
-#: .\exchange\templates\exchange\conversation.html:178
+#: .\exchange\templates\exchange\conversation.html:189
 msgid "Mute notifications"
 msgstr "Bildirishnomalarni o'chirish"
 
-#: .\exchange\templates\exchange\conversation.html:184
+#: .\exchange\templates\exchange\conversation.html:197
 msgid "Unmute notifications"
 msgstr "Bildirishnomalarni yoqish"
 
-#: .\exchange\templates\exchange\conversation.html:217
+#: .\exchange\templates\exchange\conversation.html:234
 msgid "Send"
 msgstr "Yuborish"
 
 #: .\exchange\templates\exchange\conversations_list.html:3
 msgid "My Conversations"
 msgstr "Mening Suhbatlarim"
-
-#: .\exchange\templates\exchange\create_offer.html:10
-msgid "Create an offer"
-msgstr "Taklif yaratish"
-
-#: .\exchange\templates\exchange\create_offer.html:18
-#: .\exchange\templates\exchange\update_offer.html:18
-msgid "Offer Type"
-msgstr "Taklif turi"
-
-#: .\exchange\templates\exchange\create_offer.html:31
-#: .\exchange\templates\exchange\my_offers.html:148
-#: .\exchange\templates\exchange\update_offer.html:31
-msgid "Amount"
-msgstr "Miqdor"
-
-#: .\exchange\templates\exchange\create_offer.html:40
-#: .\exchange\templates\exchange\update_offer.html:40
-msgid "Currency"
-msgstr "Valyuta"
-
-#: .\exchange\templates\exchange\create_offer.html:53
-#: .\exchange\templates\exchange\my_offers.html:161
-#: .\exchange\templates\exchange\update_offer.html:53
-msgid "Deadline"
-msgstr "Muddati"
-
-#: .\exchange\templates\exchange\create_offer.html:72
-#: .\exchange\templates\exchange\my_offers.html:222
-#: .\exchange\templates\exchange\update_offer.html:85
-msgid "Hide Contacts"
-msgstr "Aloqalarni yashirish"
-
-#: .\exchange\templates\exchange\create_offer.html:80
-#: .\exchange\templates\exchange\my_offers.html:209
-#: .\exchange\templates\exchange\update_offer.html:93
-msgid "Conditions"
-msgstr "Shartlar"
-
-#: .\exchange\templates\exchange\create_offer.html:89
-msgid "Submit Request"
-msgstr "So'rovni yuborish"
 
 #: .\exchange\templates\exchange\my_offers.html:116
 msgid "My Offers"
@@ -465,14 +540,34 @@ msgstr "Mening Takliflarim"
 msgid "Here are the offers you have made available for others to see"
 msgstr "Bu yerda siz boshqalar ko'rishi uchun taqdim etgan takliflar"
 
+#: .\exchange\templates\exchange\my_offers.html:148
+#: .\exchange\templates\exchange\offer_form.html:30
+msgid "Amount"
+msgstr "Miqdor"
+
+#: .\exchange\templates\exchange\my_offers.html:161
+#: .\exchange\templates\exchange\offer_form.html:50
+msgid "Deadline"
+msgstr "Muddati"
+
 #: .\exchange\templates\exchange\my_offers.html:174
-#: .\exchange\templates\exchange\update_offer.html:62
+#: .\exchange\templates\exchange\offer_form.html:61
 msgid "Status"
 msgstr "Holat"
 
 #: .\exchange\templates\exchange\my_offers.html:193
 msgid "Potential Savings"
 msgstr "Potensial tejash"
+
+#: .\exchange\templates\exchange\my_offers.html:209
+#: .\exchange\templates\exchange\offer_form.html:92
+msgid "Conditions"
+msgstr "Shartlar"
+
+#: .\exchange\templates\exchange\my_offers.html:222
+#: .\exchange\templates\exchange\offer_form.html:82
+msgid "Hide Contacts"
+msgstr "Aloqalarni yashirish"
 
 #: .\exchange\templates\exchange\my_offers.html:252
 msgid "Complete"
@@ -506,6 +601,34 @@ msgstr "Taklif yarating va boshqalar bilan to'g'ridan-to'g'ri bog'laning, pulni 
 msgid "Create Your Offer Now"
 msgstr "Hoziroq Taklifingizni Yarating"
 
+#: .\exchange\templates\exchange\my_offers.html:348
+msgid "Confirm Deletion"
+msgstr "O'chirishni tasdiqlash"
+
+#: .\exchange\templates\exchange\my_offers.html:349
+msgid "Are you sure you want to delete this offer? This action cannot be undone. Deleting this offer will also delete the conversations (if any) regarding this offer with other users."
+msgstr "Haqiqatan ham ushbu taklifni o'chirib tashlamoqchimisiz? Bu amalni bekor qilib bo'lmaydi. Ushbu taklifni o'chirish, shuningdek, boshqa foydalanuvchilar bilan ushbu taklifga oid suhbatlarni (agar mavjud bo'lsa) ham o'chirib tashlaydi."
+
+#: .\exchange\templates\exchange\offer_form.html:20
+msgid "Offer Type"
+msgstr "Taklif turi"
+
+#: .\exchange\templates\exchange\offer_form.html:40
+msgid "Currency"
+msgstr "Valyuta"
+
+#: .\exchange\templates\exchange\offer_form.html:55
+msgid "Please use your local time."
+msgstr "Iltimos, mahalliy vaqtingizdan foydalaning."
+
+#: .\exchange\templates\exchange\offer_form.html:86
+msgid "If checked, your contact info won't be shown until you start a conversation."
+msgstr "Agar belgilansa, siz suhbat boshlamaguningizcha aloqa ma'lumotlaringiz ko'rsatilmaydi."
+
+#: .\exchange\templates\exchange\offer_form.html:97
+msgid "Optional: Specify any conditions for the exchange."
+msgstr "Ixtiyoriy: Ayirboshlash uchun har qanday shartlarni belgilang."
+
 #: .\exchange\templates\exchange\send_message.html:4
 #: .\exchange\templates\exchange\send_message.html:22
 msgid "Send Message"
@@ -535,27 +658,38 @@ msgstr "O'zbekistondan pul qabul qilish"
 msgid "Back to Home"
 msgstr "Bosh sahifaga qaytish"
 
-#: .\exchange\templates\exchange\update_offer.html:4
-#: .\exchange\templates\exchange\update_offer.html:102
-msgid "Update Offer"
-msgstr "Taklifni yangilash"
-
-#: .\exchange\templates\exchange\update_offer.html:11
-msgid "Update your offer"
-msgstr "Taklifingizni yangilang"
-
-#: .\exchange\views.py:40
+#: .\exchange\views.py:38
 msgid "New offer created successfully"
 msgstr "Yangi taklif muvaffaqiyatli yaratildi"
 
-#: .\exchange\views.py:88
+#: .\exchange\views.py:43
+msgid "Create an Offer"
+msgstr "Yangi taklif yaratish"
+
+#: .\exchange\views.py:44
+msgid "Create Offer"
+msgstr "Taklif yaratish"
+
+#: .\exchange\views.py:57
+msgid "Update Your Offer"
+msgstr "Taklifingizni yangilang"
+
+#: .\exchange\views.py:58
+msgid "Update Offer"
+msgstr "Taklifni yangilash"
+
+#: .\exchange\views.py:62
+msgid "Offer updated successfully"
+msgstr "Taklif muvaffaqiyatli yangilandi"
+
+#: .\exchange\views.py:80
 msgid "Offer completed successfully"
 msgstr "Taklif muvaffaqiyatli yakunlandi"
 
-#: .\exchange\views.py:103
+#: .\exchange\views.py:95
 msgid "Offer deleted successfully"
 msgstr "Taklif muvaffaqiyatli o'chirildi"
 
-#: .\exchange\views.py:235 .\exchange\views.py:238
+#: .\exchange\views.py:207 .\exchange\views.py:210
 msgid "Conversation deleted successfully."
 msgstr "Suhbat muvaffaqiyatli o'chirildi."

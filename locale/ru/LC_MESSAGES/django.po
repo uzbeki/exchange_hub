@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-13 02:23+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-14 22:24+0900\n"
+"PO-Revision-Date: 2025-04-14 22:18+0900\n"
+"Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Russian <LL@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:261
+#: .\base\templates\allauth\layouts\base.html:261 .\information.txt:417
 msgid "Sign In"
 msgstr "Войти"
 
@@ -40,265 +40,382 @@ msgstr "Отправить мне код для входа"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-msgid "Open Exchange Platform"
-msgstr "Открытая Платформа Обмена"
+#: .\base\templates\allauth\layouts\base.html:145 .\base\templates\index.html:2
+#: .\base\templates\index.html:106 .\information.txt:168 .\information.txt:171
+#: .\information.txt:301 .\information.txt:444 .\information.txt:453
+msgid "Open Exchange Hub"
+msgstr "Платформа Открытого Обмена"
 
 #: .\base\templates\allauth\layouts\base.html:113
-#: .\base\templates\allauth\layouts\base.html:115
+#: .\base\templates\allauth\layouts\base.html:115 .\information.txt:269
+#: .\information.txt:271
 msgid "Toggle theme"
 msgstr "Переключить тему"
 
-#: .\base\templates\allauth\layouts\base.html:121
+#: .\base\templates\allauth\layouts\base.html:121 .\information.txt:277
 msgid "Light"
 msgstr "Светлая"
 
-#: .\base\templates\allauth\layouts\base.html:128
+#: .\base\templates\allauth\layouts\base.html:128 .\information.txt:284
 msgid "Dark"
 msgstr "Темная"
 
-#: .\base\templates\allauth\layouts\base.html:135
+#: .\base\templates\allauth\layouts\base.html:135 .\information.txt:291
 msgid "Auto"
 msgstr "Авто"
 
-#: .\base\templates\allauth\layouts\base.html:141
+#: .\base\templates\allauth\layouts\base.html:141 .\information.txt:297
 msgid "Skip to main content"
 msgstr "Перейти к основному содержанию"
 
-#: .\base\templates\allauth\layouts\base.html:145
-msgid "Open Exchange Hub"
-msgstr "Центр Открытого Обмена"
-
-#: .\base\templates\allauth\layouts\base.html:152
+#: .\base\templates\allauth\layouts\base.html:152 .\information.txt:308
 msgid "Toggle navigation"
 msgstr "Переключить навигацию"
 
-#: .\base\templates\allauth\layouts\base.html:157
+#: .\base\templates\allauth\layouts\base.html:157 .\information.txt:313
 msgid "Project links"
 msgstr "Ссылки проекта"
 
-#: .\base\templates\allauth\layouts\base.html:160
-#: .\exchange\templates\exchange\create_offer.html:3
+#: .\base\templates\allauth\layouts\base.html:160 .\information.txt:316
 msgid "New offer"
 msgstr "Новое предложение"
 
 #: .\base\templates\allauth\layouts\base.html:164
-#: .\exchange\templates\exchange\my_offers.html:1
+#: .\exchange\templates\exchange\my_offers.html:1 .\information.txt:320
 msgid "My offers"
 msgstr "Мои предложения"
 
 #: .\base\templates\allauth\layouts\base.html:168
 #: .\exchange\templates\exchange\my_offers.html:235
-#: .\exchange\templates\exchange\my_offers.html:271
+#: .\exchange\templates\exchange\my_offers.html:271 .\information.txt:324
 msgid "Conversations"
 msgstr "Беседы"
 
 #: .\base\templates\allauth\layouts\base.html:181
-#: .\base\templates\allauth\layouts\base.html:183
+#: .\base\templates\allauth\layouts\base.html:183 .\information.txt:337
+#: .\information.txt:339
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: .\base\templates\allauth\layouts\base.html:198
+#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
 msgid "You are logged in via"
 msgstr "Вы вошли через"
 
-#: .\base\templates\allauth\layouts\base.html:198
+#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\base\templates\allauth\layouts\base.html:211
+#: .\base\templates\allauth\layouts\base.html:211 .\information.txt:367
 msgid "Change Email"
 msgstr "Изменить Email"
 
-#: .\base\templates\allauth\layouts\base.html:218
+#: .\base\templates\allauth\layouts\base.html:218 .\information.txt:374
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\base\templates\allauth\layouts\base.html:225
+#: .\base\templates\allauth\layouts\base.html:225 .\information.txt:381
 msgid "Change Phone"
 msgstr "Изменить телефон"
 
-#: .\base\templates\allauth\layouts\base.html:232
+#: .\base\templates\allauth\layouts\base.html:232 .\information.txt:388
 msgid "Third-Party Accounts"
 msgstr "Сторонние аккаунты"
 
-#: .\base\templates\allauth\layouts\base.html:239
+#: .\base\templates\allauth\layouts\base.html:239 .\information.txt:395
 msgid "Two-Factor Authentication"
 msgstr "Двухфакторная аутентификация"
 
-#: .\base\templates\allauth\layouts\base.html:246
+#: .\base\templates\allauth\layouts\base.html:246 .\information.txt:402
 msgid "Sessions"
 msgstr "Сессии"
 
-#: .\base\templates\allauth\layouts\base.html:255
+#: .\base\templates\allauth\layouts\base.html:255 .\information.txt:411
 msgid "Sign out"
 msgstr "Выйти"
 
-#: .\base\templates\allauth\layouts\base.html:276
-msgid "Open Exchange Platform. All rights reserved, except the right to overpay bank fees—that's all yours!"
-msgstr "Открытая платформа обмена. Все права защищены, кроме права переплачивать банковские комиссии — это все ваше!"
+#: .\base\templates\allauth\layouts\base.html:277 .\information.txt:432
+msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "Платформа Открытого Обмена. Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"
 
-#: .\base\templates\index.html:2 .\base\templates\index.html:57
-msgid "Money Exchange Platform"
-msgstr "Платформа обмена денег"
+#: .\base\templates\allauth\layouts\base.html:281
+msgid "Have questions? Check out our FAQ!"
+msgstr "Есть вопросы? Ознакомьтесь с нашим FAQ!"
 
-#: .\base\templates\index.html:59
+#: .\base\templates\faq.html:2
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\base\templates\faq.html:20 .\base\templates\faq.html:151
+msgid "What is Open Exchange Hub?"
+msgstr "Что такое Платформа Открытого Обмена?"
+
+#: .\base\templates\faq.html:23 .\base\templates\faq.html:161
+msgid "Open Exchange Hub is a platform designed to connect people, particularly Uzbek expats, who need to exchange currencies (like JPY, UZS, USD) between Uzbekistan and other countries. We facilitate direct peer-to-peer connections, allowing users to bypass traditional bank fees and transfer service commissions."
+msgstr "Платформа Открытого Обмена – это платформа, предназначенная для связи людей, особенно узбекских экспатов, которым необходимо обменивать валюты (например, JPY, UZS, USD) между Узбекистаном и другими странами. Мы обеспечиваем прямые peer-to-peer соединения, позволяя пользователям обходить традиционные банковские комиссии и комиссии за услуги переводов."
+
+#: .\base\templates\faq.html:28 .\base\templates\faq.html:181
+msgid "Are there any fees to use the platform?"
+msgstr "Взимается ли плата за использование платформы?"
+
+#: .\base\templates\faq.html:31 .\base\templates\faq.html:191
+msgid "No, Open Exchange Hub is completely free to use for posting offers, browsing, and connecting with other users via chat. We do not charge any commissions or hidden fees. The exchange terms and methods are agreed upon directly between users."
+msgstr "Нет, Платформа Открытого Обмена полностью бесплатна для размещения предложений, просмотра и общения с другими пользователями через чат. Мы не взимаем никаких комиссий или скрытых платежей. Условия и методы обмена согласовываются непосредственно между пользователями."
+
+#: .\base\templates\faq.html:36 .\base\templates\faq.html:211
+msgid "How does the exchange process work?"
+msgstr "Как работает процесс обмена?"
+
+#: .\base\templates\faq.html:39
+msgid "1. Post or Find: Create an offer detailing your exchange need (amount, currency, direction) or browse existing offers from other users. 2. Connect: Use our secure chat system to contact a user whose offer matches your needs, or wait for someone to contact you about your offer. 3. Agree: Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer in each country), and timing directly with the other user. 4. Exchange: Complete the transaction offline based on your agreement. Important: Open Exchange Hub facilitates the connection but does not handle or guarantee the money transfer itself."
+msgstr "1. Разместите или найдите: Создайте предложение, подробно описав ваши потребности в обмене (сумма, валюта, направление), или просмотрите существующие предложения других пользователей. 2. Свяжитесь: Используйте нашу безопасную систему чата, чтобы связаться с пользователем, чье предложение соответствует вашим потребностям, или подождите, пока кто-нибудь свяжется с вами по поводу вашего предложения. 3. Договоритесь: Обсудите и согласуйте обменный курс, способы оплаты (например, местный банковский перевод в каждой стране) и сроки непосредственно с другим пользователем. 4. Обменяйте: Завершите транзакцию офлайн на основе вашего соглашения. Важно: Платформа Открытого Обмена облегчает связь, но не обрабатывает и не гарантирует сам денежный перевод."
+
+#: .\base\templates\faq.html:44 .\base\templates\faq.html:261
+msgid "Is exchanging money through this platform safe?"
+msgstr "Безопасно ли обменивать деньги через эту платформу?"
+
+#: .\base\templates\faq.html:47
+msgid "We provide tools like secure chat and user authentication to help you connect safely. However, the actual money exchange happens directly between users outside of our platform. We strongly recommend exercising caution: Start with small amounts if exchanging with someone new. Verify the identity of the other person if possible. Use trusted payment methods. Be wary of offers that seem too good to be true. Open Exchange Hub is not responsible for disputes or losses arising from offline transactions."
+msgstr "Мы предоставляем такие инструменты, как безопасный чат и аутентификация пользователей, чтобы помочь вам безопасно связываться. Однако фактический обмен денег происходит напрямую между пользователями вне нашей платформы. Мы настоятельно рекомендуем проявлять осторожность: Начинайте с небольших сумм при обмене с кем-то новым. По возможности проверяйте личность другого человека. Используйте надежные способы оплаты. Остерегайтесь предложений, которые кажутся слишком хорошими, чтобы быть правдой. Платформа Открытого Обмена не несет ответственности за споры или убытки, возникающие в результате офлайн-транзакций."
+
+#: .\base\templates\faq.html:52 .\base\templates\faq.html:298
+msgid "Can I hide my contact information?"
+msgstr "Могу ли я скрыть свою контактную информацию?"
+
+#: .\base\templates\faq.html:55 .\base\templates\faq.html:308
+msgid "Yes. When creating an offer, you have the option to hide your direct contact details (like email or phone number) from public view on the offer card. If you choose this, other users will need to initiate a conversation through our platform's chat system to connect with you."
+msgstr "Да. При создании предложения у вас есть возможность скрыть ваши прямые контактные данные (например, адрес электронной почты или номер телефона) от публичного просмотра на карточке предложения. Если вы выберете эту опцию, другим пользователям нужно будет начать разговор через систему чата нашей платформы, чтобы связаться с вами."
+
+#: .\base\templates\faq.html:60 .\base\templates\faq.html:330
+msgid "How do I post an offer?"
+msgstr "Как разместить предложение?"
+
+#: .\base\templates\faq.html:63
+msgid "You need to be logged in to post an offer. Click the \\\"New Offer\\\" link in the navigation bar. Fill in the required details: Type: Whether you want to \\\"Send to Uzbekistan\\\" or \\\"Receive from Uzbekistan\\\". Amount & Currency: The amount and the currency you are offering or requesting (e.g., 100,000 JPY, 500 USD, 5,000,000 UZS). Deadline: When you need the exchange completed by (optional). Urgent: Mark if the request is urgent. Conditions: Any specific terms or preferred methods (optional). Hide Contacts: Choose whether to display your contact info on the offer. Then, submit the form. Your offer will appear on the main page."
+msgstr "Вам необходимо войти в систему, чтобы разместить предложение. Нажмите на ссылку «Новое предложение» в навигационной панели. Заполните необходимые данные: Тип: Хотите ли вы «Отправить в Узбекистан» или «Получить из Узбекистана». Сумма и валюта: Сумма и валюта, которую вы предлагаете или запрашиваете (например, 100 000 JPY, 500 USD, 5 000 000 UZS). Срок: К какому времени вам нужно завершить обмен (необязательно). Срочно: Отметьте, если запрос срочный. Условия: Любые конкретные условия или предпочтительные методы (необязательно). Скрыть контакты: Выберите, отображать ли вашу контактную информацию в предложении. Затем отправьте форму. Ваше предложение появится на главной странице."
+
+#: .\base\templates\faq.html:68 .\base\templates\faq.html:371
+msgid "How does the chat system work?"
+msgstr "Как работает система чата?"
+
+#: .\base\templates\faq.html:71
+msgid "When you find an offer you're interested in (and you are logged in), click the \\\"Start Conversation\\\" button on the offer card (unless it's your own offer). This will open a private chat session between you and the offer creator. You can access all your ongoing conversations from the \\\"Conversations\\\" link in the navigation bar. You'll also see a notification badge for unread messages."
+msgstr "Когда вы находите интересующее вас предложение (и вы вошли в систему), нажмите кнопку «Начать беседу» на карточке предложения (если это не ваше собственное предложение). Это откроет приватный чат между вами и создателем предложения. Вы можете получить доступ ко всем вашим текущим беседам по ссылке «Беседы» в навигационной панели. Вы также увидите значок уведомления о непрочитанных сообщениях."
+
+#: .\base\templates\faq.html:76
+msgid "What does \\\"Potential Savings\\\" mean?"
+msgstr "Что означает «Потенциальная экономия»?"
+
+#: .\base\templates\faq.html:79
+msgid "The \\\"Potential Savings\\\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used."
+msgstr "Сумма «Потенциальная экономия», указанная на карточках предложений, является *оценкой* сборов, которые вы и другая сторона могли бы сэкономить, используя нашу платформу вместо традиционных банков или служб денежных переводов, которые часто взимают высокие комиссии и невыгодные обменные курсы. Этот расчет в настоящее время является приблизительным (например, на основе процента) и предназначен для того, чтобы подчеркнуть преимущества peer-to-peer обмена. Фактическая экономия зависит от конкретных альтернативных методов, которые вы бы использовали."
+
+#: .\base\templates\faq.html:132
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "Часто задаваемые вопросы (FAQ)"
+
+#: .\base\templates\faq.html:136
+msgid "General"
+msgstr "Общие"
+
+#: .\base\templates\faq.html:221
+msgid "<ol> <li> <strong>Post or Find:</strong> Create an offer detailing your exchange need (amount, currency, direction) or browse existing offers from other users. </li> <li> <strong>Connect:</strong> Use our secure chat system to contact a user whose offer matches your needs, or wait for someone to contact you about your offer. </li> <li> <strong>Agree:</strong> Discuss and agree on the exchange rate, payment methods (e.g., local bank transfer in each country), and timing directly with the other user. </li> <li> <strong>Exchange:</strong> Complete the transaction offline based on your agreement. <strong>Important:</strong> Open Exchange Hub facilitates the connection but does <strong>not</strong> handle or guarantee the money transfer itself. </li> </ol>"
+msgstr "<ol> <li> <strong>Разместите или найдите:</strong> Создайте предложение, подробно описав ваши потребности в обмене (сумма, валюта, направление), или просмотрите существующие предложения других пользователей. </li> <li> <strong>Свяжитесь:</strong> Используйте нашу безопасную систему чата, чтобы связаться с пользователем, чье предложение соответствует вашим потребностям, или подождите, пока кто-нибудь свяжется с вами по поводу вашего предложения. </li> <li> <strong>Договоритесь:</strong> Обсудите и согласуйте обменный курс, способы оплаты (например, местный банковский перевод в каждой стране) и сроки непосредственно с другим пользователем. </li> <li> <strong>Обменяйте:</strong> Завершите транзакцию офлайн на основе вашего соглашения. <strong>Важно:</strong> Платформа Открытого Обмена облегчает связь, но <strong>не</strong> обрабатывает и не гарантирует сам денежный перевод. </li> </ol>"
+
+#: .\base\templates\faq.html:246
+msgid "Security & Trust"
+msgstr "Безопасность и доверие"
+
+#: .\base\templates\faq.html:271
+msgid "We provide tools like secure chat and user authentication to help you connect safely. However, the actual money exchange happens directly between users outside of our platform. We strongly recommend exercising caution: <ul> <li>Start with small amounts if exchanging with someone new.</li> <li>Verify the identity of the other person if possible.</li> <li>Use trusted payment methods.</li> <li>Be wary of offers that seem too good to be true.</li> </ul> Open Exchange Hub is not responsible for disputes or losses arising from offline transactions."
+msgstr "Мы предоставляем такие инструменты, как безопасный чат и аутентификация пользователей, чтобы помочь вам безопасно связываться. Однако фактический обмен денег происходит напрямую между пользователями вне нашей платформы. Мы настоятельно рекомендуем проявлять осторожность: <ul> <li>Начинайте с небольших сумм при обмене с кем-то новым.</li> <li>По возможности проверяйте личность другого человека.</li> <li>Используйте надежные способы оплаты.</li> <li>Остерегайтесь предложений, которые кажутся слишком хорошими, чтобы быть правдой.</li> </ul> Платформа Открытого Обмена не несет ответственности за споры или убытки, возникающие в результате офлайн-транзакций."
+
+#: .\base\templates\faq.html:315
+msgid "Using the Platform"
+msgstr "Использование платформы"
+
+#: .\base\templates\faq.html:340
+msgid "You need to be logged in to post an offer. Click the \"New Offer\" link in the navigation bar. Fill in the required details: <ul> <li><strong>Type:</strong> Whether you want to \"Send to Uzbekistan\" or \"Receive from Uzbekistan\".</li> <li> <strong>Amount & Currency:</strong> The amount and the currency you are offering or requesting (e.g., 100,000 JPY, 500 USD, 5,000,000 UZS). </li> <li><strong>Deadline:</strong> When you need the exchange completed by (optional).</li> <li><strong>Urgent:</strong> Mark if the request is urgent.</li> <li><strong>Conditions:</strong> Any specific terms or preferred methods (optional).</li> <li><strong>Hide Contacts:</strong> Choose whether to display your contact info on the offer.</li> </ul> Then, submit the form. Your offer will appear on the main page."
+msgstr "Вам необходимо войти в систему, чтобы разместить предложение. Нажмите на ссылку «Новое предложение» в навигационной панели. Заполните необходимые данные: <ul> <li><strong>Тип:</strong> Хотите ли вы «Отправить в Узбекистан» или «Получить из Узбекистана».</li> <li> <strong>Сумма и валюта:</strong> Сумма и валюта, которую вы предлагаете или запрашиваете (например, 100 000 JPY, 500 USD, 5 000 000 UZS). </li> <li><strong>Срок:</strong> К какому времени вам нужно завершить обмен (необязательно).</li> <li><strong>Срочно:</strong> Отметьте, если запрос срочный.</li> <li><strong>Условия:</strong> Любые конкретные условия или предпочтительные методы (необязательно).</li> <li><strong>Скрыть контакты:</strong> Выберите, отображать ли вашу контактную информацию в предложении.</li> </ul> Затем отправьте форму. Ваше предложение появится на главной странице."
+
+#: .\base\templates\faq.html:381
+msgid "When you find an offer you're interested in (and you are logged in), click the \"Start Conversation\" button on the offer card (unless it's your own offer). This will open a private chat session between you and the offer creator. You can access all your ongoing conversations from the \"Conversations\" link in the navigation bar. You'll also see a notification badge for unread messages."
+msgstr "Когда вы находите интересующее вас предложение (и вы вошли в систему), нажмите кнопку «Начать беседу» на карточке предложения (если это не ваше собственное предложение). Это откроет приватный чат между вами и создателем предложения. Вы можете получить доступ ко всем вашим текущим беседам по ссылке «Беседы» в навигационной панели. Вы также увидите значок уведомления о непрочитанных сообщениях."
+
+#: .\base\templates\faq.html:402
+msgid "What does \"Potential Savings\" mean?"
+msgstr "Что означает «Потенциальная экономия»?"
+
+#: .\base\templates\faq.html:412
+msgid "The \"Potential Savings\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used."
+msgstr "Сумма «Потенциальная экономия», указанная на карточках предложений, является *оценкой* сборов, которые вы и другая сторона могли бы сэкономить, используя нашу платформу вместо традиционных банков или служб денежных переводов, которые часто взимают высокие комиссии и невыгодные обменные курсы. Этот расчет в настоящее время является приблизительным (например, на основе процента) и предназначен для того, чтобы подчеркнуть преимущества peer-to-peer обмена. Фактическая экономия зависит от конкретных альтернативных методов, которые вы бы использовали."
+
+#: .\base\templates\index.html:108 .\information.txt:455
 msgid "Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen."
 msgstr "Соединяем узбекских экспатов для беспрепятственной отправки и получения денег — без сборов, без комиссий, без посредников."
 
-#: .\base\templates\index.html:61
+#: .\base\templates\index.html:110 .\information.txt:457
 msgid "Get Started"
 msgstr "Начать"
 
-#: .\base\templates\index.html:76
+#: .\base\templates\index.html:125 .\information.txt:472
 msgid "Send Money"
 msgstr "Отправить деньги"
 
-#: .\base\templates\index.html:77
+#: .\base\templates\index.html:126 .\information.txt:473
 msgid "Looking to send money to Uzbekistan? Find expats who need funds."
 msgstr "Хотите отправить деньги в Узбекистан? Найдите экспатов, которым нужны средства."
 
-#: .\base\templates\index.html:78 .\base\templates\index.html:90
+#: .\base\templates\index.html:127 .\base\templates\index.html:139
+#: .\information.txt:474 .\information.txt:486
 msgid "View Offers"
 msgstr "Посмотреть предложения"
 
-#: .\base\templates\index.html:88
+#: .\base\templates\index.html:137 .\information.txt:484
 msgid "Receive Money"
 msgstr "Получить деньги"
 
-#: .\base\templates\index.html:89
+#: .\base\templates\index.html:138 .\information.txt:485
 msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
 msgstr "Нужно получить деньги из Узбекистана? Свяжитесь с отправителями мгновенно."
 
-#: .\base\templates\index.html:98
+#: .\base\templates\index.html:147 .\information.txt:494
 msgid "Offers to Send Money to Uzbekistan"
 msgstr "Предложения по отправке денег в Узбекистан"
 
-#: .\base\templates\index.html:118
+#: .\base\templates\index.html:167 .\information.txt:514
 msgid "Send:"
 msgstr "Отправить:"
 
-#: .\base\templates\index.html:121 .\base\templates\index.html:249
+#: .\base\templates\index.html:170 .\base\templates\index.html:298
+#: .\information.txt:517 .\information.txt:645
 msgid "Deadline:"
 msgstr "Срок:"
 
-#: .\base\templates\index.html:122 .\base\templates\index.html:250
-#: .\exchange\templates\exchange\conversation.html:100
+#: .\base\templates\index.html:171 .\base\templates\index.html:299
+#: .\exchange\templates\exchange\conversation.html:104
 #: .\exchange\templates\exchange\conversations_list.html:69
-#: .\exchange\templates\exchange\create_offer.html:63
 #: .\exchange\templates\exchange\my_offers.html:134
-#: .\exchange\templates\exchange\update_offer.html:76
+#: .\exchange\templates\exchange\offer_form.html:72 .\information.txt:518
+#: .\information.txt:646
 msgid "Urgent"
 msgstr "Срочно"
 
-#: .\base\templates\index.html:126 .\base\templates\index.html:254
+#: .\base\templates\index.html:175 .\base\templates\index.html:303
+#: .\information.txt:522 .\information.txt:650
 msgid "Conditions:"
 msgstr "Условия:"
 
-#: .\base\templates\index.html:129 .\base\templates\index.html:257
+#: .\base\templates\index.html:178 .\base\templates\index.html:306
+#: .\information.txt:525 .\information.txt:653
 msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
 msgstr "Это приблизительная сумма, которую вы и любой, кто примет это предложение, сэкономите, пропустив банковские комиссии или услуги денежных переводов."
 
-#: .\base\templates\index.html:136 .\base\templates\index.html:264
+#: .\base\templates\index.html:185 .\base\templates\index.html:313
+#: .\information.txt:532 .\information.txt:660
 msgid "potential savings"
 msgstr "потенциальная экономия"
 
-#: .\base\templates\index.html:140 .\base\templates\index.html:268
+#: .\base\templates\index.html:189 .\base\templates\index.html:317
+#: .\information.txt:536 .\information.txt:664
 msgid "Contact:"
 msgstr "Контакт:"
 
-#: .\base\templates\index.html:175
+#: .\base\templates\index.html:224 .\information.txt:571
 msgid "Social Accounts:"
 msgstr "Социальные сети:"
 
-#: .\base\templates\index.html:197 .\base\templates\index.html:281
+#: .\base\templates\index.html:246 .\base\templates\index.html:330
+#: .\information.txt:593 .\information.txt:677
 msgid "Contact information hidden. Use the message form to connect."
 msgstr "Контактная информация скрыта. Используйте форму сообщения для связи."
 
-#: .\base\templates\index.html:207 .\base\templates\index.html:291
+#: .\base\templates\index.html:256 .\base\templates\index.html:340
+#: .\information.txt:603 .\information.txt:687
 msgid "Start Conversation"
 msgstr "Начать беседу"
 
-#: .\base\templates\index.html:219
+#: .\base\templates\index.html:268 .\information.txt:615
 msgid "No active send requests available."
 msgstr "Нет активных запросов на отправку."
 
-#: .\base\templates\index.html:228
+#: .\base\templates\index.html:277 .\information.txt:624
 msgid "Offers to Receive Money from Uzbekistan"
 msgstr "Предложения по получению денег из Узбекистана"
 
-#: .\base\templates\index.html:246
+#: .\base\templates\index.html:295 .\information.txt:642
 msgid "Receive:"
 msgstr "Получить:"
 
-#: .\base\templates\index.html:303
+#: .\base\templates\index.html:352 .\information.txt:699
 msgid "No active receive requests available."
 msgstr "Нет активных запросов на получение."
 
-#: .\base\templates\index.html:315 .\base\templates\index.html:320
+#: .\base\templates\index.html:364 .\base\templates\index.html:369
+#: .\information.txt:711 .\information.txt:716
 msgid "Post an Offer"
 msgstr "Разместить предложение"
 
-#: .\base\templates\index.html:316
+#: .\base\templates\index.html:365 .\information.txt:712
 msgid "Didn't find a suitable offer?"
 msgstr "Не нашли подходящее предложение?"
 
-#: .\base\templates\index.html:318
+#: .\base\templates\index.html:367 .\information.txt:714
 msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
 msgstr "Проявите инициативу, разместите свое предложение и свяжитесь с другими, кто хочет обменять деньги."
 
-#: .\base\templates\index.html:327
+#: .\base\templates\index.html:376 .\information.txt:723
 msgid "Why Choose Us?"
 msgstr "Почему выбирают нас?"
 
-#: .\base\templates\index.html:333
+#: .\base\templates\index.html:382 .\information.txt:729
 msgid "No Fees"
 msgstr "Без комиссий"
 
-#: .\base\templates\index.html:334
+#: .\base\templates\index.html:383 .\information.txt:730
 msgid "Exchange money without any commissions or hidden charges."
 msgstr "Обменивайте деньги без каких-либо комиссий или скрытых платежей."
 
-#: .\base\templates\index.html:340
+#: .\base\templates\index.html:389 .\information.txt:736
 msgid "Direct Connection"
 msgstr "Прямое соединение"
 
-#: .\base\templates\index.html:341
+#: .\base\templates\index.html:390 .\information.txt:737
 msgid "Connect directly with other users through our secure chat system."
 msgstr "Связывайтесь напрямую с другими пользователями через нашу безопасную систему чата."
 
-#: .\base\templates\index.html:347
+#: .\base\templates\index.html:396 .\information.txt:743
 msgid "Secure"
 msgstr "Безопасно"
 
-#: .\base\templates\index.html:348
+#: .\base\templates\index.html:397 .\information.txt:744
 msgid "Your data is protected, and we don't handle any money transfers."
 msgstr "Ваши данные защищены, и мы не обрабатываем никаких денежных переводов."
 
-#: .\base\templates\index.html:357
+#: .\base\templates\index.html:406 .\information.txt:753
 msgid "How It Works"
 msgstr "Как это работает"
 
-#: .\base\templates\index.html:363
+#: .\base\templates\index.html:412 .\information.txt:759
 msgid "1. Post Your Offer"
 msgstr "1. Разместите свое предложение"
 
-#: .\base\templates\index.html:364
+#: .\base\templates\index.html:413 .\information.txt:760
 msgid "Create an offer to send or receive money with your preferred terms."
 msgstr "Создайте предложение на отправку или получение денег на ваших условиях."
 
-#: .\base\templates\index.html:370
+#: .\base\templates\index.html:419 .\information.txt:766
 msgid "2. Connect with Others"
 msgstr "2. Свяжитесь с другими"
 
-#: .\base\templates\index.html:371
+#: .\base\templates\index.html:420 .\information.txt:767
 msgid "Browse offers and start a conversation with potential matches."
 msgstr "Просматривайте предложения и начинайте беседу с потенциальными партнерами."
 
-#: .\base\templates\index.html:377
+#: .\base\templates\index.html:426 .\information.txt:773
 msgid "3. Exchange Money"
 msgstr "3. Обменяйте деньги"
 
-#: .\base\templates\index.html:378
+#: .\base\templates\index.html:427 .\information.txt:774
 msgid "Agree on terms and complete the transaction securely."
 msgstr "Согласуйте условия и безопасно завершите транзакцию."
 
@@ -322,35 +439,35 @@ msgstr "Важные даты"
 msgid "Users"
 msgstr "Пользователи"
 
-#: .\exchange\models.py:12
+#: .\exchange\models.py:13
 msgid "Send to Uzbekistan"
 msgstr "Отправить в Узбекистан"
 
-#: .\exchange\models.py:13
+#: .\exchange\models.py:14
 msgid "Receive from Uzbekistan"
 msgstr "Получить из Узбекистана"
 
-#: .\exchange\models.py:16
+#: .\exchange\models.py:17
 msgid "Japanese Yen"
 msgstr "Японская иена"
 
-#: .\exchange\models.py:17
+#: .\exchange\models.py:18
 msgid "Uzbekistan Sum"
 msgstr "Узбекский сум"
 
-#: .\exchange\models.py:18
+#: .\exchange\models.py:19
 msgid "US Dollar"
 msgstr "Доллар США"
 
-#: .\exchange\models.py:21
+#: .\exchange\models.py:22
 msgid "Active"
 msgstr "Активно"
 
-#: .\exchange\models.py:22 .\exchange\templates\exchange\conversation.html:141
+#: .\exchange\models.py:23 .\exchange\templates\exchange\conversation.html:145
 msgid "Completed"
 msgstr "Завершено"
 
-#: .\exchange\models.py:35
+#: .\exchange\models.py:36
 msgid "Hide contacts from other users"
 msgstr "Скрыть контакты от других пользователей"
 
@@ -358,104 +475,62 @@ msgstr "Скрыть контакты от других пользователе
 msgid "Conversation"
 msgstr "Беседа"
 
-#: .\exchange\templates\exchange\conversation.html:60
+#: .\exchange\templates\exchange\conversation.html:62
 #: .\exchange\templates\exchange\conversations_list.html:22
 msgid "Search chats..."
 msgstr "Поиск чатов..."
 
-#: .\exchange\templates\exchange\conversation.html:60
-#: .\exchange\templates\exchange\conversation.html:162
+#: .\exchange\templates\exchange\conversation.html:63
 #: .\exchange\templates\exchange\conversation.html:168
-#: .\exchange\templates\exchange\conversation.html:174
-#: .\exchange\templates\exchange\conversation.html:180
+#: .\exchange\templates\exchange\conversation.html:176
+#: .\exchange\templates\exchange\conversation.html:184
+#: .\exchange\templates\exchange\conversation.html:192
 #: .\exchange\templates\exchange\conversations_list.html:22
 msgid "coming soon!"
 msgstr "скоро!"
 
-#: .\exchange\templates\exchange\conversation.html:103
+#: .\exchange\templates\exchange\conversation.html:107
 #: .\exchange\templates\exchange\conversations_list.html:72
 msgid "Your offer"
 msgstr "Ваше предложение"
 
-#: .\exchange\templates\exchange\conversation.html:105
+#: .\exchange\templates\exchange\conversation.html:109
 #: .\exchange\templates\exchange\conversations_list.html:74
 #, python-format
-msgid "by %(conv.request.user.username)s"
-msgstr "от %(conv.request.user.username)s"
+msgid "by %(username)s"
+msgstr "от %(username)s"
 
-#: .\exchange\templates\exchange\conversation.html:155
+#: .\exchange\templates\exchange\conversation.html:160
 msgid "Delete this chat"
 msgstr "Удалить этот чат"
 
-#: .\exchange\templates\exchange\conversation.html:160
+#: .\exchange\templates\exchange\conversation.html:165
 msgid "Share my contact"
 msgstr "Поделиться моими контактами"
 
-#: .\exchange\templates\exchange\conversation.html:166
+#: .\exchange\templates\exchange\conversation.html:173
 msgid "Block this user"
 msgstr "Заблокировать этого пользователя"
 
-#: .\exchange\templates\exchange\conversation.html:172
+#: .\exchange\templates\exchange\conversation.html:181
 msgid "Report this user"
 msgstr "Пожаловаться на этого пользователя"
 
-#: .\exchange\templates\exchange\conversation.html:178
+#: .\exchange\templates\exchange\conversation.html:189
 msgid "Mute notifications"
 msgstr "Отключить уведомления"
 
-#: .\exchange\templates\exchange\conversation.html:184
+#: .\exchange\templates\exchange\conversation.html:197
 msgid "Unmute notifications"
 msgstr "Включить уведомления"
 
-#: .\exchange\templates\exchange\conversation.html:217
+#: .\exchange\templates\exchange\conversation.html:234
 msgid "Send"
 msgstr "Отправить"
 
 #: .\exchange\templates\exchange\conversations_list.html:3
 msgid "My Conversations"
 msgstr "Мои беседы"
-
-#: .\exchange\templates\exchange\create_offer.html:10
-msgid "Create an offer"
-msgstr "Создать предложение"
-
-#: .\exchange\templates\exchange\create_offer.html:18
-#: .\exchange\templates\exchange\update_offer.html:18
-msgid "Offer Type"
-msgstr "Тип предложения"
-
-#: .\exchange\templates\exchange\create_offer.html:31
-#: .\exchange\templates\exchange\my_offers.html:148
-#: .\exchange\templates\exchange\update_offer.html:31
-msgid "Amount"
-msgstr "Сумма"
-
-#: .\exchange\templates\exchange\create_offer.html:40
-#: .\exchange\templates\exchange\update_offer.html:40
-msgid "Currency"
-msgstr "Валюта"
-
-#: .\exchange\templates\exchange\create_offer.html:53
-#: .\exchange\templates\exchange\my_offers.html:161
-#: .\exchange\templates\exchange\update_offer.html:53
-msgid "Deadline"
-msgstr "Срок"
-
-#: .\exchange\templates\exchange\create_offer.html:72
-#: .\exchange\templates\exchange\my_offers.html:222
-#: .\exchange\templates\exchange\update_offer.html:85
-msgid "Hide Contacts"
-msgstr "Скрыть контакты"
-
-#: .\exchange\templates\exchange\create_offer.html:80
-#: .\exchange\templates\exchange\my_offers.html:209
-#: .\exchange\templates\exchange\update_offer.html:93
-msgid "Conditions"
-msgstr "Условия"
-
-#: .\exchange\templates\exchange\create_offer.html:89
-msgid "Submit Request"
-msgstr "Отправить запрос"
 
 #: .\exchange\templates\exchange\my_offers.html:116
 msgid "My Offers"
@@ -465,14 +540,34 @@ msgstr "Мои предложения"
 msgid "Here are the offers you have made available for others to see"
 msgstr "Здесь представлены предложения, которые вы сделали доступными для других"
 
+#: .\exchange\templates\exchange\my_offers.html:148
+#: .\exchange\templates\exchange\offer_form.html:30
+msgid "Amount"
+msgstr "Сумма"
+
+#: .\exchange\templates\exchange\my_offers.html:161
+#: .\exchange\templates\exchange\offer_form.html:50
+msgid "Deadline"
+msgstr "Срок"
+
 #: .\exchange\templates\exchange\my_offers.html:174
-#: .\exchange\templates\exchange\update_offer.html:62
+#: .\exchange\templates\exchange\offer_form.html:61
 msgid "Status"
 msgstr "Статус"
 
 #: .\exchange\templates\exchange\my_offers.html:193
 msgid "Potential Savings"
 msgstr "Потенциальная экономия"
+
+#: .\exchange\templates\exchange\my_offers.html:209
+#: .\exchange\templates\exchange\offer_form.html:92
+msgid "Conditions"
+msgstr "Условия"
+
+#: .\exchange\templates\exchange\my_offers.html:222
+#: .\exchange\templates\exchange\offer_form.html:82
+msgid "Hide Contacts"
+msgstr "Скрыть контакты"
 
 #: .\exchange\templates\exchange\my_offers.html:252
 msgid "Complete"
@@ -488,7 +583,7 @@ msgstr "Пометить как срочное"
 
 #: .\exchange\templates\exchange\my_offers.html:306
 msgid "Remove Urgency"
-msgstr "Снять пометку 'Срочно'"
+msgstr "Снять пометку «Срочно»"
 
 #: .\exchange\templates\exchange\my_offers.html:317
 msgid "Delete"
@@ -505,6 +600,34 @@ msgstr "Создайте предложение сейчас и свяжитес
 #: .\exchange\templates\exchange\my_offers.html:336
 msgid "Create Your Offer Now"
 msgstr "Создайте свое предложение сейчас"
+
+#: .\exchange\templates\exchange\my_offers.html:348
+msgid "Confirm Deletion"
+msgstr "Подтвердить удаление"
+
+#: .\exchange\templates\exchange\my_offers.html:349
+msgid "Are you sure you want to delete this offer? This action cannot be undone. Deleting this offer will also delete the conversations (if any) regarding this offer with other users."
+msgstr "Вы уверены, что хотите удалить это предложение? Это действие нельзя отменить. Удаление этого предложения также удалит беседы (если таковые имеются) с другими пользователями, касающиеся этого предложения."
+
+#: .\exchange\templates\exchange\offer_form.html:20
+msgid "Offer Type"
+msgstr "Тип предложения"
+
+#: .\exchange\templates\exchange\offer_form.html:40
+msgid "Currency"
+msgstr "Валюта"
+
+#: .\exchange\templates\exchange\offer_form.html:55
+msgid "Please use your local time."
+msgstr "Пожалуйста, используйте ваше местное время."
+
+#: .\exchange\templates\exchange\offer_form.html:86
+msgid "If checked, your contact info won't be shown until you start a conversation."
+msgstr "Если отмечено, ваша контактная информация не будет показана, пока вы не начнете беседу."
+
+#: .\exchange\templates\exchange\offer_form.html:97
+msgid "Optional: Specify any conditions for the exchange."
+msgstr "Необязательно: Укажите любые условия для обмена."
 
 #: .\exchange\templates\exchange\send_message.html:4
 #: .\exchange\templates\exchange\send_message.html:22
@@ -535,27 +658,38 @@ msgstr "получение денег из Узбекистана"
 msgid "Back to Home"
 msgstr "Вернуться на главную"
 
-#: .\exchange\templates\exchange\update_offer.html:4
-#: .\exchange\templates\exchange\update_offer.html:102
-msgid "Update Offer"
-msgstr "Обновить предложение"
-
-#: .\exchange\templates\exchange\update_offer.html:11
-msgid "Update your offer"
-msgstr "Обновите ваше предложение"
-
-#: .\exchange\views.py:40
+#: .\exchange\views.py:38
 msgid "New offer created successfully"
 msgstr "Новое предложение успешно создано"
 
-#: .\exchange\views.py:88
+#: .\exchange\views.py:43
+msgid "Create an Offer"
+msgstr "Создать предложение"
+
+#: .\exchange\views.py:44
+msgid "Create Offer"
+msgstr "Создать предложение"
+
+#: .\exchange\views.py:57
+msgid "Update Your Offer"
+msgstr "Обновите ваше предложение"
+
+#: .\exchange\views.py:58
+msgid "Update Offer"
+msgstr "Обновить предложение"
+
+#: .\exchange\views.py:62
+msgid "Offer updated successfully"
+msgstr "Предложение успешно обновлено"
+
+#: .\exchange\views.py:80
 msgid "Offer completed successfully"
 msgstr "Предложение успешно завершено"
 
-#: .\exchange\views.py:103
+#: .\exchange\views.py:95
 msgid "Offer deleted successfully"
 msgstr "Предложение успешно удалено"
 
-#: .\exchange\views.py:235 .\exchange\views.py:238
+#: .\exchange\views.py:207 .\exchange\views.py:210
 msgid "Conversation deleted successfully."
 msgstr "Беседа успешно удалена."

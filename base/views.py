@@ -23,3 +23,20 @@ class IndexView(TemplateView):
             }
         )
         return ctx
+
+
+class FAQView(TemplateView):
+    template_name = "faq.html"
+
+    def get_context_data(self, **kwargs):
+        ctx = super().get_context_data(**kwargs)
+        ctx.update(
+            {
+                "unread_messages": (
+                    Message.get_unread_message_count_by_user(self.request.user)
+                    if self.request.user.is_authenticated
+                    else 0
+                ),
+            }
+        )
+        return ctx

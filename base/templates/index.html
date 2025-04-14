@@ -1,5 +1,54 @@
 {% extends "allauth/layouts/base.html" %} {% load allauth humanize static i18n %} 
-{% block head_title %}{% translate 'Money Exchange Platform' %}{% endblock %} 
+{% block head_title %}{% translate 'Open Exchange Hub' %}{% endblock %} 
+{% block extra_head %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Open Exchange Hub",
+    "url": "https://exchangehub.bekhruz.com",
+    "description": "Peer-to-peer Open Exchange Hub connecting Uzbek expats to send and receive money between Uzbekistan and other countries without fees.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://exchangehub.bekhruz.com/search?q={search_term_string}", // If you add search functionality
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does Open Exchange Hub work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "1. Post an offer detailing the amount and currency you want to send or receive. 2. Browse existing offers and connect with users via secure chat. 3. Agree on the exchange terms and arrange the transfer offline. We facilitate the connection, not the transfer itself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there any fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, Open Exchange Hub is completely free to use. We charge no commissions or hidden fees. Users connect directly and arrange the exchange themselves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it secure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide a platform for connection and secure chat. User data is protected. However, the actual money exchange happens directly between users offline. We recommend users follow safe practices when arranging exchanges."
+        }
+      }
+    ]
+  }
+</script>
+{% endblock extra_head %}
 
 {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -54,7 +103,7 @@
 <!-- Hero Section -->
 <section class="py-5 text-center text-white" style="background: linear-gradient(135deg, var(--bs-primary) 0%, var(--bs-secondary) 100%)">
   <div class="container">
-    <h1 class="display-3 fw-bold">{% translate 'Money Exchange Platform' %}</h1>
+    <h1 class="display-3 fw-bold">{% translate 'Open Exchange Hub' %}</h1>
     <p class="lead my-4">
       {% translate 'Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen.' %}
     </p>
