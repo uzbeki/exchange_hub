@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 22:24+0900\n"
+"POT-Creation-Date: 2025-04-15 01:13+0900\n"
 "PO-Revision-Date: 2025-04-14 22:18+0900\n"
 "Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:261 .\information.txt:417
+#: .\base\templates\allauth\layouts\base.html:273 .\information.txt:417
 msgid "Sign In"
 msgstr "Войти"
 
@@ -40,110 +40,110 @@ msgstr "Отправить мне код для входа"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-#: .\base\templates\allauth\layouts\base.html:145 .\base\templates\index.html:2
+#: .\base\templates\allauth\layouts\base.html:155 .\base\templates\index.html:2
 #: .\base\templates\index.html:106 .\information.txt:168 .\information.txt:171
 #: .\information.txt:301 .\information.txt:444 .\information.txt:453
 msgid "Open Exchange Hub"
 msgstr "Платформа Открытого Обмена"
 
-#: .\base\templates\allauth\layouts\base.html:113
-#: .\base\templates\allauth\layouts\base.html:115 .\information.txt:269
+#: .\base\templates\allauth\layouts\base.html:122
+#: .\base\templates\allauth\layouts\base.html:124 .\information.txt:269
 #: .\information.txt:271
 msgid "Toggle theme"
 msgstr "Переключить тему"
 
-#: .\base\templates\allauth\layouts\base.html:121 .\information.txt:277
+#: .\base\templates\allauth\layouts\base.html:130 .\information.txt:277
 msgid "Light"
 msgstr "Светлая"
 
-#: .\base\templates\allauth\layouts\base.html:128 .\information.txt:284
+#: .\base\templates\allauth\layouts\base.html:137 .\information.txt:284
 msgid "Dark"
 msgstr "Темная"
 
-#: .\base\templates\allauth\layouts\base.html:135 .\information.txt:291
+#: .\base\templates\allauth\layouts\base.html:144 .\information.txt:291
 msgid "Auto"
 msgstr "Авто"
 
-#: .\base\templates\allauth\layouts\base.html:141 .\information.txt:297
+#: .\base\templates\allauth\layouts\base.html:150 .\information.txt:297
 msgid "Skip to main content"
 msgstr "Перейти к основному содержанию"
 
-#: .\base\templates\allauth\layouts\base.html:152 .\information.txt:308
+#: .\base\templates\allauth\layouts\base.html:164 .\information.txt:308
 msgid "Toggle navigation"
 msgstr "Переключить навигацию"
 
-#: .\base\templates\allauth\layouts\base.html:157 .\information.txt:313
+#: .\base\templates\allauth\layouts\base.html:169 .\information.txt:313
 msgid "Project links"
 msgstr "Ссылки проекта"
 
-#: .\base\templates\allauth\layouts\base.html:160 .\information.txt:316
+#: .\base\templates\allauth\layouts\base.html:172 .\information.txt:316
 msgid "New offer"
 msgstr "Новое предложение"
 
-#: .\base\templates\allauth\layouts\base.html:164
+#: .\base\templates\allauth\layouts\base.html:176
 #: .\exchange\templates\exchange\my_offers.html:1 .\information.txt:320
 msgid "My offers"
 msgstr "Мои предложения"
 
-#: .\base\templates\allauth\layouts\base.html:168
+#: .\base\templates\allauth\layouts\base.html:180
 #: .\exchange\templates\exchange\my_offers.html:235
 #: .\exchange\templates\exchange\my_offers.html:271 .\information.txt:324
 msgid "Conversations"
 msgstr "Беседы"
 
-#: .\base\templates\allauth\layouts\base.html:181
-#: .\base\templates\allauth\layouts\base.html:183 .\information.txt:337
+#: .\base\templates\allauth\layouts\base.html:193
+#: .\base\templates\allauth\layouts\base.html:195 .\information.txt:337
 #: .\information.txt:339
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
 msgid "You are logged in via"
 msgstr "Вы вошли через"
 
-#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\base\templates\allauth\layouts\base.html:211 .\information.txt:367
+#: .\base\templates\allauth\layouts\base.html:223 .\information.txt:367
 msgid "Change Email"
 msgstr "Изменить Email"
 
-#: .\base\templates\allauth\layouts\base.html:218 .\information.txt:374
+#: .\base\templates\allauth\layouts\base.html:230 .\information.txt:374
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\base\templates\allauth\layouts\base.html:225 .\information.txt:381
+#: .\base\templates\allauth\layouts\base.html:237 .\information.txt:381
 msgid "Change Phone"
 msgstr "Изменить телефон"
 
-#: .\base\templates\allauth\layouts\base.html:232 .\information.txt:388
+#: .\base\templates\allauth\layouts\base.html:244 .\information.txt:388
 msgid "Third-Party Accounts"
 msgstr "Сторонние аккаунты"
 
-#: .\base\templates\allauth\layouts\base.html:239 .\information.txt:395
+#: .\base\templates\allauth\layouts\base.html:251 .\information.txt:395
 msgid "Two-Factor Authentication"
 msgstr "Двухфакторная аутентификация"
 
-#: .\base\templates\allauth\layouts\base.html:246 .\information.txt:402
+#: .\base\templates\allauth\layouts\base.html:258 .\information.txt:402
 msgid "Sessions"
 msgstr "Сессии"
 
-#: .\base\templates\allauth\layouts\base.html:255 .\information.txt:411
+#: .\base\templates\allauth\layouts\base.html:267 .\information.txt:411
 msgid "Sign out"
 msgstr "Выйти"
 
-#: .\base\templates\allauth\layouts\base.html:277 .\information.txt:432
-msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
-msgstr "Платформа Открытого Обмена. Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"
+#: .\base\templates\allauth\layouts\base.html:297
+msgid "All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"
 
-#: .\base\templates\allauth\layouts\base.html:281
-msgid "Have questions? Check out our FAQ!"
-msgstr "Есть вопросы? Ознакомьтесь с нашим FAQ!"
-
-#: .\base\templates\faq.html:2
+#: .\base\templates\allauth\layouts\base.html:305 .\base\templates\faq.html:2
 msgid "FAQ"
 msgstr "FAQ"
+
+#: .\base\templates\allauth\layouts\base.html:311
+msgid "GitHub"
+msgstr ""
 
 #: .\base\templates\faq.html:20 .\base\templates\faq.html:151
 msgid "What is Open Exchange Hub?"
@@ -693,3 +693,7 @@ msgstr "Предложение успешно удалено"
 #: .\exchange\views.py:207 .\exchange\views.py:210
 msgid "Conversation deleted successfully."
 msgstr "Беседа успешно удалена."
+
+#: .\information.txt:432
+msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "Платформа Открытого Обмена. Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"

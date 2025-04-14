@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 22:24+0900\n"
+"POT-Creation-Date: 2025-04-15 01:13+0900\n"
 "PO-Revision-Date: 2025-04-14 22:14+0900\n"
 "Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Japanese <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:261 .\information.txt:417
+#: .\base\templates\allauth\layouts\base.html:273 .\information.txt:417
 msgid "Sign In"
 msgstr "サインイン"
 
@@ -40,110 +40,110 @@ msgstr "サインインコードを送信"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-#: .\base\templates\allauth\layouts\base.html:145 .\base\templates\index.html:2
+#: .\base\templates\allauth\layouts\base.html:155 .\base\templates\index.html:2
 #: .\base\templates\index.html:106 .\information.txt:168 .\information.txt:171
 #: .\information.txt:301 .\information.txt:444 .\information.txt:453
 msgid "Open Exchange Hub"
 msgstr "オープン両替ハブ"
 
-#: .\base\templates\allauth\layouts\base.html:113
-#: .\base\templates\allauth\layouts\base.html:115 .\information.txt:269
+#: .\base\templates\allauth\layouts\base.html:122
+#: .\base\templates\allauth\layouts\base.html:124 .\information.txt:269
 #: .\information.txt:271
 msgid "Toggle theme"
 msgstr "テーマを切り替える"
 
-#: .\base\templates\allauth\layouts\base.html:121 .\information.txt:277
+#: .\base\templates\allauth\layouts\base.html:130 .\information.txt:277
 msgid "Light"
 msgstr "ライト"
 
-#: .\base\templates\allauth\layouts\base.html:128 .\information.txt:284
+#: .\base\templates\allauth\layouts\base.html:137 .\information.txt:284
 msgid "Dark"
 msgstr "ダーク"
 
-#: .\base\templates\allauth\layouts\base.html:135 .\information.txt:291
+#: .\base\templates\allauth\layouts\base.html:144 .\information.txt:291
 msgid "Auto"
 msgstr "自動"
 
-#: .\base\templates\allauth\layouts\base.html:141 .\information.txt:297
+#: .\base\templates\allauth\layouts\base.html:150 .\information.txt:297
 msgid "Skip to main content"
 msgstr "メインコンテンツへスキップ"
 
-#: .\base\templates\allauth\layouts\base.html:152 .\information.txt:308
+#: .\base\templates\allauth\layouts\base.html:164 .\information.txt:308
 msgid "Toggle navigation"
 msgstr "ナビゲーションを切り替える"
 
-#: .\base\templates\allauth\layouts\base.html:157 .\information.txt:313
+#: .\base\templates\allauth\layouts\base.html:169 .\information.txt:313
 msgid "Project links"
 msgstr "プロジェクトリンク"
 
-#: .\base\templates\allauth\layouts\base.html:160 .\information.txt:316
+#: .\base\templates\allauth\layouts\base.html:172 .\information.txt:316
 msgid "New offer"
 msgstr "新規オファー"
 
-#: .\base\templates\allauth\layouts\base.html:164
+#: .\base\templates\allauth\layouts\base.html:176
 #: .\exchange\templates\exchange\my_offers.html:1 .\information.txt:320
 msgid "My offers"
 msgstr "マイオファー"
 
-#: .\base\templates\allauth\layouts\base.html:168
+#: .\base\templates\allauth\layouts\base.html:180
 #: .\exchange\templates\exchange\my_offers.html:235
 #: .\exchange\templates\exchange\my_offers.html:271 .\information.txt:324
 msgid "Conversations"
 msgstr "会話"
 
-#: .\base\templates\allauth\layouts\base.html:181
-#: .\base\templates\allauth\layouts\base.html:183 .\information.txt:337
+#: .\base\templates\allauth\layouts\base.html:193
+#: .\base\templates\allauth\layouts\base.html:195 .\information.txt:337
 #: .\information.txt:339
 msgid "Select Language"
 msgstr "言語を選択"
 
-#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
 msgid "You are logged in via"
 msgstr "次の方法でログインしています："
 
-#: .\base\templates\allauth\layouts\base.html:198 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
 msgid "Email"
 msgstr "Eメール"
 
-#: .\base\templates\allauth\layouts\base.html:211 .\information.txt:367
+#: .\base\templates\allauth\layouts\base.html:223 .\information.txt:367
 msgid "Change Email"
 msgstr "Eメールを変更"
 
-#: .\base\templates\allauth\layouts\base.html:218 .\information.txt:374
+#: .\base\templates\allauth\layouts\base.html:230 .\information.txt:374
 msgid "Change Password"
 msgstr "パスワードを変更"
 
-#: .\base\templates\allauth\layouts\base.html:225 .\information.txt:381
+#: .\base\templates\allauth\layouts\base.html:237 .\information.txt:381
 msgid "Change Phone"
 msgstr "電話番号を変更"
 
-#: .\base\templates\allauth\layouts\base.html:232 .\information.txt:388
+#: .\base\templates\allauth\layouts\base.html:244 .\information.txt:388
 msgid "Third-Party Accounts"
 msgstr "サードパーティアカウント"
 
-#: .\base\templates\allauth\layouts\base.html:239 .\information.txt:395
+#: .\base\templates\allauth\layouts\base.html:251 .\information.txt:395
 msgid "Two-Factor Authentication"
 msgstr "二要素認証"
 
-#: .\base\templates\allauth\layouts\base.html:246 .\information.txt:402
+#: .\base\templates\allauth\layouts\base.html:258 .\information.txt:402
 msgid "Sessions"
 msgstr "セッション"
 
-#: .\base\templates\allauth\layouts\base.html:255 .\information.txt:411
+#: .\base\templates\allauth\layouts\base.html:267 .\information.txt:411
 msgid "Sign out"
 msgstr "サインアウト"
 
-#: .\base\templates\allauth\layouts\base.html:277 .\information.txt:432
-msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
-msgstr "オープン両替ハブ。無断複写・転載を禁じます。ただし、銀行手数料を払いすぎる権利、それはあなたのものです！"
+#: .\base\templates\allauth\layouts\base.html:297
+msgid "All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "無断複写・転載を禁じます。ただし、銀行手数料を払いすぎる権利、それはあなたのものです！"
 
-#: .\base\templates\allauth\layouts\base.html:281
-msgid "Have questions? Check out our FAQ!"
-msgstr "ご不明な点はありますか？ FAQをご覧ください！"
-
-#: .\base\templates\faq.html:2
+#: .\base\templates\allauth\layouts\base.html:305 .\base\templates\faq.html:2
 msgid "FAQ"
 msgstr "FAQ"
+
+#: .\base\templates\allauth\layouts\base.html:311
+msgid "GitHub"
+msgstr ""
 
 #: .\base\templates\faq.html:20 .\base\templates\faq.html:151
 msgid "What is Open Exchange Hub?"
@@ -693,3 +693,10 @@ msgstr "オファーが正常に削除されました"
 #: .\exchange\views.py:207 .\exchange\views.py:210
 msgid "Conversation deleted successfully."
 msgstr "会話が正常に削除されました。"
+
+#: .\information.txt:432
+msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
+msgstr "オープン両替ハブ。無断複写・転載を禁じます。ただし、銀行手数料を払いすぎる権利、それはあなたのものです！"
+
+#~ msgid "Have questions? Check out our FAQ!"
+#~ msgstr "ご不明な点はありますか？ FAQをご覧ください！"
