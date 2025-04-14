@@ -151,7 +151,10 @@
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid px-lg-4">
-                    <a class="navbar-brand" href="/">{% translate 'Open Exchange Hub' %}</a>
+                    <a class="navbar-brand d-flex align-items-center" href="/">
+                        {% translate 'Open Exchange Hub' %}
+                        <span class="badge bg-warning text-dark ms-2">beta</span>
+                    </a>
                     <button class="navbar-toggler"
                             type="button"
                             data-bs-toggle="collapse"
@@ -285,7 +288,10 @@
                 <!-- Main Footer Content -->
                 <div class="col-md-8 col-lg-6">
                   <div class="mb-3">
-                    <h4 class="fw-bold text-primary mb-2">Open Exchange Hub</h4>
+                    <h4 class="fw-bold text-primary mb-2">
+                        Open Exchange Hub
+                        <span class="badge bg-warning text-dark ms-2">beta</span>
+                    </h4>
                     <p class="text-body mb-3 small">
                       © {{ now|date:"Y" }} {% translate "All rights reserved, except the right to overpay bank fees—that's all yours!" %}
                     </p>
