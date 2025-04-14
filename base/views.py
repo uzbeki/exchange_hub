@@ -1,6 +1,5 @@
 from django.views.generic.base import TemplateView
 from exchange.models import Message, Request
-from django.db import models
 
 
 class IndexView(TemplateView):
@@ -16,9 +15,11 @@ class IndexView(TemplateView):
                 "receive_requests": Request.objects.filter(
                     type="receive", status="active"
                 ).order_by("-created_at"),
-                "unread_messages": Message.objects.filter(
-                    ~models.Q(sender=self.request.user), is_read=False
-                ).count() if self.request.user.is_authenticated else 0,
+                "unread_messages": (
+                    Message.get_unread_message_count_by_user(self.request.user)
+                    if self.request.user.is_authenticated
+                    else 0
+                ),
             }
         )
         return ctx

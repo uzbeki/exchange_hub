@@ -22,10 +22,7 @@ from django.utils.translation import gettext_lazy as _
 class BaseMixin(LoginRequiredMixin, ContextMixin):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["unread_messages"] = Message.objects.filter(
-            ~models.Q(sender=self.request.user), is_read=False
-        ).count()
-
+        context["unread_messages"] = Message.get_unread_message_count_by_user(self.request.user)
         return context
 
 

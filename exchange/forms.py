@@ -58,6 +58,8 @@ class MessageForm(forms.ModelForm):
                     "class": "form-control me-2",
                     "placeholder": "Type your message...",
                     "required": "true",
+                    "autofocus": "true",
+                    "autocomplete": "off",
                 }
             ),
         }

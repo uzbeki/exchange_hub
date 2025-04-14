@@ -1,7 +1,7 @@
 {% extends "allauth/layouts/base.html" %}
 {% load allauth static %}
 {% block body %}
-<main class="container">
+<main class="{% block main_class %}container{% endblock %}">
     {% block content %}{% endblock %}
 </main>
 {% endblock %}

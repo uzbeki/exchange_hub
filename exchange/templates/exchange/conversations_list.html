@@ -71,7 +71,7 @@
             {% if conv.request.user == request.user %}
               <span class="badge bg-success ms-2">{% blocktrans %}Your offer{% endblocktrans %}</span>
             {% else %}
-              <span class="badge bg-secondary ms-2">{% blocktrans %}by {{ conv.request.user.username }}{% endblocktrans %}</span>
+              <span class="badge bg-secondary ms-2">{% blocktrans with username=conv.request.user.username %}by {{ username }}{% endblocktrans %}</span>
             {% endif %}
           </small>
         </div>

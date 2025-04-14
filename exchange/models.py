@@ -35,6 +35,7 @@ class Request(models.Model):
     hide_contacts = models.BooleanField(
         default=False, help_text=_("Hide contacts from other users")
     )
+
     @property
     def amount_with_currency(self):
         return f"{intcomma(self.amount)} {self.get_currency_display()}"
@@ -46,7 +47,6 @@ class Request(models.Model):
         # for now, it is an approximate amount based on the amount
         # this should be replaced with a real calculation based on the exchange rate
         return int(self.amount * Decimal(0.03))  # 3% savings
-
 
 
 class Conversation(models.Model):
@@ -112,3 +112,12 @@ class Message(models.Model):
 
     def __str__(self):
         return self.content
+
+    @classmethod
+    def get_unread_message_count_by_user(cls, user):
+        return cls.objects.filter(
+            conversation__in=Conversation.objects.filter(
+                models.Q(participant1=user) | models.Q(participant2=user)
+            ),
+            is_read=False,
+        ).exclude(sender=user).count()

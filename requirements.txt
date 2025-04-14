@@ -2,3 +2,4 @@ django-allauth[mfa,socialaccount,steam]>=65.7.0
 python-dotenv
 gunicorn
 psycopg2-binary
+Faker # used for generating fake data in tests

@@ -2,6 +2,7 @@
 {% load static i18n %}
 {% block head_title %}{% blocktrans %}Conversation{% endblocktrans %}{% endblock %}
 {% block head_extra %}<script defer src="{% static "exchange/js/conversation.js" %}"></script>{% endblock head_extra %}
+{% block main_class %}container-fluid{% endblock main_class %}
 {% block content %}
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="person-circle" viewBox="0 0 16 16">
@@ -51,13 +52,15 @@
   </symbol>
 
 </svg>
-<div class="container py-3 px-0 px-md-3">
+<div class="container-fluid py-3 px-0 px-md-3">
   <div class="row">
     <!-- Chat List -->
-    <div class="col-lg-4 col-12 mb-3 mb-lg-0">
+    <div class="col-lg-4 col-12 mb-3 mb-lg-0 overflow-auto" style="max-height: 90dvh;">
       <!-- Search Bar -->
       <div class="input-group mb-3">
-        <input type="text" class="form-control" disabled placeholder="{% blocktrans %}Search chats...{% endblocktrans %}" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}" />
+        <input type="text" class="form-control" disabled
+          placeholder="{% blocktrans %}Search chats...{% endblocktrans %}" data-bs-toggle="tooltip"
+          data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}" />
         <span class="input-group-text">
           <svg class="bi" width="16" height="16" fill="currentColor">
             <use xlink:href="#search"></use>
@@ -67,157 +70,172 @@
       <!-- Chat List Items -->
       <div class="list-group list-group-flush">
         {% for conv in conversations %}
-          <!-- Active Chat Item -->
-          <a href="{% url "conversation" conversation_id=conv.id %}" class="list-group-item list-group-item-action {% if conversation.id == conv.id %}active{% endif %}">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex">
-                <div class="flex-shrink-0 d-flex align-items-center">
-                  <svg class="bi" width="36" height="36" fill="currentColor">
-                    <use xlink:href="#person-circle"></use>
-                  </svg>
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h6 class="mb-1 text-truncate">
-                      {% if conv.participant1 == request.user %}
-                          {{ conv.participant2.username }}
-                      {% else %}
-                          {{ conv.participant1.username }}
-                      {% endif %}
-                  </h6>
-                  <small class="text-truncate {% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %}">
-                    {{ conv.last_message }}
-                  </small>
-                  <!-- Request Info -->
-                  <div class="mt-1">
-                    <small class="{% if conversation.id == conv.id %}text-light{% else %}text-muted{% endif %}">
-                      {% comment %} <i class="bi bi-box-arrow-in-right me-1"></i> {% endcomment %}
-                      <svg class="bi me-1" width="16" height="16" fill="currentColor">
-                        <use xlink:href="#{{conv.request.type}}"></use>
-                      </svg>
-                      {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
-                      {% if conv.request.urgent %}
-                        <span class="badge bg-danger ms-2">{% blocktrans %}Urgent{% endblocktrans %}</span>
-                      {% endif %}
-                      {% if conv.request.user == request.user %}
-                        <span class="badge bg-success ms-2">{% blocktrans %}Your offer{% endblocktrans %}</span>
-                      {% else %}
-                        <span class="badge bg-secondary ms-2">{% blocktrans %}by {{ conv.request.user.username }}{% endblocktrans %}</span>
-                      {% endif %}
-                    </small>
-                  </div>
-                </div>
+        <a href="{% url "conversation" conversation_id=conv.id %}"
+          class="list-group-item list-group-item-action {% if conversation.id == conv.id %}active{% endif %}">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-grow-1" style="min-width: 0;">
+              <div class="flex-shrink-0 d-flex align-items-center">
+                <svg class="bi" width="36" height="36" fill="currentColor">
+                  <use xlink:href="#person-circle"></use>
+                </svg>
               </div>
-              <div class="d-flex align-items-center">
-                <small class="{% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %} me-2">
-                  {{ conv.last_message_timestamp|time }}
+              <div class="flex-grow-1 ms-3" style="min-width: 0;">
+                <h6 class="mb-1 text-truncate">
+                  {% if conv.participant1 == request.user %}
+                  {{ conv.participant2.username }}
+                  {% else %}
+                  {{ conv.participant1.username }}
+                  {% endif %}
+                </h6>
+                <small
+                  class="d-block text-truncate {% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %}">
+                  {{ conv.last_message }}
                 </small>
-                <span class="badge bg-primary rounded-pill {% if conv.unread_count == 0 %}d-none{% endif %}">
-                  {{ conv.unread_count }}
-                </span>
+                <div class="mt-1">
+                  <small
+                    class="d-block text-truncate {% if conversation.id == conv.id %}text-light{% else %}text-muted{% endif %}">
+                    {% comment %} <i class="bi bi-box-arrow-in-right me-1"></i> {% endcomment %}
+                    <svg class="bi me-1" width="16" height="16" fill="currentColor">
+                      <use xlink:href="#{{conv.request.type}}"></use>
+                    </svg>
+                    {{ conv.request.type|title }} {{ conv.request.amount_with_currency }}
+                    {% if conv.request.urgent %}
+                    <span class="badge bg-danger ms-2">{% blocktrans %}Urgent{% endblocktrans %}</span>
+                    {% endif %}
+                    {% if conv.request.user == request.user %}
+                    <span class="badge bg-success ms-2">{% blocktrans %}Your offer{% endblocktrans %}</span>
+                    {% else %}
+                    <span class="badge bg-secondary ms-2">{% blocktrans with username=conv.request.user.username %}by {{ username }}{% endblocktrans %}</span>
+                    {% endif %}
+                  </small>
+                </div>
               </div>
             </div>
-          </a>
+            <div class="d-flex align-items-center flex-shrink-0 ms-2"> <small
+                class="{% if conversation.id == conv.id %}text-light{% else %}text-body-secondary{% endif %} me-2">
+                {{ conv.last_message_timestamp|time }}
+              </small>
+              <span class="badge bg-primary rounded-pill {% if conv.unread_count == 0 %}d-none{% endif %}">
+                {{ conv.unread_count }}
+              </span>
+            </div>
+          </div>
+        </a>
         {% endfor %}
       </div>
     </div>
 
-   <!-- Chat Window -->
-  <div class="col-lg-8 col-12">
-    <div class="card h-100">
-      <!-- Chat Header with Dropdown -->
-      <div class="card-header d-flex align-items-center">
-        <svg class="bi me-2 flex-shrink-0" width="28" height="28" fill="currentColor">
-          <use xlink:href="#person-circle"></use>
-        </svg>        
-        <h5 class="mb-0">
-          {% if conversation.participant1 == request.user %}
+    <!-- Chat Window -->
+    <div class="col-lg-8 col-12">
+      <div class="card h-100" style="max-height: 90dvh;">
+        <!-- Chat Header with Dropdown -->
+        <div class="card-header d-flex align-items-center">
+          <svg class="bi me-2 flex-shrink-0" width="28" height="28" fill="currentColor">
+            <use xlink:href="#person-circle"></use>
+          </svg>
+          <h5 class="mb-0">
+            {% if conversation.participant1 == request.user %}
             {{ conversation.participant2.username }}
-          {% else %}
+            {% else %}
             {{ conversation.participant1.username }}
-          {% endif %}
-          <small>({{ conversation.request }})</small>
-          {% if conversation.request.status == "completed" %}
+            {% endif %}
+            <small>({{ conversation.request }})</small>
+            {% if conversation.request.status == "completed" %}
             <span class="badge bg-success ms-2">{% blocktrans %}Completed{% endblocktrans %}</span>
-          {% endif %}
-        </h5>
-        <!-- Dropdown for Chat Actions -->
-        <div class="dropdown ms-auto">
-          <button class="btn btn-link" type="button" id="chatActionsDropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Chat actions">
-            <svg class="bi" width="20" height="20" fill="currentColor">
-              <use xlink:href="#three-dots-vertical"></use>
-            </svg>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="chatActionsDropdown">
-            <li><button class="dropdown-item" type="button" id="deleteChatButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#trash"/>
-              </svg>{% blocktrans %}Delete this chat{% endblocktrans %}</button>
-            </li>
-            <li><button class="dropdown-item" type="button" id="shareContactButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#share"/>
-              </svg>{% blocktrans %}Share my contact{% endblocktrans %}</button>
-            </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
-              <button class="dropdown-item" disabled type="button" id="blockUserButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#ban"/>
-              </svg>{% blocktrans %}Block this user{% endblocktrans %}</button>
-            </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
-              <button class="dropdown-item" disabled type="button" id="reportUserButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#flag"/>
-              </svg>{% blocktrans %}Report this user{% endblocktrans %}</button>
-            </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
-              <button class="dropdown-item" disabled type="button" id="muteNotificationsButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#bell-slash"/>
-              </svg>{% blocktrans %}Mute notifications{% endblocktrans %}</button>
-            </li>
-            <li data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
-              <button class="dropdown-item" disabled type="button" id="unmuteNotificationsButton" data-id="{{ conversation.id }}">
-              <svg class="bi me-2" width="16" height="16" fill="currentColor">
-                <use xlink:href="#bell"/>
-              </svg>{% blocktrans %}Unmute notifications{% endblocktrans %}</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Chat Messages -->
-      <div class="card-body" style="max-height: 400px; overflow-y: auto">
-        <div class="chat-messages">
-          {% for m in chat_messages %}
-          <!-- Received Message -->
-          <div class="mb-2 {% if m.sender == request.user %}d-flex justify-content-end{% endif %}">
-            <div class="{% if m.sender == request.user %}bg-primary text-white{% else %}bg-body-secondary{% endif %} p-2 rounded" style="max-width: 70%">
-              <small class="{% if m.sender == request.user %}text-white{% else %}text-muted{% endif %}">{{ m.sender.username }} • {{ m.timestamp|time }}
-                {% if m.is_read %}
-                <svg class="bi" width="16" height="16" fill="currentColor">
-                  <use xlink:href="#check2-all"></use>
-                </svg>
-                {% endif %}
-              </small>
-              <p class="mb-0">{{ m.content }}</p>
-            </div>
+            {% endif %}
+          </h5>
+          <!-- Dropdown for Chat Actions -->
+          <div class="dropdown ms-auto">
+            <button class="btn btn-link" type="button" id="chatActionsDropdown" data-bs-toggle="dropdown"
+              aria-expanded="false" aria-label="Chat actions">
+              <svg class="bi" width="20" height="20" fill="currentColor">
+                <use xlink:href="#three-dots-vertical"></use>
+              </svg>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="chatActionsDropdown">
+              <li><button class="dropdown-item" type="button" id="deleteChatButton" data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#trash" />
+                  </svg>{% blocktrans %}Delete this chat{% endblocktrans %}</button>
+              </li>
+              <li><button class="dropdown-item" type="button" id="shareContactButton" data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#share" />
+                  </svg>{% blocktrans %}Share my contact{% endblocktrans %}</button>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
+                <button class="dropdown-item" disabled type="button" id="blockUserButton"
+                  data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#ban" />
+                  </svg>{% blocktrans %}Block this user{% endblocktrans %}</button>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
+                <button class="dropdown-item" disabled type="button" id="reportUserButton"
+                  data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#flag" />
+                  </svg>{% blocktrans %}Report this user{% endblocktrans %}</button>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
+                <button class="dropdown-item" disabled type="button" id="muteNotificationsButton"
+                  data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#bell-slash" />
+                  </svg>{% blocktrans %}Mute notifications{% endblocktrans %}</button>
+              </li>
+              <li data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-title="🔜 {% blocktrans %}coming soon!{% endblocktrans %}">
+                <button class="dropdown-item" disabled type="button" id="unmuteNotificationsButton"
+                  data-id="{{ conversation.id }}">
+                  <svg class="bi me-2" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#bell" />
+                  </svg>{% blocktrans %}Unmute notifications{% endblocktrans %}</button>
+              </li>
+            </ul>
           </div>
-          {% endfor %}
         </div>
-      </div>
-      <!-- Message Input -->
-      <div class="card-footer">
-        <form class="d-flex" method="post">
-          {% csrf_token %}
-          {{ form.content }}
-          <button type="submit" class="btn btn-primary">
-            <svg class="bi" width="16" height="16" fill="currentColor">
+        <!-- Chat Messages -->
+        <div class="card-body" style="flex-grow: 1; overflow-y: auto">
+          <div class="chat-messages">
+            {% for m in chat_messages %}
+            <!-- Received Message -->
+            <div class="mb-2 {% if m.sender == request.user %}d-flex justify-content-end{% endif %}">
+              <div
+                class="{% if m.sender == request.user %}bg-primary text-white{% else %}bg-body-secondary{% endif %} p-2 rounded"
+                style="max-width: 70%">
+                <small class="{% if m.sender == request.user %}text-white{% else %}text-muted{% endif %}">
+                  {{ m.sender.username }} • {{ m.timestamp|time }}
+                  {% if m.is_read %}
+                  <svg class="bi" width="16" height="16" fill="currentColor">
+                    <use xlink:href="#check2-all"></use>
+                  </svg>
+                  {% endif %}
+                </small>
+                <p class="mb-0">{{ m.content }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- Message Input -->
+        <div class="card-footer">
+          <form class="d-flex" method="post">
+            {% csrf_token %}
+            {{ form.content }}
+            <button type="submit" class="btn btn-primary d-flex align-items-center">
+              <svg class="bi me-1" width="16" height="16" fill="currentColor">
               <use xlink:href="#send-message"></use>
-            </svg>{% blocktrans %}Send{% endblocktrans %}</button>
-        </form>
+              </svg>
+              <span class="d-none d-sm-inline">{% blocktrans %}Send{% endblocktrans %}</span>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </div>
 {% endblock %}
