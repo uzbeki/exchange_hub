@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-15 01:13+0900\n"
+"POT-Creation-Date: 2026-02-13 15:08+0500\n"
 "PO-Revision-Date: 2025-04-14 22:18+0900\n"
 "Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:273 .\information.txt:417
+#: .\base\templates\allauth\layouts\base.html:300
 msgid "Sign In"
 msgstr "Войти"
 
@@ -41,109 +41,138 @@ msgstr "Отправить мне код для входа"
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
 #: .\base\templates\allauth\layouts\base.html:155 .\base\templates\index.html:2
-#: .\base\templates\index.html:106 .\information.txt:168 .\information.txt:171
-#: .\information.txt:301 .\information.txt:444 .\information.txt:453
+#: .\base\templates\index.html:106
 msgid "Open Exchange Hub"
 msgstr "Платформа Открытого Обмена"
 
 #: .\base\templates\allauth\layouts\base.html:122
-#: .\base\templates\allauth\layouts\base.html:124 .\information.txt:269
-#: .\information.txt:271
+#: .\base\templates\allauth\layouts\base.html:124
 msgid "Toggle theme"
 msgstr "Переключить тему"
 
-#: .\base\templates\allauth\layouts\base.html:130 .\information.txt:277
+#: .\base\templates\allauth\layouts\base.html:130
 msgid "Light"
 msgstr "Светлая"
 
-#: .\base\templates\allauth\layouts\base.html:137 .\information.txt:284
+#: .\base\templates\allauth\layouts\base.html:137
 msgid "Dark"
 msgstr "Темная"
 
-#: .\base\templates\allauth\layouts\base.html:144 .\information.txt:291
+#: .\base\templates\allauth\layouts\base.html:144
 msgid "Auto"
 msgstr "Авто"
 
-#: .\base\templates\allauth\layouts\base.html:150 .\information.txt:297
+#: .\base\templates\allauth\layouts\base.html:150
 msgid "Skip to main content"
 msgstr "Перейти к основному содержанию"
 
-#: .\base\templates\allauth\layouts\base.html:164 .\information.txt:308
+#: .\base\templates\allauth\layouts\base.html:164
 msgid "Toggle navigation"
 msgstr "Переключить навигацию"
 
-#: .\base\templates\allauth\layouts\base.html:169 .\information.txt:313
+#: .\base\templates\allauth\layouts\base.html:169
 msgid "Project links"
 msgstr "Ссылки проекта"
 
-#: .\base\templates\allauth\layouts\base.html:172 .\information.txt:316
+#: .\base\templates\allauth\layouts\base.html:172
+msgid "Luggage Space"
+msgstr "Багажное место"
+
+#: .\base\templates\allauth\layouts\base.html:175
 msgid "New offer"
 msgstr "Новое предложение"
 
-#: .\base\templates\allauth\layouts\base.html:176
-#: .\exchange\templates\exchange\my_offers.html:1 .\information.txt:320
+#: .\base\templates\allauth\layouts\base.html:179
+msgid "My luggage listings"
+msgstr "Мои багажные объявления"
+
+#: .\base\templates\allauth\layouts\base.html:182
+#, fuzzy
+#| msgid "Mute notifications"
+msgid "My notifications"
+msgstr "Мои уведомления"
+
+#: .\base\templates\allauth\layouts\base.html:185
+#: .\exchange\templates\exchange\my_offers.html:1
 msgid "My offers"
 msgstr "Мои предложения"
 
-#: .\base\templates\allauth\layouts\base.html:180
+#: .\base\templates\allauth\layouts\base.html:189
 #: .\exchange\templates\exchange\my_offers.html:235
-#: .\exchange\templates\exchange\my_offers.html:271 .\information.txt:324
+#: .\exchange\templates\exchange\my_offers.html:271
 msgid "Conversations"
 msgstr "Беседы"
 
-#: .\base\templates\allauth\layouts\base.html:193
-#: .\base\templates\allauth\layouts\base.html:195 .\information.txt:337
-#: .\information.txt:339
+#: .\base\templates\allauth\layouts\base.html:202
+#: .\base\templates\allauth\layouts\base.html:204
 msgid "Select Language"
 msgstr "Выберите язык"
 
-#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:219
 msgid "You are logged in via"
 msgstr "Вы вошли через"
 
-#: .\base\templates\allauth\layouts\base.html:210 .\information.txt:354
+#: .\base\templates\allauth\layouts\base.html:219
 msgid "Email"
 msgstr "Электронная почта"
 
-#: .\base\templates\allauth\layouts\base.html:223 .\information.txt:367
+#: .\base\templates\allauth\layouts\base.html:230
+msgid "Telegram connected as"
+msgstr "Telegram подключён как"
+
+#: .\base\templates\allauth\layouts\base.html:232
+msgid "Telegram connected"
+msgstr "Telegram подключён"
+
+#: .\base\templates\allauth\layouts\base.html:236
+msgid "Telegram not connected"
+msgstr "Telegram не подключён"
+
+#: .\base\templates\allauth\layouts\base.html:243
+#, fuzzy
+#| msgid "Mute notifications"
+msgid "My Notifications"
+msgstr "Мои уведомления"
+
+#: .\base\templates\allauth\layouts\base.html:250
 msgid "Change Email"
 msgstr "Изменить Email"
 
-#: .\base\templates\allauth\layouts\base.html:230 .\information.txt:374
+#: .\base\templates\allauth\layouts\base.html:257
 msgid "Change Password"
 msgstr "Изменить пароль"
 
-#: .\base\templates\allauth\layouts\base.html:237 .\information.txt:381
+#: .\base\templates\allauth\layouts\base.html:264
 msgid "Change Phone"
 msgstr "Изменить телефон"
 
-#: .\base\templates\allauth\layouts\base.html:244 .\information.txt:388
+#: .\base\templates\allauth\layouts\base.html:271
 msgid "Third-Party Accounts"
 msgstr "Сторонние аккаунты"
 
-#: .\base\templates\allauth\layouts\base.html:251 .\information.txt:395
+#: .\base\templates\allauth\layouts\base.html:278
 msgid "Two-Factor Authentication"
 msgstr "Двухфакторная аутентификация"
 
-#: .\base\templates\allauth\layouts\base.html:258 .\information.txt:402
+#: .\base\templates\allauth\layouts\base.html:285
 msgid "Sessions"
 msgstr "Сессии"
 
-#: .\base\templates\allauth\layouts\base.html:267 .\information.txt:411
+#: .\base\templates\allauth\layouts\base.html:294
 msgid "Sign out"
 msgstr "Выйти"
 
-#: .\base\templates\allauth\layouts\base.html:297
+#: .\base\templates\allauth\layouts\base.html:324
 msgid "All rights reserved, except the right to overpay bank fees—that's all yours!"
 msgstr "Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"
 
-#: .\base\templates\allauth\layouts\base.html:305 .\base\templates\faq.html:2
+#: .\base\templates\allauth\layouts\base.html:332 .\base\templates\faq.html:2
 msgid "FAQ"
 msgstr "FAQ"
 
-#: .\base\templates\allauth\layouts\base.html:311
+#: .\base\templates\allauth\layouts\base.html:338
 msgid "GitHub"
-msgstr ""
+msgstr "GitHub"
 
 #: .\base\templates\faq.html:20 .\base\templates\faq.html:151
 msgid "What is Open Exchange Hub?"
@@ -249,173 +278,179 @@ msgstr "Что означает «Потенциальная экономия»?
 msgid "The \"Potential Savings\" amount shown on offer cards is an *estimate* of the fees you and the other party might save by using our platform instead of traditional banks or money transfer services, which often charge high fees and unfavourable exchange rates. This calculation is currently approximate (e.g., based on a percentage) and intended to highlight the benefit of peer-to-peer exchange. Actual savings depend on the specific alternative methods you would have used."
 msgstr "Сумма «Потенциальная экономия», указанная на карточках предложений, является *оценкой* сборов, которые вы и другая сторона могли бы сэкономить, используя нашу платформу вместо традиционных банков или служб денежных переводов, которые часто взимают высокие комиссии и невыгодные обменные курсы. Этот расчет в настоящее время является приблизительным (например, на основе процента) и предназначен для того, чтобы подчеркнуть преимущества peer-to-peer обмена. Фактическая экономия зависит от конкретных альтернативных методов, которые вы бы использовали."
 
-#: .\base\templates\index.html:108 .\information.txt:455
+#: .\base\templates\index.html:108
 msgid "Connecting Uzbek expats to send and receive money seamlessly—no fees, no commissions, no middlemen."
 msgstr "Соединяем узбекских экспатов для беспрепятственной отправки и получения денег — без сборов, без комиссий, без посредников."
 
-#: .\base\templates\index.html:110 .\information.txt:457
+#: .\base\templates\index.html:110
 msgid "Get Started"
 msgstr "Начать"
 
-#: .\base\templates\index.html:125 .\information.txt:472
+#: .\base\templates\index.html:118
+msgid "Traveling to Japan with extra luggage space?"
+msgstr "Летите в Японию с лишним багажным местом?"
+
+#: .\base\templates\index.html:120
+msgid "Publish your available kg, set your deadline and price per kg, define allowed/prohibited items, and let buyers reserve slots online."
+msgstr "Опубликуйте доступные кг, укажите срок и цену за кг, определите разрешённые/запрещённые вещи и позвольте покупателям бронировать слоты онлайн."
+
+#: .\base\templates\index.html:124
+msgid "Browse Luggage Space"
+msgstr "Смотреть багажные места"
+
+#: .\base\templates\index.html:126
+msgid "Sell My Space"
+msgstr "Продать своё место"
+
+#: .\base\templates\index.html:144
 msgid "Send Money"
 msgstr "Отправить деньги"
 
-#: .\base\templates\index.html:126 .\information.txt:473
+#: .\base\templates\index.html:145
 msgid "Looking to send money to Uzbekistan? Find expats who need funds."
 msgstr "Хотите отправить деньги в Узбекистан? Найдите экспатов, которым нужны средства."
 
-#: .\base\templates\index.html:127 .\base\templates\index.html:139
-#: .\information.txt:474 .\information.txt:486
+#: .\base\templates\index.html:146 .\base\templates\index.html:158
 msgid "View Offers"
 msgstr "Посмотреть предложения"
 
-#: .\base\templates\index.html:137 .\information.txt:484
+#: .\base\templates\index.html:156
 msgid "Receive Money"
 msgstr "Получить деньги"
 
-#: .\base\templates\index.html:138 .\information.txt:485
+#: .\base\templates\index.html:157
 msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
 msgstr "Нужно получить деньги из Узбекистана? Свяжитесь с отправителями мгновенно."
 
-#: .\base\templates\index.html:147 .\information.txt:494
+#: .\base\templates\index.html:166
 msgid "Offers to Send Money to Uzbekistan"
 msgstr "Предложения по отправке денег в Узбекистан"
 
-#: .\base\templates\index.html:167 .\information.txt:514
+#: .\base\templates\index.html:186
 msgid "Send:"
 msgstr "Отправить:"
 
-#: .\base\templates\index.html:170 .\base\templates\index.html:298
-#: .\information.txt:517 .\information.txt:645
+#: .\base\templates\index.html:189 .\base\templates\index.html:317
 msgid "Deadline:"
 msgstr "Срок:"
 
-#: .\base\templates\index.html:171 .\base\templates\index.html:299
+#: .\base\templates\index.html:190 .\base\templates\index.html:318
 #: .\exchange\templates\exchange\conversation.html:104
 #: .\exchange\templates\exchange\conversations_list.html:69
 #: .\exchange\templates\exchange\my_offers.html:134
-#: .\exchange\templates\exchange\offer_form.html:72 .\information.txt:518
-#: .\information.txt:646
+#: .\exchange\templates\exchange\offer_form.html:72
 msgid "Urgent"
 msgstr "Срочно"
 
-#: .\base\templates\index.html:175 .\base\templates\index.html:303
-#: .\information.txt:522 .\information.txt:650
+#: .\base\templates\index.html:194 .\base\templates\index.html:322
 msgid "Conditions:"
 msgstr "Условия:"
 
-#: .\base\templates\index.html:178 .\base\templates\index.html:306
-#: .\information.txt:525 .\information.txt:653
+#: .\base\templates\index.html:197 .\base\templates\index.html:325
 msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
 msgstr "Это приблизительная сумма, которую вы и любой, кто примет это предложение, сэкономите, пропустив банковские комиссии или услуги денежных переводов."
 
-#: .\base\templates\index.html:185 .\base\templates\index.html:313
-#: .\information.txt:532 .\information.txt:660
+#: .\base\templates\index.html:204 .\base\templates\index.html:332
 msgid "potential savings"
 msgstr "потенциальная экономия"
 
-#: .\base\templates\index.html:189 .\base\templates\index.html:317
-#: .\information.txt:536 .\information.txt:664
+#: .\base\templates\index.html:208 .\base\templates\index.html:336
 msgid "Contact:"
 msgstr "Контакт:"
 
-#: .\base\templates\index.html:224 .\information.txt:571
+#: .\base\templates\index.html:243
 msgid "Social Accounts:"
 msgstr "Социальные сети:"
 
-#: .\base\templates\index.html:246 .\base\templates\index.html:330
-#: .\information.txt:593 .\information.txt:677
+#: .\base\templates\index.html:265 .\base\templates\index.html:349
 msgid "Contact information hidden. Use the message form to connect."
 msgstr "Контактная информация скрыта. Используйте форму сообщения для связи."
 
-#: .\base\templates\index.html:256 .\base\templates\index.html:340
-#: .\information.txt:603 .\information.txt:687
+#: .\base\templates\index.html:275 .\base\templates\index.html:359
 msgid "Start Conversation"
 msgstr "Начать беседу"
 
-#: .\base\templates\index.html:268 .\information.txt:615
+#: .\base\templates\index.html:287
 msgid "No active send requests available."
 msgstr "Нет активных запросов на отправку."
 
-#: .\base\templates\index.html:277 .\information.txt:624
+#: .\base\templates\index.html:296
 msgid "Offers to Receive Money from Uzbekistan"
 msgstr "Предложения по получению денег из Узбекистана"
 
-#: .\base\templates\index.html:295 .\information.txt:642
+#: .\base\templates\index.html:314
 msgid "Receive:"
 msgstr "Получить:"
 
-#: .\base\templates\index.html:352 .\information.txt:699
+#: .\base\templates\index.html:371
 msgid "No active receive requests available."
 msgstr "Нет активных запросов на получение."
 
-#: .\base\templates\index.html:364 .\base\templates\index.html:369
-#: .\information.txt:711 .\information.txt:716
+#: .\base\templates\index.html:383 .\base\templates\index.html:388
 msgid "Post an Offer"
 msgstr "Разместить предложение"
 
-#: .\base\templates\index.html:365 .\information.txt:712
+#: .\base\templates\index.html:384
 msgid "Didn't find a suitable offer?"
 msgstr "Не нашли подходящее предложение?"
 
-#: .\base\templates\index.html:367 .\information.txt:714
+#: .\base\templates\index.html:386
 msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
 msgstr "Проявите инициативу, разместите свое предложение и свяжитесь с другими, кто хочет обменять деньги."
 
-#: .\base\templates\index.html:376 .\information.txt:723
+#: .\base\templates\index.html:395
 msgid "Why Choose Us?"
 msgstr "Почему выбирают нас?"
 
-#: .\base\templates\index.html:382 .\information.txt:729
+#: .\base\templates\index.html:401
 msgid "No Fees"
 msgstr "Без комиссий"
 
-#: .\base\templates\index.html:383 .\information.txt:730
+#: .\base\templates\index.html:402
 msgid "Exchange money without any commissions or hidden charges."
 msgstr "Обменивайте деньги без каких-либо комиссий или скрытых платежей."
 
-#: .\base\templates\index.html:389 .\information.txt:736
+#: .\base\templates\index.html:408
 msgid "Direct Connection"
 msgstr "Прямое соединение"
 
-#: .\base\templates\index.html:390 .\information.txt:737
+#: .\base\templates\index.html:409
 msgid "Connect directly with other users through our secure chat system."
 msgstr "Связывайтесь напрямую с другими пользователями через нашу безопасную систему чата."
 
-#: .\base\templates\index.html:396 .\information.txt:743
+#: .\base\templates\index.html:415
 msgid "Secure"
 msgstr "Безопасно"
 
-#: .\base\templates\index.html:397 .\information.txt:744
+#: .\base\templates\index.html:416
 msgid "Your data is protected, and we don't handle any money transfers."
 msgstr "Ваши данные защищены, и мы не обрабатываем никаких денежных переводов."
 
-#: .\base\templates\index.html:406 .\information.txt:753
+#: .\base\templates\index.html:425
 msgid "How It Works"
 msgstr "Как это работает"
 
-#: .\base\templates\index.html:412 .\information.txt:759
+#: .\base\templates\index.html:431
 msgid "1. Post Your Offer"
 msgstr "1. Разместите свое предложение"
 
-#: .\base\templates\index.html:413 .\information.txt:760
+#: .\base\templates\index.html:432
 msgid "Create an offer to send or receive money with your preferred terms."
 msgstr "Создайте предложение на отправку или получение денег на ваших условиях."
 
-#: .\base\templates\index.html:419 .\information.txt:766
+#: .\base\templates\index.html:438
 msgid "2. Connect with Others"
 msgstr "2. Свяжитесь с другими"
 
-#: .\base\templates\index.html:420 .\information.txt:767
+#: .\base\templates\index.html:439
 msgid "Browse offers and start a conversation with potential matches."
 msgstr "Просматривайте предложения и начинайте беседу с потенциальными партнерами."
 
-#: .\base\templates\index.html:426 .\information.txt:773
+#: .\base\templates\index.html:445
 msgid "3. Exchange Money"
 msgstr "3. Обменяйте деньги"
 
-#: .\base\templates\index.html:427 .\information.txt:774
+#: .\base\templates\index.html:446
 msgid "Agree on terms and complete the transaction securely."
 msgstr "Согласуйте условия и безопасно завершите транзакцию."
 
@@ -423,15 +458,15 @@ msgstr "Согласуйте условия и безопасно заверши
 msgid "Or continue with"
 msgstr "Или продолжить с"
 
-#: .\base\users\admin.py:11
+#: .\base\users\admin.py:35
 msgid "Personal info"
 msgstr "Личная информация"
 
-#: .\base\users\admin.py:15
+#: .\base\users\admin.py:51
 msgid "Permissions"
 msgstr "Разрешения"
 
-#: .\base\users\admin.py:26
+#: .\base\users\admin.py:62
 msgid "Important dates"
 msgstr "Важные даты"
 
@@ -439,37 +474,78 @@ msgstr "Важные даты"
 msgid "Users"
 msgstr "Пользователи"
 
-#: .\exchange\models.py:13
+#: .\exchange\models.py:16
 msgid "Send to Uzbekistan"
 msgstr "Отправить в Узбекистан"
 
-#: .\exchange\models.py:14
+#: .\exchange\models.py:17
 msgid "Receive from Uzbekistan"
 msgstr "Получить из Узбекистана"
 
-#: .\exchange\models.py:17
+#: .\exchange\models.py:20
 msgid "Japanese Yen"
 msgstr "Японская иена"
 
-#: .\exchange\models.py:18
+#: .\exchange\models.py:21
 msgid "Uzbekistan Sum"
 msgstr "Узбекский сум"
 
-#: .\exchange\models.py:19
+#: .\exchange\models.py:22
 msgid "US Dollar"
 msgstr "Доллар США"
 
-#: .\exchange\models.py:22
+#: .\exchange\models.py:25
 msgid "Active"
 msgstr "Активно"
 
-#: .\exchange\models.py:23 .\exchange\templates\exchange\conversation.html:145
+#: .\exchange\models.py:26 .\exchange\templates\exchange\conversation.html:145
 msgid "Completed"
 msgstr "Завершено"
 
-#: .\exchange\models.py:36
+#: .\exchange\models.py:39
 msgid "Hide contacts from other users"
 msgstr "Скрыть контакты от других пользователей"
+
+#: .\exchange\models.py:159
+msgid "Storage must be greater than 0 kg."
+msgstr "Объём должен быть больше 0 кг."
+
+#: .\exchange\models.py:161
+msgid "Price per kg must be greater than 0."
+msgstr "Цена за кг должна быть больше 0."
+
+#: .\exchange\models.py:195
+#: .\exchange\templates\exchange\luggage_listing_detail.html:75
+msgid "Pending"
+msgstr "Ожидает"
+
+#: .\exchange\models.py:196
+#: .\exchange\templates\exchange\luggage_listing_detail.html:76
+#: .\exchange\templates\exchange\my_luggage_listings.html:27
+msgid "Reserved"
+msgstr "Забронировано"
+
+#: .\exchange\models.py:197
+#: .\exchange\templates\exchange\luggage_listing_detail.html:77
+msgid "Cancelled"
+msgstr "Отменено"
+
+#: .\exchange\models.py:226
+msgid "Reserved kg must be greater than 0."
+msgstr "Бронируемый вес должен быть больше 0 кг."
+
+#: .\exchange\models.py:232 .\exchange\views.py:345
+msgid "You cannot reserve your own listing."
+msgstr "Вы не можете бронировать собственное объявление."
+
+#: .\exchange\models.py:235
+msgid "This listing is no longer available."
+msgstr "Это объявление больше недоступно."
+
+#: .\exchange\models.py:250
+#, python-format
+msgid "Only %(remaining)s kg is left for reservation."
+msgstr "Для бронирования осталось только %(remaining)s кг."
 
 #: .\exchange\templates\exchange\conversation.html:3
 msgid "Conversation"
@@ -532,6 +608,349 @@ msgstr "Отправить"
 msgid "My Conversations"
 msgstr "Мои беседы"
 
+#: .\exchange\templates\exchange\luggage_listing_detail.html:11
+msgid "available until"
+msgstr "доступно до"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:14
+msgid "Back to Marketplace"
+msgstr "Назад к маркетплейсу"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:16
+#: .\exchange\templates\exchange\luggage_marketplace.html:15
+msgid "My Listings"
+msgstr "Мои объявления"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:22
+msgid "Share this listing in your Telegram/Facebook groups:"
+msgstr "Поделитесь этим объявлением в ваших группах Telegram/Facebook:"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:34
+#: .\exchange\templates\exchange\luggage_listing_form.html:27
+msgid "Price per kg"
+msgstr "Цена за кг"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:35
+#: .\exchange\templates\exchange\luggage_marketplace.html:49
+msgid "Pickup in Tokyo"
+msgstr "Получение в Токио"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+msgid "Delivery options"
+msgstr "Варианты доставки"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+msgid "Not specified"
+msgstr "Не указано"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:37
+#: .\exchange\templates\exchange\luggage_listing_form.html:56
+msgid "Allowed items"
+msgstr "Разрешённые вещи"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:38
+#: .\exchange\templates\exchange\luggage_listing_form.html:60
+msgid "Not allowed items"
+msgstr "Запрещённые вещи"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:40
+#: .\exchange\templates\exchange\luggage_listing_form.html:65
+msgid "Extra details"
+msgstr "Дополнительные детали"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:48
+msgid "Manage Reservations"
+msgstr "Управление бронированиями"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:53
+msgid "Buyer"
+msgstr "Покупатель"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:54
+msgid "Kg"
+msgstr "Кг"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:55
+#, fuzzy
+#| msgid "Contact:"
+msgid "Contact"
+msgstr "Контакт"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:56
+#: .\exchange\templates\exchange\my_offers.html:174
+#: .\exchange\templates\exchange\offer_form.html:61
+msgid "Status"
+msgstr "Статус"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:57
+#, fuzzy
+#| msgid "Active"
+msgid "Actions"
+msgstr "Действия"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:79
+#, fuzzy
+#| msgid "Update Offer"
+msgid "Update"
+msgstr "Обновить"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:84
+msgid "No reservations yet."
+msgstr "Пока нет бронирований."
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:96
+#, fuzzy
+#| msgid "Status"
+msgid "Storage Status"
+msgstr "Статус места"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:98
+msgid "Committed / Total"
+msgstr "Забронировано / Всего"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:104
+msgid "Reserved (confirmed)"
+msgstr "Забронировано (подтверждено)"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:105
+#: .\exchange\templates\exchange\luggage_marketplace.html:44
+#: .\exchange\templates\exchange\my_luggage_listings.html:27
+msgid "Remaining"
+msgstr "Осталось"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:112
+#, fuzzy
+#| msgid "Mute notifications"
+msgid "Telegram Notifications"
+msgstr "Уведомления Telegram"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:118
+#: .\exchange\templates\exchange\luggage_notifications.html:42
+msgid "Enable notifications for this listing"
+msgstr "Включить уведомления для этого объявления"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:122
+#: .\exchange\templates\exchange\luggage_notifications.html:46
+msgid "New reservation created"
+msgstr "Создано новое бронирование"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:126
+#: .\exchange\templates\exchange\luggage_notifications.html:50
+msgid "Reservation status changes"
+msgstr "Изменения статуса бронирования"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:130
+#: .\exchange\templates\exchange\luggage_notifications.html:54
+msgid "Listing sold out"
+msgstr "Место полностью занято"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:134
+#: .\exchange\templates\exchange\luggage_notifications.html:58
+msgid "Space becomes available again"
+msgstr "Место снова доступно"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:137
+#, fuzzy
+#| msgid "Mute notifications"
+msgid "Save Notification Settings"
+msgstr "Сохранить настройки уведомлений"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:139
+msgid "Disable for this listing"
+msgstr "Отключить для этого объявления"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:141
+msgid "Manage All Subscriptions"
+msgstr "Управлять всеми подписками"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:145
+msgid "Connect your Telegram first using the secure connect link, then enable notifications for this listing."
+msgstr "Сначала подключите Telegram по защищённой ссылке, затем включите уведомления для этого объявления."
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:148
+#: .\exchange\templates\exchange\luggage_notifications.html:20
+msgid "Connect Telegram"
+msgstr "Подключить Telegram"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:159
+msgid "Reserve Storage"
+msgstr "Забронировать место"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:163
+msgid "How many kg?"
+msgstr "Сколько кг?"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:167
+msgid "Your phone number (optional)"
+msgstr "Ваш номер телефона (необязательно)"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:171
+msgid "Item notes"
+msgstr "Примечания к вещам"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:175
+msgid "Reserve Slot"
+msgstr "Забронировать слот"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:181
+msgid "This listing is closed or fully booked."
+msgstr "Это объявление закрыто или полностью занято."
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:184
+msgid "Please sign in to reserve storage."
+msgstr "Войдите, чтобы забронировать место."
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:18
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:23
+msgid "Total Storage (kg)"
+msgstr "Общий объём (кг)"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:31
+msgid "Available until"
+msgstr "Доступно до"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:36
+msgid "Departure city"
+msgstr "Город отправления"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:40
+msgid "Arrival city"
+msgstr "Город прибытия"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:45
+msgid "Pickup location in Tokyo"
+msgstr "Место передачи в Токио"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:50
+msgid "Optional delivery options"
+msgstr "Дополнительные варианты доставки"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:52
+msgid "Example: can deliver in Shinjuku, or can ship to recipient address in Japan."
+msgstr "Пример: могу доставить в Синдзюку или отправить по адресу получателя в Японии."
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:71
+msgid "Listing is active"
+msgstr "Объявление активно"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:81
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:4
+#: .\exchange\templates\exchange\luggage_marketplace.html:10
+msgid "Luggage Storage Marketplace"
+msgstr "Маркетплейс багажного места"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:11
+msgid "Buy extra luggage space by kilogram from travelers heading to Japan."
+msgstr "Покупайте дополнительное багажное место по килограммам у путешественников, направляющихся в Японию."
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:16
+msgid "Sell My Storage"
+msgstr "Продать своё место"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:18
+msgid "Sign in to Reserve"
+msgstr "Войдите, чтобы бронировать"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+msgid "Open"
+msgstr "Открыто"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+msgid "Closed"
+msgstr "Закрыто"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:34
+msgid "by"
+msgstr "от"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:38
+msgid "Reserved / Total"
+msgstr "Забронировано / Всего"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:48
+msgid "Price"
+msgstr "Цена"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:52
+msgid "View Listing"
+msgstr "Открыть объявление"
+
+#: .\exchange\templates\exchange\luggage_marketplace.html:58
+msgid "No active luggage listings yet. Be the first to post one."
+msgstr "Пока нет активных объявлений о багажном месте. Станьте первым."
+
+#: .\exchange\templates\exchange\luggage_notifications.html:4
+#: .\exchange\templates\exchange\luggage_notifications.html:10
+#, fuzzy
+#| msgid "Mute notifications"
+msgid "Luggage Notifications"
+msgstr "Уведомления о багаже"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:11
+msgid "Manage what you receive on Telegram for each listing."
+msgstr "Управляйте тем, что получать в Telegram по каждому объявлению."
+
+#: .\exchange\templates\exchange\luggage_notifications.html:13
+#: .\exchange\templates\exchange\my_luggage_listings.html:14
+msgid "Marketplace"
+msgstr "Маркетплейс"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:18
+msgid "Telegram is not connected yet."
+msgstr "Telegram ещё не подключён."
+
+#: .\exchange\templates\exchange\luggage_notifications.html:35
+#: .\exchange\templates\exchange\my_luggage_listings.html:31
+msgid "Open Listing"
+msgstr "Открыть объявление"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:61
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:63
+msgid "Disable"
+msgstr "Отключить"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:65
+msgid "Enable"
+msgstr "Включить"
+
+#: .\exchange\templates\exchange\luggage_notifications.html:74
+msgid "No subscriptions yet. Open a listing and save Telegram notification settings."
+msgstr "Подписок пока нет. Откройте объявление и сохраните настройки уведомлений Telegram."
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:4
+#: .\exchange\templates\exchange\my_luggage_listings.html:10
+msgid "My Luggage Listings"
+msgstr "Мои багажные объявления"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:11
+msgid "Track reservations and mark paid slots as reserved."
+msgstr "Отслеживайте бронирования и отмечайте оплаченные слоты как забронированные."
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:15
+msgid "New Listing"
+msgstr "Новое объявление"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:26
+msgid "until"
+msgstr "до"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:32
+msgid "Share"
+msgstr "Поделиться"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:41
+msgid "No luggage listings yet. Create one and share its link in Facebook or Telegram groups."
+msgstr "Объявлений о багажном месте пока нет. Создайте объявление и поделитесь ссылкой в группах Facebook или Telegram."
+
 #: .\exchange\templates\exchange\my_offers.html:116
 msgid "My Offers"
 msgstr "Мои предложения"
@@ -549,11 +968,6 @@ msgstr "Сумма"
 #: .\exchange\templates\exchange\offer_form.html:50
 msgid "Deadline"
 msgstr "Срок"
-
-#: .\exchange\templates\exchange\my_offers.html:174
-#: .\exchange\templates\exchange\offer_form.html:61
-msgid "Status"
-msgstr "Статус"
 
 #: .\exchange\templates\exchange\my_offers.html:193
 msgid "Potential Savings"
@@ -658,42 +1072,90 @@ msgstr "получение денег из Узбекистана"
 msgid "Back to Home"
 msgstr "Вернуться на главную"
 
-#: .\exchange\views.py:38
+#: .\exchange\views.py:84
 msgid "New offer created successfully"
 msgstr "Новое предложение успешно создано"
 
-#: .\exchange\views.py:43
+#: .\exchange\views.py:89
 msgid "Create an Offer"
 msgstr "Создать предложение"
 
-#: .\exchange\views.py:44
+#: .\exchange\views.py:90
 msgid "Create Offer"
 msgstr "Создать предложение"
 
-#: .\exchange\views.py:57
+#: .\exchange\views.py:103
 msgid "Update Your Offer"
 msgstr "Обновите ваше предложение"
 
-#: .\exchange\views.py:58
+#: .\exchange\views.py:104
 msgid "Update Offer"
 msgstr "Обновить предложение"
 
-#: .\exchange\views.py:62
+#: .\exchange\views.py:108
 msgid "Offer updated successfully"
 msgstr "Предложение успешно обновлено"
 
-#: .\exchange\views.py:80
+#: .\exchange\views.py:126
 msgid "Offer completed successfully"
 msgstr "Предложение успешно завершено"
 
-#: .\exchange\views.py:95
+#: .\exchange\views.py:141
 msgid "Offer deleted successfully"
 msgstr "Предложение успешно удалено"
 
-#: .\exchange\views.py:207 .\exchange\views.py:210
+#: .\exchange\views.py:184
+msgid "Luggage storage listing published."
+msgstr "Объявление о багажном месте опубликовано."
+
+#: .\exchange\views.py:189
+msgid "Create Luggage Storage Listing"
+msgstr "Создать объявление о багажном месте"
+
+#: .\exchange\views.py:190
+msgid "Publish Listing"
+msgstr "Опубликовать объявление"
+
+#: .\exchange\views.py:246
+#, python-format
+msgid "First connect Telegram: open %(url)s from this account, then return here."
+msgstr "Сначала подключите Telegram: откройте %(url)s из этого аккаунта, затем вернитесь сюда."
+
+#: .\exchange\views.py:252
+msgid "Telegram bot username is not configured by admin yet."
+msgstr "Имя пользователя Telegram-бота ещё не настроено администратором."
+
+#: .\exchange\views.py:285
+msgid "Telegram notification settings saved."
+msgstr "Настройки уведомлений Telegram сохранены."
+
+#: .\exchange\views.py:287
+msgid "Telegram notifications disabled for this listing."
+msgstr "Уведомления Telegram для этого объявления отключены."
+
+#: .\exchange\views.py:335
+msgid "Notification settings updated."
+msgstr "Настройки уведомлений обновлены."
+
+#: .\exchange\views.py:366
+msgid "Reservation submitted. Contact the seller to complete payment and handover."
+msgstr "Бронирование отправлено. Свяжитесь с продавцом для оплаты и передачи."
+
+#: .\exchange\views.py:392
+msgid "You are not allowed to update this reservation."
+msgstr "У вас нет прав обновлять это бронирование."
+
+#: .\exchange\views.py:402
+msgid "Invalid reservation status."
+msgstr "Недопустимый статус бронирования."
+
+#: .\exchange\views.py:421
+msgid "Reservation status updated."
+msgstr "Статус бронирования обновлён."
+
+#: .\exchange\views.py:718 .\exchange\views.py:721
 msgid "Conversation deleted successfully."
 msgstr "Беседа успешно удалена."
 
-#: .\information.txt:432
-msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
-msgstr "Платформа Открытого Обмена. Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"
+#~ msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
+#~ msgstr "Платформа Открытого Обмена. Все права защищены. Кроме права переплачивать банковские комиссии — это право ваше!"

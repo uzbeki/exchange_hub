@@ -87,6 +87,20 @@ Visit the live demo: [Open Exchange Hub](https://exchangehub.bekhruz.com)
 
 8. Access the application at `http://127.0.0.1:8000`.
 
+### 🌍 Translation Commands
+
+Generate translation files:
+
+```bash
+py manage.py makemessages --no-wrap -l ja -l uz -l ru --ignore=venv/*
+```
+
+Compile translations:
+
+```bash
+py manage.py compilemessages --ignore=venv/* -l ja -l uz -l ru
+```
+
 ### 🧪 Running Tests
 
 To run the test suite:
