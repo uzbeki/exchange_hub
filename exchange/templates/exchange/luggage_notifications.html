@@ -13,7 +13,16 @@
     <a href="{% url 'luggage_marketplace' %}" class="btn btn-outline-secondary">{% translate 'Marketplace' %}</a>
   </div>
 
-  {% if not telegram_is_linked %}
+  {% if telegram_is_linked %}
+  <div class="alert alert-success">
+    <p class="mb-0">
+      {% translate 'Telegram is connected.' %}
+      {% if user.telegram_username %}
+      {% blocktrans with tg=user.telegram_username %}Connected account: @{{ tg }}{% endblocktrans %}
+      {% endif %}
+    </p>
+  </div>
+  {% else %}
   <div class="alert alert-warning">
     <p class="mb-2">{% translate 'Telegram is not connected yet.' %}</p>
     {% if telegram_link_url %}

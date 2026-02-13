@@ -11,9 +11,10 @@
       <p class="text-muted mb-0">{{ listing.departure_city }} → {{ listing.arrival_city }} · {% blocktrans %}available until{% endblocktrans %} {{ listing.available_until }}</p>
     </div>
     <div class="d-flex gap-2">
-      <a href="{% url 'luggage_marketplace' %}" class="btn btn-outline-secondary">{% translate 'Back to Marketplace' %}</a>
+      <a href="{% url 'luggage_marketplace' %}" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i>{% translate 'Back to Marketplace' %}</a>
       {% if user == listing.seller %}
-      <a href="{% url 'luggage_my_listings' %}" class="btn btn-primary">{% translate 'My Listings' %}</a>
+      <a href="{% url 'luggage_my_listings' %}" class="btn btn-primary"><i class="bi bi-card-list me-1"></i>{% translate 'My Listings' %}</a>
+      <a href="{% url 'luggage_update' listing_id=listing.id %}" class="btn btn-outline-secondary"><i class="bi bi-pencil-square me-1"></i>{% translate 'Edit Listing' %}</a>
       {% endif %}
     </div>
   </div>
@@ -21,8 +22,8 @@
   <div class="alert alert-light border d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-2" role="alert">
     <span>{% translate 'Share this listing in your Telegram/Facebook groups:' %}</span>
     <div class="d-flex gap-2 flex-wrap">
-      <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={{ request.build_absolute_uri|urlencode }}&text={{ listing.title|urlencode }}">Telegram</a>
-      <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}">Facebook</a>
+      <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url={{ request.build_absolute_uri|urlencode }}&text={{ listing.title|urlencode }}"><i class="bi bi-telegram me-1"></i>Telegram</a>
+      <a class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}"><i class="bi bi-facebook me-1"></i>Facebook</a>
     </div>
   </div>
 
@@ -31,8 +32,11 @@
       <div class="card border-0 shadow-sm mb-4">
         <div class="card-body">
           <div class="row g-3">
-            <div class="col-md-6"><strong>{% translate 'Price per kg' %}:</strong> {{ listing.price_per_kg|intcomma }}</div>
+            <div class="col-md-6"><strong>{% translate 'Price per kg' %}:</strong> {{ listing.price_per_kg|intcomma }} {{ listing.price_currency }}</div>
             <div class="col-md-6"><strong>{% translate 'Pickup in Tokyo' %}:</strong> {{ listing.pickup_location_tokyo }}</div>
+            {% if listing.arrival_datetime %}
+            <div class="col-md-6"><strong>{% translate 'Estimated arrival' %}:</strong> {{ listing.arrival_datetime }}</div>
+            {% endif %}
             <div class="col-12"><strong>{% translate 'Delivery options' %}:</strong> {{ listing.delivery_options|default:_('Not specified') }}</div>
             <div class="col-md-6"><strong>{% translate 'Allowed items' %}:</strong><br>{{ listing.allowed_items|linebreaks }}</div>
             <div class="col-md-6"><strong>{% translate 'Not allowed items' %}:</strong><br>{{ listing.prohibited_items|linebreaks }}</div>
@@ -44,10 +48,29 @@
       </div>
 
       {% if user == listing.seller %}
+      <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body d-flex flex-wrap gap-2">
+          <form method="post" action="{% url 'luggage_toggle_active' listing_id=listing.id %}">
+            {% csrf_token %}
+            {% if listing.is_active %}
+            <input type="hidden" name="action" value="close">
+            <button class="btn btn-outline-warning" type="submit"><i class="bi bi-check2-circle me-1"></i>{% translate 'Mark as Done' %}</button>
+            {% else %}
+            <input type="hidden" name="action" value="reopen">
+            <button class="btn btn-outline-success" type="submit"><i class="bi bi-arrow-clockwise me-1"></i>{% translate 'Reopen Listing' %}</button>
+            {% endif %}
+          </form>
+          <form method="post" action="{% url 'luggage_delete' listing_id=listing.id %}" onsubmit="return confirm('{% translate 'Delete this listing?' %}')">
+            {% csrf_token %}
+            <button class="btn btn-outline-danger" type="submit"><i class="bi bi-trash me-1"></i>{% translate 'Delete Listing' %}</button>
+          </form>
+        </div>
+      </div>
+
       <div class="card border-0 shadow-sm">
-        <div class="card-header bg-light"><strong>{% translate 'Manage Reservations' %}</strong></div>
+        <div class="card-header bg-body-tertiary border-bottom"><strong>{% translate 'Manage Reservations' %}</strong></div>
         <div class="table-responsive">
-          <table class="table mb-0 align-middle">
+          <table class="table table-hover mb-0 align-middle">
             <thead>
               <tr>
                 <th>{% translate 'Buyer' %}</th>
@@ -76,7 +99,7 @@
                       <option value="reserved" {% if reservation.status == 'reserved' %}selected{% endif %}>{% translate 'Reserved' %}</option>
                       <option value="cancelled" {% if reservation.status == 'cancelled' %}selected{% endif %}>{% translate 'Cancelled' %}</option>
                     </select>
-                    <button class="btn btn-sm btn-outline-primary" type="submit">{% translate 'Update' %}</button>
+                    <button class="btn btn-sm btn-outline-primary" type="submit"><i class="bi bi-check2 me-1"></i>{% translate 'Update' %}</button>
                   </form>
                 </td>
               </tr>
@@ -111,6 +134,12 @@
         <div class="card-body">
           <h2 class="h5 mb-3">{% translate 'Telegram Notifications' %}</h2>
           {% if telegram_is_linked %}
+          <div class="alert alert-success py-2 small">
+            {% translate 'Telegram is connected.' %}
+            {% if user.telegram_username %}
+            {% blocktrans with tg=user.telegram_username %}Connected account: @{{ tg }}{% endblocktrans %}
+            {% endif %}
+          </div>
           <form method="post" action="{% url 'luggage_telegram_notify_toggle' listing_id=listing.id %}" class="row g-2">
             {% csrf_token %}
             <div class="col-12 form-check">
@@ -136,23 +165,25 @@
             <div class="col-12 d-grid gap-2">
               <button class="btn btn-outline-primary" type="submit">{% translate 'Save Notification Settings' %}</button>
               {% if telegram_subscription and telegram_subscription.is_active %}
-              <button class="btn btn-outline-danger" type="submit" name="action" value="disable">{% translate 'Disable for this listing' %}</button>
+              <button class="btn btn-outline-danger" type="submit" name="action" value="disable"><i class="bi bi-bell-slash me-1"></i>{% translate 'Disable for this listing' %}</button>
               {% endif %}
-              <a href="{% url 'luggage_notifications' %}" class="btn btn-outline-secondary">{% translate 'Manage All Subscriptions' %}</a>
+              <a href="{% url 'luggage_notifications' %}" class="btn btn-outline-secondary"><i class="bi bi-sliders me-1"></i>{% translate 'Manage All Subscriptions' %}</a>
             </div>
           </form>
           {% else %}
           <p class="small text-muted">{% translate 'Connect your Telegram first using the secure connect link, then enable notifications for this listing.' %}</p>
           {% if telegram_link_url %}
           <a href="{{ telegram_link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">
-            {% translate 'Connect Telegram' %}
+            <i class="bi bi-telegram me-1"></i>{% translate 'Connect Telegram' %}
           </a>
           {% endif %}
           {% endif %}
         </div>
       </div>
 
-      {% if listing.is_sellable and user != listing.seller %}
+      {% if user == listing.seller %}
+      <div class="alert alert-secondary">{% blocktrans %}This is your listing. Use the reservation manager to confirm or cancel bookings.{% endblocktrans %}</div>
+      {% elif listing.is_sellable %}
 
       <div class="card border-0 shadow-sm">
         <div class="card-body">

@@ -73,6 +73,14 @@ class LuggageListingForm(forms.ModelForm):
         ),
         input_formats=["%Y-%m-%d"],
     )
+    arrival_datetime = forms.DateTimeField(
+        required=False,
+        widget=forms.DateTimeInput(
+            attrs={"type": "datetime-local", "class": "form-control"},
+            format="%Y-%m-%dT%H:%M",
+        ),
+        input_formats=["%Y-%m-%dT%H:%M"],
+    )
 
     class Meta:
         model = LuggageListing
@@ -80,7 +88,9 @@ class LuggageListingForm(forms.ModelForm):
             "title",
             "total_kg",
             "price_per_kg",
+            "price_currency",
             "available_until",
+            "arrival_datetime",
             "departure_city",
             "arrival_city",
             "pickup_location_tokyo",
@@ -98,6 +108,7 @@ class LuggageListingForm(forms.ModelForm):
             "price_per_kg": forms.NumberInput(
                 attrs={"class": "form-control", "step": "0.01", "min": "0.01"}
             ),
+            "price_currency": forms.Select(attrs={"class": "form-select"}),
             "departure_city": forms.TextInput(attrs={"class": "form-control"}),
             "arrival_city": forms.TextInput(attrs={"class": "form-control"}),
             "pickup_location_tokyo": forms.TextInput(

@@ -127,6 +127,12 @@ class Message(models.Model):
 
 
 class LuggageListing(models.Model):
+    PRICE_CURRENCY_CHOICES = [
+        ("JPY", _("Japanese Yen")),
+        ("UZS", _("Uzbekistan Sum")),
+        ("USD", _("US Dollar")),
+    ]
+
     id = models.UUIDField(primary_key=True, editable=False, default=uuid4)
     seller = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -136,7 +142,9 @@ class LuggageListing(models.Model):
     title = models.CharField(max_length=120)
     total_kg = models.DecimalField(max_digits=6, decimal_places=2)
     price_per_kg = models.DecimalField(max_digits=10, decimal_places=2)
+    price_currency = models.CharField(max_length=3, choices=PRICE_CURRENCY_CHOICES, default="JPY")
     available_until = models.DateField()
+    arrival_datetime = models.DateTimeField(blank=True, null=True)
     departure_city = models.CharField(max_length=120, default="Tashkent")
     arrival_city = models.CharField(max_length=120, default="Tokyo")
     pickup_location_tokyo = models.CharField(max_length=255)

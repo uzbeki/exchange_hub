@@ -194,6 +194,68 @@ class LuggageListingCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
+class LuggageListingUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    template_name = "exchange/luggage_listing_form.html"
+    model = LuggageListing
+    form_class = LuggageListingForm
+    pk_url_kwarg = "listing_id"
+    success_url = reverse_lazy("luggage_my_listings")
+
+    def test_func(self):
+        return self.get_object().seller == self.request.user
+
+    def form_valid(self, form):
+        messages.success(self.request, _("Luggage listing updated."))
+        return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["view_title"] = _("Edit Luggage Storage Listing")
+        context["submit_button_text"] = _("Save Changes")
+        context["unread_messages"] = Message.get_unread_message_count_by_user(
+            self.request.user
+        )
+        return context
+
+
+class DeleteLuggageListingView(LoginRequiredMixin, View):
+    def post(self, request: HttpRequest, *args, **kwargs):
+        listing = get_object_or_404(LuggageListing, id=kwargs["listing_id"])
+        if listing.seller != request.user:
+            messages.error(request, _("You are not allowed to delete this listing."))
+            return redirect("luggage_listing_detail", listing_id=listing.id)
+
+        listing.delete()
+        messages.success(request, _("Luggage listing deleted."))
+        return redirect("luggage_my_listings")
+
+
+class ToggleLuggageListingActiveView(LoginRequiredMixin, View):
+    def post(self, request: HttpRequest, *args, **kwargs):
+        listing = get_object_or_404(LuggageListing, id=kwargs["listing_id"])
+        if listing.seller != request.user:
+            messages.error(request, _("You are not allowed to update this listing."))
+            return redirect("luggage_listing_detail", listing_id=listing.id)
+
+        action = request.POST.get("action")
+        if action == "close":
+            listing.is_active = False
+            messages.success(request, _("Listing marked as done/closed."))
+        elif action == "reopen":
+            listing.is_active = True
+            messages.success(request, _("Listing reopened."))
+        else:
+            messages.error(request, _("Invalid listing action."))
+            return redirect("luggage_listing_detail", listing_id=listing.id)
+
+        listing.save(update_fields=["is_active", "updated_at"])
+
+        next_url = request.POST.get("next")
+        if next_url == "my_listings":
+            return redirect("luggage_my_listings")
+        return redirect("luggage_listing_detail", listing_id=listing.id)
+
+
 class MyLuggageListingsView(LoginRequiredMixin, TemplateView):
     template_name = "exchange/my_luggage_listings.html"
 

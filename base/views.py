@@ -1,5 +1,5 @@
 from django.views.generic.base import TemplateView
-from exchange.models import Message, Request
+from exchange.models import LuggageListing, Message, Request
 
 
 class IndexView(TemplateView):
@@ -15,6 +15,11 @@ class IndexView(TemplateView):
                 "receive_requests": Request.objects.filter(
                     type="receive", status="active"
                 ).order_by("-created_at"),
+                "recent_luggage_listings": LuggageListing.objects.filter(
+                    is_active=True
+                )
+                .select_related("seller")
+                .order_by("-created_at")[:3],
                 "unread_messages": (
                     Message.get_unread_message_count_by_user(self.request.user)
                     if self.request.user.is_authenticated

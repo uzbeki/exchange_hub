@@ -28,8 +28,16 @@
             {{ form.price_per_kg }}
           </div>
           <div class="col-md-4">
+            <label for="{{ form.price_currency.id_for_label }}" class="form-label">{% translate 'Price currency' %}</label>
+            {{ form.price_currency }}
+          </div>
+          <div class="col-md-4">
             <label for="{{ form.available_until.id_for_label }}" class="form-label">{% translate 'Available until' %}</label>
             {{ form.available_until }}
+          </div>
+          <div class="col-md-4">
+            <label for="{{ form.arrival_datetime.id_for_label }}" class="form-label">{% translate 'Estimated arrival date & time' %}</label>
+            {{ form.arrival_datetime }}
           </div>
 
           <div class="col-md-6">
@@ -64,6 +72,7 @@
           <div class="col-12">
             <label for="{{ form.description.id_for_label }}" class="form-label">{% translate 'Extra details' %}</label>
             {{ form.description }}
+            <div class="form-text">{% translate 'Use this for pickup nuances; use arrival date & time above for ETA.' %}</div>
           </div>
 
           <div class="col-12 form-check ms-1">
