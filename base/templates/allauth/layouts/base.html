@@ -227,10 +227,11 @@
                                         <strong class="d-block lh-1">{{ user }}</strong>
                                         {% if user.telegram_chat_id %}
                                             <small class="text-success d-block lh-1 mt-1">
+                                                <i class="bi bi-telegram me-1"></i>
                                                 {% if user.telegram_username %}
-                                                    {% translate 'Telegram connected as' %} @{{ user.telegram_username }}
+                                                    @{{ user.telegram_username }}
                                                 {% else %}
-                                                    {% translate 'Telegram connected' %}
+                                                    {% translate 'Connected' %}
                                                 {% endif %}
                                             </small>
                                         {% else %}
