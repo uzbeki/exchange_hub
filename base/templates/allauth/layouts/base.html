@@ -169,9 +169,18 @@
                             aria-label="{% translate 'Project links' %}"
                             class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
+                                <a class="nav-link" href="{% url "luggage_marketplace" %}">{% translate 'Luggage Space' %}</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link active" href="{% url "create_offer" %}">{% translate 'New offer' %}</a>
                             </li>
                             {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url "luggage_my_listings" %}">{% translate 'My luggage listings' %}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url "luggage_notifications" %}">{% translate 'My notifications' %}</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url "my_offers" %}">{% translate 'My offers' %}</a>
                             </li>
@@ -212,9 +221,27 @@
                                         <use href="#person-circle"/>
                                     </svg>
                                     {% comment %} <strong>{{user}} <small class="d-inline-block">(via {% if social_accounts %}{% with first_account=social_accounts|first %}{{ first_account.get_provider_display }}{% endwith %}{% else %}Email{% endif %})</small></strong> {% endcomment %}
-                                    <strong>{{user}}</strong>
+                                    <div class="text-start">
+                                        <strong class="d-block lh-1">{{ user }}</strong>
+                                        {% if user.telegram_chat_id %}
+                                            <small class="text-success d-block lh-1 mt-1">
+                                                {% if user.telegram_username %}
+                                                    {% translate 'Telegram connected as' %} @{{ user.telegram_username }}
+                                                {% else %}
+                                                    {% translate 'Telegram connected' %}
+                                                {% endif %}
+                                            </small>
+                                        {% else %}
+                                            <small class="text-muted d-block lh-1 mt-1">{% translate 'Telegram not connected' %}</small>
+                                        {% endif %}
+                                    </div>
                                 </button>
                                 <ul class="dropdown-menu text-small dropdown-menu-lg-end">
+                                    <li>
+                                        <a class="dropdown-item"
+                                        href="{% url 'luggage_notifications' %}">{% translate 'My Notifications' %}</a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
                                     {% url 'account_email' as email_url_ %}
                                     {% if email_url_ %}
                                         <li>

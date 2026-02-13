@@ -188,11 +188,17 @@ ACCOUNT_LOGIN_BY_CODE_ENABLED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_EMAIL_VERIFICATION_BY_CODE_ENABLED = True
 ACCOUNT_LOGIN_METHODS = {
+    "username",
     "email",
 }
 ACCOUNT_PASSWORD_RESET_BY_CODE_ENABLED = True
-ACCOUNT_SIGNUP_FIELDS = ["email*", "password1*", "password2*"]
+ACCOUNT_SIGNUP_FIELDS = ["username*", "email*", "password1*", "password2*"]
 ACCOUNT_ADAPTER = "base.users.allauth.AccountAdapter"
+
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_BOT_USERNAME = os.getenv("TELEGRAM_BOT_USERNAME", "")
+TELEGRAM_WEBHOOK_SECRET = os.getenv("TELEGRAM_WEBHOOK_SECRET", "")
+TELEGRAM_ADMIN_CHAT_ID = os.getenv("TELEGRAM_ADMIN_CHAT_ID", "")
 
 
 MFA_SUPPORTED_TYPES = [
@@ -216,3 +222,36 @@ MESSAGE_TAGS = {
     messages.ERROR: "alert-danger",
 }
 LOGIN_REDIRECT_URL = "my_offers"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+        "telegram_admin": {
+            "class": "base.telegram_logging.TelegramAdminHandler",
+            "level": "ERROR",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["console", "telegram_admin"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "exchange": {
+            "handlers": ["console", "telegram_admin"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
+}

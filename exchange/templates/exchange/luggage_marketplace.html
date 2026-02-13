@@ -1,0 +1,63 @@
+{% extends "allauth/layouts/base.html" %}
+{% load i18n humanize %}
+
+{% block head_title %}{% translate 'Luggage Storage Marketplace' %}{% endblock %}
+
+{% block content %}
+<main class="container py-5">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+    <div>
+      <h1 class="fw-bold mb-1">{% translate 'Luggage Storage Marketplace' %}</h1>
+      <p class="text-muted mb-0">{% translate 'Buy extra luggage space by kilogram from travelers heading to Japan.' %}</p>
+    </div>
+    <div class="d-flex gap-2">
+      {% if user.is_authenticated %}
+      <a href="{% url 'luggage_my_listings' %}" class="btn btn-outline-secondary">{% translate 'My Listings' %}</a>
+      <a href="{% url 'luggage_create' %}" class="btn btn-primary">{% translate 'Sell My Storage' %}</a>
+      {% else %}
+      <a href="{% url 'account_login' %}" class="btn btn-primary">{% translate 'Sign in to Reserve' %}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row g-4">
+    {% for listing in listings %}
+    <div class="col-12 col-md-6 col-xl-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body d-flex flex-column">
+          <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+            <h5 class="card-title mb-0">{{ listing.title }}</h5>
+            <span class="badge {% if listing.is_sellable %}text-bg-success{% else %}text-bg-secondary{% endif %}">
+              {% if listing.is_sellable %}{% translate 'Open' %}{% else %}{% translate 'Closed' %}{% endif %}
+            </span>
+          </div>
+          <p class="text-muted small mb-2">{{ listing.departure_city }} → {{ listing.arrival_city }} · {% blocktrans %}by{% endblocktrans %} {{ listing.available_until }}</p>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between small mb-1">
+              <span>{% translate 'Reserved / Total' %}</span>
+              <span>{{ listing.committed_kg|floatformat:2 }}kg / {{ listing.total_kg|floatformat:2 }}kg</span>
+            </div>
+            <div class="progress" role="progressbar" aria-label="Storage usage">
+              <div class="progress-bar" style="width: {% widthratio listing.committed_kg listing.total_kg 100 %}%"></div>
+            </div>
+            <div class="small text-muted mt-1">{% translate 'Remaining' %}: {{ listing.remaining_kg|floatformat:2 }}kg</div>
+          </div>
+
+          <div class="small mb-3">
+            <div><strong>{% translate 'Price' %}:</strong> {{ listing.price_per_kg|intcomma }} / kg</div>
+            <div><strong>{% translate 'Pickup in Tokyo' %}:</strong> {{ listing.pickup_location_tokyo }}</div>
+          </div>
+
+          <a class="btn btn-outline-primary mt-auto" href="{% url 'luggage_listing_detail' listing_id=listing.id %}">{% translate 'View Listing' %}</a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <div class="alert alert-info text-center mb-0">{% translate 'No active luggage listings yet. Be the first to post one.' %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

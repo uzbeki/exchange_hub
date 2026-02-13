@@ -1,0 +1,79 @@
+{% extends "allauth/layouts/manage.html" %}
+{% load i18n %}
+
+{% block head_title %}{% translate 'Luggage Notifications' %}{% endblock %}
+
+{% block content %}
+<div class="my-5">
+  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-4">
+    <div>
+      <h1 class="h3 fw-bold mb-1">{% translate 'Luggage Notifications' %}</h1>
+      <p class="text-muted mb-0">{% translate 'Manage what you receive on Telegram for each listing.' %}</p>
+    </div>
+    <a href="{% url 'luggage_marketplace' %}" class="btn btn-outline-secondary">{% translate 'Marketplace' %}</a>
+  </div>
+
+  {% if not telegram_is_linked %}
+  <div class="alert alert-warning">
+    <p class="mb-2">{% translate 'Telegram is not connected yet.' %}</p>
+    {% if telegram_link_url %}
+    <a href="{{ telegram_link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">{% translate 'Open Telegram Bot and send /connect' %}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="row g-3">
+    {% for sub in subscriptions %}
+    <div class="col-12">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body">
+          <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-2 mb-3">
+            <div>
+              <h2 class="h5 mb-1">{{ sub.listing.title }}</h2>
+              <p class="text-muted small mb-0">{{ sub.listing.departure_city }} → {{ sub.listing.arrival_city }}</p>
+            </div>
+            <a href="{% url 'luggage_listing_detail' listing_id=sub.listing.id %}" class="btn btn-outline-secondary btn-sm">{% translate 'Open Listing' %}</a>
+          </div>
+
+          <form method="post" action="{% url 'luggage_notification_update' subscription_id=sub.id %}" class="row g-2">
+            {% csrf_token %}
+            <div class="col-12 form-check">
+              <input class="form-check-input" type="checkbox" id="s_active_{{ sub.id }}" name="is_active" {% if sub.is_active %}checked{% endif %}>
+              <label class="form-check-label" for="s_active_{{ sub.id }}">{% translate 'Enable notifications for this listing' %}</label>
+            </div>
+            <div class="col-md-6 form-check">
+              <input class="form-check-input" type="checkbox" id="s_new_{{ sub.id }}" name="notify_on_new_reservation" {% if sub.notify_on_new_reservation %}checked{% endif %}>
+              <label class="form-check-label" for="s_new_{{ sub.id }}">{% translate 'New reservation created' %}</label>
+            </div>
+            <div class="col-md-6 form-check">
+              <input class="form-check-input" type="checkbox" id="s_status_{{ sub.id }}" name="notify_on_status_change" {% if sub.notify_on_status_change %}checked{% endif %}>
+              <label class="form-check-label" for="s_status_{{ sub.id }}">{% translate 'Reservation status changes' %}</label>
+            </div>
+            <div class="col-md-6 form-check">
+              <input class="form-check-input" type="checkbox" id="s_sold_{{ sub.id }}" name="notify_on_sold_out" {% if sub.notify_on_sold_out %}checked{% endif %}>
+              <label class="form-check-label" for="s_sold_{{ sub.id }}">{% translate 'Listing sold out' %}</label>
+            </div>
+            <div class="col-md-6 form-check">
+              <input class="form-check-input" type="checkbox" id="s_reopen_{{ sub.id }}" name="notify_on_reopened" {% if sub.notify_on_reopened %}checked{% endif %}>
+              <label class="form-check-label" for="s_reopen_{{ sub.id }}">{% translate 'Space becomes available again' %}</label>
+            </div>
+            <div class="col-12 d-flex gap-2 flex-wrap mt-2">
+              <button class="btn btn-outline-primary btn-sm" type="submit">{% translate 'Save' %}</button>
+              {% if sub.is_active %}
+              <button class="btn btn-outline-danger btn-sm" type="submit" name="action" value="disable">{% translate 'Disable' %}</button>
+              {% else %}
+              <button class="btn btn-outline-success btn-sm" type="submit" name="action" value="enable">{% translate 'Enable' %}</button>
+              {% endif %}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <div class="alert alert-info mb-0">{% translate 'No subscriptions yet. Open a listing and save Telegram notification settings.' %}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

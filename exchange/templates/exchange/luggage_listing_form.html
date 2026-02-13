@@ -1,0 +1,89 @@
+{% extends "allauth/layouts/manage.html" %}
+{% load i18n %}
+
+{% block head_title %}{{ view_title }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center my-5">
+  <div class="col-lg-8">
+    <div class="card shadow-sm border-0">
+      <div class="card-header bg-primary text-white">
+        <h2 class="h4 mb-0">{{ view_title }}</h2>
+      </div>
+      <div class="card-body">
+        <form method="post" class="row g-3">
+          {% csrf_token %}
+
+          <div class="col-12">
+            <label for="{{ form.title.id_for_label }}" class="form-label">{% translate 'Title' %}</label>
+            {{ form.title }}
+          </div>
+
+          <div class="col-md-4">
+            <label for="{{ form.total_kg.id_for_label }}" class="form-label">{% translate 'Total Storage (kg)' %}</label>
+            {{ form.total_kg }}
+          </div>
+          <div class="col-md-4">
+            <label for="{{ form.price_per_kg.id_for_label }}" class="form-label">{% translate 'Price per kg' %}</label>
+            {{ form.price_per_kg }}
+          </div>
+          <div class="col-md-4">
+            <label for="{{ form.available_until.id_for_label }}" class="form-label">{% translate 'Available until' %}</label>
+            {{ form.available_until }}
+          </div>
+
+          <div class="col-md-6">
+            <label for="{{ form.departure_city.id_for_label }}" class="form-label">{% translate 'Departure city' %}</label>
+            {{ form.departure_city }}
+          </div>
+          <div class="col-md-6">
+            <label for="{{ form.arrival_city.id_for_label }}" class="form-label">{% translate 'Arrival city' %}</label>
+            {{ form.arrival_city }}
+          </div>
+
+          <div class="col-12">
+            <label for="{{ form.pickup_location_tokyo.id_for_label }}" class="form-label">{% translate 'Pickup location in Tokyo' %}</label>
+            {{ form.pickup_location_tokyo }}
+          </div>
+
+          <div class="col-12">
+            <label for="{{ form.delivery_options.id_for_label }}" class="form-label">{% translate 'Optional delivery options' %}</label>
+            {{ form.delivery_options }}
+            <div class="form-text">{% translate 'Example: can deliver in Shinjuku, or can ship to recipient address in Japan.' %}</div>
+          </div>
+
+          <div class="col-md-6">
+            <label for="{{ form.allowed_items.id_for_label }}" class="form-label">{% translate 'Allowed items' %}</label>
+            {{ form.allowed_items }}
+          </div>
+          <div class="col-md-6">
+            <label for="{{ form.prohibited_items.id_for_label }}" class="form-label">{% translate 'Not allowed items' %}</label>
+            {{ form.prohibited_items }}
+          </div>
+
+          <div class="col-12">
+            <label for="{{ form.description.id_for_label }}" class="form-label">{% translate 'Extra details' %}</label>
+            {{ form.description }}
+          </div>
+
+          <div class="col-12 form-check ms-1">
+            {{ form.is_active }}
+            <label for="{{ form.is_active.id_for_label }}" class="form-check-label">{% translate 'Listing is active' %}</label>
+          </div>
+
+          {% if form.non_field_errors %}
+          <div class="col-12">
+            <div class="alert alert-danger mb-0">{{ form.non_field_errors }}</div>
+          </div>
+          {% endif %}
+
+          <div class="col-12 d-grid d-md-flex justify-content-md-end gap-2">
+            <a href="{% url 'luggage_marketplace' %}" class="btn btn-outline-secondary">{% translate 'Cancel' %}</a>
+            <button type="submit" class="btn btn-primary">{{ submit_button_text }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

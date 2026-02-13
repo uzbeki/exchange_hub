@@ -1,5 +1,5 @@
 from django import forms
-from exchange.models import Request, Message
+from exchange.models import Request, Message, LuggageListing, LuggageReservation
 
 
 class RequestForm(forms.ModelForm):
@@ -63,3 +63,89 @@ class MessageForm(forms.ModelForm):
                 }
             ),
         }
+
+
+class LuggageListingForm(forms.ModelForm):
+    available_until = forms.DateField(
+        widget=forms.DateInput(
+            attrs={"type": "date", "class": "form-control"},
+            format="%Y-%m-%d",
+        ),
+        input_formats=["%Y-%m-%d"],
+    )
+
+    class Meta:
+        model = LuggageListing
+        fields = [
+            "title",
+            "total_kg",
+            "price_per_kg",
+            "available_until",
+            "departure_city",
+            "arrival_city",
+            "pickup_location_tokyo",
+            "delivery_options",
+            "allowed_items",
+            "prohibited_items",
+            "description",
+            "is_active",
+        ]
+        widgets = {
+            "title": forms.TextInput(attrs={"class": "form-control"}),
+            "total_kg": forms.NumberInput(
+                attrs={"class": "form-control", "step": "0.01", "min": "0.01"}
+            ),
+            "price_per_kg": forms.NumberInput(
+                attrs={"class": "form-control", "step": "0.01", "min": "0.01"}
+            ),
+            "departure_city": forms.TextInput(attrs={"class": "form-control"}),
+            "arrival_city": forms.TextInput(attrs={"class": "form-control"}),
+            "pickup_location_tokyo": forms.TextInput(
+                attrs={"class": "form-control"}
+            ),
+            "delivery_options": forms.Textarea(
+                attrs={"class": "form-control", "rows": 3}
+            ),
+            "allowed_items": forms.Textarea(
+                attrs={"class": "form-control", "rows": 3}
+            ),
+            "prohibited_items": forms.Textarea(
+                attrs={"class": "form-control", "rows": 3}
+            ),
+            "description": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
+            "is_active": forms.CheckboxInput(attrs={"class": "form-check-input"}),
+        }
+
+
+class LuggageReservationForm(forms.ModelForm):
+    class Meta:
+        model = LuggageReservation
+        fields = ["kg_requested", "contact_handle", "note"]
+        widgets = {
+            "kg_requested": forms.NumberInput(
+                attrs={"class": "form-control", "step": "0.01", "min": "0.01"}
+            ),
+            "contact_handle": forms.TextInput(
+                attrs={
+                    "class": "form-control",
+                    "placeholder": "Phone number (optional)",
+                }
+            ),
+            "note": forms.Textarea(attrs={"class": "form-control", "rows": 2}),
+        }
+
+    def __init__(self, *args, listing=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.listing = listing
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if not self.listing:
+            return cleaned_data
+
+        reservation = self.instance
+        reservation.listing = self.listing
+        reservation.kg_requested = cleaned_data.get("kg_requested")
+        if reservation.kg_requested:
+            reservation.clean()
+        return cleaned_data
