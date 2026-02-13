@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 15:08+0500\n"
+"POT-Creation-Date: 2026-02-13 18:03+0500\n"
 "PO-Revision-Date: 2025-04-14 22:07+0900\n"
 "Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Uzbek <beki@bekhruz.com>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:300
+#: .\base\templates\allauth\layouts\base.html:297
 msgid "Sign In"
 msgstr "Kirish"
 
@@ -40,62 +40,63 @@ msgstr "Menga kirish kodini yuboring"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-#: .\base\templates\allauth\layouts\base.html:155 .\base\templates\index.html:2
+#: .\base\templates\allauth\layouts\base.html:156 .\base\templates\index.html:2
 #: .\base\templates\index.html:106
 msgid "Open Exchange Hub"
 msgstr "Ochiq Ayirboshlash Markazi"
 
-#: .\base\templates\allauth\layouts\base.html:122
-#: .\base\templates\allauth\layouts\base.html:124
+#: .\base\templates\allauth\layouts\base.html:123
+#: .\base\templates\allauth\layouts\base.html:125
 msgid "Toggle theme"
 msgstr "Temani o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:130
+#: .\base\templates\allauth\layouts\base.html:131
 msgid "Light"
 msgstr "Yorug'"
 
-#: .\base\templates\allauth\layouts\base.html:137
+#: .\base\templates\allauth\layouts\base.html:138
 msgid "Dark"
 msgstr "Qorong'u"
 
-#: .\base\templates\allauth\layouts\base.html:144
+#: .\base\templates\allauth\layouts\base.html:145
 msgid "Auto"
 msgstr "Avto"
 
-#: .\base\templates\allauth\layouts\base.html:150
+#: .\base\templates\allauth\layouts\base.html:151
 msgid "Skip to main content"
 msgstr "Asosiy tarkibga o'tish"
 
-#: .\base\templates\allauth\layouts\base.html:164
+#: .\base\templates\allauth\layouts\base.html:165
 msgid "Toggle navigation"
 msgstr "Navigatsiyani almashtirish"
 
-#: .\base\templates\allauth\layouts\base.html:169
+#: .\base\templates\allauth\layouts\base.html:170
 msgid "Project links"
 msgstr "Loyiha havolalari"
 
-#: .\base\templates\allauth\layouts\base.html:172
+#: .\base\templates\allauth\layouts\base.html:173
 msgid "Luggage Space"
 msgstr "Bagaj joyi"
 
-#: .\base\templates\allauth\layouts\base.html:175
-msgid "New offer"
-msgstr "Yangi taklif"
+#: .\base\templates\allauth\layouts\base.html:176
+msgid "Post money offer"
+msgstr "Pul taklifini joylashtirish"
 
-#: .\base\templates\allauth\layouts\base.html:179
+#: .\base\templates\allauth\layouts\base.html:181
+msgid "My Hub"
+msgstr "Mening markazim"
+
+#: .\base\templates\allauth\layouts\base.html:184
+msgid "My money offers"
+msgstr "Mening pul takliflarim"
+
+#: .\base\templates\allauth\layouts\base.html:185
 msgid "My luggage listings"
 msgstr "Mening bagaj e'lonlarim"
 
-#: .\base\templates\allauth\layouts\base.html:182
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\base\templates\allauth\layouts\base.html:186
 msgid "My notifications"
 msgstr "Mening bildirishnomalarim"
-
-#: .\base\templates\allauth\layouts\base.html:185
-#: .\exchange\templates\exchange\my_offers.html:1
-msgid "My offers"
-msgstr "Mening takliflarim"
 
 #: .\base\templates\allauth\layouts\base.html:189
 #: .\exchange\templates\exchange\my_offers.html:235
@@ -103,74 +104,68 @@ msgstr "Mening takliflarim"
 msgid "Conversations"
 msgstr "Suhbatlar"
 
-#: .\base\templates\allauth\layouts\base.html:202
 #: .\base\templates\allauth\layouts\base.html:204
+#: .\base\templates\allauth\layouts\base.html:206
 msgid "Select Language"
 msgstr "Tilni tanlang"
 
-#: .\base\templates\allauth\layouts\base.html:219
+#: .\base\templates\allauth\layouts\base.html:221
 msgid "You are logged in via"
 msgstr "Siz orqali kirgansiz"
 
-#: .\base\templates\allauth\layouts\base.html:219
+#: .\base\templates\allauth\layouts\base.html:221
 msgid "Email"
 msgstr "Elektron pochta"
 
-#: .\base\templates\allauth\layouts\base.html:230
+#: .\base\templates\allauth\layouts\base.html:232
 msgid "Telegram connected as"
 msgstr "Telegram ulangan:"
 
-#: .\base\templates\allauth\layouts\base.html:232
+#: .\base\templates\allauth\layouts\base.html:234
 msgid "Telegram connected"
 msgstr "Telegram ulangan"
 
-#: .\base\templates\allauth\layouts\base.html:236
+#: .\base\templates\allauth\layouts\base.html:238
 msgid "Telegram not connected"
 msgstr "Telegram ulanmagan"
 
-#: .\base\templates\allauth\layouts\base.html:243
-#, fuzzy
-#| msgid "Mute notifications"
-msgid "My Notifications"
-msgstr "Mening bildirishnomalarim"
-
-#: .\base\templates\allauth\layouts\base.html:250
+#: .\base\templates\allauth\layouts\base.html:247
 msgid "Change Email"
 msgstr "Elektron pochtani o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:257
+#: .\base\templates\allauth\layouts\base.html:254
 msgid "Change Password"
 msgstr "Parolni o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:264
+#: .\base\templates\allauth\layouts\base.html:261
 msgid "Change Phone"
 msgstr "Telefon raqamini o'zgartirish"
 
-#: .\base\templates\allauth\layouts\base.html:271
+#: .\base\templates\allauth\layouts\base.html:268
 msgid "Third-Party Accounts"
 msgstr "Uchinchi tomon hisoblari"
 
-#: .\base\templates\allauth\layouts\base.html:278
+#: .\base\templates\allauth\layouts\base.html:275
 msgid "Two-Factor Authentication"
 msgstr "Ikki faktorli autentifikatsiya"
 
-#: .\base\templates\allauth\layouts\base.html:285
+#: .\base\templates\allauth\layouts\base.html:282
 msgid "Sessions"
 msgstr "Sessiyalar"
 
-#: .\base\templates\allauth\layouts\base.html:294
+#: .\base\templates\allauth\layouts\base.html:291
 msgid "Sign out"
 msgstr "Chiqish"
 
-#: .\base\templates\allauth\layouts\base.html:324
+#: .\base\templates\allauth\layouts\base.html:321
 msgid "All rights reserved, except the right to overpay bank fees—that's all yours!"
 msgstr "Ochiq pul ayirboshlash markazi. Barcha huquqlar himoyalangan, bank to'lovlarini ortiqcha to'lash huquqidan tashqari — bu sizniki!"
 
-#: .\base\templates\allauth\layouts\base.html:332 .\base\templates\faq.html:2
+#: .\base\templates\allauth\layouts\base.html:329 .\base\templates\faq.html:2
 msgid "FAQ"
 msgstr "FAQ"
 
-#: .\base\templates\allauth\layouts\base.html:338
+#: .\base\templates\allauth\layouts\base.html:335
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -291,8 +286,8 @@ msgid "Traveling to Japan with extra luggage space?"
 msgstr "Yaponiyaga ortiqcha bagaj joyi bilan ketyapsizmi?"
 
 #: .\base\templates\index.html:120
-msgid "Publish your available kg, set your deadline and price per kg, define allowed/prohibited items, and let buyers reserve slots online."
-msgstr "Mavjud kg miqdoringizni e'lon qiling, muddat va har kg narxini belgilang, ruxsat etilgan/taqiqlangan buyumlarni ko'rsating va xaridorlarga joylarni onlayn band qilish imkonini bering."
+msgid "Publish your available kg, set price currency (USD/UZS/JPY), add ETA, define allowed/prohibited items, and manage reservations online."
+msgstr "Mavjud kg’ni e’lon qiling, narx valyutasini (USD/UZS/JPY) belgilang, ETA qo‘shing, ruxsat etilgan/taqiqlangan buyumlarni ko‘rsating va band qilishlarni onlayn boshqaring."
 
 #: .\base\templates\index.html:124
 msgid "Browse Luggage Space"
@@ -302,39 +297,96 @@ msgstr "Bagaj joylarini ko'rish"
 msgid "Sell My Space"
 msgstr "Joyimni sotish"
 
-#: .\base\templates\index.html:144
+#: .\base\templates\index.html:137
+msgid "Latest Luggage Listings"
+msgstr "Eng so'nggi bagaj e'lonlari"
+
+#: .\base\templates\index.html:138
+msgid "A quick snapshot of currently active luggage space offers."
+msgstr "Hozirda faol bagaj joyi takliflarining qisqa ko'rinishi."
+
+#: .\base\templates\index.html:140
+msgid "View All Luggage Listings"
+msgstr "Barcha bagaj e'lonlarini ko'rish"
+
+#: .\base\templates\index.html:151
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+#: .\exchange\templates\exchange\my_luggage_listings.html:28
+msgid "Open"
+msgstr "Ochiq"
+
+#: .\base\templates\index.html:151
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+#: .\exchange\templates\exchange\my_luggage_listings.html:28
+msgid "Closed"
+msgstr "Yopiq"
+
+#: .\base\templates\index.html:154
+#: .\exchange\templates\exchange\my_luggage_listings.html:31
+msgid "until"
+msgstr "gacha"
+
+#: .\base\templates\index.html:156
+#: .\exchange\templates\exchange\luggage_marketplace.html:36
+msgid "ETA"
+msgstr "Kutilgan yetib kelish vaqti"
+
+#: .\base\templates\index.html:158
+#: .\exchange\templates\exchange\luggage_marketplace.html:51
+#: .\exchange\templates\exchange\my_luggage_listings.html:35
+msgid "Price"
+msgstr "Narx"
+
+#: .\base\templates\index.html:159
+#: .\exchange\templates\exchange\luggage_listing_detail.html:128
+#: .\exchange\templates\exchange\luggage_marketplace.html:47
+#: .\exchange\templates\exchange\my_luggage_listings.html:36
+msgid "Remaining"
+msgstr "Qolgan"
+
+#: .\base\templates\index.html:160
+#: .\exchange\templates\exchange\luggage_notifications.html:44
+#: .\exchange\templates\exchange\my_luggage_listings.html:40
+msgid "Open Listing"
+msgstr "E'lonni ochish"
+
+#: .\base\templates\index.html:166
+msgid "No active luggage listings yet."
+msgstr "Hozircha faol bagaj e'lonlari yo'q."
+
+#: .\base\templates\index.html:184
 msgid "Send Money"
 msgstr "Pul jo'natish"
 
-#: .\base\templates\index.html:145
+#: .\base\templates\index.html:185
 msgid "Looking to send money to Uzbekistan? Find expats who need funds."
 msgstr "O'zbekistonga pul jo'natmoqchimisiz? Mablag'ga muhtoj muhojirlarni toping."
 
-#: .\base\templates\index.html:146 .\base\templates\index.html:158
+#: .\base\templates\index.html:186 .\base\templates\index.html:198
 msgid "View Offers"
 msgstr "Takliflarni ko'rish"
 
-#: .\base\templates\index.html:156
+#: .\base\templates\index.html:196
 msgid "Receive Money"
 msgstr "Pul qabul qilish"
 
-#: .\base\templates\index.html:157
+#: .\base\templates\index.html:197
 msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
 msgstr "O'zbekistondan pul qabul qilishingiz kerakmi? Jo'natuvchilar bilan bir zumda bog'laning."
 
-#: .\base\templates\index.html:166
+#: .\base\templates\index.html:206
 msgid "Offers to Send Money to Uzbekistan"
 msgstr "O'zbekistonga pul jo'natish takliflari"
 
-#: .\base\templates\index.html:186
+#: .\base\templates\index.html:226
 msgid "Send:"
 msgstr "Jo'natish:"
 
-#: .\base\templates\index.html:189 .\base\templates\index.html:317
+#: .\base\templates\index.html:229 .\base\templates\index.html:357
 msgid "Deadline:"
 msgstr "Muddati:"
 
-#: .\base\templates\index.html:190 .\base\templates\index.html:318
+#: .\base\templates\index.html:230 .\base\templates\index.html:358
 #: .\exchange\templates\exchange\conversation.html:104
 #: .\exchange\templates\exchange\conversations_list.html:69
 #: .\exchange\templates\exchange\my_offers.html:134
@@ -342,115 +394,115 @@ msgstr "Muddati:"
 msgid "Urgent"
 msgstr "Shoshilinch"
 
-#: .\base\templates\index.html:194 .\base\templates\index.html:322
+#: .\base\templates\index.html:234 .\base\templates\index.html:362
 msgid "Conditions:"
 msgstr "Shartlar:"
 
-#: .\base\templates\index.html:197 .\base\templates\index.html:325
+#: .\base\templates\index.html:237 .\base\templates\index.html:365
 msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
 msgstr "Bu siz va bank to'lovlari yoki pul o'tkazmalari xizmatlarini chetlab o'tib, ushbu taklifni qabul qilgan har bir kishi tejaydigan taxminiy summa."
 
-#: .\base\templates\index.html:204 .\base\templates\index.html:332
+#: .\base\templates\index.html:244 .\base\templates\index.html:372
 msgid "potential savings"
 msgstr "potensial tejash"
 
-#: .\base\templates\index.html:208 .\base\templates\index.html:336
+#: .\base\templates\index.html:248 .\base\templates\index.html:376
 msgid "Contact:"
 msgstr "Aloqa:"
 
-#: .\base\templates\index.html:243
+#: .\base\templates\index.html:283
 msgid "Social Accounts:"
 msgstr "Ijtimoiy tarmoq hisoblari:"
 
-#: .\base\templates\index.html:265 .\base\templates\index.html:349
+#: .\base\templates\index.html:305 .\base\templates\index.html:389
 msgid "Contact information hidden. Use the message form to connect."
 msgstr "Aloqa maʼlumotlari yashirilgan. Bog'lanish uchun xabar shaklidan foydalaning."
 
-#: .\base\templates\index.html:275 .\base\templates\index.html:359
+#: .\base\templates\index.html:315 .\base\templates\index.html:399
 msgid "Start Conversation"
 msgstr "Suhbatni boshlash"
 
-#: .\base\templates\index.html:287
+#: .\base\templates\index.html:327
 msgid "No active send requests available."
 msgstr "Faol jo'natish so'rovlari mavjud emas."
 
-#: .\base\templates\index.html:296
+#: .\base\templates\index.html:336
 msgid "Offers to Receive Money from Uzbekistan"
 msgstr "O'zbekistondan pul qabul qilish takliflari"
 
-#: .\base\templates\index.html:314
+#: .\base\templates\index.html:354
 msgid "Receive:"
 msgstr "Qabul qilish:"
 
-#: .\base\templates\index.html:371
+#: .\base\templates\index.html:411
 msgid "No active receive requests available."
 msgstr "Faol qabul qilish so'rovlari mavjud emas."
 
-#: .\base\templates\index.html:383 .\base\templates\index.html:388
+#: .\base\templates\index.html:423 .\base\templates\index.html:428
 msgid "Post an Offer"
 msgstr "Taklif joylashtirish"
 
-#: .\base\templates\index.html:384
+#: .\base\templates\index.html:424
 msgid "Didn't find a suitable offer?"
 msgstr "Mos taklif topa olmadingizmi?"
 
-#: .\base\templates\index.html:386
+#: .\base\templates\index.html:426
 msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
 msgstr "O'z taklifingizni joylashtirish tashabbusini oling va pul ayirboshlamoqchi bo'lgan boshqalar bilan bog'laning."
 
-#: .\base\templates\index.html:395
+#: .\base\templates\index.html:435
 msgid "Why Choose Us?"
 msgstr "Nima uchun bizni tanlaysiz?"
 
-#: .\base\templates\index.html:401
+#: .\base\templates\index.html:441
 msgid "No Fees"
 msgstr "To'lovlar yo'q"
 
-#: .\base\templates\index.html:402
+#: .\base\templates\index.html:442
 msgid "Exchange money without any commissions or hidden charges."
 msgstr "Hech qanday komissiya yoki yashirin to'lovlarsiz pul ayirboshlang."
 
-#: .\base\templates\index.html:408
+#: .\base\templates\index.html:448
 msgid "Direct Connection"
 msgstr "To'g'ridan-to'g'ri aloqa"
 
-#: .\base\templates\index.html:409
+#: .\base\templates\index.html:449
 msgid "Connect directly with other users through our secure chat system."
 msgstr "Xavfsiz chat tizimimiz orqali boshqa foydalanuvchilar bilan to'g'ridan-to'g'ri bog'laning."
 
-#: .\base\templates\index.html:415
+#: .\base\templates\index.html:455
 msgid "Secure"
 msgstr "Xavfsiz"
 
-#: .\base\templates\index.html:416
+#: .\base\templates\index.html:456
 msgid "Your data is protected, and we don't handle any money transfers."
 msgstr "Sizning ma'lumotlaringiz himoyalangan va biz hech qanday pul o'tkazmalarini amalga oshirmaymiz."
 
-#: .\base\templates\index.html:425
+#: .\base\templates\index.html:465
 msgid "How It Works"
 msgstr "Qanday ishlaydi"
 
-#: .\base\templates\index.html:431
+#: .\base\templates\index.html:471
 msgid "1. Post Your Offer"
 msgstr "1. Taklifingizni joylashtiring"
 
-#: .\base\templates\index.html:432
+#: .\base\templates\index.html:472
 msgid "Create an offer to send or receive money with your preferred terms."
 msgstr "O'zingiz afzal ko'rgan shartlar bilan pul jo'natish yoki qabul qilish taklifini yarating."
 
-#: .\base\templates\index.html:438
+#: .\base\templates\index.html:478
 msgid "2. Connect with Others"
 msgstr "2. Boshqalar bilan bog'laning"
 
-#: .\base\templates\index.html:439
+#: .\base\templates\index.html:479
 msgid "Browse offers and start a conversation with potential matches."
 msgstr "Takliflarni ko'rib chiqing va potensial mos keluvchilar bilan suhbatni boshlang."
 
-#: .\base\templates\index.html:445
+#: .\base\templates\index.html:485
 msgid "3. Exchange Money"
 msgstr "3. Pul ayirboshlang"
 
-#: .\base\templates\index.html:446
+#: .\base\templates\index.html:486
 msgid "Agree on terms and complete the transaction securely."
 msgstr "Shartlarga kelishing va tranzaksiyani xavfsiz tarzda yakunlang."
 
@@ -482,15 +534,15 @@ msgstr "O'zbekistonga jo'natish"
 msgid "Receive from Uzbekistan"
 msgstr "O'zbekistondan qabul qilish"
 
-#: .\exchange\models.py:20
+#: .\exchange\models.py:20 .\exchange\models.py:131
 msgid "Japanese Yen"
 msgstr "Yapon Iyeni"
 
-#: .\exchange\models.py:21
+#: .\exchange\models.py:21 .\exchange\models.py:132
 msgid "Uzbekistan Sum"
 msgstr "O'zbekiston So'mi"
 
-#: .\exchange\models.py:22
+#: .\exchange\models.py:22 .\exchange\models.py:133
 msgid "US Dollar"
 msgstr "AQSh Dollari"
 
@@ -506,43 +558,43 @@ msgstr "Tugallangan"
 msgid "Hide contacts from other users"
 msgstr "Boshqa foydalanuvchilardan aloqa maʼlumotlarini yashirish"
 
-#: .\exchange\models.py:159
+#: .\exchange\models.py:167
 msgid "Storage must be greater than 0 kg."
 msgstr "Hajm 0 kg dan katta bo‘lishi kerak."
 
-#: .\exchange\models.py:161
+#: .\exchange\models.py:169
 msgid "Price per kg must be greater than 0."
 msgstr "Har kg narxi 0 dan katta bo‘lishi kerak."
 
-#: .\exchange\models.py:195
-#: .\exchange\templates\exchange\luggage_listing_detail.html:75
+#: .\exchange\models.py:203
+#: .\exchange\templates\exchange\luggage_listing_detail.html:98
 msgid "Pending"
 msgstr "Kutilmoqda"
 
-#: .\exchange\models.py:196
-#: .\exchange\templates\exchange\luggage_listing_detail.html:76
-#: .\exchange\templates\exchange\my_luggage_listings.html:27
+#: .\exchange\models.py:204
+#: .\exchange\templates\exchange\luggage_listing_detail.html:99
+#: .\exchange\templates\exchange\my_luggage_listings.html:36
 msgid "Reserved"
 msgstr "Band qilingan"
 
-#: .\exchange\models.py:197
-#: .\exchange\templates\exchange\luggage_listing_detail.html:77
+#: .\exchange\models.py:205
+#: .\exchange\templates\exchange\luggage_listing_detail.html:100
 msgid "Cancelled"
 msgstr "Bekor qilingan"
 
-#: .\exchange\models.py:226
+#: .\exchange\models.py:234
 msgid "Reserved kg must be greater than 0."
 msgstr "Band qilinadigan kg 0 dan katta bo‘lishi kerak."
 
-#: .\exchange\models.py:232 .\exchange\views.py:345
+#: .\exchange\models.py:240 .\exchange\views.py:407
 msgid "You cannot reserve your own listing."
 msgstr "O'zingizning e'loningizni band qila olmaysiz."
 
-#: .\exchange\models.py:235
+#: .\exchange\models.py:243
 msgid "This listing is no longer available."
 msgstr "Bu e'lon endi mavjud emas."
 
-#: .\exchange\models.py:250
+#: .\exchange\models.py:258
 #, python-format
 msgid "Only %(remaining)s kg is left for reservation."
 msgstr "Band qilish uchun faqat %(remaining)s kg qoldi."
@@ -621,182 +673,205 @@ msgstr "Marketplace'ga qaytish"
 msgid "My Listings"
 msgstr "Mening e'lonlarim"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:22
+#: .\exchange\templates\exchange\luggage_listing_detail.html:17
+msgid "Edit Listing"
+msgstr "E'lonni tahrirlash"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:23
 msgid "Share this listing in your Telegram/Facebook groups:"
 msgstr "Ushbu e'lonni Telegram/Facebook guruhlaringizda ulashing:"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:34
+#: .\exchange\templates\exchange\luggage_listing_detail.html:35
 #: .\exchange\templates\exchange\luggage_listing_form.html:27
 msgid "Price per kg"
 msgstr "Har kg narxi"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:35
-#: .\exchange\templates\exchange\luggage_marketplace.html:49
+#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_marketplace.html:52
 msgid "Pickup in Tokyo"
 msgstr "Tokioda qabul qilish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_listing_detail.html:38
+#: .\exchange\templates\exchange\my_luggage_listings.html:33
+msgid "Estimated arrival"
+msgstr "Yetib kelish vaqti"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:40
 msgid "Delivery options"
 msgstr "Yetkazib berish variantlari"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_listing_detail.html:40
 msgid "Not specified"
 msgstr "Ko'rsatilmagan"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:37
-#: .\exchange\templates\exchange\luggage_listing_form.html:56
+#: .\exchange\templates\exchange\luggage_listing_detail.html:41
+#: .\exchange\templates\exchange\luggage_listing_form.html:64
 msgid "Allowed items"
 msgstr "Ruxsat etilgan buyumlar"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:38
-#: .\exchange\templates\exchange\luggage_listing_form.html:60
+#: .\exchange\templates\exchange\luggage_listing_detail.html:42
+#: .\exchange\templates\exchange\luggage_listing_form.html:68
 msgid "Not allowed items"
 msgstr "Ruxsat etilmagan buyumlar"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:40
-#: .\exchange\templates\exchange\luggage_listing_form.html:65
+#: .\exchange\templates\exchange\luggage_listing_detail.html:44
+#: .\exchange\templates\exchange\luggage_listing_form.html:73
 msgid "Extra details"
 msgstr "Qo'shimcha tafsilotlar"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:48
+#: .\exchange\templates\exchange\luggage_listing_detail.html:57
+msgid "Mark as Done"
+msgstr "Yakunlandi deb belgilash"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:60
+msgid "Reopen Listing"
+msgstr "E'lonni qayta ochish"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:63
+#: .\exchange\templates\exchange\my_luggage_listings.html:54
+msgid "Delete this listing?"
+msgstr "Ushbu e'lonni o'chirasizmi?"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:65
+msgid "Delete Listing"
+msgstr "E'lonni o'chirish"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:71
 msgid "Manage Reservations"
 msgstr "Band qilishlarni boshqarish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:53
+#: .\exchange\templates\exchange\luggage_listing_detail.html:76
 msgid "Buyer"
 msgstr "Xaridor"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:54
+#: .\exchange\templates\exchange\luggage_listing_detail.html:77
 msgid "Kg"
 msgstr "Kg"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:55
-#, fuzzy
-#| msgid "Contact:"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:78
 msgid "Contact"
 msgstr "Aloqa"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:56
+#: .\exchange\templates\exchange\luggage_listing_detail.html:79
 #: .\exchange\templates\exchange\my_offers.html:174
 #: .\exchange\templates\exchange\offer_form.html:61
 msgid "Status"
 msgstr "Holat"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:57
-#, fuzzy
-#| msgid "Active"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:80
 msgid "Actions"
 msgstr "Amallar"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:79
-#, fuzzy
-#| msgid "Update Offer"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:102
 msgid "Update"
 msgstr "Yangilash"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:84
+#: .\exchange\templates\exchange\luggage_listing_detail.html:107
 msgid "No reservations yet."
 msgstr "Hozircha band qilishlar yo'q."
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:96
-#, fuzzy
-#| msgid "Status"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:119
 msgid "Storage Status"
 msgstr "Bagaj holati"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:98
+#: .\exchange\templates\exchange\luggage_listing_detail.html:121
 msgid "Committed / Total"
 msgstr "Band qilingan / Jami"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:104
+#: .\exchange\templates\exchange\luggage_listing_detail.html:127
 msgid "Reserved (confirmed)"
 msgstr "Band qilingan (tasdiqlangan)"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:105
-#: .\exchange\templates\exchange\luggage_marketplace.html:44
-#: .\exchange\templates\exchange\my_luggage_listings.html:27
-msgid "Remaining"
-msgstr "Qolgan"
-
-#: .\exchange\templates\exchange\luggage_listing_detail.html:112
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:135
 msgid "Telegram Notifications"
 msgstr "Telegram bildirishnomalari"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:118
-#: .\exchange\templates\exchange\luggage_notifications.html:42
+#: .\exchange\templates\exchange\luggage_listing_detail.html:138
+#: .\exchange\templates\exchange\luggage_notifications.html:19
+msgid "Telegram is connected."
+msgstr "Telegram ulangan."
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:140
+#: .\exchange\templates\exchange\luggage_notifications.html:21
+#, python-format
+msgid "Connected account: @%(tg)s"
+msgstr "Ulangan akkaunt: @%(tg)s"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:147
+#: .\exchange\templates\exchange\luggage_notifications.html:51
 msgid "Enable notifications for this listing"
 msgstr "Ushbu e'lon uchun bildirishnomalarni yoqish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:122
-#: .\exchange\templates\exchange\luggage_notifications.html:46
+#: .\exchange\templates\exchange\luggage_listing_detail.html:151
+#: .\exchange\templates\exchange\luggage_notifications.html:55
 msgid "New reservation created"
 msgstr "Yangi band qilish yaratildi"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:126
-#: .\exchange\templates\exchange\luggage_notifications.html:50
+#: .\exchange\templates\exchange\luggage_listing_detail.html:155
+#: .\exchange\templates\exchange\luggage_notifications.html:59
 msgid "Reservation status changes"
 msgstr "Band qilish holati o'zgarishi"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:130
-#: .\exchange\templates\exchange\luggage_notifications.html:54
+#: .\exchange\templates\exchange\luggage_listing_detail.html:159
+#: .\exchange\templates\exchange\luggage_notifications.html:63
 msgid "Listing sold out"
 msgstr "Joy to'liq band bo'lgan"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:134
-#: .\exchange\templates\exchange\luggage_notifications.html:58
+#: .\exchange\templates\exchange\luggage_listing_detail.html:163
+#: .\exchange\templates\exchange\luggage_notifications.html:67
 msgid "Space becomes available again"
 msgstr "Joy yana mavjud bo'ldi"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:137
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:166
 msgid "Save Notification Settings"
 msgstr "Bildirishnoma sozlamalarini saqlash"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:139
+#: .\exchange\templates\exchange\luggage_listing_detail.html:168
 msgid "Disable for this listing"
 msgstr "Bu e'lon uchun o‘chirish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:141
+#: .\exchange\templates\exchange\luggage_listing_detail.html:170
 msgid "Manage All Subscriptions"
 msgstr "Barcha obunalarni boshqarish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:145
+#: .\exchange\templates\exchange\luggage_listing_detail.html:174
 msgid "Connect your Telegram first using the secure connect link, then enable notifications for this listing."
 msgstr "Avval Telegram'ni xavfsiz ulanish havolasi orqali ulang, so‘ng ushbu e’lon uchun bildirishnomalarni yoqing."
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:148
-#: .\exchange\templates\exchange\luggage_notifications.html:20
+#: .\exchange\templates\exchange\luggage_listing_detail.html:177
+#: .\exchange\templates\exchange\luggage_notifications.html:29
 msgid "Connect Telegram"
 msgstr "Telegram'ni ulash"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:159
+#: .\exchange\templates\exchange\luggage_listing_detail.html:185
+msgid "This is your listing. Use the reservation manager to confirm or cancel bookings."
+msgstr "Bu sizning e'loningiz. Band qilishlarni tasdiqlash yoki bekor qilish uchun band qilishlarni boshqaruvchisidan foydalaning."
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:190
 msgid "Reserve Storage"
 msgstr "Joyni band qilish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:163
+#: .\exchange\templates\exchange\luggage_listing_detail.html:194
 msgid "How many kg?"
 msgstr "Necha kg?"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:167
+#: .\exchange\templates\exchange\luggage_listing_detail.html:198
 msgid "Your phone number (optional)"
 msgstr "Telefon raqamingiz (ixtiyoriy)"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:171
+#: .\exchange\templates\exchange\luggage_listing_detail.html:202
 msgid "Item notes"
 msgstr "Buyum izohlari"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:175
+#: .\exchange\templates\exchange\luggage_listing_detail.html:206
 msgid "Reserve Slot"
 msgstr "Joyni band qilish"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:181
+#: .\exchange\templates\exchange\luggage_listing_detail.html:212
 msgid "This listing is closed or fully booked."
 msgstr "Bu e'lon yopilgan yoki to‘liq band qilingan."
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:184
+#: .\exchange\templates\exchange\luggage_listing_detail.html:215
 msgid "Please sign in to reserve storage."
 msgstr "Joyni band qilish uchun tizimga kiring."
 
@@ -809,34 +884,46 @@ msgid "Total Storage (kg)"
 msgstr "Umumiy hajm (kg)"
 
 #: .\exchange\templates\exchange\luggage_listing_form.html:31
+msgid "Price currency"
+msgstr "Narx valyutasi"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:35
 msgid "Available until"
 msgstr "Gacha mavjud"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:36
+#: .\exchange\templates\exchange\luggage_listing_form.html:39
+msgid "Estimated arrival date & time"
+msgstr "Yetib kelish sanasi va soati"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:44
 msgid "Departure city"
 msgstr "Jo'nash shahri"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:40
+#: .\exchange\templates\exchange\luggage_listing_form.html:48
 msgid "Arrival city"
 msgstr "Yetib borish shahri"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:45
+#: .\exchange\templates\exchange\luggage_listing_form.html:53
 msgid "Pickup location in Tokyo"
 msgstr "Tokiodagi topshirish joyi"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:50
+#: .\exchange\templates\exchange\luggage_listing_form.html:58
 msgid "Optional delivery options"
 msgstr "Ixtiyoriy yetkazib berish variantlari"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:52
+#: .\exchange\templates\exchange\luggage_listing_form.html:60
 msgid "Example: can deliver in Shinjuku, or can ship to recipient address in Japan."
 msgstr "Misol: Shinjukuga yetkazib bera olaman yoki Yaponiyadagi qabul qiluvchi manziliga yubora olaman."
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:71
+#: .\exchange\templates\exchange\luggage_listing_form.html:75
+msgid "Use this for pickup nuances; use arrival date & time above for ETA."
+msgstr "Ushbu maydondan topshirib olishga oid tafsilotlar uchun foydalaning; ETA uchun yuqoridagi yetib kelish sanasi va vaqtini ishlating."
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:80
 msgid "Listing is active"
 msgstr "E'lon faol"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:81
+#: .\exchange\templates\exchange\luggage_listing_form.html:90
 msgid "Cancel"
 msgstr "Bekor qilish"
 
@@ -857,38 +944,24 @@ msgstr "Joyimni sotish"
 msgid "Sign in to Reserve"
 msgstr "Band qilish uchun kiring"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:31
-msgid "Open"
-msgstr "Ochiq"
-
-#: .\exchange\templates\exchange\luggage_marketplace.html:31
-msgid "Closed"
-msgstr "Yopiq"
-
 #: .\exchange\templates\exchange\luggage_marketplace.html:34
 msgid "by"
 msgstr "tomonidan"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:38
+#: .\exchange\templates\exchange\luggage_marketplace.html:41
 msgid "Reserved / Total"
 msgstr "Band qilingan / Jami"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:48
-msgid "Price"
-msgstr "Narx"
-
-#: .\exchange\templates\exchange\luggage_marketplace.html:52
+#: .\exchange\templates\exchange\luggage_marketplace.html:55
 msgid "View Listing"
 msgstr "E'lonni ko'rish"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:58
+#: .\exchange\templates\exchange\luggage_marketplace.html:61
 msgid "No active luggage listings yet. Be the first to post one."
 msgstr "Hozircha faol bagaj e'lonlari yo'q. Birinchi bo'lib joylashtiring."
 
 #: .\exchange\templates\exchange\luggage_notifications.html:4
 #: .\exchange\templates\exchange\luggage_notifications.html:10
-#, fuzzy
-#| msgid "Mute notifications"
 msgid "Luggage Notifications"
 msgstr "Bagaj bildirishnomalari"
 
@@ -901,28 +974,23 @@ msgstr "Har bir e'lon bo‘yicha Telegram’da oladigan xabarlaringizni boshqari
 msgid "Marketplace"
 msgstr "Marketplace"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:18
+#: .\exchange\templates\exchange\luggage_notifications.html:27
 msgid "Telegram is not connected yet."
 msgstr "Telegram hali ulanmagan."
 
-#: .\exchange\templates\exchange\luggage_notifications.html:35
-#: .\exchange\templates\exchange\my_luggage_listings.html:31
-msgid "Open Listing"
-msgstr "E'lonni ochish"
-
-#: .\exchange\templates\exchange\luggage_notifications.html:61
+#: .\exchange\templates\exchange\luggage_notifications.html:70
 msgid "Save"
 msgstr "Saqlash"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:63
+#: .\exchange\templates\exchange\luggage_notifications.html:72
 msgid "Disable"
 msgstr "O‘chirish"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:65
+#: .\exchange\templates\exchange\luggage_notifications.html:74
 msgid "Enable"
 msgstr "Yoqish"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:74
+#: .\exchange\templates\exchange\luggage_notifications.html:83
 msgid "No subscriptions yet. Open a listing and save Telegram notification settings."
 msgstr "Hozircha obunalar yo'q. E'lonni ochib, Telegram bildirishnoma sozlamalarini saqlang."
 
@@ -939,17 +1007,35 @@ msgstr "Band qilishlarni kuzating va to'langan joylarni band qilingan deb belgil
 msgid "New Listing"
 msgstr "Yangi e'lon"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:26
-msgid "until"
-msgstr "gacha"
+#: .\exchange\templates\exchange\my_luggage_listings.html:41
+#: .\exchange\templates\exchange\my_offers.html:262
+msgid "Edit"
+msgstr "Tahrirlash"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:32
+#: .\exchange\templates\exchange\my_luggage_listings.html:47
+msgid "Mark Done"
+msgstr "Yopildi deb belgilash"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:51
+msgid "Reopen"
+msgstr "Qayta ochish"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:56
+#: .\exchange\templates\exchange\my_offers.html:317
+msgid "Delete"
+msgstr "O'chirish"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:58
 msgid "Share"
 msgstr "Ulashish"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:41
+#: .\exchange\templates\exchange\my_luggage_listings.html:67
 msgid "No luggage listings yet. Create one and share its link in Facebook or Telegram groups."
 msgstr "Hali bagaj e'lonlari yo'q. E'lon yarating va havolasini Facebook yoki Telegram guruhlarida ulashing."
+
+#: .\exchange\templates\exchange\my_offers.html:1
+msgid "My offers"
+msgstr "Mening takliflarim"
 
 #: .\exchange\templates\exchange\my_offers.html:116
 msgid "My Offers"
@@ -987,10 +1073,6 @@ msgstr "Aloqalarni yashirish"
 msgid "Complete"
 msgstr "Tugatish"
 
-#: .\exchange\templates\exchange\my_offers.html:262
-msgid "Edit"
-msgstr "Tahrirlash"
-
 #: .\exchange\templates\exchange\my_offers.html:289
 msgid "Mark Urgent"
 msgstr "Shoshilinch deb belgilash"
@@ -998,10 +1080,6 @@ msgstr "Shoshilinch deb belgilash"
 #: .\exchange\templates\exchange\my_offers.html:306
 msgid "Remove Urgency"
 msgstr "Shoshilinchlikni olib tashlash"
-
-#: .\exchange\templates\exchange\my_offers.html:317
-msgid "Delete"
-msgstr "O'chirish"
 
 #: .\exchange\templates\exchange\my_offers.html:328
 msgid "Start Saving Today!"
@@ -1116,49 +1194,85 @@ msgstr "Bagaj joyi e'lonini yaratish"
 msgid "Publish Listing"
 msgstr "E'lonni chop etish"
 
+#: .\exchange\views.py:208
+msgid "Luggage listing updated."
+msgstr "Bagaj e'loni yangilandi."
+
+#: .\exchange\views.py:213
+msgid "Edit Luggage Storage Listing"
+msgstr "Bagaj joyi e'lonini tahrirlash"
+
+#: .\exchange\views.py:214
+msgid "Save Changes"
+msgstr "O'zgarishlarni saqlash"
+
+#: .\exchange\views.py:225
+msgid "You are not allowed to delete this listing."
+msgstr "Bu e'lonni o'chirishga sizda ruxsat yo‘q."
+
+#: .\exchange\views.py:229
+msgid "Luggage listing deleted."
+msgstr "Bagaj e'loni o'chirildi."
+
+#: .\exchange\views.py:237
+msgid "You are not allowed to update this listing."
+msgstr "Bu e'lonni yangilashga sizda ruxsat yo‘q."
+
+#: .\exchange\views.py:243
+msgid "Listing marked as done/closed."
+msgstr "E'lon yakunlandi/yopildi deb belgilandi."
+
 #: .\exchange\views.py:246
+msgid "Listing reopened."
+msgstr "E'lon qayta ochildi."
+
+#: .\exchange\views.py:248
+msgid "Invalid listing action."
+msgstr "E'lon amali noto‘g‘ri."
+
+#: .\exchange\views.py:308
 #, python-format
 msgid "First connect Telegram: open %(url)s from this account, then return here."
 msgstr "Avval Telegram'ni ulang: %(url)s ni shu akkauntdan oching, keyin bu yerga qayting."
 
-#: .\exchange\views.py:252
+#: .\exchange\views.py:314
 msgid "Telegram bot username is not configured by admin yet."
 msgstr "Telegram bot username'i administrator tomonidan hali sozlanmagan."
 
-#: .\exchange\views.py:285
+#: .\exchange\views.py:347
 msgid "Telegram notification settings saved."
 msgstr "Telegram bildirishnoma sozlamalari saqlandi."
 
-#: .\exchange\views.py:287
+#: .\exchange\views.py:349
 msgid "Telegram notifications disabled for this listing."
 msgstr "Ushbu e'lon uchun Telegram bildirishnomalari o‘chirildi."
 
-#: .\exchange\views.py:335
+#: .\exchange\views.py:397
 msgid "Notification settings updated."
 msgstr "Bildirishnoma sozlamalari yangilandi."
 
-#: .\exchange\views.py:366
+#: .\exchange\views.py:428
 msgid "Reservation submitted. Contact the seller to complete payment and handover."
 msgstr "Band qilish yuborildi. To'lov va topshirishni yakunlash uchun sotuvchi bilan bog'laning."
 
-#: .\exchange\views.py:392
+#: .\exchange\views.py:454
 msgid "You are not allowed to update this reservation."
 msgstr "Bu band qilishni yangilashga sizda ruxsat yo‘q."
 
-#: .\exchange\views.py:402
+#: .\exchange\views.py:464
 msgid "Invalid reservation status."
 msgstr "Band qilish holati noto‘g‘ri."
 
-#: .\exchange\views.py:421
+#: .\exchange\views.py:483
 msgid "Reservation status updated."
 msgstr "Band qilish holati yangilandi."
 
-#: .\exchange\views.py:718 .\exchange\views.py:721
+#: .\exchange\views.py:780 .\exchange\views.py:783
 msgid "Conversation deleted successfully."
 msgstr "Suhbat muvaffaqiyatli o'chirildi."
 
-#~ msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
-#~ msgstr "Ochiq pul ayirboshlash markazi. Barcha huquqlar himoyalangan, bank to'lovlarini ortiqcha to'lash huquqidan tashqari — bu sizniki!"
+#~ msgid "New offer"
+#~ msgstr "Yangi taklif"
 
-#~ msgid "Have questions? Check out our FAQ!"
-#~ msgstr "Savollaringiz bormi? Bizning FAQ boʻlimimizni koʻrib chiqing!"
+#~ msgid "My Notifications"
+#~ msgstr "Mening bildirishnomalarim"

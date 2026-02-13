@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 15:08+0500\n"
+"POT-Creation-Date: 2026-02-13 18:03+0500\n"
 "PO-Revision-Date: 2025-04-14 22:14+0900\n"
 "Last-Translator: Bekhruz Otaev <info@bekhruz.com>\n"
 "Language-Team: Japanese <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\base\templates\account\login.html:5 .\base\templates\account\login.html:9
 #: .\base\templates\account\login.html:31
-#: .\base\templates\allauth\layouts\base.html:300
+#: .\base\templates\allauth\layouts\base.html:297
 msgid "Sign In"
 msgstr "サインイン"
 
@@ -40,62 +40,63 @@ msgstr "サインインコードを送信"
 
 #: .\base\templates\allauth\layouts\base.html:9
 #: .\base\templates\allauth\layouts\base.html:12
-#: .\base\templates\allauth\layouts\base.html:155 .\base\templates\index.html:2
+#: .\base\templates\allauth\layouts\base.html:156 .\base\templates\index.html:2
 #: .\base\templates\index.html:106
 msgid "Open Exchange Hub"
 msgstr "オープン両替ハブ"
 
-#: .\base\templates\allauth\layouts\base.html:122
-#: .\base\templates\allauth\layouts\base.html:124
+#: .\base\templates\allauth\layouts\base.html:123
+#: .\base\templates\allauth\layouts\base.html:125
 msgid "Toggle theme"
 msgstr "テーマを切り替える"
 
-#: .\base\templates\allauth\layouts\base.html:130
+#: .\base\templates\allauth\layouts\base.html:131
 msgid "Light"
 msgstr "ライト"
 
-#: .\base\templates\allauth\layouts\base.html:137
+#: .\base\templates\allauth\layouts\base.html:138
 msgid "Dark"
 msgstr "ダーク"
 
-#: .\base\templates\allauth\layouts\base.html:144
+#: .\base\templates\allauth\layouts\base.html:145
 msgid "Auto"
 msgstr "自動"
 
-#: .\base\templates\allauth\layouts\base.html:150
+#: .\base\templates\allauth\layouts\base.html:151
 msgid "Skip to main content"
 msgstr "メインコンテンツへスキップ"
 
-#: .\base\templates\allauth\layouts\base.html:164
+#: .\base\templates\allauth\layouts\base.html:165
 msgid "Toggle navigation"
 msgstr "ナビゲーションを切り替える"
 
-#: .\base\templates\allauth\layouts\base.html:169
+#: .\base\templates\allauth\layouts\base.html:170
 msgid "Project links"
 msgstr "プロジェクトリンク"
 
-#: .\base\templates\allauth\layouts\base.html:172
+#: .\base\templates\allauth\layouts\base.html:173
 msgid "Luggage Space"
 msgstr "荷物スペース"
 
-#: .\base\templates\allauth\layouts\base.html:175
-msgid "New offer"
-msgstr "新規オファー"
+#: .\base\templates\allauth\layouts\base.html:176
+msgid "Post money offer"
+msgstr "送金オファーを投稿"
 
-#: .\base\templates\allauth\layouts\base.html:179
+#: .\base\templates\allauth\layouts\base.html:181
+msgid "My Hub"
+msgstr "マイハブ"
+
+#: .\base\templates\allauth\layouts\base.html:184
+msgid "My money offers"
+msgstr "自分の送金オファー"
+
+#: .\base\templates\allauth\layouts\base.html:185
 msgid "My luggage listings"
 msgstr "自分の荷物掲載"
 
-#: .\base\templates\allauth\layouts\base.html:182
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\base\templates\allauth\layouts\base.html:186
 msgid "My notifications"
 msgstr "自分の通知"
-
-#: .\base\templates\allauth\layouts\base.html:185
-#: .\exchange\templates\exchange\my_offers.html:1
-msgid "My offers"
-msgstr "マイオファー"
 
 #: .\base\templates\allauth\layouts\base.html:189
 #: .\exchange\templates\exchange\my_offers.html:235
@@ -103,74 +104,68 @@ msgstr "マイオファー"
 msgid "Conversations"
 msgstr "会話"
 
-#: .\base\templates\allauth\layouts\base.html:202
 #: .\base\templates\allauth\layouts\base.html:204
+#: .\base\templates\allauth\layouts\base.html:206
 msgid "Select Language"
 msgstr "言語を選択"
 
-#: .\base\templates\allauth\layouts\base.html:219
+#: .\base\templates\allauth\layouts\base.html:221
 msgid "You are logged in via"
 msgstr "次の方法でログインしています："
 
-#: .\base\templates\allauth\layouts\base.html:219
+#: .\base\templates\allauth\layouts\base.html:221
 msgid "Email"
 msgstr "Eメール"
 
-#: .\base\templates\allauth\layouts\base.html:230
+#: .\base\templates\allauth\layouts\base.html:232
 msgid "Telegram connected as"
 msgstr "Telegram連携済み:"
 
-#: .\base\templates\allauth\layouts\base.html:232
+#: .\base\templates\allauth\layouts\base.html:234
 msgid "Telegram connected"
 msgstr "Telegram連携済み"
 
-#: .\base\templates\allauth\layouts\base.html:236
+#: .\base\templates\allauth\layouts\base.html:238
 msgid "Telegram not connected"
 msgstr "Telegram未連携"
 
-#: .\base\templates\allauth\layouts\base.html:243
-#, fuzzy
-#| msgid "Mute notifications"
-msgid "My Notifications"
-msgstr "自分の通知"
-
-#: .\base\templates\allauth\layouts\base.html:250
+#: .\base\templates\allauth\layouts\base.html:247
 msgid "Change Email"
 msgstr "Eメールを変更"
 
-#: .\base\templates\allauth\layouts\base.html:257
+#: .\base\templates\allauth\layouts\base.html:254
 msgid "Change Password"
 msgstr "パスワードを変更"
 
-#: .\base\templates\allauth\layouts\base.html:264
+#: .\base\templates\allauth\layouts\base.html:261
 msgid "Change Phone"
 msgstr "電話番号を変更"
 
-#: .\base\templates\allauth\layouts\base.html:271
+#: .\base\templates\allauth\layouts\base.html:268
 msgid "Third-Party Accounts"
 msgstr "サードパーティアカウント"
 
-#: .\base\templates\allauth\layouts\base.html:278
+#: .\base\templates\allauth\layouts\base.html:275
 msgid "Two-Factor Authentication"
 msgstr "二要素認証"
 
-#: .\base\templates\allauth\layouts\base.html:285
+#: .\base\templates\allauth\layouts\base.html:282
 msgid "Sessions"
 msgstr "セッション"
 
-#: .\base\templates\allauth\layouts\base.html:294
+#: .\base\templates\allauth\layouts\base.html:291
 msgid "Sign out"
 msgstr "サインアウト"
 
-#: .\base\templates\allauth\layouts\base.html:324
+#: .\base\templates\allauth\layouts\base.html:321
 msgid "All rights reserved, except the right to overpay bank fees—that's all yours!"
 msgstr "無断複写・転載を禁じます。ただし、銀行手数料を払いすぎる権利、それはあなたのものです！"
 
-#: .\base\templates\allauth\layouts\base.html:332 .\base\templates\faq.html:2
+#: .\base\templates\allauth\layouts\base.html:329 .\base\templates\faq.html:2
 msgid "FAQ"
 msgstr "FAQ"
 
-#: .\base\templates\allauth\layouts\base.html:338
+#: .\base\templates\allauth\layouts\base.html:335
 msgid "GitHub"
 msgstr "GitHub"
 
@@ -291,8 +286,8 @@ msgid "Traveling to Japan with extra luggage space?"
 msgstr "日本へ行く予定で荷物スペースに余裕がありますか？"
 
 #: .\base\templates\index.html:120
-msgid "Publish your available kg, set your deadline and price per kg, define allowed/prohibited items, and let buyers reserve slots online."
-msgstr "利用可能なkgを公開し、期限と1kgあたりの価格を設定し、可/不可の品目を定義して、購入者がオンラインで予約できるようにしましょう。"
+msgid "Publish your available kg, set price currency (USD/UZS/JPY), add ETA, define allowed/prohibited items, and manage reservations online."
+msgstr "利用可能なkgを公開し、価格通貨（USD/UZS/JPY）を設定し、ETAを追加し、許可/禁止されているアイテムを定義し、オンラインで予約を管理します。"
 
 #: .\base\templates\index.html:124
 msgid "Browse Luggage Space"
@@ -302,39 +297,96 @@ msgstr "荷物スペースを探す"
 msgid "Sell My Space"
 msgstr "自分のスペースを販売"
 
-#: .\base\templates\index.html:144
+#: .\base\templates\index.html:137
+msgid "Latest Luggage Listings"
+msgstr "最新の荷物掲載"
+
+#: .\base\templates\index.html:138
+msgid "A quick snapshot of currently active luggage space offers."
+msgstr "現在有効な荷物スペースオファーのクイックスナップショット。"
+
+#: .\base\templates\index.html:140
+msgid "View All Luggage Listings"
+msgstr "すべての荷物掲載を見る"
+
+#: .\base\templates\index.html:151
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+#: .\exchange\templates\exchange\my_luggage_listings.html:28
+msgid "Open"
+msgstr "公開中"
+
+#: .\base\templates\index.html:151
+#: .\exchange\templates\exchange\luggage_marketplace.html:31
+#: .\exchange\templates\exchange\my_luggage_listings.html:28
+msgid "Closed"
+msgstr "非公開"
+
+#: .\base\templates\index.html:154
+#: .\exchange\templates\exchange\my_luggage_listings.html:31
+msgid "until"
+msgstr "まで"
+
+#: .\base\templates\index.html:156
+#: .\exchange\templates\exchange\luggage_marketplace.html:36
+msgid "ETA"
+msgstr "ETA"
+
+#: .\base\templates\index.html:158
+#: .\exchange\templates\exchange\luggage_marketplace.html:51
+#: .\exchange\templates\exchange\my_luggage_listings.html:35
+msgid "Price"
+msgstr "価格"
+
+#: .\base\templates\index.html:159
+#: .\exchange\templates\exchange\luggage_listing_detail.html:128
+#: .\exchange\templates\exchange\luggage_marketplace.html:47
+#: .\exchange\templates\exchange\my_luggage_listings.html:36
+msgid "Remaining"
+msgstr "残り"
+
+#: .\base\templates\index.html:160
+#: .\exchange\templates\exchange\luggage_notifications.html:44
+#: .\exchange\templates\exchange\my_luggage_listings.html:40
+msgid "Open Listing"
+msgstr "掲載を開く"
+
+#: .\base\templates\index.html:166
+msgid "No active luggage listings yet."
+msgstr "まだアクティブな荷物掲載はありません。"
+
+#: .\base\templates\index.html:184
 msgid "Send Money"
 msgstr "送金する"
 
-#: .\base\templates\index.html:145
+#: .\base\templates\index.html:185
 msgid "Looking to send money to Uzbekistan? Find expats who need funds."
 msgstr "ウズベキスタンに送金したいですか？資金を必要としている駐在員を見つけましょう。"
 
-#: .\base\templates\index.html:146 .\base\templates\index.html:158
+#: .\base\templates\index.html:186 .\base\templates\index.html:198
 msgid "View Offers"
 msgstr "オファーを見る"
 
-#: .\base\templates\index.html:156
+#: .\base\templates\index.html:196
 msgid "Receive Money"
 msgstr "受け取る"
 
-#: .\base\templates\index.html:157
+#: .\base\templates\index.html:197
 msgid "Need to receive money from Uzbekistan? Connect with senders instantly."
 msgstr "ウズベキスタンからお金を受け取る必要がありますか？送信者とすぐに繋がりましょう。"
 
-#: .\base\templates\index.html:166
+#: .\base\templates\index.html:206
 msgid "Offers to Send Money to Uzbekistan"
 msgstr "ウズベキスタンへの送金オファー"
 
-#: .\base\templates\index.html:186
+#: .\base\templates\index.html:226
 msgid "Send:"
 msgstr "送金:"
 
-#: .\base\templates\index.html:189 .\base\templates\index.html:317
+#: .\base\templates\index.html:229 .\base\templates\index.html:357
 msgid "Deadline:"
 msgstr "期限:"
 
-#: .\base\templates\index.html:190 .\base\templates\index.html:318
+#: .\base\templates\index.html:230 .\base\templates\index.html:358
 #: .\exchange\templates\exchange\conversation.html:104
 #: .\exchange\templates\exchange\conversations_list.html:69
 #: .\exchange\templates\exchange\my_offers.html:134
@@ -342,115 +394,115 @@ msgstr "期限:"
 msgid "Urgent"
 msgstr "緊急"
 
-#: .\base\templates\index.html:194 .\base\templates\index.html:322
+#: .\base\templates\index.html:234 .\base\templates\index.html:362
 msgid "Conditions:"
 msgstr "条件:"
 
-#: .\base\templates\index.html:197 .\base\templates\index.html:325
+#: .\base\templates\index.html:237 .\base\templates\index.html:365
 msgid "This is the approximate amount you and anyone who accepts this offer by skipping bank fees or money transfer services."
 msgstr "これは、銀行手数料や送金サービスをスキップすることで、あなたとこのオファーを受け入れる人が節約できるおおよその金額です。"
 
-#: .\base\templates\index.html:204 .\base\templates\index.html:332
+#: .\base\templates\index.html:244 .\base\templates\index.html:372
 msgid "potential savings"
 msgstr "潜在的な節約額"
 
-#: .\base\templates\index.html:208 .\base\templates\index.html:336
+#: .\base\templates\index.html:248 .\base\templates\index.html:376
 msgid "Contact:"
 msgstr "連絡先:"
 
-#: .\base\templates\index.html:243
+#: .\base\templates\index.html:283
 msgid "Social Accounts:"
 msgstr "ソーシャルアカウント:"
 
-#: .\base\templates\index.html:265 .\base\templates\index.html:349
+#: .\base\templates\index.html:305 .\base\templates\index.html:389
 msgid "Contact information hidden. Use the message form to connect."
 msgstr "連絡先情報は非表示です。接続するにはメッセージフォームを使用してください。"
 
-#: .\base\templates\index.html:275 .\base\templates\index.html:359
+#: .\base\templates\index.html:315 .\base\templates\index.html:399
 msgid "Start Conversation"
 msgstr "会話を開始"
 
-#: .\base\templates\index.html:287
+#: .\base\templates\index.html:327
 msgid "No active send requests available."
 msgstr "利用可能なアクティブな送信リクエストはありません。"
 
-#: .\base\templates\index.html:296
+#: .\base\templates\index.html:336
 msgid "Offers to Receive Money from Uzbekistan"
 msgstr "ウズベキスタンからの受取オファー"
 
-#: .\base\templates\index.html:314
+#: .\base\templates\index.html:354
 msgid "Receive:"
 msgstr "受取:"
 
-#: .\base\templates\index.html:371
+#: .\base\templates\index.html:411
 msgid "No active receive requests available."
 msgstr "利用可能なアクティブな受取リクエストはありません。"
 
-#: .\base\templates\index.html:383 .\base\templates\index.html:388
+#: .\base\templates\index.html:423 .\base\templates\index.html:428
 msgid "Post an Offer"
 msgstr "オファーを投稿"
 
-#: .\base\templates\index.html:384
+#: .\base\templates\index.html:424
 msgid "Didn't find a suitable offer?"
 msgstr "適切なオファーが見つかりませんでしたか？"
 
-#: .\base\templates\index.html:386
+#: .\base\templates\index.html:426
 msgid "Take the initiative to post your own offer and connect with others looking to exchange money."
 msgstr "率先して自分のオファーを投稿し、両替を希望する他の人と繋がりましょう。"
 
-#: .\base\templates\index.html:395
+#: .\base\templates\index.html:435
 msgid "Why Choose Us?"
 msgstr "選ばれる理由"
 
-#: .\base\templates\index.html:401
+#: .\base\templates\index.html:441
 msgid "No Fees"
 msgstr "手数料なし"
 
-#: .\base\templates\index.html:402
+#: .\base\templates\index.html:442
 msgid "Exchange money without any commissions or hidden charges."
 msgstr "手数料や隠れた費用なしで両替できます。"
 
-#: .\base\templates\index.html:408
+#: .\base\templates\index.html:448
 msgid "Direct Connection"
 msgstr "直接接続"
 
-#: .\base\templates\index.html:409
+#: .\base\templates\index.html:449
 msgid "Connect directly with other users through our secure chat system."
 msgstr "安全なチャットシステムを通じて他のユーザーと直接接続します。"
 
-#: .\base\templates\index.html:415
+#: .\base\templates\index.html:455
 msgid "Secure"
 msgstr "安全"
 
-#: .\base\templates\index.html:416
+#: .\base\templates\index.html:456
 msgid "Your data is protected, and we don't handle any money transfers."
 msgstr "あなたのデータは保護されており、私たちはお金の送金を扱いません。"
 
-#: .\base\templates\index.html:425
+#: .\base\templates\index.html:465
 msgid "How It Works"
 msgstr "仕組み"
 
-#: .\base\templates\index.html:431
+#: .\base\templates\index.html:471
 msgid "1. Post Your Offer"
 msgstr "1. オファーを投稿"
 
-#: .\base\templates\index.html:432
+#: .\base\templates\index.html:472
 msgid "Create an offer to send or receive money with your preferred terms."
 msgstr "希望する条件で送金または受取のオファーを作成します。"
 
-#: .\base\templates\index.html:438
+#: .\base\templates\index.html:478
 msgid "2. Connect with Others"
 msgstr "2. 他のユーザーと繋がる"
 
-#: .\base\templates\index.html:439
+#: .\base\templates\index.html:479
 msgid "Browse offers and start a conversation with potential matches."
 msgstr "オファーを閲覧し、潜在的なマッチング相手と会話を開始します。"
 
-#: .\base\templates\index.html:445
+#: .\base\templates\index.html:485
 msgid "3. Exchange Money"
 msgstr "3. 両替する"
 
-#: .\base\templates\index.html:446
+#: .\base\templates\index.html:486
 msgid "Agree on terms and complete the transaction securely."
 msgstr "条件に合意し、安全に取引を完了します。"
 
@@ -482,15 +534,15 @@ msgstr "ウズベキスタンへ送金"
 msgid "Receive from Uzbekistan"
 msgstr "ウズベキスタンから受取"
 
-#: .\exchange\models.py:20
+#: .\exchange\models.py:20 .\exchange\models.py:131
 msgid "Japanese Yen"
 msgstr "日本円"
 
-#: .\exchange\models.py:21
+#: .\exchange\models.py:21 .\exchange\models.py:132
 msgid "Uzbekistan Sum"
 msgstr "ウズベキスタン・スム"
 
-#: .\exchange\models.py:22
+#: .\exchange\models.py:22 .\exchange\models.py:133
 msgid "US Dollar"
 msgstr "米ドル"
 
@@ -506,43 +558,43 @@ msgstr "完了"
 msgid "Hide contacts from other users"
 msgstr "他のユーザーから連絡先を隠す"
 
-#: .\exchange\models.py:159
+#: .\exchange\models.py:167
 msgid "Storage must be greater than 0 kg."
 msgstr "保管容量は0kgより大きくしてください。"
 
-#: .\exchange\models.py:161
+#: .\exchange\models.py:169
 msgid "Price per kg must be greater than 0."
 msgstr "1kgあたりの価格は0より大きくしてください。"
 
-#: .\exchange\models.py:195
-#: .\exchange\templates\exchange\luggage_listing_detail.html:75
+#: .\exchange\models.py:203
+#: .\exchange\templates\exchange\luggage_listing_detail.html:98
 msgid "Pending"
 msgstr "保留中"
 
-#: .\exchange\models.py:196
-#: .\exchange\templates\exchange\luggage_listing_detail.html:76
-#: .\exchange\templates\exchange\my_luggage_listings.html:27
+#: .\exchange\models.py:204
+#: .\exchange\templates\exchange\luggage_listing_detail.html:99
+#: .\exchange\templates\exchange\my_luggage_listings.html:36
 msgid "Reserved"
 msgstr "予約済み"
 
-#: .\exchange\models.py:197
-#: .\exchange\templates\exchange\luggage_listing_detail.html:77
+#: .\exchange\models.py:205
+#: .\exchange\templates\exchange\luggage_listing_detail.html:100
 msgid "Cancelled"
 msgstr "キャンセル済み"
 
-#: .\exchange\models.py:226
+#: .\exchange\models.py:234
 msgid "Reserved kg must be greater than 0."
 msgstr "予約するkgは0より大きくしてください。"
 
-#: .\exchange\models.py:232 .\exchange\views.py:345
+#: .\exchange\models.py:240 .\exchange\views.py:407
 msgid "You cannot reserve your own listing."
 msgstr "自分の掲載は予約できません。"
 
-#: .\exchange\models.py:235
+#: .\exchange\models.py:243
 msgid "This listing is no longer available."
 msgstr "この掲載は現在利用できません。"
 
-#: .\exchange\models.py:250
+#: .\exchange\models.py:258
 #, python-format
 msgid "Only %(remaining)s kg is left for reservation."
 msgstr "予約可能なのは残り%(remaining)skgのみです。"
@@ -621,182 +673,205 @@ msgstr "マーケットプレイスに戻る"
 msgid "My Listings"
 msgstr "自分の掲載"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:22
+#: .\exchange\templates\exchange\luggage_listing_detail.html:17
+msgid "Edit Listing"
+msgstr "掲載を編集"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:23
 msgid "Share this listing in your Telegram/Facebook groups:"
 msgstr "この掲載をTelegram/Facebookグループで共有:"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:34
+#: .\exchange\templates\exchange\luggage_listing_detail.html:35
 #: .\exchange\templates\exchange\luggage_listing_form.html:27
 msgid "Price per kg"
 msgstr "1kgあたりの価格"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:35
-#: .\exchange\templates\exchange\luggage_marketplace.html:49
+#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_marketplace.html:52
 msgid "Pickup in Tokyo"
 msgstr "東京で受け取り"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_listing_detail.html:38
+#: .\exchange\templates\exchange\my_luggage_listings.html:33
+msgid "Estimated arrival"
+msgstr "到着予定日"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:40
 msgid "Delivery options"
 msgstr "受け渡し方法"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:36
+#: .\exchange\templates\exchange\luggage_listing_detail.html:40
 msgid "Not specified"
 msgstr "未指定"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:37
-#: .\exchange\templates\exchange\luggage_listing_form.html:56
+#: .\exchange\templates\exchange\luggage_listing_detail.html:41
+#: .\exchange\templates\exchange\luggage_listing_form.html:64
 msgid "Allowed items"
 msgstr "持ち込み可能な品目"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:38
-#: .\exchange\templates\exchange\luggage_listing_form.html:60
+#: .\exchange\templates\exchange\luggage_listing_detail.html:42
+#: .\exchange\templates\exchange\luggage_listing_form.html:68
 msgid "Not allowed items"
 msgstr "持ち込み不可の品目"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:40
-#: .\exchange\templates\exchange\luggage_listing_form.html:65
+#: .\exchange\templates\exchange\luggage_listing_detail.html:44
+#: .\exchange\templates\exchange\luggage_listing_form.html:73
 msgid "Extra details"
 msgstr "追加情報"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:48
+#: .\exchange\templates\exchange\luggage_listing_detail.html:57
+msgid "Mark as Done"
+msgstr "完了にする"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:60
+msgid "Reopen Listing"
+msgstr "掲載を再開"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:63
+#: .\exchange\templates\exchange\my_luggage_listings.html:54
+msgid "Delete this listing?"
+msgstr "この掲載を削除しますか？"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:65
+msgid "Delete Listing"
+msgstr "掲載を削除"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:71
 msgid "Manage Reservations"
 msgstr "予約管理"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:53
+#: .\exchange\templates\exchange\luggage_listing_detail.html:76
 msgid "Buyer"
 msgstr "購入者"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:54
+#: .\exchange\templates\exchange\luggage_listing_detail.html:77
 msgid "Kg"
 msgstr "Kg"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:55
-#, fuzzy
-#| msgid "Contact:"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:78
 msgid "Contact"
 msgstr "連絡先"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:56
+#: .\exchange\templates\exchange\luggage_listing_detail.html:79
 #: .\exchange\templates\exchange\my_offers.html:174
 #: .\exchange\templates\exchange\offer_form.html:61
 msgid "Status"
 msgstr "操作"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:57
-#, fuzzy
-#| msgid "Active"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:80
 msgid "Actions"
-msgstr "アクティブ"
+msgstr "操作"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:79
-#, fuzzy
-#| msgid "Update Offer"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:102
 msgid "Update"
 msgstr "更新"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:84
+#: .\exchange\templates\exchange\luggage_listing_detail.html:107
 msgid "No reservations yet."
 msgstr "まだ予約はありません。"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:96
-#, fuzzy
-#| msgid "Status"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:119
 msgid "Storage Status"
-msgstr "容量ステータス"
+msgstr "保管状況"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:98
+#: .\exchange\templates\exchange\luggage_listing_detail.html:121
 msgid "Committed / Total"
 msgstr "予約済み / 合計"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:104
+#: .\exchange\templates\exchange\luggage_listing_detail.html:127
 msgid "Reserved (confirmed)"
 msgstr "予約済み（確定）"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:105
-#: .\exchange\templates\exchange\luggage_marketplace.html:44
-#: .\exchange\templates\exchange\my_luggage_listings.html:27
-msgid "Remaining"
-msgstr "残り"
-
-#: .\exchange\templates\exchange\luggage_listing_detail.html:112
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:135
 msgid "Telegram Notifications"
 msgstr "Telegram通知"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:118
-#: .\exchange\templates\exchange\luggage_notifications.html:42
+#: .\exchange\templates\exchange\luggage_listing_detail.html:138
+#: .\exchange\templates\exchange\luggage_notifications.html:19
+msgid "Telegram is connected."
+msgstr "Telegramが連携されています。"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:140
+#: .\exchange\templates\exchange\luggage_notifications.html:21
+#, python-format
+msgid "Connected account: @%(tg)s"
+msgstr "連携されたアカウント: @%(tg)s"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:147
+#: .\exchange\templates\exchange\luggage_notifications.html:51
 msgid "Enable notifications for this listing"
 msgstr "この掲載の通知を有効にする"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:122
-#: .\exchange\templates\exchange\luggage_notifications.html:46
+#: .\exchange\templates\exchange\luggage_listing_detail.html:151
+#: .\exchange\templates\exchange\luggage_notifications.html:55
 msgid "New reservation created"
 msgstr "新しい予約が作成されました"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:126
-#: .\exchange\templates\exchange\luggage_notifications.html:50
+#: .\exchange\templates\exchange\luggage_listing_detail.html:155
+#: .\exchange\templates\exchange\luggage_notifications.html:59
 msgid "Reservation status changes"
 msgstr "予約ステータスの変更"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:130
-#: .\exchange\templates\exchange\luggage_notifications.html:54
+#: .\exchange\templates\exchange\luggage_listing_detail.html:159
+#: .\exchange\templates\exchange\luggage_notifications.html:63
 msgid "Listing sold out"
 msgstr "空き容量がなくなりました"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:134
-#: .\exchange\templates\exchange\luggage_notifications.html:58
+#: .\exchange\templates\exchange\luggage_listing_detail.html:163
+#: .\exchange\templates\exchange\luggage_notifications.html:67
 msgid "Space becomes available again"
 msgstr "空き容量が再び利用可能になりました"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:137
-#, fuzzy
-#| msgid "Mute notifications"
+#: .\exchange\templates\exchange\luggage_listing_detail.html:166
 msgid "Save Notification Settings"
 msgstr "通知設定を保存"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:139
+#: .\exchange\templates\exchange\luggage_listing_detail.html:168
 msgid "Disable for this listing"
 msgstr "この掲載の通知を無効化"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:141
+#: .\exchange\templates\exchange\luggage_listing_detail.html:170
 msgid "Manage All Subscriptions"
 msgstr "すべての購読を管理"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:145
+#: .\exchange\templates\exchange\luggage_listing_detail.html:174
 msgid "Connect your Telegram first using the secure connect link, then enable notifications for this listing."
 msgstr "安全な接続リンクで先にTelegramを連携してから、この掲載の通知を有効にしてください。"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:148
-#: .\exchange\templates\exchange\luggage_notifications.html:20
+#: .\exchange\templates\exchange\luggage_listing_detail.html:177
+#: .\exchange\templates\exchange\luggage_notifications.html:29
 msgid "Connect Telegram"
 msgstr "Telegramを連携"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:159
+#: .\exchange\templates\exchange\luggage_listing_detail.html:185
+msgid "This is your listing. Use the reservation manager to confirm or cancel bookings."
+msgstr "これはあなたの掲載です。予約管理を使用して予約を確認またはキャンセルしてください。"
+
+#: .\exchange\templates\exchange\luggage_listing_detail.html:190
 msgid "Reserve Storage"
 msgstr "容量を予約"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:163
+#: .\exchange\templates\exchange\luggage_listing_detail.html:194
 msgid "How many kg?"
 msgstr "何kgですか？"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:167
+#: .\exchange\templates\exchange\luggage_listing_detail.html:198
 msgid "Your phone number (optional)"
 msgstr "電話番号（任意）"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:171
+#: .\exchange\templates\exchange\luggage_listing_detail.html:202
 msgid "Item notes"
 msgstr "荷物メモ"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:175
+#: .\exchange\templates\exchange\luggage_listing_detail.html:206
 msgid "Reserve Slot"
 msgstr "予約する"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:181
+#: .\exchange\templates\exchange\luggage_listing_detail.html:212
 msgid "This listing is closed or fully booked."
 msgstr "この掲載は終了しているか満枠です。"
 
-#: .\exchange\templates\exchange\luggage_listing_detail.html:184
+#: .\exchange\templates\exchange\luggage_listing_detail.html:215
 msgid "Please sign in to reserve storage."
 msgstr "容量を予約するにはログインしてください。"
 
@@ -809,34 +884,46 @@ msgid "Total Storage (kg)"
 msgstr "合計容量（kg）"
 
 #: .\exchange\templates\exchange\luggage_listing_form.html:31
+msgid "Price currency"
+msgstr "価格通貨"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:35
 msgid "Available until"
 msgstr "利用可能期限"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:36
+#: .\exchange\templates\exchange\luggage_listing_form.html:39
+msgid "Estimated arrival date & time"
+msgstr "到着予定日時"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:44
 msgid "Departure city"
 msgstr "出発都市"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:40
+#: .\exchange\templates\exchange\luggage_listing_form.html:48
 msgid "Arrival city"
 msgstr "到着都市"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:45
+#: .\exchange\templates\exchange\luggage_listing_form.html:53
 msgid "Pickup location in Tokyo"
 msgstr "東京での受け渡し場所"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:50
+#: .\exchange\templates\exchange\luggage_listing_form.html:58
 msgid "Optional delivery options"
 msgstr "任意の受け渡しオプション"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:52
+#: .\exchange\templates\exchange\luggage_listing_form.html:60
 msgid "Example: can deliver in Shinjuku, or can ship to recipient address in Japan."
 msgstr "例: 新宿で受け渡し可能、または日本国内の受取先住所へ発送可能。"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:71
+#: .\exchange\templates\exchange\luggage_listing_form.html:75
+msgid "Use this for pickup nuances; use arrival date & time above for ETA."
+msgstr "受け渡しのニュアンスにはこれを使用してください。ETAには上記の到着日時を使用してください。"
+
+#: .\exchange\templates\exchange\luggage_listing_form.html:80
 msgid "Listing is active"
 msgstr "掲載を有効化"
 
-#: .\exchange\templates\exchange\luggage_listing_form.html:81
+#: .\exchange\templates\exchange\luggage_listing_form.html:90
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -857,38 +944,24 @@ msgstr "自分の容量を販売"
 msgid "Sign in to Reserve"
 msgstr "予約するにはログイン"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:31
-msgid "Open"
-msgstr "公開中"
-
-#: .\exchange\templates\exchange\luggage_marketplace.html:31
-msgid "Closed"
-msgstr "非公開"
-
 #: .\exchange\templates\exchange\luggage_marketplace.html:34
 msgid "by"
 msgstr "による"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:38
+#: .\exchange\templates\exchange\luggage_marketplace.html:41
 msgid "Reserved / Total"
 msgstr "予約済み / 合計"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:48
-msgid "Price"
-msgstr "価格"
-
-#: .\exchange\templates\exchange\luggage_marketplace.html:52
+#: .\exchange\templates\exchange\luggage_marketplace.html:55
 msgid "View Listing"
 msgstr "掲載を見る"
 
-#: .\exchange\templates\exchange\luggage_marketplace.html:58
+#: .\exchange\templates\exchange\luggage_marketplace.html:61
 msgid "No active luggage listings yet. Be the first to post one."
 msgstr "まだ有効な荷物掲載はありません。最初の掲載者になりましょう。"
 
 #: .\exchange\templates\exchange\luggage_notifications.html:4
 #: .\exchange\templates\exchange\luggage_notifications.html:10
-#, fuzzy
-#| msgid "Mute notifications"
 msgid "Luggage Notifications"
 msgstr "荷物通知"
 
@@ -901,28 +974,23 @@ msgstr "各掲載ごとにTelegramで受け取る通知を管理します。"
 msgid "Marketplace"
 msgstr "マーケットプレイス"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:18
+#: .\exchange\templates\exchange\luggage_notifications.html:27
 msgid "Telegram is not connected yet."
 msgstr "Telegramはまだ連携されていません。"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:35
-#: .\exchange\templates\exchange\my_luggage_listings.html:31
-msgid "Open Listing"
-msgstr "掲載を開く"
-
-#: .\exchange\templates\exchange\luggage_notifications.html:61
+#: .\exchange\templates\exchange\luggage_notifications.html:70
 msgid "Save"
 msgstr "保存"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:63
+#: .\exchange\templates\exchange\luggage_notifications.html:72
 msgid "Disable"
 msgstr "無効化"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:65
+#: .\exchange\templates\exchange\luggage_notifications.html:74
 msgid "Enable"
 msgstr "有効化"
 
-#: .\exchange\templates\exchange\luggage_notifications.html:74
+#: .\exchange\templates\exchange\luggage_notifications.html:83
 msgid "No subscriptions yet. Open a listing and save Telegram notification settings."
 msgstr "まだ購読はありません。掲載を開いてTelegram通知設定を保存してください。"
 
@@ -939,17 +1007,35 @@ msgstr "予約を追跡し、支払い済み枠を予約済みにできます。
 msgid "New Listing"
 msgstr "新しい掲載"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:26
-msgid "until"
-msgstr "まで"
+#: .\exchange\templates\exchange\my_luggage_listings.html:41
+#: .\exchange\templates\exchange\my_offers.html:262
+msgid "Edit"
+msgstr "編集"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:32
+#: .\exchange\templates\exchange\my_luggage_listings.html:47
+msgid "Mark Done"
+msgstr "完了にする"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:51
+msgid "Reopen"
+msgstr "再開する"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:56
+#: .\exchange\templates\exchange\my_offers.html:317
+msgid "Delete"
+msgstr "削除"
+
+#: .\exchange\templates\exchange\my_luggage_listings.html:58
 msgid "Share"
 msgstr "共有"
 
-#: .\exchange\templates\exchange\my_luggage_listings.html:41
+#: .\exchange\templates\exchange\my_luggage_listings.html:67
 msgid "No luggage listings yet. Create one and share its link in Facebook or Telegram groups."
 msgstr "まだ荷物掲載はありません。掲載を作成してFacebookまたはTelegramグループで共有してください。"
+
+#: .\exchange\templates\exchange\my_offers.html:1
+msgid "My offers"
+msgstr "マイオファー"
 
 #: .\exchange\templates\exchange\my_offers.html:116
 msgid "My Offers"
@@ -987,10 +1073,6 @@ msgstr "連絡先を隠す"
 msgid "Complete"
 msgstr "完了する"
 
-#: .\exchange\templates\exchange\my_offers.html:262
-msgid "Edit"
-msgstr "編集"
-
 #: .\exchange\templates\exchange\my_offers.html:289
 msgid "Mark Urgent"
 msgstr "緊急マークを付ける"
@@ -998,10 +1080,6 @@ msgstr "緊急マークを付ける"
 #: .\exchange\templates\exchange\my_offers.html:306
 msgid "Remove Urgency"
 msgstr "緊急マークを削除"
-
-#: .\exchange\templates\exchange\my_offers.html:317
-msgid "Delete"
-msgstr "削除"
 
 #: .\exchange\templates\exchange\my_offers.html:328
 msgid "Start Saving Today!"
@@ -1116,46 +1194,88 @@ msgstr "荷物容量の掲載を作成"
 msgid "Publish Listing"
 msgstr "掲載を公開"
 
+#: .\exchange\views.py:208
+msgid "Luggage listing updated."
+msgstr "荷物掲載を更新しました。"
+
+#: .\exchange\views.py:213
+msgid "Edit Luggage Storage Listing"
+msgstr "荷物容量の掲載を編集"
+
+#: .\exchange\views.py:214
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: .\exchange\views.py:225
+msgid "You are not allowed to delete this listing."
+msgstr "この掲載を削除する権限がありません。"
+
+#: .\exchange\views.py:229
+msgid "Luggage listing deleted."
+msgstr "荷物掲載を削除しました。"
+
+#: .\exchange\views.py:237
+msgid "You are not allowed to update this listing."
+msgstr "この掲載を更新する権限がありません。"
+
+#: .\exchange\views.py:243
+msgid "Listing marked as done/closed."
+msgstr "掲載を完了/終了にしました。"
+
 #: .\exchange\views.py:246
+msgid "Listing reopened."
+msgstr "掲載を再開しました。"
+
+#: .\exchange\views.py:248
+msgid "Invalid listing action."
+msgstr "無効な掲載アクションです。"
+
+#: .\exchange\views.py:308
 #, python-format
 msgid "First connect Telegram: open %(url)s from this account, then return here."
 msgstr "まずTelegramを連携してください: このアカウントから %(url)s を開き、ここに戻ってください。"
 
-#: .\exchange\views.py:252
+#: .\exchange\views.py:314
 msgid "Telegram bot username is not configured by admin yet."
 msgstr "Telegramボットのユーザー名が管理者によってまだ設定されていません。"
 
-#: .\exchange\views.py:285
+#: .\exchange\views.py:347
 msgid "Telegram notification settings saved."
 msgstr "Telegram通知設定を保存しました。"
 
-#: .\exchange\views.py:287
+#: .\exchange\views.py:349
 msgid "Telegram notifications disabled for this listing."
 msgstr "この掲載のTelegram通知を無効にしました。"
 
-#: .\exchange\views.py:335
+#: .\exchange\views.py:397
 msgid "Notification settings updated."
 msgstr "通知設定を更新しました。"
 
-#: .\exchange\views.py:366
+#: .\exchange\views.py:428
 msgid "Reservation submitted. Contact the seller to complete payment and handover."
 msgstr "予約を送信しました。支払いと受け渡しのため販売者に連絡してください。"
 
-#: .\exchange\views.py:392
+#: .\exchange\views.py:454
 msgid "You are not allowed to update this reservation."
 msgstr "この予約を更新する権限がありません。"
 
-#: .\exchange\views.py:402
+#: .\exchange\views.py:464
 msgid "Invalid reservation status."
 msgstr "無効な予約ステータスです。"
 
-#: .\exchange\views.py:421
+#: .\exchange\views.py:483
 msgid "Reservation status updated."
 msgstr "予約ステータスを更新しました。"
 
-#: .\exchange\views.py:718 .\exchange\views.py:721
+#: .\exchange\views.py:780 .\exchange\views.py:783
 msgid "Conversation deleted successfully."
 msgstr "会話が正常に削除されました。"
+
+#~ msgid "New offer"
+#~ msgstr "新規オファー"
+
+#~ msgid "My Notifications"
+#~ msgstr "自分の通知"
 
 #~ msgid "Open Exchange Hub. All rights reserved, except the right to overpay bank fees—that's all yours!"
 #~ msgstr "オープン両替ハブ。無断複写・転載を禁じます。ただし、銀行手数料を払いすぎる権利、それはあなたのものです！"

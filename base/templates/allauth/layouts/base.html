@@ -170,28 +170,29 @@
                             aria-label="{% translate 'Project links' %}"
                             class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url "luggage_marketplace" %}"><i class="bi bi-suitcase2 me-1"></i>{% translate 'Luggage Space' %}</a>
+                                <a class="nav-link {% if request.resolver_match.url_name == 'luggage_marketplace' %}active{% endif %}" href="{% url "luggage_marketplace" %}"><i class="bi bi-suitcase2 me-1"></i>{% translate 'Luggage Space' %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="{% url "create_offer" %}">{% translate 'New offer' %}</a>
+                                <a class="nav-link {% if request.resolver_match.url_name == 'create_offer' %}active{% endif %}" href="{% url "create_offer" %}"><i class="bi bi-cash-coin me-1"></i>{% translate 'Post money offer' %}</a>
                             </li>
                             {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url "luggage_my_listings" %}"><i class="bi bi-card-list me-1"></i>{% translate 'My luggage listings' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url "luggage_notifications" %}"><i class="bi bi-bell me-1"></i>{% translate 'My notifications' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url "my_offers" %}">{% translate 'My offers' %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url "conversations_list" %}">
-                                    {% translate 'Conversations' %}
-                                    {% if unread_messages > 0%}
-                                        <span class="badge bg-danger">{{unread_messages}}</span>
-                                    {% endif %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'my_offers' or request.resolver_match.url_name == 'luggage_my_listings' or request.resolver_match.url_name == 'luggage_notifications' or request.resolver_match.url_name == 'conversations_list' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-grid-3x3-gap me-1"></i>{% translate 'My Hub' %}
                                 </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{% url "my_offers" %}"><i class="bi bi-wallet2 me-2"></i>{% translate 'My money offers' %}</a></li>
+                                    <li><a class="dropdown-item" href="{% url "luggage_my_listings" %}"><i class="bi bi-card-list me-2"></i>{% translate 'My luggage listings' %}</a></li>
+                                    <li><a class="dropdown-item" href="{% url "luggage_notifications" %}"><i class="bi bi-bell me-2"></i>{% translate 'My notifications' %}</a></li>
+                                    <li>
+                                        <a class="dropdown-item d-flex justify-content-between align-items-center" href="{% url "conversations_list" %}">
+                                            <span><i class="bi bi-chat-dots me-2"></i>{% translate 'Conversations' %}</span>
+                                            {% if unread_messages > 0%}
+                                                <span class="badge bg-danger">{{unread_messages}}</span>
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             {% endif %}
                         </ul>
@@ -238,11 +239,6 @@
                                     </div>
                                 </button>
                                 <ul class="dropdown-menu text-small dropdown-menu-lg-end">
-                                    <li>
-                                        <a class="dropdown-item"
-                                        href="{% url 'luggage_notifications' %}">{% translate 'My Notifications' %}</a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
                                     {% url 'account_email' as email_url_ %}
                                     {% if email_url_ %}
                                         <li>
