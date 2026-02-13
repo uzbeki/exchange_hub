@@ -142,10 +142,10 @@
             </div>
           </form>
           {% else %}
-          <p class="small text-muted">{% translate 'Connect your Telegram first by opening the bot and sending /connect, then enable notifications for this listing.' %}</p>
+          <p class="small text-muted">{% translate 'Connect your Telegram first using the secure connect link, then enable notifications for this listing.' %}</p>
           {% if telegram_link_url %}
           <a href="{{ telegram_link_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100">
-            {% translate 'Open Telegram Bot' %}
+            {% translate 'Connect Telegram' %}
           </a>
           {% endif %}
           {% endif %}

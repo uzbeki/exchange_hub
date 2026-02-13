@@ -21,6 +21,7 @@ from exchange.models import (
     LuggageListing,
     LuggageReservation,
     LuggageTelegramSubscription,
+    TelegramLinkToken,
 )
 from exchange.forms import (
     RequestForm,
@@ -32,11 +33,14 @@ from exchange.forms import (
 from django.contrib import messages
 from django.db import models
 from django.http import HttpRequest, JsonResponse
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 from exchange.notifications import notify_listing_subscribers
 from exchange.telegram import (
+    bot_start_url,
     bot_chat_url,
+    create_telegram_link_token,
     send_telegram_message,
     verify_webhook_secret,
 )
@@ -47,6 +51,25 @@ class BaseMixin(LoginRequiredMixin, ContextMixin):
         context = super().get_context_data(**kwargs)
         context["unread_messages"] = Message.get_unread_message_count_by_user(self.request.user)
         return context
+
+
+def _build_telegram_connect_url(user) -> str:
+    if user.telegram_chat_id:
+        return bot_chat_url()
+
+    token_obj = (
+        TelegramLinkToken.objects.filter(
+            user=user,
+            used_at__isnull=True,
+            expires_at__gte=timezone.now(),
+        )
+        .order_by("-created_at")
+        .first()
+    )
+    if not token_obj:
+        token_obj = create_telegram_link_token(user)
+
+    return bot_start_url(token_obj.token) or bot_chat_url()
 
 
 class CreateOfferView(BaseMixin, CreateView):
@@ -202,7 +225,7 @@ class LuggageListingDetailView(TemplateView):
                 user=self.request.user,
             ).first()
             context["telegram_is_linked"] = bool(self.request.user.telegram_chat_id)
-            context["telegram_link_url"] = bot_chat_url()
+            context["telegram_link_url"] = _build_telegram_connect_url(self.request.user)
         context["unread_messages"] = (
             Message.get_unread_message_count_by_user(self.request.user)
             if self.request.user.is_authenticated
@@ -216,11 +239,11 @@ class ToggleLuggageTelegramSubscriptionView(LoginRequiredMixin, View):
         listing = get_object_or_404(LuggageListing, id=kwargs["listing_id"])
 
         if not request.user.telegram_chat_id:
-            link_url = bot_chat_url()
+            link_url = _build_telegram_connect_url(request.user)
             if link_url:
                 messages.info(
                     request,
-                    _("First connect Telegram: open %(url)s and send /connect to the bot, then return here.")
+                    _("First connect Telegram: open %(url)s from this account, then return here.")
                     % {"url": link_url},
                 )
             else:
@@ -277,7 +300,7 @@ class LuggageNotificationsView(LoginRequiredMixin, TemplateView):
             .order_by("-updated_at")
         )
         context["telegram_is_linked"] = bool(self.request.user.telegram_chat_id)
-        context["telegram_link_url"] = bot_chat_url()
+        context["telegram_link_url"] = _build_telegram_connect_url(self.request.user)
         context["unread_messages"] = Message.get_unread_message_count_by_user(
             self.request.user
         )
@@ -429,19 +452,40 @@ class TelegramWebhookView(View):
             return JsonResponse({"ok": True})
 
         if text.startswith("/start"):
-            send_telegram_message(
-                str(chat_id),
-                "Welcome! Send /connect to link this Telegram chat to your website account. Use /help for commands.",
-            )
-            return JsonResponse({"ok": True})
+            parts = text.split(maxsplit=1)
+            start_token = parts[1].strip() if len(parts) > 1 else ""
 
-        linked_user = get_user_model().objects.filter(telegram_chat_id=str(chat_id)).first()
+            if start_token:
+                token_obj = TelegramLinkToken.objects.select_related("user").filter(
+                    token=start_token
+                ).first()
+                if not token_obj:
+                    send_telegram_message(
+                        str(chat_id),
+                        "Invalid or unknown connect token. Please click Connect Telegram again from the website.",
+                    )
+                    return JsonResponse({"ok": True})
 
-        if text.startswith("/connect"):
-            existing = get_user_model().objects.filter(telegram_chat_id=str(chat_id)).first()
-            if existing:
-                existing.link_telegram(chat_id=str(chat_id), username=username)
-                existing.save(
+                if not token_obj.is_valid:
+                    send_telegram_message(
+                        str(chat_id),
+                        "This connect token is expired or already used. Please generate a new one from the website.",
+                    )
+                    return JsonResponse({"ok": True})
+
+                user = token_obj.user
+
+                get_user_model().objects.filter(telegram_chat_id=str(chat_id)).exclude(
+                    pk=user.pk
+                ).update(
+                    telegram_chat_id=None,
+                    telegram_username="",
+                    telegram_notifications_enabled=False,
+                    telegram_linked_at=None,
+                )
+
+                user.link_telegram(chat_id=str(chat_id), username=username)
+                user.save(
                     update_fields=[
                         "telegram_chat_id",
                         "telegram_username",
@@ -449,46 +493,34 @@ class TelegramWebhookView(View):
                         "telegram_linked_at",
                     ]
                 )
+                token_obj.used_at = timezone.now()
+                token_obj.save(update_fields=["used_at"])
+
                 send_telegram_message(
                     str(chat_id),
-                    f"Connected ✅ This chat is linked to {existing.username}.",
+                    f"Connected ✅ This Telegram chat is now linked to {user.username}.",
                 )
                 return JsonResponse({"ok": True})
 
-            if not username:
-                send_telegram_message(
-                    str(chat_id),
-                    "Cannot auto-link: your Telegram account has no username. Set a Telegram username and try /connect again.",
-                )
-                return JsonResponse({"ok": True})
-
-            user = get_user_model().objects.filter(username__iexact=username).first()
-            if not user:
-                send_telegram_message(
-                    str(chat_id),
-                    "No matching website account found for your Telegram username. Make sure they are the same.",
-                )
-                return JsonResponse({"ok": True})
-
-            user.link_telegram(chat_id=str(chat_id), username=username)
-            user.save(
-                update_fields=[
-                    "telegram_chat_id",
-                    "telegram_username",
-                    "telegram_notifications_enabled",
-                    "telegram_linked_at",
-                ]
-            )
             send_telegram_message(
                 str(chat_id),
-                f"Connected ✅ You will now receive notifications for {user.username}.",
+                "Welcome! Open the website and use the Connect Telegram button to link this chat securely. Use /help for commands.",
+            )
+            return JsonResponse({"ok": True})
+
+        linked_user = get_user_model().objects.filter(telegram_chat_id=str(chat_id)).first()
+
+        if text.startswith("/connect"):
+            send_telegram_message(
+                str(chat_id),
+                "For security, /connect is deprecated. Please tap Connect Telegram on the website, which opens this bot with a one-time token.",
             )
             return JsonResponse({"ok": True})
 
         if not linked_user:
             send_telegram_message(
                 str(chat_id),
-                "This chat is not linked yet. Send /connect first.",
+                "This chat is not linked yet. Open the website and press Connect Telegram.",
             )
             return JsonResponse({"ok": True})
 
