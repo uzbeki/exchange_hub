@@ -73,8 +73,7 @@ Visit the live demo: [Open Exchange Hub](https://exchangehub.bekhruz.com)
 2. Create a virtual environment and activate it:
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   uv sync
    ```
 
 3. Install dependencies:
@@ -144,13 +143,13 @@ Webhook endpoint used by the command:
 Generate translation files:
 
 ```bash
-py manage.py makemessages --no-wrap -l ja -l uz -l ru --ignore=venv/*
+uv run manage.py makemessages --no-wrap -l ja -l uz -l ru --ignore=.venv/*
 ```
 
 Compile translations:
 
 ```bash
-py manage.py compilemessages --ignore=venv/* -l ja -l uz -l ru
+uv run manage.py compilemessages --ignore=.venv/* -l ja -l uz -l ru
 ```
 
 ### 🧪 Running Tests
@@ -158,7 +157,7 @@ py manage.py compilemessages --ignore=venv/* -l ja -l uz -l ru
 To run the test suite:
 
 ```bash
-python manage.py test
+uv run manage.py test
 ```
 
 ### 🌟 Deployment
